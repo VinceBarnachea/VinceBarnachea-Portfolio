@@ -22,12 +22,12 @@
 // // `
 
 // // setupCounter(document.querySelector('#counter'))
-import { gsap } from "../node_modules/gsap/index.js";
+import { gsap } from "gsap";
     
-import { ScrollTrigger } from "../node_modules/gsap/ScrollTrigger.js";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 // ScrollSmoother requires ScrollTrigger
-import { ScrollSmoother } from "../node_modules/gsap/ScrollSmoother.js";
-import { SplitText } from "../node_modules/gsap/SplitText.js";
+import { ScrollSmoother } from "gsap/ScrollSmoother";
+import { SplitText } from "gsap/SplitText";
 
 gsap.registerPlugin(ScrollTrigger,ScrollSmoother,SplitText);
 
