@@ -22,19 +22,33 @@
 // // `
 
 // // setupCounter(document.querySelector('#counter'))
-import { gsap } from "gsap";
+import { gsap } from "../node_modules/gsap/index.js";
     
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ScrollTrigger } from "../node_modules/gsap/ScrollTrigger.js";
 // ScrollSmoother requires ScrollTrigger
-import { ScrollSmoother } from "gsap/ScrollSmoother";
-import { SplitText } from "gsap/SplitText";
+import { ScrollSmoother } from "../node_modules/gsap/ScrollSmoother.js";
+import { SplitText } from "../node_modules/gsap/SplitText.js";
 
 gsap.registerPlugin(ScrollTrigger,ScrollSmoother,SplitText);
 
 gsap.to('.box',
   {
-    rotate: 360,
-    duration: 3,
+    rotate: 720,
     scale: 2,
+    duration: 2,
+    repeat: -1,   // infinite loop
+    yoyo: true 
   }
 );
+
+var header = SplitText.create('.comingsoon',{ type: "words, chars" });
+
+gsap.from(header.chars,
+  {
+    y: 300,
+    stagger: 0.05,
+    duration: 1,
+        repeat: -1,   // infinite loop
+    yoyo: true 
+  }
+)
