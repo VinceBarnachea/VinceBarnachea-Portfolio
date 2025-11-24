@@ -1,0 +1,137 @@
+@import "tailwindcss";
+
+
+@theme {
+  /* 1. Reset all default breakpoints to remove sm, md, lg, etc. */
+  /* --breakpoint-*: initial; */
+
+  /* 2. Define your custom breakpoints */
+
+  --breakpoint-xs: 391px;
+  --breakpoint-sm: 540px;
+  --breakpoint-md: 950px;
+  --breakpoint-lg: 1025px;
+  --breakpoint-sl: 1281px;
+  --breakpoint-xl: 1400px;
+  --breakpoint-2xl: 1500px;
+  --breakpoint-3xl: 1800px;
+  --breakpoint-4xl: 2160px;
+}
+
+@font-face {
+  font-family: 'Geologica Black';
+  src: url('../fonts/Geologica-Black.woff2') format('woff2'),
+    url('../fonts/Geologica-Black.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Geologica Thin';
+  src: url('../fonts/Geologica-Thin.woff2') format('woff2'),
+    url('../fonts/Geologica-Thin.woff') format('woff');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  font-family: 'Geologica Thin';
+  color: #e6e6e6;
+  background-color: #16302b;
+}
+
+p {
+  margin: 0 0 1rem 0;
+}
+
+p:last-of-type {
+  margin: 0;
+}
+
+.max-container {
+  max-width: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.text-white {
+  color: #E6E6E6;
+}
+
+.text-black {
+  color: #16302b;
+}
+
+.bg-black {
+  background-color: #16302b;
+}
+
+.bg-white {
+  background-color: #E6E6E6;
+}
+
+.font-black {
+  font-family: 'Geologica Black';
+  font-weight: 900 !important;
+  font-style: normal;
+  font-display: swap;
+}
+
+.font-reg {
+  font-family: 'Geologica';
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+
+@media only screen and (max-width: 640px) {
+  .max-container {
+    max-width: none;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media only screen and (min-width: 641px) {
+  .max-container {
+    max-width: none;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .max-container {
+    max-width: none;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .max-container {
+    max-width: none;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media only screen and (min-width: 1500px) {
+  .max-container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media only screen and (min-width: 1800px) {
+  .max-container {
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
