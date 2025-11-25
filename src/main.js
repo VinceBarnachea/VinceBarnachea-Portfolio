@@ -24,24 +24,47 @@
 // // setupCounter(document.querySelector('#counter'))
 gsap.registerPlugin(ScrollTrigger,ScrollSmoother,SplitText);
 
-gsap.to('.box',
-  {
-    rotate: 720,
-    scale: 2,
-    duration: 2,
-    repeat: -1,   // infinite loop
-    yoyo: true 
-  }
-);
+$(document).ready(function(){
+  console.log('Ready');
 
-var header = SplitText.create('.comingsoon',{ type: "words, chars" });
+  ScrollSmoother.create({
+        wrapper: "#smooth-wrapper",
+        content: "#smooth-content",
+        smooth: ScrollTrigger.isTouch ? 0 : 1.1, // disable smooth on touch devices
+        effects: true,
+        // normalizeScroll: !ScrollTrigger.isTouch, // only normalize scroll on desktop
+    });
 
-gsap.from(header.chars,
-  {
-    y: 300,
-    stagger: 0.05,
-    duration: 1,
-        repeat: -1,   // infinite loop
-    yoyo: true 
-  }
-)
+
+    setTimeout(() => {
+        gsap.to('.coming-soon-section',
+          {
+              top: 0,
+              duration: 1,
+          }
+        )
+
+            gsap.to('.box',
+            {
+              rotate: 720,
+              scale: 2,
+              duration: 2,
+              repeat: -1,   // infinite loop
+              yoyo: true 
+            }
+          );
+
+          var header = SplitText.create('.comingsoon',{ type: "lines, words, chars" });
+
+          gsap.from(header.chars,
+            {
+              y: 300,
+              stagger: 0.05,
+              duration: 1,
+                  repeat: -1,   // infinite loop
+              yoyo: true,
+              repeatDelay: 0.5
+            }
+          )
+    }, 2000);
+});

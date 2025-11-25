@@ -64,6 +64,10 @@ p:last-of-type {
   color: #16302b;
 }
 
+.border-white{
+  border-color: #E6E6E6;
+}
+
 .bg-black {
   background-color: #16302b;
 }
