@@ -66,37 +66,49 @@ $(document).ready(function(){
       }, 1);
   });
 
-    // setTimeout(() => {
-    //     gsap.to('.coming-soon-section',
-    //       {
-    //           top: 0,
-    //           duration: 1,
-    //       }
-    //     )
+  $(document).on('click', function() {
+        $cursorFlwr.addClass('expand');
+        setTimeout(function() {
+            $cursorFlwr.removeClass('expand');
+        }, 200);
+    });
 
-    //         gsap.to('.box',
-    //         {
-    //           rotate: 720,
-    //           scale: 2,
-    //           duration: 2,
-    //           repeat: -1,   // infinite loop
-    //           yoyo: true,
-    //           delay: 0.5 
-    //         }
-    //       );
+    setTimeout(() => {
+        gsap.to('body',
+          {
+            overflow: "hidden",
+          }
+        );
+        gsap.to('.coming-soon-section',
+          {
+              top: 0,
+              duration: 1,
+          }
+        )
 
-    //       var header = SplitText.create('.comingsoon',{ type: "lines, words, chars" });
+            gsap.to('.box',
+            {
+              rotate: 720,
+              scale: 2,
+              duration: 2,
+              repeat: -1,   // infinite loop
+              yoyo: true,
+              delay: 0.5 
+            }
+          );
 
-    //       gsap.from(header.chars,
-    //         {
-    //           y: 300,
-    //           stagger: 0.05,
-    //           duration: 1,
-    //               repeat: -1,   // infinite loop
-    //           yoyo: true,
-    //           delay: 0.5,
-    //           repeatDelay: 0.5
-    //         }
-    //       )
-    // }, 2000);
+          var header = SplitText.create('.comingsoon',{ type: "lines, words, chars" });
+
+          gsap.from(header.chars,
+            {
+              y: 300,
+              stagger: 0.05,
+              duration: 1,
+                  repeat: -1,   // infinite loop
+              yoyo: true,
+              delay: 0.5,
+              repeatDelay: 0.5
+            }
+          )
+    }, 3000);
 });
