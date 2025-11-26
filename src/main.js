@@ -35,36 +35,68 @@ $(document).ready(function(){
         // normalizeScroll: !ScrollTrigger.isTouch, // only normalize scroll on desktop
     });
 
+  const $cursorFlwr = $('.cursor-flwr');
+  const $cursorPntr = $('.cursor-pntr');
 
-    setTimeout(() => {
-        gsap.to('.coming-soon-section',
-          {
-              top: 0,
-              duration: 1,
-          }
-        )
+  var mouseX = (event) => event.clientX;
+  var mouseY = (event) => event.clientY;
 
-            gsap.to('.box',
-            {
-              rotate: 720,
-              scale: 2,
-              duration: 2,
-              repeat: -1,   // infinite loop
-              yoyo: true 
-            }
-          );
+  var positionElement = (event) => {
+      var mouse = {
+          x: mouseX(event),
+          y: mouseY(event)
+      };
 
-          var header = SplitText.create('.comingsoon',{ type: "lines, words, chars" });
+      // Smoothly update the cursor position using CSS transform
+      $cursorFlwr.css({
+          transform: `translate3d(${(mouse.x-0)}px, ${(mouse.y-0)}px, 0)`
+      });
 
-          gsap.from(header.chars,
-            {
-              y: 300,
-              stagger: 0.05,
-              duration: 1,
-                  repeat: -1,   // infinite loop
-              yoyo: true,
-              repeatDelay: 0.5
-            }
-          )
-    }, 2000);
+      $cursorPntr.css({
+          transform: `translate3d(${(mouse.x-0)}px, ${(mouse.y-0)}px, 0)`
+      });
+  };
+
+  // Throttling the mousemove event
+  var timer = false;
+  $(window).on('mousemove', function(event) {
+      clearTimeout(timer); // Clear any previous timeouts
+      timer = setTimeout(function() {
+          positionElement(event); // Call positionElement after 1ms
+      }, 1);
+  });
+
+    // setTimeout(() => {
+    //     gsap.to('.coming-soon-section',
+    //       {
+    //           top: 0,
+    //           duration: 1,
+    //       }
+    //     )
+
+    //         gsap.to('.box',
+    //         {
+    //           rotate: 720,
+    //           scale: 2,
+    //           duration: 2,
+    //           repeat: -1,   // infinite loop
+    //           yoyo: true,
+    //           delay: 0.5 
+    //         }
+    //       );
+
+    //       var header = SplitText.create('.comingsoon',{ type: "lines, words, chars" });
+
+    //       gsap.from(header.chars,
+    //         {
+    //           y: 300,
+    //           stagger: 0.05,
+    //           duration: 1,
+    //               repeat: -1,   // infinite loop
+    //           yoyo: true,
+    //           delay: 0.5,
+    //           repeatDelay: 0.5
+    //         }
+    //       )
+    // }, 2000);
 });

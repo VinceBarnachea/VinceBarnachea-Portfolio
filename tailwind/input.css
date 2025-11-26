@@ -18,6 +18,10 @@
   --breakpoint-4xl: 2160px;
 }
 
+* {
+  cursor: none;
+}
+
 @font-face {
   font-family: 'Geologica Black';
   src: url('../fonts/Geologica-Black.woff2') format('woff2'),
