@@ -22,10 +22,10 @@
 // // `
 
 // // setupCounter(document.querySelector('#counter'))
-gsap.registerPlugin(ScrollTrigger,ScrollSmoother,SplitText);
+gsap.registerPlugin(ScrollTrigger,ScrollSmoother,SplitText,DrawSVGPlugin);
 
 $(document).ready(function(){
-  console.log('Ready');
+  console.log('Hello Devs! My Portfolio Revamp is WIP :)');
 
   ScrollSmoother.create({
         wrapper: "#smooth-wrapper",
@@ -70,8 +70,49 @@ $(document).ready(function(){
         $cursorFlwr.addClass('expand');
         setTimeout(function() {
             $cursorFlwr.removeClass('expand');
-        }, 200);
+        }, 180);
     });
+
+        $('.hvr-crsr').hover(
+            function () {
+                $cursorFlwr.addClass('hovered');
+            },
+            function () {
+                $cursorFlwr.removeClass('hovered');
+            }
+        );
+
+    const gitAnimation = gsap.timeline();
+
+    gitAnimation.fromTo('#cat', 
+    { drawSVG: "0%" }, 
+    { drawSVG: "100%", duration: 1.5, ease: "power2.out" }
+    )
+    .to('#cat', {
+    fill: "#e6e6e6",  // change to whatever fill color you want
+    duration: 0.3,
+    ease: "power1.inOut"
+    },">")
+    .to("#cat",
+        {
+            stroke: "transparent",
+            duration: 0.5,
+    ease: "power1.inOut"
+        }
+    ),"<";
+
+    gsap.fromTo('.lin',
+      {
+        drawSVG: "0%"
+      },
+      {
+        drawSVG: "100%",
+        duration: 2,
+        ease: "power2.out"
+      }
+    );
+
+
 
     setTimeout(() => {
         gsap.to('body',

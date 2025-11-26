@@ -23,8 +23,13 @@
 }
 
 .expand.cursor-flwr{
-  height: 75px;
-  width: 75px;
+  height: 85px!important;
+  width: 85px!important;
+}
+
+.hovered.cursor-flwr{
+  height: 65px;
+  width: 65px;
 }
 
 @font-face {

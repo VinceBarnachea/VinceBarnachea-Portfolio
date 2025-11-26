@@ -238,9 +238,6 @@
   .inline-block {
     display: inline-block;
   }
-  .table {
-    display: table;
-  }
   .h-\[2px\] {
     height: 2px;
   }
@@ -249,6 +246,9 @@
   }
   .h-\[35px\] {
     height: 35px;
+  }
+  .h-\[40px\] {
+    height: 40px;
   }
   .h-\[45px\] {
     height: 45px;
@@ -277,6 +277,9 @@
   .w-\[27px\] {
     width: 27px;
   }
+  .w-\[40px\] {
+    width: 40px;
+  }
   .w-\[45px\] {
     width: 45px;
   }
@@ -288,9 +291,6 @@
   }
   .w-full {
     width: 100%;
-  }
-  .border-collapse {
-    border-collapse: collapse;
   }
   .origin-center {
     transform-origin: center;
@@ -385,9 +385,6 @@
   .bg-\[rgba\(22\,48\,43\,0\.9\)\] {
     background-color: rgba(22,48,43,0.9);
   }
-  .bg-\[rgba\(22\,48\,43\,0\.98\)\] {
-    background-color: rgba(22,48,43,0.98);
-  }
   .bg-black {
     background-color: var(--color-black);
   }
@@ -448,11 +445,11 @@
   .text-\[5rem\] {
     font-size: 5rem;
   }
-  .text-\[9\.5rem\] {
-    font-size: 9.5rem;
+  .text-\[7\.5rem\] {
+    font-size: 7.5rem;
   }
-  .text-\[10rem\] {
-    font-size: 10rem;
+  .text-\[8rem\] {
+    font-size: 8rem;
   }
   .leading-\[0\.9\] {
     --tw-leading: 0.9;
@@ -469,24 +466,14 @@
   .text-\[\#e6e6e6cc\] {
     color: #e6e6e6cc;
   }
-  .text-black {
-    color: var(--color-black);
-  }
   .text-white {
     color: var(--color-white);
-  }
-  .underline {
-    text-decoration-line: underline;
   }
   .opacity-\[0\.5\] {
     opacity: 0.5;
   }
   .mix-blend-difference {
     mix-blend-mode: difference;
-  }
-  .outline {
-    outline-style: var(--tw-outline-style);
-    outline-width: 1px;
   }
   .transition {
     transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, content-visibility, overlay, pointer-events;
@@ -581,13 +568,37 @@
       padding-inline: calc(var(--spacing) * 0);
     }
   }
+  .\32 xl\:text-\[8\.5rem\] {
+    @media (width >= 1500px) {
+      font-size: 8.5rem;
+    }
+  }
+  .\32 xl\:text-\[9rem\] {
+    @media (width >= 1500px) {
+      font-size: 9rem;
+    }
+  }
+  .\33 xl\:text-\[9\.5rem\] {
+    @media (width >= 1800px) {
+      font-size: 9.5rem;
+    }
+  }
+  .\33 xl\:text-\[10rem\] {
+    @media (width >= 1800px) {
+      font-size: 10rem;
+    }
+  }
 }
 * {
   cursor: none;
 }
 .expand.cursor-flwr {
-  height: 75px;
-  width: 75px;
+  height: 85px !important;
+  width: 85px !important;
+}
+.hovered.cursor-flwr {
+  height: 65px;
+  width: 65px;
 }
 @font-face {
   font-family: 'Geologica Black';
@@ -736,11 +747,6 @@ p:last-of-type {
   syntax: "*";
   inherits: false;
 }
-@property --tw-outline-style {
-  syntax: "*";
-  inherits: false;
-  initial-value: solid;
-}
 @property --tw-duration {
   syntax: "*";
   inherits: false;
@@ -763,7 +769,6 @@ p:last-of-type {
       --tw-border-style: solid;
       --tw-leading: initial;
       --tw-font-weight: initial;
-      --tw-outline-style: solid;
       --tw-duration: initial;
       --tw-ease: initial;
     }
