@@ -153,3 +153,11 @@ p:last-of-type {
     margin-right: auto;
   }
 }
+
+.proj-cta-bg:hover .cta-bg-clip,.prj-cta-bg:hover .cta-bg-clip{
+  clip-path: inset(0% 0% 0% 100%);
+}
+
+.prj-cta-non:hover .cta-bg-clip{
+    clip-path: inset(0% 0% 0% 0%);
+}

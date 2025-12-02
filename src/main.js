@@ -22,7 +22,7 @@
 // // `
 
 // // setupCounter(document.querySelector('#counter'))
-gsap.registerPlugin(ScrollTrigger,ScrollSmoother,SplitText,DrawSVGPlugin);
+gsap.registerPlugin(ScrollTrigger,ScrollSmoother,SplitText,DrawSVGPlugin,MotionPathPlugin);
 
 $(document).ready(function(){
   console.log('Hello Devs! My Portfolio Revamp is WIP :)');
@@ -73,14 +73,183 @@ $(document).ready(function(){
         }, 180);
     });
 
-        $('.hvr-crsr').hover(
-            function () {
-                $cursorFlwr.addClass('hovered');
-            },
-            function () {
-                $cursorFlwr.removeClass('hovered');
+    $('.hvr-crsr').hover(
+        function () {
+            $cursorFlwr.addClass('hovered');
+        },
+        function () {
+            $cursorFlwr.removeClass('hovered');
+        }
+    );
+
+    $('.proj-cta-bg').hover(function(){
+        const shareIcon = gsap.timeline();
+
+        shareIcon.fromTo('.boxshare', 
+            { drawSVG: "0%" }, 
+            { drawSVG: "100%", duration: 0.25, ease: "power2.out" }
+          )
+          .fromTo('.arrowshare', 
+            { drawSVG: "0%" }, 
+            { drawSVG: "100%", duration:0.25, ease: "power2.out" }, 
+            ">"
+          ).to('.arrowshare',
+            {
+              x: 2.5,
+              y: -2.5,
+              duration: 0.5,
+              ease: "power2.out"
             }
-        );
+          );
+          
+    },
+    function(){
+          gsap.to('.arrowshare',
+            {
+              x: -1,
+              y: 1,
+              duration: 0.5,
+              ease: "power2.out"
+            }
+          );
+    }
+  );
+
+
+  $('.prj-cta-non, .prj-cta-bg').hover(
+  function() {
+    const gitAnimation = gsap.timeline();
+
+    gitAnimation
+      // set initial stroke/fill
+      .set("#projcat", { fill: "transparent", stroke: "#e6e6e6" })
+      // animate the stroke drawing
+      .fromTo(
+        "#projcat",
+        { drawSVG: "0%" },
+        { drawSVG: "100%", duration: 0.8, ease: "power2.out" }
+      )
+      // fill the shape at the end
+      .to("#projcat", {
+        fill: "#e6e6e6",
+        duration: 0.3,
+        ease: "power1.inOut"
+      });
+  },
+  function() {
+    gsap.to("#projcat", {
+      stroke: "transparent",
+      fill: "#e6e6e6", // also reset fill
+      duration: 0.5,
+      ease: "power1.inOut"
+    });
+  }
+);
+
+ $('.cta-plane').hover(function () {
+
+  // circle + scale
+  gsap.to(".planesvg", {
+    duration: 1,
+    scale: 2,
+    ease: "power2.out",
+    motionPath: {
+      path: [
+        { x: 50, y: 0 },
+        { x: 0, y: -50 },
+        { x: -50, y: 0 },
+        { x: 0, y: 0 },
+        { x: 10, y: 0 },
+      ],
+      autoRotate: true,
+      curviness: 1.5
+    },
+    onComplete() {
+      // start shake after motion
+      gsap.to(".planesvg", {
+        x: "+=2",
+        duration: 0.03,
+        repeat: -1,
+        yoyo: true,
+        ease: "none"
+      });
+    }
+  });
+
+}, function () {
+
+  gsap.killTweensOf(".planesvg");
+
+  gsap.to(".planesvg", {
+    duration: 1,
+    scale: 1,
+    x: 0,
+    ease: "power2.out"
+  });
+
+});
+
+gsap.fromTo('.online', 
+  { opacity: 1 }, 
+  { 
+    opacity: 0.5, 
+    duration: 1, 
+    repeat: -1, 
+    yoyo: true,  
+    ease: "power1.inOut" 
+  }
+);
+
+
+var headerTL = gsap.timeline({
+  scrollTrigger: {
+    trigger: ".home-landing-section",
+    start: "center-=100 top",
+    toggleActions: "play none none reverse",
+  }
+});
+
+headerTL
+  .from(".header-bg", {
+    opacity: 0,
+    duration: 0.5,
+    ease: "power2.out"
+  })
+  .from(
+    ".header-border",
+    {
+      clipPath: "inset(0% 100% 0% 0%)", // hidden from top
+      duration: 0.5,
+      ease: "power2.out"
+    },
+    "<"
+  );
+
+  var projRow = $('.projects-row').prop('scrollWidth');
+  var sectionWidth = $('.max-container').width();
+  var totalWidthProj = ((projRow - sectionWidth));
+
+  var projectsTL = gsap.timeline({
+    scrollTrigger: {
+        trigger: ".projects-section",
+        start: "top+=75 top+=75",
+        pin: true,
+        anticipatePin: 2,
+        scrub: true,
+        end: "+=3000"
+    }
+  });
+
+  projectsTL.to('.projects-row',
+    {
+      x: "-"+ totalWidthProj + "px",
+      ease: "power1.inOut",
+    }
+  ).to('.projects-grid',
+    {
+      backgroundPositionX: "-"+ (totalWidthProj/10) + "px",
+    },"<"
+  );
 
     const gitAnimation = gsap.timeline();
 
@@ -111,6 +280,8 @@ $(document).ready(function(){
         ease: "power2.out"
       }
     );
+
+
 
 
 
@@ -151,5 +322,5 @@ $(document).ready(function(){
               repeatDelay: 0.5
             }
           )
-    }, 3000);
+    }, 10000);
 });
