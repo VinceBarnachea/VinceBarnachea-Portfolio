@@ -846,6 +846,28 @@
       font-size: 10rem;
     }
   }
+  .\[\%\>div\]\:overflow-hidden {
+    &:is(%>div) {
+      overflow: hidden;
+    }
+  }
+  .\[\&\>div\]\:overflow-hidden {
+    &>div {
+      overflow: hidden;
+    }
+  }
+  .\[\&\>div\]\:pb-\[8px\] {
+    &>div {
+      padding-bottom: 8px;
+    }
+  }
+  .\[\&\>div\]\:lg\:pb-\[14px\] {
+    &>div {
+      @media (width >= 1025px) {
+        padding-bottom: 14px;
+      }
+    }
+  }
 }
 * {
   cursor: none;

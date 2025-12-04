@@ -102,7 +102,7 @@
   </header>
   <div id="smooth-wrapper">
     <div id="smooth-content">
-      <main class="w-full bg-black relative">
+      <main class="w-full bg-black relative overflow-hidden">
         <section
           class="home-landing-section w-full h-[100vh] relative py-8 bg-[length:7px_7px] bg-[linear-gradient(to_right,rgba(112,112,112,0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgba(112,112,112,0.04)_1px,transparent_1px)] bg-center z-10">
           <div class="max-container h-full px-5 sm:px-[5%] 2xl:px-0">
@@ -147,10 +147,10 @@
                 </div>
 
 
-                <h1 class="text-[8rem] 2xl:text-[9rem] 3xl:text-[10rem] leading-[0.9] font-black">
+                <h1 class="text-[8rem] 2xl:text-[9rem] 3xl:text-[10rem] leading-[0.9] font-black text-center">
                   John Vincent
                 </h1>
-                <h2 class="text-[7.5rem] 2xl:text-[8.5rem] 3xl:text-[9.5rem] leading-[0.9] text-[#e6e6e6cc] font-black">
+                <h2 class="text-[7.5rem] 2xl:text-[8.5rem] 3xl:text-[9.5rem] leading-[0.9] text-[#e6e6e6cc] font-black text-center">
                   Barnachea
                 </h2>
                 <div class="h-[1px] w-[10rem] bg-white mt-8"></div>
@@ -981,7 +981,7 @@
   <section class="coming-soon-section fixed top-[100%] left-0 w-full bg-black z-[999999]">
     <div class="h-[100vh] w-full relative flex flex-col items-center justify-center">
       <h2
-        class="comingsoon overflow-hidden font-black text-center text-[5rem] lg:text-[7rem] mb-12 pb-[8px] lg:pb-[14px]">
+        class="comingsoon [&>div]:overflow-hidden font-black text-center text-[5rem] lg:text-[7rem] mb-12 [&>div]:pb-[8px] [&>div]:lg:pb-[14px]">
         Coming Soon!</h2>
       <div class="box bg-[#00ff00] font-black flex items-center justify-center h-[50px] w-[50px] rounded-md"></div>
 

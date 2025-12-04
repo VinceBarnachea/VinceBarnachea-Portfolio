@@ -406,7 +406,7 @@ function animateText() {
 
 // Start animation
 animateText();// change every 3 seconds
-  }, 10000);
+  }, 15000);
 }); //Eng ng Ready Function
 
 
