@@ -405,7 +405,7 @@ function animateText() {
 }
 
 animateText();
-  }, 15000);
+  }, 25000);
 }); //Eng ng Ready Function
 
 
