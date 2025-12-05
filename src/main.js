@@ -355,57 +355,57 @@ $(document).ready(function () {
     }
   );
 
-//   setTimeout(() => {
-//       gsap.to('body',
-//         {
-//           overflow: "hidden",
-//         }
-//       );
-//       gsap.to('.coming-soon-section',
-//         {
-//             top: 0,
-//             duration: 1,
-//         }
-//       )
+  setTimeout(() => {
+      gsap.to('body',
+        {
+          overflow: "hidden",
+        }
+      );
+      gsap.to('.coming-soon-section',
+        {
+            top: 0,
+            duration: 1,
+        }
+      )
 
-//           gsap.to('.box',
-//           {
-//             rotate: 720,
-//             scale: 2,
-//             duration: 2,
-//             repeat: -1,   // infinite loop
-//             yoyo: true,
-//             delay: 0.5
-//           }
-//         );
+          gsap.to('.box',
+          {
+            rotate: 720,
+            scale: 2,
+            duration: 2,
+            repeat: -1,   // infinite loop
+            yoyo: true,
+            delay: 0.5
+          }
+        );
 
-// const texts = ["Coming Soon!", "Work in Progress","Hello World"];
-// let index = 0;
+const texts = ["Coming Soon!", "Work in Progress","Hello World"];
+let index = 0;
 
-// function animateText() {
-//   const el = $(".comingsoon");
-//   el.text(texts[index]);
+function animateText() {
+  const el = $(".comingsoon");
+  el.text(texts[index]);
 
-//   const split = new SplitText(el, { type: "lines,words,chars" });
+  const split = new SplitText(el, { type: "lines,words,chars" });
 
-//   gsap.from(split.chars, {
-//     y: 300,
-//     stagger: 0.05,
-//     duration: 1,
-//     yoyo: true,
-//     repeat: 1, // goes up and down once
-//     repeatDelay: 0.7, 
-//     ease: "power1.inOut",
-//     onComplete: () => {
-//       split.revert(); // clean up
-//       index = (index + 1) % texts.length; // move to next text
-//       animateText(); // recursively animate next text
-//     }
-//   });
-// }
+  gsap.from(split.chars, {
+    y: 300,
+    stagger: 0.05,
+    duration: 1,
+    yoyo: true,
+    repeat: 1, // goes up and down once
+    repeatDelay: 0.7, 
+    ease: "power1.inOut",
+    onComplete: () => {
+      split.revert(); // clean up
+      index = (index + 1) % texts.length; // move to next text
+      animateText(); // recursively animate next text
+    }
+  });
+}
 
-// animateText();
-//   }, 15000);
+animateText();
+  }, 15000);
 }); //Eng ng Ready Function
 
 
