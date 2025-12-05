@@ -319,6 +319,48 @@ $(document).ready(function () {
     },
   });
 
+
+var allChaptersHeight = $('.allchapters').outerHeight(true);
+["chapter1", "chapter2","chapter3"].forEach(ch => {
+  // Pin headers
+  gsap.timeline({
+    scrollTrigger: {
+      trigger: `.${ch}-header`,
+      start: "top top+=75",
+      endTrigger: `.${ch}-contents`,
+      end: "bottom top+=175",
+      pin: `.${ch}-header`,
+      pinSpacing: false,
+      // markers: true
+    }
+  });
+
+  // Animate background Y with scroll
+  gsap.to(`.${ch}`, {
+    backgroundPositionY: "-" +(5)+"px", // adjust to your total scroll distance
+    ease: "none",
+    scrollTrigger: {
+      trigger: '.allchapters',
+      start: "top top",
+      end: "+=8000",
+      scrub: true,
+      // markers: true
+    }
+  });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
   const gitAnimation = gsap.timeline();
 
   gitAnimation
@@ -405,7 +447,7 @@ function animateText() {
 }
 
 animateText();
-  }, 25000);
+  }, 20000);
 }); //Eng ng Ready Function
 
 

@@ -82,7 +82,7 @@ p:last-of-type {
 }
 
 .text-black {
-  color: #16302b;
+  color: #16302b!important;
 }
 
 .border-white {
