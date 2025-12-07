@@ -89,6 +89,10 @@ p:last-of-type {
   border-color: #E6E6E6;
 }
 
+.border-black {
+  border-color: #16302b;
+}
+
 .bg-black {
   background-color: #16302b;
 }
