@@ -38,7 +38,7 @@
 //               </path>
 
 //               </g>
-
+// ACF LOGO <svg class="h-[40px] w-fit" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 460"><path fill="#e6e6e6" d="M180.81 0h14.25l62.52.5a1.1 1.09-10.5 0 1 1 .68L320 150.19a.27.27 0 0 0 .5-.01C383.41-10.21 590.05-47.91 704.65 81.15a.2.2 0 0 0 .35-.14V1.98a.46.46 0 0 1 .46-.46l294.54.07v106.22l-185.01-.03q-.49 0-.49.49v82.23q0 .5.5.5h173.75q.5 0 .5.5l.01 101.95a.35.35 0 0 1-.56.28q-.31-.23-.7-.23H815.2a.74.74 0 0 0-.74.74L814.3 460H705.19l-.13-77.54q0-1.13-.75-.28c-66.74 75.37-172.34 98.16-264.59 57.35q-.55-.25-.32.31l7.02 16.98a.25.25 0 0 1-.23.34l-122.07-.56q-.55 0-.75-.52l-25.43-64.55q-.18-.46-.68-.46l-154.47-.24a.44.42-78.9 0 0-.4.28l-25.11 65.42q-.28.72-1.05.72l-115.78.01a.29.28-78.8 0 1-.26-.4L180.81 0Zm265.88 322.81c67.43 64.54 178.29 35.39 206.86-53.33a.72.71 9 0 1 .68-.49l50.27.02a.51.5-90 0 0 .5-.51v-74a.5.5 0 0 0-.5-.5h-50.22q-.44 0-.59-.42-16.23-48.14-59.32-72.5c-61.6-34.82-140.13-10.12-172.61 51.94-25.98 49.65-16 110.62 24.93 149.79Zm-263.8-35.53a.35.35 0 0 0 .33.47l75.06-.44a.35.35 0 0 0 .33-.47l-38.62-104.95a.35.35 0 0 0-.66.01l-36.44 105.38Z"/></svg>
 //               </svg>
 //               <h6 class="text-2xl font-black text-black relative top-[2px]">CSS</h6>
 //             </div>
@@ -393,6 +393,42 @@ gsap.to(`.chapter3`, {
       x: "-" + totalSlidingWidth + "px",
       ease: "none",
     });
+
+
+
+      ScrollTrigger.create({
+        trigger: ".sliding-svg-section",
+        start: "top top+=75",
+        pin: true,
+        end: "+=7000",
+        pinSpacing: false,
+        scrub: true,
+        // markers: true,
+      });
+
+
+      var slideSVGLength = ($('.sliding-svg-black').outerWidth(true)*55);
+      console.log(slideSVGLength);
+      var slidingSVGTL = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".skills-section",
+          start: "top bottom",
+          end: () => "+=" + (slideSVGLength*10),
+          scrub: true,
+        }
+      });
+
+    slidingSVGTL.to('.sliding-svg-white div',
+      {
+        x: - + slideSVGLength +"px",
+        ease: "none",
+      }
+    ).to('.sliding-svg-black div',
+      {
+        x: slideSVGLength + "px",
+        ease: "none",
+      },"<"
+    );
 
   const gitAnimation = gsap.timeline();
 
