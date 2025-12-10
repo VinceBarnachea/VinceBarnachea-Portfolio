@@ -262,7 +262,7 @@ $(document).ready(function () {
       pin: true,
       anticipatePin: 2,
       scrub: true,
-      end: () => "+=" + totalWidthProj,
+      end: () => "+=" + totalWidthProj/3,
       // markers: true,
     },
   });
@@ -380,7 +380,7 @@ gsap.to(`.chapter3`, {
   var slidingText = gsap.timeline({
     scrollTrigger: {
       trigger: ".sliding-text-section",
-      start: "top 30%",
+      start: "top 40%",
       pin: true,
       scrub: true,
       // markers: true,
@@ -516,7 +516,7 @@ gsap.to(`.chapter3`, {
   }
 
   animateText();
-    }, 20000);
+    }, 30000);
 }); //Eng ng Ready Function
 
 let resizeTimer;
