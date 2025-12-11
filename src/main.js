@@ -54,13 +54,13 @@ gsap.registerPlugin(
 
 $(document).ready(function () {
   console.log("Hello Devs! My Portfolio Revamp is WIP :)");
-
+  var headerHeight = $('.header-main').outerHeight(true);
   ScrollSmoother.create({
     wrapper: "#smooth-wrapper",
     content: "#smooth-content",
     smooth: ScrollTrigger.isTouch ? 0 : 1.1, // disable smooth on touch devices
     effects: true,
-    normalizeScroll: !ScrollTrigger.isTouch, // only normalize scroll on desktop
+    // normalizeScroll: !ScrollTrigger.isTouch, // only normalize scroll on desktop
   });
 
   const $cursorFlwr = $(".cursor-flwr");
@@ -258,7 +258,7 @@ $(document).ready(function () {
   var projectsTL = gsap.timeline({
     scrollTrigger: {
       trigger: ".projects-section",
-      start: "top+=75 top+=75",
+      start: "top+="+ headerHeight + " top+="+ headerHeight,
       pin: true,
       anticipatePin: 2,
       scrub: true,
@@ -348,9 +348,9 @@ $(document).ready(function () {
     gsap.timeline({
       scrollTrigger: {
         trigger: `.${ch}-header`,
-        start: "top top+=75",
+        start: "top top+="+ headerHeight,
         endTrigger: `.${ch}-contents`,
-        end: "bottom top+=175",
+        end: "bottom top+="+ (100+headerHeight),
         pin: `.${ch}-header`,
         pinSpacing: false,
         // markers: true
@@ -376,7 +376,6 @@ gsap.to(`.chapter3`, {
   var slidingTextWidth = $(".sliding-text-row").outerWidth(true);
   var totalSlidingWidth = (slidingTextWidth - sectionWidth);
 
-  console.log(sectionWidth);
   var slidingText = gsap.timeline({
     scrollTrigger: {
       trigger: ".sliding-text-section",
@@ -395,12 +394,13 @@ gsap.to(`.chapter3`, {
     });
 
 
-
+    var slidingSvgHeight = $('.sliding-svg-section').outerHeight(true);
       ScrollTrigger.create({
         trigger: ".sliding-svg-section",
-        start: "top top+=75",
+        start: "top top+="+headerHeight,
         pin: true,
-        end: "+=7000",
+        endTrigger: '.skills-grid',
+        end: "bottom top+="+(slidingSvgHeight+headerHeight),
         pinSpacing: false,
         scrub: true,
         // markers: true,
@@ -408,12 +408,11 @@ gsap.to(`.chapter3`, {
 
 
       var slideSVGLength = ($('.sliding-svg-black').outerWidth(true)*55);
-      console.log(slideSVGLength);
       var slidingSVGTL = gsap.timeline({
         scrollTrigger: {
           trigger: ".skills-section",
           start: "top bottom",
-          end: () => "+=" + (slideSVGLength*10),
+          end: () => "+=" + (slideSVGLength*5),
           scrub: true,
         }
       });
