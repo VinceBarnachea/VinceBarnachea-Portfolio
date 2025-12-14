@@ -48,19 +48,40 @@ gsap.registerPlugin(
   ScrollTrigger,
   ScrollSmoother,
   SplitText,
+  ScrollToPlugin,
   DrawSVGPlugin,
   MotionPathPlugin
 );
 
 $(document).ready(function () {
   console.log("Hello Devs! My Portfolio Revamp is WIP :)");
-  var headerHeight = $('.header-main').outerHeight(true);
+  var headerHeight = $(".header-main").outerHeight(true);
   ScrollSmoother.create({
     wrapper: "#smooth-wrapper",
     content: "#smooth-content",
     smooth: ScrollTrigger.isTouch ? 0 : 1.1, // disable smooth on touch devices
     effects: true,
-    // normalizeScroll: !ScrollTrigger.isTouch, // only normalize scroll on desktop
+    normalizeScroll: !ScrollTrigger.isTouch, // only normalize scroll on desktop
+  });
+
+  $('nav a[href^="#"]').on("click", function (e) {
+    const target = $(this).attr("href");
+
+    if (!target || target === "#") return;
+
+    const $section = $(target);
+    if (!$section.length) return;
+
+    e.preventDefault();
+
+    gsap.to(window, {
+      duration: 1,
+      scrollTo: {
+        y: $section[0],
+        offsetY: 0,
+      },
+      ease: "power2.out",
+    });
   });
 
   const $cursorFlwr = $(".cursor-flwr");
@@ -258,11 +279,11 @@ $(document).ready(function () {
   var projectsTL = gsap.timeline({
     scrollTrigger: {
       trigger: ".projects-section",
-      start: "top+="+ headerHeight + " top+="+ headerHeight,
+      start: "top+=" + headerHeight + " top+=" + headerHeight,
       pin: true,
       anticipatePin: 2,
       scrub: true,
-      end: () => "+=" + totalWidthProj/3,
+      end: () => "+=" + totalWidthProj / 3,
       // markers: true,
     },
   });
@@ -341,16 +362,14 @@ $(document).ready(function () {
     },
   });
 
- 
-
   ["chapter1", "chapter2", "chapter3"].forEach((ch) => {
     // Pin headers
     gsap.timeline({
       scrollTrigger: {
         trigger: `.${ch}-header`,
-        start: "top top+="+ headerHeight,
+        start: "top top+=" + headerHeight,
         endTrigger: `.${ch}-contents`,
-        end: "bottom top+="+ (100+headerHeight),
+        end: "bottom top+=" + (100 + headerHeight),
         pin: `.${ch}-header`,
         pinSpacing: false,
         // markers: true
@@ -358,23 +377,22 @@ $(document).ready(function () {
     });
 
     // Animate background Y with scroll
-    
   });
 
-gsap.to(`.chapter3`, {
-      backgroundPositionY: "-" + 5 + "px", // adjust to your total scroll distance
-      ease: "none",
-      scrollTrigger: {
-        trigger: ".allchapters",
-        start: "top top",
-        end: "+=8000",
-        scrub: true,
-        // markers: true
-      },
-    });
-  
+  gsap.to(`.chapter3`, {
+    backgroundPositionY: "-" + 5 + "px", // adjust to your total scroll distance
+    ease: "none",
+    scrollTrigger: {
+      trigger: ".allchapters",
+      start: "top top",
+      end: "+=8000",
+      scrub: true,
+      // markers: true
+    },
+  });
+
   var slidingTextWidth = $(".sliding-text-row").outerWidth(true);
-  var totalSlidingWidth = (slidingTextWidth - sectionWidth);
+  var totalSlidingWidth = slidingTextWidth - sectionWidth;
 
   var slidingText = gsap.timeline({
     scrollTrigger: {
@@ -387,46 +405,45 @@ gsap.to(`.chapter3`, {
     },
   });
 
-  slidingText
-    .to(".sliding-text-row", {
-      x: "-" + totalSlidingWidth + "px",
+  slidingText.to(".sliding-text-row", {
+    x: "-" + totalSlidingWidth + "px",
+    ease: "none",
+  });
+
+  var slidingSvgHeight = $(".sliding-svg-section").outerHeight(true);
+  ScrollTrigger.create({
+    trigger: ".sliding-svg-section",
+    start: "top top+=" + headerHeight,
+    pin: true,
+    endTrigger: ".skills-grid",
+    end: "bottom top+=" + (slidingSvgHeight + headerHeight),
+    pinSpacing: false,
+    scrub: true,
+    // markers: true,
+  });
+
+  var slideSVGLength = $(".sliding-svg-black").outerWidth(true) * 55;
+  var slidingSVGTL = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".skills-section",
+      start: "top bottom",
+      end: () => "+=" + slideSVGLength * 5,
+      scrub: true,
+    },
+  });
+
+  slidingSVGTL
+    .to(".sliding-svg-white div", {
+      x: -+slideSVGLength + "px",
       ease: "none",
-    });
-
-
-    var slidingSvgHeight = $('.sliding-svg-section').outerHeight(true);
-      ScrollTrigger.create({
-        trigger: ".sliding-svg-section",
-        start: "top top+="+headerHeight,
-        pin: true,
-        endTrigger: '.skills-grid',
-        end: "bottom top+="+(slidingSvgHeight+headerHeight),
-        pinSpacing: false,
-        scrub: true,
-        // markers: true,
-      });
-
-
-      var slideSVGLength = ($('.sliding-svg-black').outerWidth(true)*55);
-      var slidingSVGTL = gsap.timeline({
-        scrollTrigger: {
-          trigger: ".skills-section",
-          start: "top bottom",
-          end: () => "+=" + (slideSVGLength*5),
-          scrub: true,
-        }
-      });
-
-    slidingSVGTL.to('.sliding-svg-white div',
-      {
-        x: - + slideSVGLength +"px",
-        ease: "none",
-      }
-    ).to('.sliding-svg-black div',
+    })
+    .to(
+      ".sliding-svg-black div",
       {
         x: slideSVGLength + "px",
         ease: "none",
-      },"<"
+      },
+      "<"
     );
 
   const gitAnimation = gsap.timeline();
@@ -465,57 +482,51 @@ gsap.to(`.chapter3`, {
     }
   );
 
-    setTimeout(() => {
-        gsap.to('body',
-          {
-            overflow: "hidden",
-          }
-        );
-        gsap.to('.coming-soon-section',
-          {
-              top: 0,
-              duration: 1,
-          }
-        )
-
-            gsap.to('.box',
-            {
-              rotate: 720,
-              scale: 2,
-              duration: 2,
-              repeat: -1,   // infinite loop
-              yoyo: true,
-              delay: 0.5
-            }
-          );
-
-  const texts = ["Coming Soon!", "Work in Progress","Hello World"];
-  let index = 0;
-
-  function animateText() {
-    const el = $(".comingsoon");
-    el.text(texts[index]);
-
-    const split = new SplitText(el, { type: "lines,words,chars" });
-
-    gsap.from(split.chars, {
-      y: 300,
-      stagger: 0.05,
-      duration: 1,
-      yoyo: true,
-      repeat: 1, // goes up and down once
-      repeatDelay: 0.7,
-      ease: "power1.inOut",
-      onComplete: () => {
-        split.revert(); // clean up
-        index = (index + 1) % texts.length; // move to next text
-        animateText(); // recursively animate next text
-      }
+  setTimeout(() => {
+    gsap.to("body", {
+      overflow: "hidden",
     });
-  }
+    gsap.to(".coming-soon-section", {
+      top: 0,
+      duration: 1,
+    });
 
-  animateText();
-    }, 30000);
+    gsap.to(".box", {
+      rotate: 720,
+      scale: 2,
+      duration: 2,
+      repeat: -1, // infinite loop
+      yoyo: true,
+      delay: 0.5,
+    });
+
+    const texts = ["Coming Soon!", "Work in Progress", "Hello World"];
+    let index = 0;
+
+    function animateText() {
+      const el = $(".comingsoon");
+      el.text(texts[index]);
+
+      const split = new SplitText(el, { type: "lines,words,chars" });
+
+      gsap.from(split.chars, {
+        y: 300,
+        stagger: 0.05,
+        duration: 1,
+        yoyo: true,
+        repeat: 1, // goes up and down once
+        repeatDelay: 0.7,
+        ease: "power1.inOut",
+        onComplete: () => {
+          split.revert(); // clean up
+          index = (index + 1) % texts.length; // move to next text
+          animateText(); // recursively animate next text
+        },
+      });
+    }
+
+    animateText();
+  }, 30000);
 }); //Eng ng Ready Function
 
 let resizeTimer;
