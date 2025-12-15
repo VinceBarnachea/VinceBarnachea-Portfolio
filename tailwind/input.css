@@ -16,6 +16,9 @@
   --breakpoint-2xl: 1500px;
   --breakpoint-3xl: 1800px;
   --breakpoint-4xl: 2160px;
+  --color-black: #16302b;
+  --color-white: #e6e6e6;
+  --font-sans: "Geologica Thin";
 }
 
 * {
@@ -35,8 +38,8 @@
 }
 
 .hovered~.cursor-pntr,.expand~.cursor-pntr{
-  height: 15px;
-  width: 15px;
+  height: 12px;
+  width: 12px;
 }
 
 @font-face {
@@ -116,6 +119,17 @@ p:last-of-type {
   font-display: swap;
 }
 
+.animate300{
+  transition: all 0.3s ease-out;
+}
+
+.animate500{
+  transition: all 0.5s ease-out;
+}
+
+.animate700{
+  transition: all 0.7s ease-out;
+}
 
 
 @media only screen and (max-width: 640px) {
