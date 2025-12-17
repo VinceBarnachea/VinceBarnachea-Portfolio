@@ -27,6 +27,18 @@
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/DrawSVGPlugin.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/MotionPathPlugin.min.js"></script>
 
+
+
+  <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "vP6e7zIhDyY7JVw1D",
+      });
+   })();
+</script>
 </head>
 
 <body class="portfolio-body relative">
@@ -67,30 +79,30 @@
           </svg>
         </a>
 
-        <nav class="flex items-stretch h-[35px] gap-2">
+        <nav class="flex items-stretch h-[40px] gap-2">
           <a href="#home"
-            class="flex items-center border-l-[1px] hvr-crsr h-full border-[rgba(230,230,230,0.3)] group bg-transparent hover:bg-white ">
-            <h6 class="text-white mix-blend-difference px-4 flex items-center gap-2"><span class="text-xs">[01]</span>
+            class="flex items-center border-l-[1px] hvr-crsr h-full border-[rgba(230,230,230,0.3)] group animate300 bg-transparent hover:bg-white ">
+            <h6 class="text-white mix-blend-difference px-4 flex items-center gap-2 text-sm"><span class="text-[11px] leading-[0.9]">[01]</span>
               HOME</h6>
           </a>
           <a href="#projects-section"
-            class="flex items-center border-l-[1px] hvr-crsr h-full border-[rgba(230,230,230,0.3)] group bg-transparent hover:bg-white ">
-            <h6 class="text-white mix-blend-difference px-4 flex items-center gap-2"><span class="text-xs">[02]</span>
+            class="flex items-center border-l-[1px] hvr-crsr h-full border-[rgba(230,230,230,0.3)] group animate300 bg-transparent hover:bg-white ">
+            <h6 class="text-white mix-blend-difference px-4 flex items-center gap-2 text-sm"><span class="text-[11px] leading-[0.9]">[02]</span>
               PROJECTS</h6>
           </a>
           <a href="#aboutme-section"
-            class="flex items-center border-l-[1px] hvr-crsr h-full border-[rgba(230,230,230,0.3)] group bg-transparent hover:bg-white ">
-            <h6 class="text-white mix-blend-difference px-4 flex items-center gap-2"><span class="text-xs">[03]</span>
+            class="flex items-center border-l-[1px] hvr-crsr h-full border-[rgba(230,230,230,0.3)] group animate300 bg-transparent hover:bg-white ">
+            <h6 class="text-white mix-blend-difference px-4 flex items-center gap-2 text-sm"><span class="text-[11px] leading-[0.9]">[03]</span>
               ABOUT</h6>
           </a>
           <a href="#skills-section"
-            class="flex items-center border-l-[1px] hvr-crsr h-full border-[rgba(230,230,230,0.3)] group bg-transparent hover:bg-white ">
-            <h6 class="text-white mix-blend-difference px-4 flex items-center gap-2"><span class="text-xs">[04]</span>
+            class="flex items-center border-l-[1px] hvr-crsr h-full border-[rgba(230,230,230,0.3)] group animate300 bg-transparent hover:bg-white ">
+            <h6 class="text-white mix-blend-difference px-4 flex items-center gap-2 text-sm"><span class="text-[11px] leading-[0.9]">[04]</span>
               SKILLS</h6>
           </a>
           <a href="#contact-section"
-            class="flex items-center border-l-[1px] hvr-crsr h-full border-[rgba(230,230,230,0.3)] group bg-transparent hover:bg-white ">
-            <h6 class="text-white mix-blend-difference px-4 flex items-center gap-2"><span class="text-xs">[05]</span>
+            class="flex items-center border-l-[1px] hvr-crsr h-full border-[rgba(230,230,230,0.3)] group animate300 bg-transparent hover:bg-white ">
+            <h6 class="text-white mix-blend-difference px-4 flex items-center gap-2 text-sm"><span class="text-[11px] leading-[0.9]">[05]</span>
               CONTACT</h6>
           </a>
         </nav>
@@ -2443,7 +2455,7 @@
           <div class="max-container relative px-5 sm:px-[5%] 2xl:px-0 flex flex-col justify-center items-center">
             <div class="flex items-center gap-4">
               <div class="w-[8rem] 3xl:w-[10rem] h-px bg-white"></div>
-              <h6 class="text-sm 3xl:text-base">LET'TALK</h6>
+              <h6 class="text-sm 3xl:text-base">LET'S TALK</h6>
               <div class="w-[8rem] 3xl:w-[10rem] h-px bg-white"></div>
             </div>
 
@@ -2454,9 +2466,9 @@
             </p>
 
 
-            <div class="mt-[10rem] w-[55rem] flex flex-col">
+            <div class="mt-24 w-[55rem] flex flex-col">
               <h6 class="text-sm opacity-75">DIRECT EMAIL</h6>
-              <div class = "relative mt-4 w-full border border-[rgba(230,230,230,0.5)] px-8 py-6 flex justify-between clck2copy hvr-crsr animate500 hover:bg-white group">
+              <div class = "relative mt-4 w-full rounded-[5px] border-2 border-[rgba(230,230,230,0.3)] px-8 py-6 flex justify-between clck2copy hvr-crsr animate500 hover:bg-white group">
                 <div class = "flex flex-col group-hover:text-black origin-center scale-[1] group-hover:scale-[1.05] animate500 ease-out">
                   <h3 class="text-xl clck2copy-email">barnacheajohnvincent48@gmail.com</h3>
                   <h6 class="text-xs mt-2 clck2copy-status opacity-75">CLICK TO COPY</h6>
@@ -2485,11 +2497,63 @@
               </div>
 
               <h6 class="text-sm opacity-75 mt-12">OR SEND ME A QUICK MESSAGE</h6>
-              <div class="my-4 w-full border border-[rgba(230,230,230,0.5)] px-8 py-6 hover:border-[rgba(230,230,230,1)] animate500 ease-out">
-                <h6 class="text-xs opacity-75">NAME *</h6>
-              </div>
+              <form id = "vinceForm" action="#" class="my-4 w-full rounded-[5px] border-2 border-[rgba(230,230,230,0.3)] px-8 py-6 hover:border-[rgba(230,230,230,1)] animate500 flex flex-col items-center">
+                <div class="w-full relative flex flex-col">
+                  <label class="text-xs opacity-75 mb-2">NAME *</label>
+                  <input class = "px-6 py-3 border-2 rounded-[5px] border-[rgba(230,230,230,0.3)] inpName" type="text"  name="cfName" id="inpName" autocomplete="off" placeholder = "YOUR NAME" required>
+                </div>
+
+                <div class="w-full relative flex flex-col my-8">
+                  <label class="text-xs opacity-75 mb-2">EMAIL *</label>
+                  <input class = "px-6 py-3 border-2 rounded-[5px] border-[rgba(230,230,230,0.3)] inpEmail" type="email"  name="cfEmail" id="inpEmail" autocomplete="off" placeholder = "YOUREMAIL@HERE.COM" required>
+                </div>
+                
+                <div class="w-full relative flex flex-col">
+                  <label class="text-xs opacity-75 mb-2">MESSAGE</label>
+                  <textarea rows="4" class = "px-6 py-3 border-2 rounded-[5px] border-[rgba(230,230,230,0.3)] inpMessage"  name="cfMessage" id="inpMessage" autocomplete="off" placeholder = "YOUR MESSAGE..."></textarea>
+                </div>
+
+                <button id = "form-sbmt"
+                  class="cta-plane mt-8 border border-white rounded-[5px] w-fit py-3 px-8 bg-transparent relative group hover:cursor-pointer hvr-crsr" type="submit">
+                  <h6 class="text-white mix-blend-difference relative z-20 flex items-center gap-3">
+                    SUBMIT
+                    <svg class="w-[20px] h-fit planesvg origin-center" width="800px" height="800px" viewBox="0 0 24 24"
+                      fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path id="planeshake"
+                        d="M20.3359 3.22136L3.87333 8.70889C3.56801 8.81066 3.55033 9.23586 3.84614 9.36263L9.89655 11.9557C9.96078 11.9832 10.0347 11.9752 10.0916 11.9346L16.0235 7.69749C16.2073 7.56618 16.4338 7.79266 16.3025 7.97648L12.0654 13.9084C12.0248 13.9653 12.0168 14.0392 12.0443 14.1034L14.6374 20.1539C14.7641 20.4497 15.1893 20.432 15.2911 20.1267L20.7786 3.66408C20.8698 3.39046 20.6095 3.13015 20.3359 3.22136Z"
+                        fill="#e6e6e6" />
+                    </svg>
+                  </h6>
+                  <div
+                    class="bg-white absolute top-0 left-0 w-full h-full z-10 [clip-path:inset(0%_100%_0%_0%)] group-hover:[clip-path:inset(0%_-1%_0%_0%)] animate300">
+                  </div>
+                </button>
+              </form>
             </div>
           </div>
+
+
+          <script>
+            $("#vinceForm").on("submit", function (e) {
+              e.preventDefault(); // ⛔ stop reload
+
+              emailjs.send("service_trvsn93", "template_3twd4qk", {
+                name: $("#inpName").val(),
+                email: $("#inpEmail").val(),
+                time: new Date().toLocaleString(),
+                message: $("#inpMessage").val()
+              })
+              .then(function(response) {
+                console.log("SUCCESS!", response.status, response.text);
+                alert("Your message has been sent successfully!");
+                $("#vinceForm")[0].reset();
+              })
+              .catch(function(error) {
+                console.error("FAILED...", error);
+                alert("Oops! Something went wrong. Please try again.");
+              });
+            });
+          </script>
         </section>
 
 
