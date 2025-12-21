@@ -44,14 +44,27 @@
 //             </div>
 
 // // setupCounter(document.querySelector('#counter'))
-gsap.registerPlugin(
-  ScrollTrigger,
-  ScrollSmoother,
-  SplitText,
-  ScrollToPlugin,
-  DrawSVGPlugin,
-  MotionPathPlugin
-);
+
+import { gsap } from "gsap";
+    
+import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
+import { MotionPathPlugin } from "gsap/MotionPathPlugin";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+// ScrollSmoother requires ScrollTrigger
+import { ScrollSmoother } from "gsap/ScrollSmoother";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+import { SplitText } from "gsap/SplitText";
+
+gsap.registerPlugin(DrawSVGPlugin,MotionPathPlugin,ScrollTrigger,ScrollSmoother,ScrollToPlugin,SplitText);
+
+// gsap.registerPlugin(
+//   ScrollTrigger,
+//   ScrollSmoother,
+//   SplitText,
+//   ScrollToPlugin,
+//   DrawSVGPlugin,
+//   MotionPathPlugin
+// );
 
 $(document).ready(function () {
   console.log("Hello Devs! My Portfolio Revamp is WIP :)");
