@@ -88,7 +88,7 @@ $(document).ready(function () {
     e.preventDefault();
 
     gsap.to(window, {
-      duration: 1,
+      duration: 0.5,
       scrollTo: {
         y: $section[0],
         offsetY: 0,
@@ -96,6 +96,28 @@ $(document).ready(function () {
       ease: "power2.out",
     });
   });
+  
+  $('.landingcta-secondary').click(function(){
+    gsap.to(window,
+      {
+        duration: 0.5,
+        scrollTo: "#projects-section",
+        ease: "power2.out"
+      }
+    )
+  });
+
+    $('.landingcta-primary, .cta-plane').click(function(){
+    gsap.to(window,
+      {
+        duration: 0.5,
+        scrollTo: "#contact-section",
+        ease: "power2.out"
+      }
+    )
+  });
+
+
 
   const $cursorFlwr = $(".cursor-flwr");
   const $cursorPntr = $(".cursor-pntr");
@@ -207,10 +229,11 @@ $(document).ready(function () {
     }
   );
 
-  $(".cta-plane").hover(
+  $(".cta-plane, .cta-plane-form").hover(
     function () {
-      // circle + scale
-      gsap.to(".planesvg", {
+      const $plane = $(this).find(".planesvg");
+
+      gsap.to($plane, {
         duration: 1,
         scale: 2,
         ease: "power2.out",
@@ -225,9 +248,9 @@ $(document).ready(function () {
           autoRotate: true,
           curviness: 1.5,
         },
-        onComplete() {
-          // start shake after motion
-          gsap.to(".planesvg", {
+        onComplete: () => {
+          // ✅ shake works now
+          gsap.to($plane, {
             x: "+=2",
             duration: 0.03,
             repeat: -1,
@@ -238,16 +261,21 @@ $(document).ready(function () {
       });
     },
     function () {
-      gsap.killTweensOf(".planesvg");
+      const $plane = $(this).find(".planesvg");
 
-      gsap.to(".planesvg", {
+      gsap.killTweensOf($plane);
+
+      gsap.to($plane, {
         duration: 1,
         scale: 1,
         x: 0,
+        y: 0,
+        rotation: 0,
         ease: "power2.out",
       });
     }
   );
+
 
   $('.clck2copy').on('click', function () {
     const text = $('.clck2copy-email').text();
@@ -296,6 +324,64 @@ $(document).ready(function () {
       },
       "<"
     );
+
+
+    const landing1st = ["John Vincent","Website","Hello","Web","Design"];
+    const landing2nd = ["Barnachea","Portfolio","World","Developer","to Reality"];
+    let index1st = 0, index2nd = 0;
+
+    function landingAnimate(){
+      const el1st = $('.landing1st');
+      el1st.text(landing1st[index1st]);
+      const split1st = new SplitText(el1st, {type:"lines,words,chars"});
+
+      gsap.from(split1st.chars, {
+        y: 300,
+        stagger: 0.04,
+        autoAlpha: 0,
+        duration: 0.5,
+        yoyo: true,
+        repeat: 1, // goes up and down once
+        repeatDelay: 3,
+        ease: "power3.out",
+        onComplete: () => {
+          split1st.revert(); // clean up
+          index1st = (index1st + 1) % landing1st.length; // move to next text
+          landingAnimate(); // recursively animate next text
+        },
+      });
+    }
+
+    function landing2ndAnimate(){
+      const el2nd = $('.landing2nd');
+      el2nd.text(landing2nd[index2nd]);
+      const split2nd = new SplitText(el2nd, {type:"lines,words,chars"});
+      gsap.from(split2nd.chars, {
+        y: 300,
+        autoAlpha: 0,
+        stagger: 0.04,
+        duration: 0.5,
+        yoyo: true,
+        repeat: 1, // goes up and down once
+        repeatDelay: 2.9,
+        ease: "power3.out",
+        onComplete: () => {
+          split2nd.revert(); // clean up
+          index2nd = (index2nd + 1) % landing2nd.length; // move to next text
+          landing2ndAnimate(); // recursively animate next text
+        },
+      });
+    }
+
+    setTimeout(() => {
+      $('.landing1st, .landing2nd').css('opacity','1');
+
+      landingAnimate();
+      // setTimeout(() => {
+        landing2ndAnimate();
+      // }, 500);
+    }, 1000);
+
 
   var projRow = $(".projects-row").outerWidth(true);
   var sectionWidth = $(".max-container").width();
@@ -556,6 +642,8 @@ $(document).ready(function () {
 
     animateText();
   }, 30000);
+
+
 }); //Eng ng Ready Function
 
 let resizeTimer;
