@@ -17,6 +17,7 @@
   "main": "index.js",
   "dependencies": {
     "@tailwindcss/cli": "^4.1.17",
+    "@vercel/analytics": "^1.6.1",
     "esbuild": "^0.25.12",
     "fdir": "^6.5.0",
     "gsap": "^3.14.2",

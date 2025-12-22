@@ -329,6 +329,12 @@
   .mb-28 {
     margin-bottom: calc(var(--spacing) * 28);
   }
+  .mb-32 {
+    margin-bottom: calc(var(--spacing) * 32);
+  }
+  .mb-\[10rem\] {
+    margin-bottom: 10rem;
+  }
   .flex {
     display: flex;
   }
