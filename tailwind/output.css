@@ -326,12 +326,6 @@
   .mb-12 {
     margin-bottom: calc(var(--spacing) * 12);
   }
-  .mb-28 {
-    margin-bottom: calc(var(--spacing) * 28);
-  }
-  .mb-32 {
-    margin-bottom: calc(var(--spacing) * 32);
-  }
   .mb-\[10rem\] {
     margin-bottom: 10rem;
   }
@@ -349,9 +343,6 @@
   }
   .inline-block {
     display: inline-block;
-  }
-  .table {
-    display: table;
   }
   .aspect-\[4\/3\] {
     aspect-ratio: 4/3;
@@ -517,9 +508,6 @@
   }
   .w-max {
     width: max-content;
-  }
-  .border-collapse {
-    border-collapse: collapse;
   }
   .origin-center {
     transform-origin: center;
@@ -915,14 +903,8 @@
   .text-\[7\.5rem\] {
     font-size: 7.5rem;
   }
-  .text-\[7rem\] {
-    font-size: 7rem;
-  }
   .text-\[8\.5rem\] {
     font-size: 8.5rem;
-  }
-  .text-\[8rem\] {
-    font-size: 8rem;
   }
   .text-\[10px\] {
     font-size: 10px;
@@ -957,9 +939,6 @@
   .text-nowrap {
     text-wrap: nowrap;
   }
-  .text-wrap {
-    text-wrap: wrap;
-  }
   .whitespace-nowrap {
     white-space: nowrap;
   }
@@ -977,9 +956,6 @@
   }
   .text-white {
     color: var(--color-white);
-  }
-  .underline {
-    text-decoration-line: underline;
   }
   .opacity-0 {
     opacity: 0%;
@@ -1013,9 +989,6 @@
     --tw-brightness: brightness(90%);
     filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,);
   }
-  .filter {
-    filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,);
-  }
   .backdrop-blur-3xl {
     --tw-backdrop-blur: blur(var(--blur-3xl));
     -webkit-backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
@@ -1043,10 +1016,6 @@
   }
   .backdrop-opacity-\[0\.01\] {
     --tw-backdrop-opacity: opacity(0.01);
-    -webkit-backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
-    backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
-  }
-  .backdrop-filter {
     -webkit-backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
     backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
   }
@@ -1417,19 +1386,9 @@
       font-size: 8.5rem;
     }
   }
-  .\32 xl\:text-\[8rem\] {
-    @media (width >= 1500px) {
-      font-size: 8rem;
-    }
-  }
   .\32 xl\:text-\[9\.5rem\] {
     @media (width >= 1500px) {
       font-size: 9.5rem;
-    }
-  }
-  .\32 xl\:text-\[9rem\] {
-    @media (width >= 1500px) {
-      font-size: 9rem;
     }
   }
   .\33 xl\:bottom-4 {
@@ -1530,19 +1489,9 @@
       font-size: 9.5rem;
     }
   }
-  .\33 xl\:text-\[9rem\] {
-    @media (width >= 1800px) {
-      font-size: 9rem;
-    }
-  }
   .\33 xl\:text-\[10\.5rem\] {
     @media (width >= 1800px) {
       font-size: 10.5rem;
-    }
-  }
-  .\33 xl\:text-\[10rem\] {
-    @media (width >= 1800px) {
-      font-size: 10rem;
     }
   }
   .\[\&\>div\]\:overflow-hidden {
@@ -1553,11 +1502,6 @@
   .\[\&\>div\]\:pb-\[8px\] {
     &>div {
       padding-bottom: 8px;
-    }
-  }
-  .\[\&\>div\]\:pb-\[12px\] {
-    &>div {
-      padding-bottom: 12px;
     }
   }
   .\[\&\>div\]\:pb-\[16px\] {

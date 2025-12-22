@@ -22,7 +22,7 @@
 
 // // setupCounter(document.querySelector('#counter'))
 
-import { Analytics } from "@vercel/analytics/react";
+// import { Analytics } from "@vercel/analytics/react";
 
 
 
