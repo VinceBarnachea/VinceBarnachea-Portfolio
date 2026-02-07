@@ -624,12 +624,12 @@ $(document).ready(function () {
 }); //Eng ng Ready Function
 
 let resizeTimer;
-let prevWidth = jQuery(window).width();
+let prevWidth = $(window).width();
 
-jQuery(window).on("resize", function () {
+$(window).on("resize", function () {
   clearTimeout(resizeTimer);
   resizeTimer = setTimeout(function () {
-    let newWidth = jQuery(window).width();
+    let newWidth = $(window).width();
     if (newWidth !== prevWidth) {
       location.reload();
     }

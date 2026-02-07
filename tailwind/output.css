@@ -696,14 +696,11 @@
   .bg-\[\#101010\] {
     background-color: #101010;
   }
-  .bg-\[\#FF0033\] {
-    background-color: #FF0033;
+  .bg-\[\#FC0D0D\] {
+    background-color: #FC0D0D;
   }
   .bg-\[\#e6e6e6\] {
     background-color: #e6e6e6;
-  }
-  .bg-\[\#ff0033\] {
-    background-color: #ff0033;
   }
   .bg-\[\#fff\] {
     background-color: #fff;
@@ -945,20 +942,17 @@
   .text-\[\#16302b\] {
     color: #16302b;
   }
+  .text-\[\#FC0D0D\] {
+    color: #FC0D0D;
+  }
   .text-\[\#e6e6e6cc\] {
     color: #e6e6e6cc;
-  }
-  .text-\[\#ff0033\] {
-    color: #ff0033;
   }
   .text-black {
     color: var(--color-black);
   }
   .text-white {
     color: var(--color-white);
-  }
-  .opacity-0 {
-    opacity: 0%;
   }
   .opacity-3 {
     opacity: 3%;
