@@ -38,6 +38,9 @@ gsap.registerPlugin(DrawSVGPlugin,MotionPathPlugin,ScrollTrigger,ScrollSmoother,
 
 $(document).ready(function () {
   console.log("Hello Devs! My Portfolio Revamp is WIP :)");
+
+
+  
   var headerHeight = $(".header-main").outerHeight(true);
   ScrollSmoother.create({
     wrapper: "#smooth-wrapper",
@@ -297,7 +300,7 @@ $(document).ready(function () {
 
 
     
-
+  $('#projects-section').css('padding-top',(headerHeight+10)+"px");
 
   var projRow = $(".projects-row").outerWidth(true);
   var sectionWidth = $(".max-container").width();
@@ -305,11 +308,10 @@ $(document).ready(function () {
 
   var projectsTL = gsap.timeline({
     scrollTrigger: {
-      trigger: ".projects-section",
-      start: "top+=" + headerHeight + " top+=" + headerHeight,
+      trigger: "#projects-section",
+      start: "top top",
       pin: true,
       pinType: ScrollTrigger.isTouch ? "fixed" : "transform",
-      
       scrub: true,
       end: () => "+=" + totalWidthProj / 3,
       // markers: true,
@@ -562,63 +564,6 @@ $(document).ready(function () {
   //   animateText();
   // }, 30000);
 
-  const landing1st = ["John Vincent","Website","Hello","Web","Design"];
-    const landing2nd = ["Barnachea","Portfolio","World","Developer","to Reality"];
-    let index1st = 0, index2nd = 0;
-
-    function landingAnimate(){
-      const el1st = $('.landing1st');
-      el1st.text(landing1st[index1st]);
-      const split1st = new SplitText(el1st, {type:"lines,words,chars"});
-
-      gsap.from(split1st.chars, {
-        y: 300,
-        stagger: 0.04,
-        autoAlpha: 0,
-        duration: 0.5,
-        yoyo: true,
-        repeat: 1, // goes up and down once
-        repeatDelay: 3,
-        ease: "power3.out",
-        onComplete: () => {
-          split1st.revert(); // clean up
-          index1st = (index1st + 1) % landing1st.length; // move to next text
-          landingAnimate(); // recursively animate next text
-          ScrollTrigger.refresh();
-        },
-      });
-    }
-
-    function landing2ndAnimate(){
-      const el2nd = $('.landing2nd');
-      el2nd.text(landing2nd[index2nd]);
-      const split2nd = new SplitText(el2nd, {type:"lines,words,chars"});
-      gsap.from(split2nd.chars, {
-        y: 300,
-        autoAlpha: 0,
-        stagger: 0.04,
-        duration: 0.5,
-        yoyo: true,
-        repeat: 1, // goes up and down once
-        repeatDelay: 2.9,
-        ease: "power3.out",
-        onComplete: () => {
-          split2nd.revert(); // clean up
-          index2nd = (index2nd + 1) % landing2nd.length; // move to next text
-          landing2ndAnimate(); // recursively animate next text
-          ScrollTrigger.refresh();
-        },
-      });
-    }
-
-    setTimeout(() => {
-      $('.landing1st, .landing2nd').css('opacity','1');
-
-      landingAnimate();
-      // setTimeout(() => {
-        landing2ndAnimate();
-      // }, 500);
-    }, 100);
 
 
     $("#vinceForm").on("submit", function (e) {
@@ -656,6 +601,70 @@ $(window).on("resize", function () {
     }
     prevWidth = newWidth; // update for next check
   }, 100);
+});
+
+ var servicesH = new SplitText('.landing1st, .landing2nd',
+            {type: "lines,words,chars"}
+        );
+
+const landing1st = ["John Vincent", "Website", "Hello", "Web", "Design"];
+const landing2nd = ["Barnachea", "Portfolio", "World", "Developer", "to Reality"];
+
+function cycleText($el, words, hold = 3) {
+  // ScrollTrigger.refresh();
+  let index = 0;
+  let split;
+
+  gsap.set($el, { autoAlpha: 1 });
+
+  function animate() {
+    $el.text(words[index]);
+
+    // IMPORTANT: pass DOM element, not jQuery object
+    split = new SplitText($el[0], {type:"lines,words,chars"});
+
+    gsap.fromTo(
+      split.chars,
+      {
+        y: 300,
+        autoAlpha: 0
+      },
+      {
+        y: 0,
+        autoAlpha: 1,
+        stagger: 0.04,
+        duration: 0.5,
+        ease: "power3.out",
+        onComplete: function () {
+          gsap.to(split.chars, {
+            y: 300,
+            autoAlpha: 0,
+            stagger: 0.04,
+            duration: 0.5,
+            delay: hold,
+            ease: "power3.in",
+            onComplete: function () {
+              split.revert();
+              index = (index + 1) % words.length;
+              animate();
+            }
+          });
+        }
+      }
+    );
+    // ScrollTrigger.refresh();
+  }
+  // ScrollTrigger.refresh();
+  animate();
+}
+
+// INIT
+$(window).on("load", function () {
+  setTimeout(function () {
+    cycleText($(".landing1st"), landing1st, 3);
+    cycleText($(".landing2nd"), landing2nd, 2.9);
+  }, 100);
+  // ScrollTrigger.refresh();
 });
 
 
