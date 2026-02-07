@@ -34,12 +34,12 @@
 
 <body class="portfolio-body relative">
   <div
-    class="cursor-flwr border-[2px] border-[#fff] w-[40px] h-[40px] origin-center mix-blend-difference rounded-full z-[9999999] fixed left-0 top-0 pointer-events-none transition-all duration-300 ease-out translate-x-[-50%] translate-y-[-50%]">
+    class="cursor-flwr border-[2px] border-[#fff] w-[40px] h-[40px] origin-center mix-blend-difference rounded-full z-[9999999] fixed left-0 top-0 pointer-events-none transition-all duration-300 ease-out translate-x-[-50%] translate-y-[-50%] hidden sm:block">
   </div>
   <div
-    class="cursor-pntr bg-[#fff] w-[10px] h-[10px] origin-center mix-blend-difference rounded-full z-[9999999] fixed left-0 top-0 pointer-events-none translate-x-[-50%] translate-y-[-50%]">
+    class="cursor-pntr bg-[#fff] w-[10px] h-[10px] origin-center mix-blend-difference rounded-full z-[9999999] fixed left-0 top-0 pointer-events-none translate-x-[-50%] translate-y-[-50%] hidden sm:block">
   </div>
-  <header class="header-main fixed top-0 left-0 w-full z-[99999] h-[75px]">
+  <header class="header-main fixed top-0 left-0 w-full z-[99999] h-[75px] hidden sm:block">
     <div class="header-wrapper w-full h-full relative z-[10] flex items-center">
       <div class="flex justify-between h-full w-full items-center gap-8 max-container px-5 sm:px-[5%] 2xl:px-0">
         <a class="inline-block h-[45px] hvr-crsr" href="https://vincebarnachea-portfolio.vercel.app/">
@@ -112,13 +112,13 @@
     <div id="smooth-content">
       <main class="w-full bg-black relative overflow-hidden">
         <section id="home"
-          class="home-landing-section w-full min-h-screen relative py-8 bg-[length:7px_7px] bg-[linear-gradient(to_right,rgba(112,112,112,0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgba(112,112,112,0.04)_1px,transparent_1px)] bg-center z-10">
-          <div class="max-container min-h-screen px-5 sm:px-[5%] 2xl:px-0">
-            <div class="w-full min-h-screen flex flex-col items-center justify-center">
+          class="home-landing-section w-full relative bg-[length:7px_7px] bg-[linear-gradient(to_right,rgba(112,112,112,0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgba(112,112,112,0.04)_1px,transparent_1px)] bg-center z-10">
+          <div class="max-container h-full px-5 sm:px-[5%] 2xl:px-0">
+            <div class="w-full min-h-screen py-8 flex flex-col items-center justify-center">
               <div class="flex flex-col items-center justify-center">
-                <div class="flex items-center justify-center gap-4 mb-12">
+                <div class="flex items-center justify-center gap-3 sm:gap-4 mb-8 sm:mb-12">
                   <a href="https://www.linkedin.com/in/john-vincent-barnachea/" target="_blank"
-                    class="w-[45px] h-[45px] flex items-center justify-center border border-white rounded-[5px] hvr-crsr">
+                    class="w-[40px] sm:w-[45px] h-[40px] sm:h-[45px] flex items-center justify-center border border-white rounded-[5px] hvr-crsr">
                     <svg class="w-[20px] h-fit" fill="#e6e6e6" version="1.1" id="Capa_1"
                       xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="800px"
                       height="800px" viewBox="0 0 93.06 93.06" xml:space="preserve">
@@ -135,13 +135,13 @@
                     </svg>
                   </a>
 
-                  <div class="border border-white rounded-[5px] flex items-center gap-3 h-[45px] px-4">
-                    <h6>AVAILABLE FOR WORK</h6>
+                  <div class="border border-white rounded-[5px] flex items-center gap-3 h-[40px] sm:h-[45px] px-3 xs:px-4">
+                    <h6 class = "text-sm sm:text-base">AVAILABLE FOR WORK</h6>
                     <span class="online h-[10px] w-[10px] bg-[#00ff00] rounded-full"></span>
                   </div>
 
                   <a href="https://vincebarnachea-portfolio.vercel.app" target="_blank"
-                    class="w-[45px] h-[45px] flex items-center justify-center border border-white rounded-[5px] hvr-crsr">
+                    class="w-[40px] sm:w-[45px] h-[40px] sm:h-[45px] flex items-center justify-center border border-white rounded-[5px] hvr-crsr">
                     <svg class="w-[27px] h-fit" width="800px" height="800px" viewBox="0 0 24 24" fill="#e6e6e6"
                       xmlns="http://www.w3.org/2000/svg">
                       <path id="cat"
@@ -156,22 +156,22 @@
 
 
                 <h1
-                  class="landing1st text-[8.5rem] 2xl:text-[9.5rem] 3xl:text-[10.5rem] leading-[0.9] font-black text-center [&>div]:overflow-hidden [&>div]:pb-[24px]">
+                  class="landing1st text-[4rem] sm:text-[8.5rem] 2xl:text-[9.5rem] 3xl:text-[10.5rem] leading-[0.9] font-black text-center [&>div]:overflow-hidden [&>div]:pb-[10px] sm:[&>div]:pb-[24px]">
                   John Vincent
                 </h1>
                 <h2
-                  class="landing2nd text-[7.5rem] 2xl:text-[8.5rem] 3xl:text-[9.5rem] leading-[0.9] text-[#e6e6e6cc] font-black text-center [&>div]:overflow-hidden [&>div]:pb-[16px]">
+                  class="landing2nd text-[3.5rem] sm:text-[7.5rem] 2xl:text-[8.5rem] 3xl:text-[9.5rem] leading-[0.9] text-[#e6e6e6cc] font-black text-center [&>div]:overflow-hidden [&>div]:pb-[8px] sm:[&>div]:pb-[16px]">
                   Barnachea
                 </h2>
                 <div class="h-[1px] w-[10rem] bg-white mt-8"></div>
 
-                <div class="w-fit flex items-center gap-2 text-2xl mt-8 3xl:mt-12">
+                <div class="w-fit flex items-center gap-2 text-base sm:text-2xl my-8 sm:my-8 3xl:mt-12">
                   <h6>Wordpress Developer</h6>
                   <h6>/</h6>
                   <h6>Frontend Developer</h6>
                 </div>
 
-                <div class="w-fit flex flex-wrap justify-center items-center gap-4 mt-8">
+                <div class="w-fit flex flex-wrap justify-center items-center gap-3 sm:gap-4">
                   <div
                     class="border border-white rounded-[5px] text-xs xl:text-sm py-2 px-4 opacity-[0.5] hover:opacity-100 animate300 hover:cursor-pointer">
                     WORDPRESS</div>
@@ -192,7 +192,7 @@
                     ACF</div>
                 </div>
 
-                <div class="hero-cta flex items-center justify-center gap-4 mt-12 3xl:mt-16">
+                <div class="hero-cta flex items-center justify-center flex-col sm:flex-row gap-3 sm:gap-4 mt-12 3xl:mt-16">
                   <button
                     class="landingcta-secondary border border-white rounded-[5px] py-3 px-8 bg-transparent relative group hover:cursor-pointer hvr-crsr">
                     <h6 class="text-white mix-blend-difference relative z-20">PROJECTS</h6>
@@ -217,7 +217,7 @@
 
 
         <section id="projects-section"
-          class="pt-[80px] projects-section min-h-screen relative w-full bg-[length:20px_20px] bg-[linear-gradient(to_right,rgba(112,112,112,0.07)_1px,transparent_1px),linear-gradient(to_bottom,rgba(112,112,112,0.07)_1px,transparent_1px)] bg-top z-10">
+          class="pt-[80px] projects-section min-h-screen relative w-full bg-[#101010] bg-[length:20px_20px] bg-[linear-gradient(to_right,rgba(112,112,112,0.07)_1px,transparent_1px),linear-gradient(to_bottom,rgba(112,112,112,0.07)_1px,transparent_1px)] bg-top z-10">
           <div class="max-container w-full h-full px-5 sm:px-[5%] 2xl:px-0 relative z-[999]">
             <div
               class="projects-row h-[90%] sl:h-[90%] xl:h-[80%] 2xl:h-[90%] 3xl:h-[45rem] w-max relative flex flex-row gap-28 items-start overflow-hidden">
@@ -2535,11 +2535,6 @@
               </form>
             </div>
           </div>
-
-
-          <script>
-            
-          </script>
         </section>
 
 
