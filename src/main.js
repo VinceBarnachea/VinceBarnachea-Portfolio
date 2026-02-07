@@ -621,6 +621,27 @@ $(document).ready(function () {
     }, 500);
 
 
+    $("#vinceForm").on("submit", function (e) {
+              e.preventDefault(); // ⛔ stop reload
+
+              emailjs.send("service_trvsn93", "template_3twd4qk", {
+                name: $("#inpName").val(),
+                email: $("#inpEmail").val(),
+                time: new Date().toLocaleString(),
+                message: $("#inpMessage").val()
+              })
+                .then(function (response) {
+                  console.log("SUCCESS!", response.status, response.text);
+                  alert("Your message has been sent successfully!");
+                  $("#vinceForm")[0].reset();
+                })
+                .catch(function (error) {
+                  console.error("FAILED...", error);
+                  alert("Oops! Something went wrong. Please try again.");
+                });
+            });
+
+
 }); //Eng ng Ready Function
 
 let resizeTimer;
