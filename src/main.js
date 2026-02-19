@@ -1,3 +1,7 @@
+import { inject } from "@vercel/analytics";
+
+inject();
+
 // import './style.css'
 // import javascriptLogo from './javascript.svg'
 // import viteLogo from '/vite.svg'
