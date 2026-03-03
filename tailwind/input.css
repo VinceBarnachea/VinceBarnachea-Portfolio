@@ -1,4 +1,6 @@
 @import "tailwindcss";
+@import "owl.carousel/dist/assets/owl.carousel.css";
+@import "owl.carousel/dist/assets/owl.theme.default.css";
 
 
 @theme {
@@ -26,14 +28,14 @@
 }
 
 .expand.cursor-flwr {
-  height: 90px !important;
-  width: 90px !important;
+  height: 80px !important;
+  width: 80px !important;
   border-width: 3px;
 }
 
 .hovered.cursor-flwr {
-  height: 75px;
-  width: 75px;
+  height: 60px;
+  width: 60px;
   border-width: 3px;
 }
 

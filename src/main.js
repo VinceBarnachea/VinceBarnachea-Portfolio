@@ -21,10 +21,15 @@
 // //   </div>
 
 // // setupCounter(document.querySelector('#counter'))
-import $ from 'jquery';
+import $ from "jquery";
 
+
+
+// Make jQuery global (important!)
+window.$ = window.jQuery = $;
+import("owl.carousel");
 import { gsap } from "gsap";
-    
+
 import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
 import { MotionPathPlugin } from "gsap/MotionPathPlugin";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -33,14 +38,25 @@ import { ScrollSmoother } from "gsap/ScrollSmoother";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { SplitText } from "gsap/SplitText";
 
-gsap.registerPlugin(DrawSVGPlugin,MotionPathPlugin,ScrollTrigger,ScrollSmoother,ScrollToPlugin,SplitText);
+gsap.registerPlugin(
+  DrawSVGPlugin,
+  MotionPathPlugin,
+  ScrollTrigger,
+  ScrollSmoother,
+  ScrollToPlugin,
+  SplitText,
+);
 
+
+// Make jQuery global BEFORE loading Owl
+
+
+// Now load Owl (it will attach to window.jQuery)
+// import "owl.carousel";
 
 $(document).ready(function () {
   console.log("Hello Devs! My Portfolio Revamp is WIP :)");
 
-
-  
   var headerHeight = $(".header-main").outerHeight(true);
   ScrollSmoother.create({
     wrapper: "#smooth-wrapper",
@@ -69,28 +85,22 @@ $(document).ready(function () {
       ease: "power2.out",
     });
   });
-  
-  $('.landingcta-secondary').on('click',function(){
-    gsap.to(window,
-      {
-        duration: 0.5,
-        scrollTo: "#projects-section",
-        ease: "power2.out"
-      }
-    )
+
+  $(".landingcta-secondary").on("click", function () {
+    gsap.to(window, {
+      duration: 0.5,
+      scrollTo: "#projects-section",
+      ease: "power2.out",
+    });
   });
 
-    $('.landingcta-primary, .cta-plane').on('click',function(){
-    gsap.to(window,
-      {
-        duration: 0.5,
-        scrollTo: "#contact-section",
-        ease: "power2.out"
-      }
-    )
+  $(".landingcta-primary, .cta-plane").on("click", function () {
+    gsap.to(window, {
+      duration: 0.5,
+      scrollTo: "#contact-section",
+      ease: "power2.out",
+    });
   });
-
-
 
   const $cursorFlwr = $(".cursor-flwr");
   const $cursorPntr = $(".cursor-pntr");
@@ -136,7 +146,7 @@ $(document).ready(function () {
     },
     function () {
       $cursorFlwr.removeClass("hovered");
-    }
+    },
   );
 
   $(".proj-cta-bg").hover(
@@ -147,13 +157,13 @@ $(document).ready(function () {
         .fromTo(
           ".boxshare",
           { drawSVG: "0%" },
-          { drawSVG: "100%", duration: 0.25, ease: "power2.out" }
+          { drawSVG: "100%", duration: 0.25, ease: "power2.out" },
         )
         .fromTo(
           ".arrowshare",
           { drawSVG: "0%" },
           { drawSVG: "100%", duration: 0.25, ease: "power2.out" },
-          ">"
+          ">",
         )
         .to(".arrowshare", {
           x: 2.5,
@@ -169,7 +179,7 @@ $(document).ready(function () {
         duration: 0.5,
         ease: "power2.out",
       });
-    }
+    },
   );
 
   $(".prj-cta-non, .prj-cta-bg").hover(
@@ -183,7 +193,7 @@ $(document).ready(function () {
         .fromTo(
           "#projcat",
           { drawSVG: "0%" },
-          { drawSVG: "100%", duration: 0.8, ease: "power2.out" }
+          { drawSVG: "100%", duration: 0.8, ease: "power2.out" },
         )
         // fill the shape at the end
         .to("#projcat", {
@@ -199,7 +209,7 @@ $(document).ready(function () {
         duration: 0.5,
         ease: "power1.inOut",
       });
-    }
+    },
   );
 
   $(".cta-plane, .cta-plane-form").hover(
@@ -246,20 +256,22 @@ $(document).ready(function () {
         rotation: 0,
         ease: "power2.out",
       });
-    }
+    },
   );
 
+  $(".clck2copy").on("click", function () {
+    const text = $(".clck2copy-email").text();
 
-  $('.clck2copy').on('click', function () {
-    const text = $('.clck2copy-email').text();
-
-    navigator.clipboard.writeText(text).then(() => {
-      $('.clck2copy-status').text('COPIED !');
-      $('.copy-svg').hide();
-      $('.copied-svg').show();
-    }).catch(() => {
-      $('.clck2copy-status').text('FAILED TO COPY');
-    });
+    navigator.clipboard
+      .writeText(text)
+      .then(() => {
+        $(".clck2copy-status").text("COPIED !");
+        $(".copy-svg").hide();
+        $(".copied-svg").show();
+      })
+      .catch(() => {
+        $(".clck2copy-status").text("FAILED TO COPY");
+      });
   });
 
   gsap.fromTo(
@@ -271,7 +283,7 @@ $(document).ready(function () {
       repeat: -1,
       yoyo: true,
       ease: "power1.inOut",
-    }
+    },
   );
 
   var headerTL = gsap.timeline({
@@ -295,12 +307,10 @@ $(document).ready(function () {
         duration: 0.5,
         ease: "power2.out",
       },
-      "<"
+      "<",
     );
 
-
-    
-  $('#projects-section').css('padding-top',(headerHeight+10)+"px");
+  $("#projects-section").css("padding-top", headerHeight + 10 + "px");
 
   var projRow = $(".projects-row").outerWidth(true);
   var sectionWidth = $(".max-container").width();
@@ -313,7 +323,7 @@ $(document).ready(function () {
       pin: true,
       pinType: ScrollTrigger.isTouch ? "fixed" : "transform",
       scrub: true,
-      end: () => "+=" + totalWidthProj / 3,
+      end: () => "+=" + totalWidthProj / 1.5,
       // markers: true,
     },
   });
@@ -328,7 +338,7 @@ $(document).ready(function () {
       {
         backgroundPositionX: "-" + totalWidthProj / 10 + "px",
       },
-      "<"
+      "<",
     );
 
   var totalCards = $(".projects-card").length;
@@ -355,7 +365,7 @@ $(document).ready(function () {
           scrub: true,
           // markers: true,
         },
-      }
+      },
     );
 
     // Count Current Project Card
@@ -392,6 +402,7 @@ $(document).ready(function () {
     },
   });
 
+  var chptstickyHeight = $(".chpt-sticky").outerHeight(true);
   ["chapter1", "chapter2", "chapter3"].forEach((ch) => {
     // Pin headers
     gsap.timeline({
@@ -399,11 +410,11 @@ $(document).ready(function () {
         trigger: `.${ch}-header`,
         start: "top top+=" + headerHeight,
         endTrigger: `.${ch}-contents`,
-        end: "bottom top+=" + (100 + headerHeight),
+        end: "bottom top+=" + (chptstickyHeight + headerHeight),
         pin: `.${ch}-header`,
         pinType: ScrollTrigger.isTouch ? "fixed" : "transform",
         pinSpacing: false,
-        
+
         // markers: true
       },
     });
@@ -432,7 +443,7 @@ $(document).ready(function () {
       start: "top 40%",
       pin: true,
       pinType: ScrollTrigger.isTouch ? "fixed" : "transform",
-      
+
       scrub: true,
       // markers: true,
       end: () => "+=" + totalSlidingWidth,
@@ -453,7 +464,7 @@ $(document).ready(function () {
     endTrigger: ".skills-grid",
     end: "bottom top+=" + (slidingSvgHeight + headerHeight),
     pinSpacing: false,
-    
+
     scrub: true,
     // markers: true,
   });
@@ -479,16 +490,16 @@ $(document).ready(function () {
         x: slideSVGLength + "px",
         ease: "none",
       },
-      "<"
+      "<",
     );
 
   const gitAnimation = gsap.timeline();
 
-  gitAnimation
+  (gitAnimation
     .fromTo(
       "#cat",
       { drawSVG: "0%" },
-      { drawSVG: "100%", duration: 1.5, ease: "power2.out" }
+      { drawSVG: "100%", duration: 1.5, ease: "power2.out" },
     )
     .to(
       "#cat",
@@ -497,14 +508,14 @@ $(document).ready(function () {
         duration: 0.3,
         ease: "power1.inOut",
       },
-      ">"
+      ">",
     )
     .to("#cat", {
       stroke: "transparent",
       duration: 0.5,
       ease: "power1.inOut",
     }),
-    "<";
+    "<");
 
   gsap.fromTo(
     ".lin",
@@ -515,7 +526,7 @@ $(document).ready(function () {
       drawSVG: "100%",
       duration: 2,
       ease: "power2.out",
-    }
+    },
   );
 
   setTimeout(() => {
@@ -565,29 +576,44 @@ $(document).ready(function () {
   }, 30000);
 
 
+  $("#vinceForm").on("submit", function (e) {
+    e.preventDefault(); // ⛔ stop reload
 
-    $("#vinceForm").on("submit", function (e) {
-              e.preventDefault(); // ⛔ stop reload
+    emailjs
+      .send("service_trvsn93", "template_3twd4qk", {
+        name: $("#inpName").val(),
+        email: $("#inpEmail").val(),
+        time: new Date().toLocaleString(),
+        message: $("#inpMessage").val(),
+      })
+      .then(function (response) {
+        console.log("SUCCESS!", response.status, response.text);
+        alert("Your message has been sent successfully!");
+        $("#vinceForm")[0].reset();
+      })
+      .catch(function (error) {
+        console.error("FAILED...", error);
+        alert("Oops! Something went wrong. Please try again.");
+      });
+  });
 
-              emailjs.send("service_trvsn93", "template_3twd4qk", {
-                name: $("#inpName").val(),
-                email: $("#inpEmail").val(),
-                time: new Date().toLocaleString(),
-                message: $("#inpMessage").val()
-              })
-                .then(function (response) {
-                  console.log("SUCCESS!", response.status, response.text);
-                  alert("Your message has been sent successfully!");
-                  $("#vinceForm")[0].reset();
-                })
-                .catch(function (error) {
-                  console.error("FAILED...", error);
-                  alert("Oops! Something went wrong. Please try again.");
-                });
-            });
+  let resizeTimer;
+  let prevWidth = $(window).width();
+
+  $(window).on("resize", function () {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function () {
+      let newWidth = $(window).width();
+      if (newWidth !== prevWidth) {
+        location.reload();
+      }
+      prevWidth = newWidth; // update for next check
+    }, 100);
+  });
 
 
-}); //Eng ng Ready Function
+
+}); //End ng Ready Function
 
 let resizeTimer;
 let prevWidth = $(window).width();
@@ -603,69 +629,50 @@ $(window).on("resize", function () {
   }, 100);
 });
 
- var servicesH = new SplitText('.landing1st, .landing2nd',
-            {type: "lines,words,chars"}
-        );
-
-const landing1st = ["John Vincent", "Website", "Hello", "Web", "Design"];
-const landing2nd = ["Barnachea", "Portfolio", "World", "Developer", "to Reality"];
-
-function cycleText($el, words, hold) {
-  // ScrollTrigger.refresh();
-  let index = 0;
-  let split;
-
-  gsap.set($el, { autoAlpha: 1 });
-
-  function animate() {
-    $el.text(words[index]);
-
-    // IMPORTANT: pass DOM element, not jQuery object
-    split = new SplitText($el[0], {type:"lines,words,chars"});
-
-    gsap.fromTo(
-      split.chars,
-      {
-        y: 300,
-        autoAlpha: 0
-      },
-      {
-        y: 0,
-        autoAlpha: 1,
-        stagger: 0.04,
-        duration: 0.5,
-        ease: "power3.out",
-        onComplete: function () {
-          gsap.to(split.chars, {
-            y: 300,
-            autoAlpha: 0,
-            stagger: 0.04,
-            duration: 0.5,
-            delay: hold,
-            ease: "power3.in",
-            onComplete: function () {
-              split.revert();
-              index = (index + 1) % words.length;
-              animate();
-            }
-          });
-        }
-      }
-    );
-    // ScrollTrigger.refresh();
-  }
-  // ScrollTrigger.refresh();
-  animate();
-}
-
-// INIT
-$(window).on("load", function () {
-  setTimeout(function () {
-    cycleText($(".landing1st"), landing1st, 3);
-    cycleText($(".landing2nd"), landing2nd, 2.7);
-  }, 100);
-  // ScrollTrigger.refresh();
+var servicesH = new SplitText(".landing1st, .landing2nd", {
+  type: "lines,words,chars",
 });
 
+const landing1st = ["John Vincent", "Website", "Hello", "Web", "Design"];
+const landing2nd = [
+  "Barnachea",
+  "Portfolio",
+  "World",
+  "Developer",
+  "to Reality",
+];
 
+function animateLanding(selector, textArray, repeatDelay) {
+  let index = 0;
+  const el = $(selector);
 
+  function run() {
+    el.text(textArray[index]);
+    const split = new SplitText(el, { type: "lines,words,chars" });
+
+    gsap.from(split.chars, {
+      y: 300,
+      autoAlpha: 0,
+      stagger: 0.04,
+      duration: 0.5,
+      yoyo: true,
+      repeat: 1,
+      repeatDelay,
+      ease: "power3.out",
+      onComplete: () => {
+        split.revert();
+        index = (index + 1) % textArray.length;
+        run();
+        ScrollTrigger.refresh();
+      }
+    });
+  }
+
+  run();
+}
+
+setTimeout(() => {
+  $('.landing1st, .landing2nd').css('opacity', '1');
+  animateLanding('.landing1st', landing1st, 3);
+  animateLanding('.landing2nd', landing2nd, 2.9);
+}, 100);

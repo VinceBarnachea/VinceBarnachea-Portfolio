@@ -23,6 +23,7 @@
     "gsap": "^3.14.2",
     "jquery": "^3.7.1",
     "nanoid": "^3.3.11",
+    "owl.carousel": "^2.3.4",
     "picocolors": "^1.1.1",
     "picomatch": "^4.0.3",
     "postcss": "^8.5.6",
