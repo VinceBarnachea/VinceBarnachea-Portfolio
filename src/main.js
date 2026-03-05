@@ -61,12 +61,12 @@ $(document).ready(function () {
   ScrollSmoother.create({
     wrapper: "#smooth-wrapper",
     content: "#smooth-content",
-    smooth: ScrollTrigger.isTouch ? 0 : 1, // disable smooth on touch devices
+    smooth: ScrollTrigger.isTouch ? 0 : 0.8, // disable smooth on touch devices
     effects: true,
     normalizeScroll: !ScrollTrigger.isTouch, // only normalize scroll on desktop
   });
 
-  $('nav a[href^="#"]').on("click", function (e) {
+  $('nav a[href^="#"], .footer-nav a[href^="#"]').on("click", function (e) {
     const target = $(this).attr("href");
 
     if (!target || target === "#") return;
@@ -474,7 +474,7 @@ $(document).ready(function () {
     scrollTrigger: {
       trigger: ".skills-section",
       start: "top bottom",
-      end: () => "+=" + slideSVGLength * 4.5,
+      end: () => "+=" + slideSVGLength *4.5,
       scrub: true,
     },
   });
@@ -529,51 +529,51 @@ $(document).ready(function () {
     },
   );
 
-  setTimeout(() => {
-    gsap.to("body", {
-      overflow: "hidden",
-    });
-    gsap.to(".coming-soon-section", {
-      top: 0,
-      duration: 1,
-    });
+  // setTimeout(() => {
+  //   gsap.to("body", {
+  //     overflow: "hidden",
+  //   });
+  //   gsap.to(".coming-soon-section", {
+  //     top: 0,
+  //     duration: 1,
+  //   });
 
-    gsap.to(".box", {
-      rotate: 720,
-      scale: 2,
-      duration: 2,
-      repeat: -1, // infinite loop
-      yoyo: true,
-      delay: 0.5,
-    });
+  //   gsap.to(".box", {
+  //     rotate: 720,
+  //     scale: 2,
+  //     duration: 2,
+  //     repeat: -1, // infinite loop
+  //     yoyo: true,
+  //     delay: 0.5,
+  //   });
 
-    const texts = ["Coming Soon!", "Work in Progress", "Hello World"];
-    let index = 0;
+  //   const texts = ["Coming Soon!", "Work in Progress", "Hello World"];
+  //   let index = 0;
 
-    function animateText() {
-      const el = $(".comingsoon");
-      el.text(texts[index]);
+  //   function animateText() {
+  //     const el = $(".comingsoon");
+  //     el.text(texts[index]);
 
-      const split = new SplitText(el, { type: "lines,words,chars" });
+  //     const split = new SplitText(el, { type: "lines,words,chars" });
 
-      gsap.from(split.chars, {
-        y: 300,
-        stagger: 0.05,
-        duration: 1,
-        yoyo: true,
-        repeat: 1, // goes up and down once
-        repeatDelay: 0.7,
-        ease: "power1.inOut",
-        onComplete: () => {
-          split.revert(); // clean up
-          index = (index + 1) % texts.length; // move to next text
-          animateText(); // recursively animate next text
-        },
-      });
-    }
+  //     gsap.from(split.chars, {
+  //       y: 300,
+  //       stagger: 0.05,
+  //       duration: 1,
+  //       yoyo: true,
+  //       repeat: 1, // goes up and down once
+  //       repeatDelay: 0.7,
+  //       ease: "power1.inOut",
+  //       onComplete: () => {
+  //         split.revert(); // clean up
+  //         index = (index + 1) % texts.length; // move to next text
+  //         animateText(); // recursively animate next text
+  //       },
+  //     });
+  //   }
 
-    animateText();
-  }, 30000);
+  //   animateText();
+  // }, 30000);
 
 
   $("#vinceForm").on("submit", function (e) {
@@ -629,50 +629,66 @@ $(window).on("resize", function () {
   }, 100);
 });
 
-var servicesH = new SplitText(".landing1st, .landing2nd", {
-  type: "lines,words,chars",
-});
+var servicesH = new SplitText('.landing1st, .landing2nd',
+            {type: "lines,words,chars"}
+        );
 
 const landing1st = ["John Vincent", "Website", "Hello", "Web", "Design"];
-const landing2nd = [
-  "Barnachea",
-  "Portfolio",
-  "World",
-  "Developer",
-  "to Reality",
-];
+const landing2nd = ["Barnachea", "Portfolio", "World", "Developer", "to Reality"];
 
-function animateLanding(selector, textArray, repeatDelay) {
+function cycleText($el, words, hold) {
+  // ScrollTrigger.refresh();
   let index = 0;
-  const el = $(selector);
+  let split;
 
-  function run() {
-    el.text(textArray[index]);
-    const split = new SplitText(el, { type: "lines,words,chars" });
+  gsap.set($el, { autoAlpha: 1 });
 
-    gsap.from(split.chars, {
-      y: 300,
-      autoAlpha: 0,
-      stagger: 0.04,
-      duration: 0.5,
-      yoyo: true,
-      repeat: 1,
-      repeatDelay,
-      ease: "power3.out",
-      onComplete: () => {
-        split.revert();
-        index = (index + 1) % textArray.length;
-        run();
-        ScrollTrigger.refresh();
+  function animate() {
+    $el.text(words[index]);
+
+    // IMPORTANT: pass DOM element, not jQuery object
+    split = new SplitText($el[0], {type:"lines,words,chars"});
+
+    gsap.fromTo(
+      split.chars,
+      {
+        y: 300,
+        autoAlpha: 0
+      },
+      {
+        y: 0,
+        autoAlpha: 1,
+        stagger: 0.04,
+        duration: 0.5,
+        ease: "power3.out",
+        onComplete: function () {
+          gsap.to(split.chars, {
+            y: 300,
+            autoAlpha: 0,
+            stagger: 0.04,
+            duration: 0.5,
+            delay: hold,
+            ease: "power3.in",
+            onComplete: function () {
+              split.revert();
+              index = (index + 1) % words.length;
+              animate();
+            }
+          });
+        }
       }
-    });
+    );
+    // ScrollTrigger.refresh();
   }
-
-  run();
+  // ScrollTrigger.refresh();
+  animate();
 }
 
-setTimeout(() => {
-  $('.landing1st, .landing2nd').css('opacity', '1');
-  animateLanding('.landing1st', landing1st, 3);
-  animateLanding('.landing2nd', landing2nd, 2.9);
-}, 100);
+// INIT
+$(window).on("load", function () {
+  setTimeout(function () {
+    cycleText($(".landing1st"), landing1st, 3);
+    cycleText($(".landing2nd"), landing2nd, 2.7);
+  }, 100);
+  // ScrollTrigger.refresh();
+});
