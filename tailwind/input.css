@@ -23,9 +23,7 @@
   --font-sans: "Geologica Thin";
 }
 
-* {
-  cursor: none;
-}
+
 
 .expand.cursor-flwr {
   height: 80px !important;

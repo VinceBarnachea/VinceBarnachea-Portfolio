@@ -54,19 +54,19 @@ gsap.registerPlugin(
 // Now load Owl (it will attach to window.jQuery)
 // import "owl.carousel";
 
-$(document).ready(function () {
+$(function() {
   console.log("Hello Devs! My Portfolio Revamp is WIP :)");
 
   var headerHeight = $(".header-main").outerHeight(true);
   ScrollSmoother.create({
     wrapper: "#smooth-wrapper",
     content: "#smooth-content",
-    smooth: ScrollTrigger.isTouch ? 0 : 0.8, // disable smooth on touch devices
+    smooth: ScrollTrigger.isTouch ? 0 : 1, // disable smooth on touch devices
     effects: true,
     normalizeScroll: !ScrollTrigger.isTouch, // only normalize scroll on desktop
   });
 
-  $('nav a[href^="#"], .footer-nav a[href^="#"]').on("click", function (e) {
+  $('nav a[href^="#"], .href-target a[href^="#"]').on("click", function (e) {
     const target = $(this).attr("href");
 
     if (!target || target === "#") return;
@@ -80,7 +80,7 @@ $(document).ready(function () {
       duration: 0.5,
       scrollTo: {
         y: $section[0],
-        offsetY: 0,
+        offsetY: headerHeight,
       },
       ease: "power2.out",
     });
@@ -103,51 +103,42 @@ $(document).ready(function () {
   });
 
   const $cursorFlwr = $(".cursor-flwr");
-  const $cursorPntr = $(".cursor-pntr");
+const $cursorPntr = $(".cursor-pntr");
 
-  var mouseX = (event) => event.clientX;
-  var mouseY = (event) => event.clientY;
+let mouseX = 0;
+let mouseY = 0;
+let rafId = null;
 
-  var positionElement = (event) => {
-    var mouse = {
-      x: mouseX(event),
-      y: mouseY(event),
-    };
+function updateCursor() {
+  const transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
 
-    // Smoothly update the cursor position using CSS transform
-    $cursorFlwr.css({
-      transform: `translate3d(${mouse.x - 0}px, ${mouse.y - 0}px, 0)`,
-    });
+  $cursorFlwr.css("transform", transform);
+  $cursorPntr.css("transform", transform);
 
-    $cursorPntr.css({
-      transform: `translate3d(${mouse.x - 0}px, ${mouse.y - 0}px, 0)`,
-    });
-  };
+  rafId = null;
+}
 
-  // Throttling the mousemove event
-  var timer = false;
-  $(window).on("mousemove", function (event) {
-    clearTimeout(timer); // Clear any previous timeouts
-    timer = setTimeout(function () {
-      positionElement(event); // Call positionElement after 1ms
-    }, 1);
-  });
+$(window).on("mousemove", (e) => {
+  mouseX = e.clientX;
+  mouseY = e.clientY;
 
-  $(document).on("click", function () {
-    $cursorFlwr.addClass("expand");
-    setTimeout(function () {
-      $cursorFlwr.removeClass("expand");
-    }, 180);
-  });
+  if (!rafId) {
+    rafId = requestAnimationFrame(updateCursor);
+  }
+});
 
-  $(".hvr-crsr").hover(
-    function () {
-      $cursorFlwr.addClass("hovered");
-    },
-    function () {
-      $cursorFlwr.removeClass("hovered");
-    },
-  );
+$(document).on("click", () => {
+  $cursorFlwr.addClass("expand");
+
+  setTimeout(() => {
+    $cursorFlwr.removeClass("expand");
+  }, 180);
+});
+
+$(".hvr-crsr").hover(
+  () => $cursorFlwr.addClass("hovered"),
+  () => $cursorFlwr.removeClass("hovered")
+);
 
   $(".proj-cta-bg").hover(
     function () {
@@ -315,6 +306,7 @@ $(document).ready(function () {
   var projRow = $(".projects-row").outerWidth(true);
   var sectionWidth = $(".max-container").width();
   var totalWidthProj = projRow - sectionWidth;
+  var projSpeed = $(window).width() < 768 ? 1.5 : 3.5;
 
   var projectsTL = gsap.timeline({
     scrollTrigger: {
@@ -323,7 +315,7 @@ $(document).ready(function () {
       pin: true,
       pinType: ScrollTrigger.isTouch ? "fixed" : "transform",
       scrub: true,
-      end: () => "+=" + totalWidthProj / 1.5,
+      end: () => "+=" + totalWidthProj / projSpeed,
       // markers: true,
     },
   });
@@ -332,14 +324,7 @@ $(document).ready(function () {
     .to(".projects-row", {
       x: "-" + totalWidthProj + "px",
       ease: "none",
-    })
-    .to(
-      ".projects-grid",
-      {
-        backgroundPositionX: "-" + totalWidthProj / 10 + "px",
-      },
-      "<",
-    );
+    });
 
   var totalCards = $(".projects-card").length;
   $(".projects-card").each(function (index, element) {
@@ -422,17 +407,17 @@ $(document).ready(function () {
     // Animate background Y with scroll
   });
 
-  gsap.to(`.chapter3`, {
-    backgroundPositionY: "-" + 5 + "px", // adjust to your total scroll distance
-    ease: "none",
-    scrollTrigger: {
-      trigger: ".allchapters",
-      start: "top top",
-      end: "+=8000",
-      scrub: true,
-      // markers: true
-    },
-  });
+  // gsap.to(`.chapter3`, {
+  //   backgroundPositionY: "-" + 5 + "px", // adjust to your total scroll distance
+  //   ease: "none",
+  //   scrollTrigger: {
+  //     trigger: ".allchapters",
+  //     start: "top top",
+  //     end: "+=8000",
+  //     scrub: true,
+  //     // markers: true
+  //   },
+  // });
 
   var slidingTextWidth = $(".sliding-text-row").outerWidth(true);
   var totalSlidingWidth = slidingTextWidth - sectionWidth;
@@ -469,12 +454,13 @@ $(document).ready(function () {
     // markers: true,
   });
 
+  var svgSpeed = $(window).width() < 768 ? 1.5 : 4;
   var slideSVGLength = $(".sliding-svg-black").outerWidth(true) * 55;
   var slidingSVGTL = gsap.timeline({
     scrollTrigger: {
       trigger: ".skills-section",
       start: "top bottom",
-      end: () => "+=" + slideSVGLength *4.5,
+      end: () => "+=" + slideSVGLength *svgSpeed,
       scrub: true,
     },
   });
