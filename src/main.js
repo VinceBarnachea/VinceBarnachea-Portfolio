@@ -463,26 +463,55 @@ $(function () {
   //   },
   // });
 
-  var slidingTextWidth = $(".sliding-text-row").outerWidth(true);
-  var totalSlidingWidth = slidingTextWidth - sectionWidth;
+  var $sectionSlidingText = $(".sliding-text-section");
+  var $rowSlidingText = $(".sliding-text-row");
+  if (!$sectionSlidingText.length || !$rowSlidingText.length) return;
 
-  var slidingText = gsap.timeline({
-    scrollTrigger: {
-      trigger: ".sliding-text-section",
-      start: "top 40%",
-      pin: true,
-      pinType: ScrollTrigger.isTouch ? "fixed" : "transform",
+  // Distance the text has to travel, recalculated on every refresh
+  function getDistance() {
+    var $container = $rowSlidingText.parent(); // .max-container
+    var visibleWidth = $container.width(); // content width, excludes padding
+    return Math.max(0, $rowSlidingText[0].scrollWidth - visibleWidth);
+  }
 
-      scrub: true,
-      // markers: true,
-      end: () => "+=" + totalSlidingWidth,
-    },
+  function initSlidingText() {
+    gsap.to($rowSlidingText[0], {
+      x: function () {
+        return -getDistance();
+      },
+      ease: "none",
+      scrollTrigger: {
+        trigger: $sectionSlidingText[0],
+        start: "top 40%",
+        end: function () {
+          return "+=" + getDistance();
+        },
+        pin: true,
+        pinType: ScrollTrigger.isTouch ? "fixed" : "transform",
+        scrub: true,
+        invalidateOnRefresh: true, // re-runs the function values on resize/refresh
+        // markers: true,
+      },
+    });
+
+    ScrollTrigger.refresh();
+  }
+
+  // Wait for fonts + all assets before measuring
+  var fontsReady =
+    document.fonts && document.fonts.ready
+      ? document.fonts.ready
+      : Promise.resolve();
+
+  var windowLoaded = new Promise(function (resolve) {
+    if (document.readyState === "complete") {
+      resolve();
+    } else {
+      $(window).one("load", resolve);
+    }
   });
 
-  slidingText.to(".sliding-text-row", {
-    x: "-" + totalSlidingWidth + "px",
-    ease: "none",
-  });
+  Promise.all([fontsReady, windowLoaded]).then(initSlidingText);
 
   var slidingSvgHeight = $(".sliding-svg-section").outerHeight(true);
   ScrollTrigger.create({
