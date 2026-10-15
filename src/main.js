@@ -62,6 +62,59 @@ $(function () {
     normalizeScroll: !ScrollTrigger.isTouch, // only normalize scroll on desktop
   });
 
+  $.fn.marquee = function (opts) {
+    const speed = (opts && opts.speed) || 60;          // px per second
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    return this.each(function () {
+      const $track = $(this);
+      const $originals = $track.children().clone();   // keep a pristine copy of one set
+      let setWidth = 0, x = 0, last = 0, paused = false, raf;
+
+      function build() {
+        cancelAnimationFrame(raf);
+        $track.empty().append($originals.clone());
+
+        // Exact pixel width of ONE set of items
+        setWidth = 0;
+        $track.children().each(function () { setWidth += this.getBoundingClientRect().width; });
+
+        // Enough extra copies to fill the screen, plus one spare
+        const copies = Math.ceil($track.parent().width() / setWidth) + 1;
+        for (let i = 0; i < copies; i++) {
+          $originals.clone().attr("aria-hidden", "true").appendTo($track);
+        }
+
+        x = 0; last = 0;
+        if (!reduce) raf = requestAnimationFrame(tick);
+      }
+
+      function tick(t) {
+        if (!last) last = t;
+        const dt = (t - last) / 1000;
+        last = t;
+        if (!paused) {
+          x -= speed * dt;
+          if (x <= -setWidth) x += setWidth;           // jump back, invisible
+          $track.css("transform", "translate3d(" + x + "px,0,0)");
+        }
+        raf = requestAnimationFrame(tick);
+      }
+
+      // Pause on hover
+      
+
+      // Rebuild on resize
+      let timer;
+      $(window).on("resize", function () { clearTimeout(timer); timer = setTimeout(build, 200); });
+
+      // Wait for fonts so the widths are measured correctly
+      document.fonts.ready.then(build);
+    });
+  };
+
+  $("#marquee").marquee({ speed: 100 });
+
   $('nav a[href^="#"], .href-target a[href^="#"]').on("click", function (e) {
     const target = $(this).attr("href");
 
@@ -325,7 +378,7 @@ $(function () {
   var headerTL = gsap.timeline({
     scrollTrigger: {
       trigger: ".home-landing-section",
-      start: "center-=100 top",
+      start: "top+=50 top",
       toggleActions: "play none none reverse",
     },
   });
@@ -671,7 +724,18 @@ $(function () {
       prevWidth = newWidth; // update for next check
     }, 100);
   });
+  setHeroHeight();
 }); //End ng Ready Function
+
+function setHeroHeight() {
+  const headerHeight = $(".header-main").outerHeight(true);
+  const loopBottom = $('.loop-elements').outerHeight(true);
+  
+  $(".hero-section").css({
+    "padding-top": headerHeight+8,
+    "padding-bottom": loopBottom+8,
+  });
+}
 
 let resizeTimer;
 let prevWidth = $(window).width();
