@@ -20,8 +20,21 @@
   --breakpoint-4xl: 2160px;
   --color-black: #16302b;
   --color-white: #e6e6e6;
+  --color-mute: rgb(169 189 179);
+  --font-display: "Bricolage Grotesque", system-ui, sans-serif;
   --font-sans: "Geologica Thin";
+
+  --color-ok: #5fd68a;
+  --animate-ring: ring 1.4s infinite;
+
+  @keyframes ring {
+    0%   { box-shadow: 0 0 0 0 #5fd68a; }
+    70%  { box-shadow: 0 0 0 7px transparent; }
+    100% { box-shadow: 0 0 0 0 transparent; }
+  }
+
 }
+  
 
 
 
@@ -105,7 +118,8 @@ p:last-of-type {
 }
 
 .font-black {
-  font-family: 'Geologica Black';
+  /* font-family: 'Geologica Black'; */
+  font-family: var(--font-display);
   font-weight: 900 !important;
   font-style: normal;
   font-display: swap;

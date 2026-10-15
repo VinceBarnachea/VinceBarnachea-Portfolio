@@ -9,7 +9,9 @@
 
   <link rel="icon" type="image/svg" href="/assets/logoShape.svg" />
 
-
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap" rel="stylesheet">
   <!-- Output.css Tailwind -->
   <link href="tailwind/output.css" rel="stylesheet">
 
@@ -27,11 +29,11 @@
   </script>
 
   <!-- VERCEL ANALYTICS -->
-<script>
-  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
-</script>
-<script defer src="/_vercel/insights/script.js"></script>
-  
+  <script>
+    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+  </script>
+  <script defer src="/_vercel/insights/script.js"></script>
+
 </head>
 
 <body class="portfolio-body relative">
@@ -44,8 +46,10 @@
   <header class="header-main fixed top-0 left-0 w-full z-[99999] h-[65px] lg:h-[75px]">
     <div class="header-wrapper w-full h-full relative z-[10] flex items-center">
       <div class="flex justify-between h-full w-full items-center gap-8 max-container px-5 sm:px-[5%] 2xl:px-0">
-        <a class="inline-block h-[40px] lg:h-[45px] hvr-crsr relative z-[100]" href="https://vincebarnachea-portfolio.vercel.app/">
-          <svg class = "h-[40px] lg:h-[45px] w-fit relative" id="Layer_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 150 150">
+        <a class="inline-block h-[40px] lg:h-[45px] hvr-crsr relative z-[100]"
+          href="https://vincebarnachea-portfolio.vercel.app/">
+          <svg class="h-[40px] lg:h-[45px] w-fit relative" id="Layer_1" xmlns="http://www.w3.org/2000/svg" version="1.1"
+            viewBox="0 0 150 150">
             <defs>
               <style>
                 .st0 {
@@ -53,100 +57,103 @@
                 }
               </style>
             </defs>
-            <path class="st0" d="M52.66,66.12h-.56c.23.14.46.27.7.38l-.14-.38Z"/>
-            <path class="st0" d="M44.89,25.86c-1.72-.48-3.08-1.28-4.09-2.41-1.76-1.96-2.64-4.79-2.64-8.49,0-1.76.27-3.5.82-5.21.54-1.72,1.31-3.44,2.31-5.17l-8.1-3.22c-1.29,2.17-2.3,4.5-3.01,6.98-.72,2.48-1.08,5.09-1.08,7.85,0,4.28.77,7.92,2.31,10.91,1.27,2.48,2.98,4.46,5.11,5.93v21c0,5.49.94,10.23,2.83,14.23.19.4.39.81.6,1.19,0,.01.01.01.01.02l28.57,74.35h13.26l26.56-70.95h.01c.55-.58,1.07-1.2,1.55-1.87,3.34-4.63,5.01-10.7,5.01-18.2v-26.94H44.89ZM105.07,50.67c0,4.82-.98,8.52-2.95,11.12-1.95,2.59-4.76,3.89-8.42,3.89-2.58,0-4.78-.62-6.61-1.85-1.83-1.23-3.23-2.95-4.2-5.15-.97-2.2-1.46-4.82-1.46-7.84v-12.43h23.64v12.26ZM52.1,66.12c-.98-.58-1.83-1.33-2.56-2.23-2.11-2.62-3.16-6.61-3.16-11.99v-13.49h25.65v13.27c0,5.49-1.11,9.55-3.31,12.18-2.2,2.63-5.41,3.95-9.63,3.95-2.46,0-4.55-.44-6.29-1.31-.24-.11-.47-.24-.7-.38ZM75.35,127.23l-17.26-46.5c.14.01.29.01.44.01,5.08,0,9.35-1.42,12.82-4.28,3.48-2.86,5.86-6.41,7.17-10.67.79,2.02,2.02,3.96,3.7,5.83,1.68,1.86,3.63,3.38,5.85,4.56,1.58.84,3.22,1.37,4.94,1.6l-17.66,49.45Z"/>
+            <path class="st0" d="M52.66,66.12h-.56c.23.14.46.27.7.38l-.14-.38Z" />
+            <path class="st0"
+              d="M44.89,25.86c-1.72-.48-3.08-1.28-4.09-2.41-1.76-1.96-2.64-4.79-2.64-8.49,0-1.76.27-3.5.82-5.21.54-1.72,1.31-3.44,2.31-5.17l-8.1-3.22c-1.29,2.17-2.3,4.5-3.01,6.98-.72,2.48-1.08,5.09-1.08,7.85,0,4.28.77,7.92,2.31,10.91,1.27,2.48,2.98,4.46,5.11,5.93v21c0,5.49.94,10.23,2.83,14.23.19.4.39.81.6,1.19,0,.01.01.01.01.02l28.57,74.35h13.26l26.56-70.95h.01c.55-.58,1.07-1.2,1.55-1.87,3.34-4.63,5.01-10.7,5.01-18.2v-26.94H44.89ZM105.07,50.67c0,4.82-.98,8.52-2.95,11.12-1.95,2.59-4.76,3.89-8.42,3.89-2.58,0-4.78-.62-6.61-1.85-1.83-1.23-3.23-2.95-4.2-5.15-.97-2.2-1.46-4.82-1.46-7.84v-12.43h23.64v12.26ZM52.1,66.12c-.98-.58-1.83-1.33-2.56-2.23-2.11-2.62-3.16-6.61-3.16-11.99v-13.49h25.65v13.27c0,5.49-1.11,9.55-3.31,12.18-2.2,2.63-5.41,3.95-9.63,3.95-2.46,0-4.55-.44-6.29-1.31-.24-.11-.47-.24-.7-.38ZM75.35,127.23l-17.26-46.5c.14.01.29.01.44.01,5.08,0,9.35-1.42,12.82-4.28,3.48-2.86,5.86-6.41,7.17-10.67.79,2.02,2.02,3.96,3.7,5.83,1.68,1.86,3.63,3.38,5.85,4.56,1.58.84,3.22,1.37,4.94,1.6l-17.66,49.45Z" />
           </svg>
         </a>
 
         <div class="burger-container flex lg:hidden gap-1.5 flex-col relative z-50">
-            <div class="brg-1 h-[2px] w-[29px] bg-[#E6E6E6] rounded-full"></div>
-            <div class="brg-2 h-[2px] w-[29px] bg-[#E6E6E6] rounded-full"></div>
-            <div class="brg-3 h-[2px] w-[29px] bg-[#E6E6E6] rounded-full"></div>
+          <div class="brg-1 h-[2px] w-[29px] bg-[#E6E6E6] rounded-full"></div>
+          <div class="brg-2 h-[2px] w-[29px] bg-[#E6E6E6] rounded-full"></div>
+          <div class="brg-3 h-[2px] w-[29px] bg-[#E6E6E6] rounded-full"></div>
         </div>
 
-        <nav class="nav-menu flex flex-col lg:flex-row items-center lg:items-stretch justify-center w-screen lg:w-fit h-screen lg:h-fit gap-2 fixed lg:relative top-0 left-0 z-[10] px-8 lg:px-0 translate-y-[-100%] lg:translate-y-[0] backdrop-blur-[10px] lg:backdrop-blur-0">
+        <nav
+          class="nav-menu flex flex-col lg:flex-row items-center lg:items-stretch justify-center w-screen lg:w-fit h-screen lg:h-fit gap-2 fixed lg:relative top-0 left-0 z-[10] px-8 lg:px-0 translate-y-[-100%] lg:translate-y-[0] backdrop-blur-[10px] lg:backdrop-blur-0">
 
-            <h6 class="text-sm opacity-75 mb-4 block lg:hidden">MENU</h6>
-            <div class="flex flex-col lg:flex-row items-center lg:items-stretch h-fit w-full lg:w-fit lg:h-[40px] gap-4 lg:gap-2">
-              <a href="#home"
-                class="flex items-center lg:border-l-[1px] hvr-crsr h-full border-[rgba(230,230,230,0.3)] group animate300 bg-transparent hover:bg-white ">
-                <h6 class="text-white lg:mix-blend-difference px-4 flex items-center gap-2 text-base lg:text-sm"><span
-                    class="text-[11px] leading-[0.9]">[01]</span>
-                  HOME</h6>
-              </a>
-              <a href="#projects-section"
-                class="flex items-center lg:border-l-[1px] hvr-crsr h-full border-[rgba(230,230,230,0.3)] group animate300 bg-transparent hover:bg-white ">
-                <h6 class="text-white lg:mix-blend-difference px-4 flex items-center gap-2 text-base lg:text-sm"><span
-                    class="text-[11px] leading-[0.9]">[02]</span>
-                  PROJECTS</h6>
-              </a>
-              <a href="#aboutme-section"
-                class="flex items-center lg:border-l-[1px] hvr-crsr h-full border-[rgba(230,230,230,0.3)] group animate300 bg-transparent hover:bg-white ">
-                <h6 class="text-white lg:mix-blend-difference px-4 flex items-center gap-2 text-base lg:text-sm"><span
-                    class="text-[11px] leading-[0.9]">[03]</span>
-                  ABOUT</h6>
-              </a>
-              <a href="#skills-section"
-                class="flex items-center lg:border-l-[1px] hvr-crsr h-full border-[rgba(230,230,230,0.3)] group animate300 bg-transparent hover:bg-white ">
-                <h6 class="text-white lg:mix-blend-difference px-4 flex items-center gap-2 text-base lg:text-sm"><span
-                    class="text-[11px] leading-[0.9]">[04]</span>
-                  SKILLS</h6>
-              </a>
-              <a href="#contact-section"
-                class="flex items-center lg:border-l-[1px] hvr-crsr h-full border-[rgba(230,230,230,0.3)] group animate300 bg-transparent hover:bg-white ">
-                <h6 class="text-white lg:mix-blend-difference px-4 flex items-center gap-2 text-base lg:text-sm"><span
-                    class="text-[11px] leading-[0.9]">[05]</span>
-                  CONTACT</h6>
-              </a>
-            </div>
+          <h6 class="text-sm opacity-75 mb-4 block lg:hidden">MENU</h6>
+          <div
+            class="flex flex-col lg:flex-row items-center lg:items-stretch h-fit w-full lg:w-fit lg:h-[40px] gap-4 lg:gap-2">
+            <a href="#home"
+              class="flex items-center lg:border-l-[1px] hvr-crsr h-full border-[rgba(230,230,230,0.3)] group animate300 bg-transparent hover:bg-white ">
+              <h6 class="text-white lg:mix-blend-difference px-4 flex items-center gap-2 text-base lg:text-sm"><span
+                  class="text-[11px] leading-[0.9]">[01]</span>
+                HOME</h6>
+            </a>
+            <a href="#projects-section"
+              class="flex items-center lg:border-l-[1px] hvr-crsr h-full border-[rgba(230,230,230,0.3)] group animate300 bg-transparent hover:bg-white ">
+              <h6 class="text-white lg:mix-blend-difference px-4 flex items-center gap-2 text-base lg:text-sm"><span
+                  class="text-[11px] leading-[0.9]">[02]</span>
+                PROJECTS</h6>
+            </a>
+            <a href="#aboutme-section"
+              class="flex items-center lg:border-l-[1px] hvr-crsr h-full border-[rgba(230,230,230,0.3)] group animate300 bg-transparent hover:bg-white ">
+              <h6 class="text-white lg:mix-blend-difference px-4 flex items-center gap-2 text-base lg:text-sm"><span
+                  class="text-[11px] leading-[0.9]">[03]</span>
+                ABOUT</h6>
+            </a>
+            <a href="#skills-section"
+              class="flex items-center lg:border-l-[1px] hvr-crsr h-full border-[rgba(230,230,230,0.3)] group animate300 bg-transparent hover:bg-white ">
+              <h6 class="text-white lg:mix-blend-difference px-4 flex items-center gap-2 text-base lg:text-sm"><span
+                  class="text-[11px] leading-[0.9]">[04]</span>
+                SKILLS</h6>
+            </a>
+            <a href="#contact-section"
+              class="flex items-center lg:border-l-[1px] hvr-crsr h-full border-[rgba(230,230,230,0.3)] group animate300 bg-transparent hover:bg-white ">
+              <h6 class="text-white lg:mix-blend-difference px-4 flex items-center gap-2 text-base lg:text-sm"><span
+                  class="text-[11px] leading-[0.9]">[05]</span>
+                CONTACT</h6>
+            </a>
+          </div>
 
-            <div class="my-6 w-full h-px bg-[rgba(230,230,230,0.3)] block lg:hidden"></div>
-            
-            <div class="flex lg:hidden items-center gap-4">
-                <a href="https://www.linkedin.com/in/john-vincent-barnachea/" target="_blank"
-                  class="w-[40px] lg:w-[45px] h-[40px] lg:h-[45px] flex items-center justify-center border border-white rounded-[5px] hvr-crsr">
-                  <svg class="w-[20px] h-fit" fill="#e6e6e6" version="1.1" id="Capa_1"
-                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="800px"
-                    height="800px" viewBox="0 0 93.06 93.06" xml:space="preserve">
-                    <g>
-                      <g>
-                        <path class="lin" d="M11.185,0.08C5.004,0.08,0.001,5.092,0,11.259c0,6.173,5.003,11.184,11.186,11.184c6.166,0,11.176-5.011,11.176-11.184
+          <div class="my-6 w-full h-px bg-[rgba(230,230,230,0.3)] block lg:hidden"></div>
+
+          <div class="flex lg:hidden items-center gap-4">
+            <a href="https://www.linkedin.com/in/john-vincent-barnachea/" target="_blank"
+              class="w-[40px] lg:w-[45px] h-[40px] lg:h-[45px] flex items-center justify-center border border-white rounded-[5px] hvr-crsr">
+              <svg class="w-[20px] h-fit" fill="#e6e6e6" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink" width="800px" height="800px" viewBox="0 0 93.06 93.06"
+                xml:space="preserve">
+                <g>
+                  <g>
+                    <path class="lin" d="M11.185,0.08C5.004,0.08,0.001,5.092,0,11.259c0,6.173,5.003,11.184,11.186,11.184c6.166,0,11.176-5.011,11.176-11.184
                                               C22.362,5.091,17.351,0.08,11.185,0.08z" stroke="#e6e6e6" />
-                        <rect x="1.538" y="30.926" width="19.287" height="62.054" />
-                        <path class="lin" d="M69.925,29.383c-9.382,0-15.673,5.144-18.248,10.022h-0.258v-8.479H32.921H32.92v62.053h19.27V62.281
+                    <rect x="1.538" y="30.926" width="19.287" height="62.054" />
+                    <path class="lin" d="M69.925,29.383c-9.382,0-15.673,5.144-18.248,10.022h-0.258v-8.479H32.921H32.92v62.053h19.27V62.281
                                               c0-8.093,1.541-15.932,11.575-15.932c9.89,0,10.022,9.256,10.022,16.451v30.178H93.06V58.942
                                               C93.06,42.235,89.455,29.383,69.925,29.383z" stroke="#e6e6e6" />
-                      </g>
-                    </g>
-                  </svg>
-                </a>
+                  </g>
+                </g>
+              </svg>
+            </a>
 
-                <a href="https://vincebarnachea-portfolio.vercel.app" target="_blank"
-                  class="w-[40px] lg:w-[45px] h-[40px] lg:h-[45px] flex items-center justify-center border border-white rounded-[5px] hvr-crsr">
-                  <svg class="w-[27px] h-fit" width="800px" height="800px" viewBox="0 0 24 24" fill="#e6e6e6"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path id="cat"
-                      d="M4.0744 2.9938C4.13263 1.96371 4.37869 1.51577 5.08432 1.15606C5.84357 0.768899 7.04106 0.949072 8.45014 1.66261C9.05706 1.97009 9.11886 1.97635 10.1825 1.83998C11.5963 1.65865 13.4164 1.65929 14.7213 1.84164C15.7081 1.97954 15.7729 1.97265 16.3813 1.66453C18.3814 0.651679 19.9605 0.71795 20.5323 1.8387C20.8177 2.39812 20.8707 3.84971 20.6494 5.04695C20.5267 5.71069 20.5397 5.79356 20.8353 6.22912C22.915 9.29385 21.4165 14.2616 17.8528 16.1155C17.5801 16.2574 17.3503 16.3452 17.163 16.4167C16.5879 16.6363 16.4133 16.703 16.6247 17.7138C16.7265 18.2 16.8491 19.4088 16.8973 20.4002C16.9844 22.1922 16.9831 22.2047 16.6688 22.5703C16.241 23.0676 15.6244 23.076 15.2066 22.5902C14.9341 22.2734 14.9075 22.1238 14.9075 20.9015C14.9075 19.0952 14.7095 17.8946 14.2417 16.8658C13.6854 15.6415 14.0978 15.185 15.37 14.9114C17.1383 14.531 18.5194 13.4397 19.2892 11.8146C20.0211 10.2698 20.1314 8.13501 18.8082 6.83668C18.4319 6.3895 18.4057 5.98446 18.6744 4.76309C18.7748 4.3066 18.859 3.71768 18.8615 3.45425C18.8653 3.03823 18.8274 2.97541 18.5719 2.97541C18.4102 2.97541 17.7924 3.21062 17.1992 3.49805L16.2524 3.95695C16.1663 3.99866 16.07 4.0147 15.975 4.0038C13.5675 3.72746 11.2799 3.72319 8.86062 4.00488C8.76526 4.01598 8.66853 3.99994 8.58215 3.95802L7.63585 3.49882C7.04259 3.21087 6.42482 2.97541 6.26317 2.97541C5.88941 2.97541 5.88379 3.25135 6.22447 4.89078C6.43258 5.89203 6.57262 6.11513 5.97101 6.91572C5.06925 8.11576 4.844 9.60592 5.32757 11.1716C5.93704 13.1446 7.4295 14.4775 9.52773 14.9222C10.7926 15.1903 11.1232 15.5401 10.6402 16.9905C10.26 18.1319 10.0196 18.4261 9.46707 18.4261C8.72365 18.4261 8.25796 17.7821 8.51424 17.1082C8.62712 16.8112 8.59354 16.7795 7.89711 16.5255C5.77117 15.7504 4.14514 14.0131 3.40172 11.7223C2.82711 9.95184 3.07994 7.64739 4.00175 6.25453C4.31561 5.78028 4.32047 5.74006 4.174 4.83217C4.09113 4.31822 4.04631 3.49103 4.0744 2.9938Z"
-                      fill="none" stroke="#e6e6e6" />
-                    <path id="cat"
-                      d="M3.33203 15.9454C3.02568 15.4859 2.40481 15.3617 1.94528 15.6681C1.48576 15.9744 1.36158 16.5953 1.66793 17.0548C1.8941 17.3941 2.16467 17.6728 2.39444 17.9025C2.4368 17.9449 2.47796 17.9858 2.51815 18.0257C2.71062 18.2169 2.88056 18.3857 3.05124 18.5861C3.42875 19.0292 3.80536 19.626 4.0194 20.6962C4.11474 21.1729 4.45739 21.4297 4.64725 21.5419C4.85315 21.6635 5.07812 21.7352 5.26325 21.7819C5.64196 21.8774 6.10169 21.927 6.53799 21.9559C7.01695 21.9877 7.53592 21.998 7.99999 22.0008C8.00033 22.5527 8.44791 23.0001 8.99998 23.0001C9.55227 23.0001 9.99998 22.5524 9.99998 22.0001V21.0001C9.99998 20.4478 9.55227 20.0001 8.99998 20.0001C8.90571 20.0001 8.80372 20.0004 8.69569 20.0008C8.10883 20.0026 7.34388 20.0049 6.67018 19.9603C6.34531 19.9388 6.07825 19.9083 5.88241 19.871C5.58083 18.6871 5.09362 17.8994 4.57373 17.2891C4.34391 17.0194 4.10593 16.7834 3.91236 16.5914C3.87612 16.5555 3.84144 16.5211 3.80865 16.4883C3.5853 16.265 3.4392 16.1062 3.33203 15.9454Z"
-                      fill="none" stroke="#e6e6e6" />
-                  </svg>
-                </a>
+            <a href="https://vincebarnachea-portfolio.vercel.app" target="_blank"
+              class="w-[40px] lg:w-[45px] h-[40px] lg:h-[45px] flex items-center justify-center border border-white rounded-[5px] hvr-crsr">
+              <svg class="w-[27px] h-fit" width="800px" height="800px" viewBox="0 0 24 24" fill="#e6e6e6"
+                xmlns="http://www.w3.org/2000/svg">
+                <path id="cat"
+                  d="M4.0744 2.9938C4.13263 1.96371 4.37869 1.51577 5.08432 1.15606C5.84357 0.768899 7.04106 0.949072 8.45014 1.66261C9.05706 1.97009 9.11886 1.97635 10.1825 1.83998C11.5963 1.65865 13.4164 1.65929 14.7213 1.84164C15.7081 1.97954 15.7729 1.97265 16.3813 1.66453C18.3814 0.651679 19.9605 0.71795 20.5323 1.8387C20.8177 2.39812 20.8707 3.84971 20.6494 5.04695C20.5267 5.71069 20.5397 5.79356 20.8353 6.22912C22.915 9.29385 21.4165 14.2616 17.8528 16.1155C17.5801 16.2574 17.3503 16.3452 17.163 16.4167C16.5879 16.6363 16.4133 16.703 16.6247 17.7138C16.7265 18.2 16.8491 19.4088 16.8973 20.4002C16.9844 22.1922 16.9831 22.2047 16.6688 22.5703C16.241 23.0676 15.6244 23.076 15.2066 22.5902C14.9341 22.2734 14.9075 22.1238 14.9075 20.9015C14.9075 19.0952 14.7095 17.8946 14.2417 16.8658C13.6854 15.6415 14.0978 15.185 15.37 14.9114C17.1383 14.531 18.5194 13.4397 19.2892 11.8146C20.0211 10.2698 20.1314 8.13501 18.8082 6.83668C18.4319 6.3895 18.4057 5.98446 18.6744 4.76309C18.7748 4.3066 18.859 3.71768 18.8615 3.45425C18.8653 3.03823 18.8274 2.97541 18.5719 2.97541C18.4102 2.97541 17.7924 3.21062 17.1992 3.49805L16.2524 3.95695C16.1663 3.99866 16.07 4.0147 15.975 4.0038C13.5675 3.72746 11.2799 3.72319 8.86062 4.00488C8.76526 4.01598 8.66853 3.99994 8.58215 3.95802L7.63585 3.49882C7.04259 3.21087 6.42482 2.97541 6.26317 2.97541C5.88941 2.97541 5.88379 3.25135 6.22447 4.89078C6.43258 5.89203 6.57262 6.11513 5.97101 6.91572C5.06925 8.11576 4.844 9.60592 5.32757 11.1716C5.93704 13.1446 7.4295 14.4775 9.52773 14.9222C10.7926 15.1903 11.1232 15.5401 10.6402 16.9905C10.26 18.1319 10.0196 18.4261 9.46707 18.4261C8.72365 18.4261 8.25796 17.7821 8.51424 17.1082C8.62712 16.8112 8.59354 16.7795 7.89711 16.5255C5.77117 15.7504 4.14514 14.0131 3.40172 11.7223C2.82711 9.95184 3.07994 7.64739 4.00175 6.25453C4.31561 5.78028 4.32047 5.74006 4.174 4.83217C4.09113 4.31822 4.04631 3.49103 4.0744 2.9938Z"
+                  fill="none" stroke="#e6e6e6" />
+                <path id="cat"
+                  d="M3.33203 15.9454C3.02568 15.4859 2.40481 15.3617 1.94528 15.6681C1.48576 15.9744 1.36158 16.5953 1.66793 17.0548C1.8941 17.3941 2.16467 17.6728 2.39444 17.9025C2.4368 17.9449 2.47796 17.9858 2.51815 18.0257C2.71062 18.2169 2.88056 18.3857 3.05124 18.5861C3.42875 19.0292 3.80536 19.626 4.0194 20.6962C4.11474 21.1729 4.45739 21.4297 4.64725 21.5419C4.85315 21.6635 5.07812 21.7352 5.26325 21.7819C5.64196 21.8774 6.10169 21.927 6.53799 21.9559C7.01695 21.9877 7.53592 21.998 7.99999 22.0008C8.00033 22.5527 8.44791 23.0001 8.99998 23.0001C9.55227 23.0001 9.99998 22.5524 9.99998 22.0001V21.0001C9.99998 20.4478 9.55227 20.0001 8.99998 20.0001C8.90571 20.0001 8.80372 20.0004 8.69569 20.0008C8.10883 20.0026 7.34388 20.0049 6.67018 19.9603C6.34531 19.9388 6.07825 19.9083 5.88241 19.871C5.58083 18.6871 5.09362 17.8994 4.57373 17.2891C4.34391 17.0194 4.10593 16.7834 3.91236 16.5914C3.87612 16.5555 3.84144 16.5211 3.80865 16.4883C3.5853 16.265 3.4392 16.1062 3.33203 15.9454Z"
+                  fill="none" stroke="#e6e6e6" />
+              </svg>
+            </a>
 
-                <a href="mailto:barnacheajohnvincent48@gmail.com"
-                  class="w-[40px] lg:w-[45px] h-[40px] lg:h-[45px] flex items-center justify-center border border-white rounded-[5px] hvr-crsr">
-                  <svg class="w-[27px] h-fit" width="800px" height="800px" viewBox="0 0 24 24" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M3 8L10.8906 13.2604C11.5624 13.7083 12.4376 13.7083 13.1094 13.2604L21 8M5 19H19C20.1046 19 21 18.1046 21 17V7C21 5.89543 20.1046 5 19 5H5C3.89543 5 3 5.89543 3 7V17C3 18.1046 3.89543 19 5 19Z"
-                      stroke="#e6e6e6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                  </svg>
-                </a>
-            </div>
-            <h6 class="text-sm text-center mt-1 block lg:hidden">John Vincent Barnachea<br>&copy; 2026 Portfolio</h6>
+            <a href="mailto:barnacheajohnvincent48@gmail.com"
+              class="w-[40px] lg:w-[45px] h-[40px] lg:h-[45px] flex items-center justify-center border border-white rounded-[5px] hvr-crsr">
+              <svg class="w-[27px] h-fit" width="800px" height="800px" viewBox="0 0 24 24" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M3 8L10.8906 13.2604C11.5624 13.7083 12.4376 13.7083 13.1094 13.2604L21 8M5 19H19C20.1046 19 21 18.1046 21 17V7C21 5.89543 20.1046 5 19 5H5C3.89543 5 3 5.89543 3 7V17C3 18.1046 3.89543 19 5 19Z"
+                  stroke="#e6e6e6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </a>
+          </div>
+          <h6 class="text-sm text-center mt-1 block lg:hidden">John Vincent Barnachea<br>&copy; 2026 Portfolio</h6>
 
-            <div class="mt-6 w-full h-px bg-[rgba(230,230,230,0.3)] block lg:hidden"></div>
+          <div class="mt-6 w-full h-px bg-[rgba(230,230,230,0.3)] block lg:hidden"></div>
         </nav>
       </div>
     </div>
@@ -160,9 +167,9 @@
         <section id="home"
           class="home-landing-section w-full relative bg-[length:7px_7px] bg-[linear-gradient(to_right,rgba(112,112,112,0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgba(112,112,112,0.04)_1px,transparent_1px)] bg-center z-10">
           <div class="max-container h-full px-5 sm:px-[5%] 2xl:px-0">
-            <div class="w-full min-h-screen py-24 flex flex-col items-center justify-center">
-              <div class="flex flex-col items-center justify-center">
-                <div class="flex items-center justify-center gap-3 sm:gap-4 mb-8 sm:mb-12">
+            <div class="w-full min-h-screen py-24 grid grid-cols-12 gap-4">
+              <div class="col-span-8 w-full h-full flex flex-col justify-center">
+                <div class="flex items-center justify-start gap-3 sm:gap-4 mb-5 sm:mb-6">
                   <a href="https://www.linkedin.com/in/john-vincent-barnachea/" target="_blank"
                     class="w-[40px] sm:w-[45px] h-[40px] sm:h-[45px] flex items-center justify-center border border-white rounded-[5px] hvr-crsr">
                     <svg class="w-[20px] h-fit" fill="#e6e6e6" version="1.1" id="Capa_1"
@@ -171,19 +178,21 @@
                       <g>
                         <g>
                           <path class="lin" d="M11.185,0.08C5.004,0.08,0.001,5.092,0,11.259c0,6.173,5.003,11.184,11.186,11.184c6.166,0,11.176-5.011,11.176-11.184
-                                              C22.362,5.091,17.351,0.08,11.185,0.08z" stroke="#e6e6e6" />
+                                                            C22.362,5.091,17.351,0.08,11.185,0.08z" stroke="#e6e6e6" />
                           <rect x="1.538" y="30.926" width="19.287" height="62.054" />
                           <path class="lin" d="M69.925,29.383c-9.382,0-15.673,5.144-18.248,10.022h-0.258v-8.479H32.921H32.92v62.053h19.27V62.281
-                                              c0-8.093,1.541-15.932,11.575-15.932c9.89,0,10.022,9.256,10.022,16.451v30.178H93.06V58.942
-                                              C93.06,42.235,89.455,29.383,69.925,29.383z" stroke="#e6e6e6" />
+                                                            c0-8.093,1.541-15.932,11.575-15.932c9.89,0,10.022,9.256,10.022,16.451v30.178H93.06V58.942
+                                                            C93.06,42.235,89.455,29.383,69.925,29.383z"
+                            stroke="#e6e6e6" />
                         </g>
                       </g>
                     </svg>
                   </a>
 
-                  <div class="border border-white rounded-[5px] flex items-center gap-3 h-[40px] sm:h-[45px] px-3 xs:px-4">
-                    <h6 class = "text-sm sm:text-base">AVAILABLE FOR WORK</h6>
-                    <span class="online h-[10px] w-[10px] bg-[#00ff00] rounded-full"></span>
+                  <div
+                    class="border border-[rgba(255,255,255,0.3)] rounded-[5px] flex items-center gap-3 h-[40px] sm:h-[45px] px-3 xs:px-4">
+                    <h6 class="text-sm sm:text-base">AVAILABLE FOR WORK</h6>
+                    <span class="size-[9px] rounded-full bg-ok animate-ring motion-reduce:animate-none"></span>
                   </div>
 
                   <a href="https://vincebarnachea-portfolio.vercel.app" target="_blank"
@@ -199,46 +208,14 @@
                     </svg>
                   </a>
                 </div>
+                <h1 class="text-[clamp(38px,12.4vw,64px)] sm:text-[clamp(52px,8.9vw,130px)] font-black leading-[.92] ">John Vincent</h1>
+                <h2 class="text-[clamp(38px,12.4vw,64px)] sm:text-[clamp(52px,8.9vw,128px)] font-black text-[#e6e6e6cc]">Barnachea</h2>
 
-
-                <h1
-                  class="landing1st text-[4rem] sm:text-[8.5rem] 2xl:text-[9.5rem] 3xl:text-[10.5rem] leading-[0.9] font-black text-center [&>div]:overflow-hidden [&>div]:pb-[10px] sm:[&>div]:pb-[24px]">
-                  John Vincent
-                </h1>
-                <h2
-                  class="landing2nd text-[3.5rem] sm:text-[7.5rem] 2xl:text-[8.5rem] 3xl:text-[9.5rem] leading-[0.9] text-[#e6e6e6cc] font-black text-center [&>div]:overflow-hidden [&>div]:pb-[8px] sm:[&>div]:pb-[16px]">
-                  Barnachea
-                </h2>
-                <div class="h-[1px] w-[10rem] bg-white my-8"></div>
-
-                <div class="w-fit flex items-center gap-2 text-base sm:text-2xl mb-8 sm:mb-8 3xl:mt-12">
-                  <h6>Wordpress Developer</h6>
-                  <h6>/</h6>
-                  <h6>Frontend Developer</h6>
+                <div class="mt-4 text-xl text-white text-balance text-left">
+                    <p>I build fast, custom <b>WordPress</b> websites from the ground up, with clean, responsive front ends and custom-coded functionality that clients can easily manage without relying on a website builder.</p>
                 </div>
 
-                <div class="w-fit flex flex-wrap justify-center items-center gap-3 sm:gap-4">
-                  <div
-                    class="border border-white rounded-[5px] text-xs xl:text-sm py-2 px-4 opacity-[0.5] hover:opacity-100 animate300">
-                    WORDPRESS</div>
-                  <div
-                    class="border border-white rounded-[5px] text-xs xl:text-sm py-2 px-4 opacity-[0.5] hover:opacity-100 animate300">
-                    PHP</div>
-                  <div
-                    class="border border-white rounded-[5px] text-xs xl:text-sm py-2 px-4 opacity-[0.5] hover:opacity-100 animate300">
-                    AJAX</div>
-                  <div
-                    class="border border-white rounded-[5px] text-xs xl:text-sm py-2 px-4 opacity-[0.5] hover:opacity-100 animate300">
-                    JQUERY</div>
-                  <div
-                    class="border border-white rounded-[5px] text-xs xl:text-sm py-2 px-4 opacity-[0.5] hover:opacity-100 animate300">
-                    WOOCOMMERCE</div>
-                  <div
-                    class="border border-white rounded-[5px] text-xs xl:text-sm py-2 px-4 opacity-[0.5] hover:opacity-100 animate300">
-                    ACF</div>
-                </div>
-
-                <div class="hero-cta flex items-center justify-center flex-col sm:flex-row gap-3 sm:gap-4 mt-12 3xl:mt-16">
+                <div class="hero-cta flex items-center justify-start flex-col sm:flex-row gap-3 sm:gap-4 mt-6 3xl:mt-6">
                   <button
                     class="landingcta-secondary border border-white rounded-[5px] py-2 lg:py-3 px-6 lg:px-8 bg-transparent relative group hover:cursor-pointer hvr-crsr">
                     <h6 class="text-white mix-blend-difference relative z-20">PROJECTS</h6>
@@ -281,8 +258,12 @@
                     class="my-6 sl:my-4 xl:my-6 3xl:my-8 text-[2.5rem] lg:text-[3.5rem] sl:text-[3rem] xl:text-[4rem] 2xl:text-[3.6rem] 3xl:text-[5rem] leading-[0.9] font-black opacity-100 sm:opacity-65 group-hover:opacity-100 animate500 ease-in-out">
                     Rewardia</h2>
 
-                  <p class="text-base 3xl:text-lg opacity-100 sm:opacity-65 group-hover:opacity-100 animate500 ease-in-out">
-                    I was tasked with developing Rewardia, a B2B platform that allows companies to reward employees with redeemable voucher codes. I also integrated Sole Travel as a partner, enabling users to use their points for travel packages. To ensure security, I implemented voucher code encryption so that only the intended recipient can access the decrypted code through email.
+                  <p
+                    class="text-base 3xl:text-lg opacity-100 sm:opacity-65 group-hover:opacity-100 animate500 ease-in-out">
+                    I was tasked with developing Rewardia, a B2B platform that allows companies to reward employees with
+                    redeemable voucher codes. I also integrated Sole Travel as a partner, enabling users to use their
+                    points for travel packages. To ensure security, I implemented voucher code encryption so that only
+                    the intended recipient can access the decrypted code through email.
                   </p>
 
                   <div class="w-full flex flex-wrap gap-2 my-6 sl:my-4 xl:my-6 3xl:my-8">
@@ -348,10 +329,11 @@
                     class="text-[10rem] lg:text-[15rem] font-black text-white opacity-5 pointer-events-none absolute top-12 left-5 lg:left-12 z-[0] hidden lg:block">
                     01</h2>
                 </div>
-                <div class="w-full sm:w-6/12 h-10/12 lg:h-full overflow-hidden absolute z-10 top-0 left-0 sm:relative bg-[rgba(26,26,26,0.3)]">
+                <div
+                  class="w-full sm:w-6/12 h-10/12 lg:h-full overflow-hidden absolute z-10 top-0 left-0 sm:relative bg-[rgba(26,26,26,0.3)]">
                   <img
                     class="overflow-hidden w-full h-full object-cover lg:scale-[1.1] group-hover:scale-[1] lg:brightness-90 group-hover:brightness-100 relative z-[1] object-center animate500 ease-out"
-                    src="assets/Screenshot 2026-10-15 075142.png" loading="lazy" alt="" srcset="">
+                    src="assets/getrewardia-optimized.webp" loading="lazy" alt="" srcset="">
                   <div
                     class="hidden sm:block bg-[radial-gradient(ellipse_80%_50%_at_center,rgba(16,16,16,0),rgba(16,16,16,0.4))] w-full h-full absolute top-0 left-0 pointer-events-none z-[10] opacity-100 group-hover:opacity-0 animate500 ease-out">
                   </div>
@@ -362,9 +344,11 @@
                 <div
                   class="y-border h-full w-[5px] rounded-full bg-white z-[99] absolute top-0 right-0 [clip-path:inset(100%_0%_0%_0%)] group-hover:[clip-path:inset(0%_0%_0%_0%)] opacity-100 group-hover:opacity-0 animate500 ease-out">
                 </div>
-                <div class="w-full h-full absolute bottom-0 left-0 bg-[linear-gradient(to_top,rgba(26,26,26,1),rgba(26,26,26,1),rgba(26,26,26,0.7),rgba(26,26,26,0))] z-10 block lg:hidden backdrop-blur-[0px]"></div>
+                <div
+                  class="w-full h-full absolute bottom-0 left-0 bg-[linear-gradient(to_top,rgba(26,26,26,1),rgba(26,26,26,1),rgba(26,26,26,0.7),rgba(26,26,26,0))] z-10 block lg:hidden backdrop-blur-[0px]">
+                </div>
               </div>
-              
+
               <!-- A2 Revamp -->
               <div
                 class="projects-card w-screen lg:w-[80vw] sl:w-[80vw] xl:w-[80vw] 2xl:w-[75vw] 3xl:w-[75vw] h-full border border-[rgba(230,230,230,0.05)] rounded-[10px] overflow-hidden flex flex-col sm:flex-row group relative">
@@ -379,7 +363,8 @@
                     class="my-6 sl:my-4 xl:my-6 3xl:my-8 text-[2.5rem] lg:text-[3.5rem] sl:text-[3rem] xl:text-[4rem] 2xl:text-[3.6rem] 3xl:text-[5rem] leading-[0.9] font-black opacity-100 sm:opacity-65 group-hover:opacity-100 animate500 ease-in-out">
                     A2 Design Lab Revamp</h2>
 
-                  <p class="text-base 3xl:text-lg opacity-100 sm:opacity-65 group-hover:opacity-100 animate500 ease-in-out">
+                  <p
+                    class="text-base 3xl:text-lg opacity-100 sm:opacity-65 group-hover:opacity-100 animate500 ease-in-out">
                     I developed the A2 Design Lab revamp in WordPress, implementing the new design provided by the team
                     with clean, responsive layouts and optimized performance. My work focused on translating the design
                     into a functional, fast, and smooth user experience, ensuring stability, scalability, and seamless
@@ -443,7 +428,8 @@
                     class="text-[10rem] lg:text-[15rem] font-black text-white opacity-5 pointer-events-none absolute top-12 left-5 lg:left-12 z-[0] hidden lg:block">
                     02</h2>
                 </div>
-                <div class="w-full sm:w-6/12 h-10/12 lg:h-full overflow-hidden absolute z-10 top-0 left-0 sm:relative bg-[rgba(26,26,26,0.3)]">
+                <div
+                  class="w-full sm:w-6/12 h-10/12 lg:h-full overflow-hidden absolute z-10 top-0 left-0 sm:relative bg-[rgba(26,26,26,0.3)]">
                   <img
                     class="overflow-hidden w-full h-full object-cover lg:scale-[1.1] group-hover:scale-[1] lg:brightness-90 group-hover:brightness-100 relative z-[1] object-center animate500 ease-out"
                     src="assets/RevampA2.webp" loading="lazy" alt="" srcset="">
@@ -457,7 +443,9 @@
                 <div
                   class="y-border h-full w-[5px] rounded-full bg-white z-[99] absolute top-0 right-0 [clip-path:inset(100%_0%_0%_0%)] group-hover:[clip-path:inset(0%_0%_0%_0%)] opacity-100 group-hover:opacity-0 animate500 ease-out">
                 </div>
-                <div class="w-full h-full absolute bottom-0 left-0 bg-[linear-gradient(to_top,rgba(26,26,26,1),rgba(26,26,26,1),rgba(26,26,26,0.7),rgba(26,26,26,0))] z-10 block lg:hidden backdrop-blur-[0px]"></div>
+                <div
+                  class="w-full h-full absolute bottom-0 left-0 bg-[linear-gradient(to_top,rgba(26,26,26,1),rgba(26,26,26,1),rgba(26,26,26,0.7),rgba(26,26,26,0))] z-10 block lg:hidden backdrop-blur-[0px]">
+                </div>
               </div>
 
               <!-- SOLE TRAVEL -->
@@ -474,7 +462,8 @@
                     class="my-6 sl:my-4 xl:my-6 3xl:my-8 text-[2.5rem] lg:text-[3.5rem] sl:text-[3rem] xl:text-[4rem] 2xl:text-[3.6rem] 3xl:text-[5rem] leading-[0.9] font-black opacity-100 sm:opacity-65 group-hover:opacity-100 animate500 ease-in-out">
                     Sole Travel</h2>
 
-                  <p class="text-base 3xl:text-lg opacity-100 sm:opacity-65 group-hover:opacity-100 animate500 ease-in-out">
+                  <p
+                    class="text-base 3xl:text-lg opacity-100 sm:opacity-65 group-hover:opacity-100 animate500 ease-in-out">
                     We developed the Sole Travel website, building a clean and responsive platform in WordPress that
                     showcases travel packages, destinations, and tour details. The site focuses on smooth navigation,
                     fast performance, and an easy-to-manage backend tailored for updating trip information efficiently.
@@ -534,7 +523,8 @@
                     class="text-[10rem] lg:text-[15rem] font-black text-white opacity-5 pointer-events-none absolute top-12 left-5 lg:left-12 z-[0] hidden lg:block">
                     03</h2>
                 </div>
-                <div class="w-full sm:w-6/12 h-10/12 lg:h-full overflow-hidden absolute z-10 top-0 left-0 sm:relative bg-[rgba(26,26,26,0.3)]">
+                <div
+                  class="w-full sm:w-6/12 h-10/12 lg:h-full overflow-hidden absolute z-10 top-0 left-0 sm:relative bg-[rgba(26,26,26,0.3)]">
                   <img
                     class="overflow-hidden w-full h-full object-cover lg:scale-[1.1] group-hover:scale-[1] lg:brightness-90 group-hover:brightness-100 relative z-[1] object-center animate500 ease-out"
                     src="assets/Sole Travel-Optimized.webp" loading="lazy" alt="" srcset="">
@@ -548,7 +538,9 @@
                 <div
                   class="y-border h-full w-[5px] rounded-full bg-white z-[99] absolute top-0 right-0 [clip-path:inset(100%_0%_0%_0%)] group-hover:[clip-path:inset(0%_0%_0%_0%)] opacity-100 group-hover:opacity-0 animate500 ease-out">
                 </div>
-                <div class="w-full h-full absolute bottom-0 left-0 bg-[linear-gradient(to_top,rgba(26,26,26,1),rgba(26,26,26,1),rgba(26,26,26,0.7),rgba(26,26,26,0))] z-10 block lg:hidden backdrop-blur-[0px]"></div>
+                <div
+                  class="w-full h-full absolute bottom-0 left-0 bg-[linear-gradient(to_top,rgba(26,26,26,1),rgba(26,26,26,1),rgba(26,26,26,0.7),rgba(26,26,26,0))] z-10 block lg:hidden backdrop-blur-[0px]">
+                </div>
               </div>
 
               <!-- LAGIM CARD GAME -->
@@ -565,7 +557,8 @@
                     class="my-6 sl:my-4 xl:my-6 3xl:my-8 text-[2.5rem] lg:text-[3.5rem] sl:text-[3rem] xl:text-[4rem] 2xl:text-[3.6rem] 3xl:text-[5rem] leading-[0.9] font-black opacity-100 sm:opacity-65 group-hover:opacity-100 animate500 ease-in-out">
                     Lagim Card Game Revamp</h2>
 
-                  <p class="text-base 3xl:text-lg opacity-100 sm:opacity-65 group-hover:opacity-100 animate500 ease-in-out">
+                  <p
+                    class="text-base 3xl:text-lg opacity-100 sm:opacity-65 group-hover:opacity-100 animate500 ease-in-out">
                     I handled the development for the Lagim Card Game website revamp, rebuilding the site in WordPress
                     with improved performance, cleaner structure, and responsive layouts. The updated version provides
                     smoother navigation and a more modern, user-friendly experience while staying true to the brand’s
@@ -626,7 +619,8 @@
                     class="text-[10rem] lg:text-[15rem] font-black text-white opacity-5 pointer-events-none absolute top-12 left-5 lg:left-12 z-[0] hidden lg:block">
                     04</h2>
                 </div>
-                <div class="w-full sm:w-6/12 h-10/12 lg:h-full overflow-hidden absolute z-10 top-0 left-0 sm:relative bg-[rgba(26,26,26,0.3)]">
+                <div
+                  class="w-full sm:w-6/12 h-10/12 lg:h-full overflow-hidden absolute z-10 top-0 left-0 sm:relative bg-[rgba(26,26,26,0.3)]">
                   <img
                     class="overflow-hidden w-full h-full object-cover lg:scale-[1.1] group-hover:scale-[1] lg:brightness-90 group-hover:brightness-100 relative z-[1] object-center animate500 ease-out"
                     src="assets/Lagim Revamp-Optimized.webp" loading="lazy" alt="" srcset="">
@@ -640,7 +634,9 @@
                 <div
                   class="y-border h-full w-[5px] rounded-full bg-white z-[99] absolute top-0 right-0 [clip-path:inset(100%_0%_0%_0%)] group-hover:[clip-path:inset(0%_0%_0%_0%)] opacity-100 group-hover:opacity-0 animate500 ease-out">
                 </div>
-                <div class="w-full h-full absolute bottom-0 left-0 bg-[linear-gradient(to_top,rgba(26,26,26,1),rgba(26,26,26,1),rgba(26,26,26,0.7),rgba(26,26,26,0))] z-10 block lg:hidden backdrop-blur-[0px]"></div>
+                <div
+                  class="w-full h-full absolute bottom-0 left-0 bg-[linear-gradient(to_top,rgba(26,26,26,1),rgba(26,26,26,1),rgba(26,26,26,0.7),rgba(26,26,26,0))] z-10 block lg:hidden backdrop-blur-[0px]">
+                </div>
               </div>
 
               <!-- SPRING SISTERS -->
@@ -657,7 +653,8 @@
                     class="my-6 sl:my-4 xl:my-6 3xl:my-8 text-[2.5rem] lg:text-[3.5rem] sl:text-[3rem] xl:text-[4rem] 2xl:text-[3.6rem] 3xl:text-[5rem] leading-[0.9] font-black opacity-100 sm:opacity-65 group-hover:opacity-100 animate500 ease-in-out">
                     Spring Sisters</h2>
 
-                  <p class="text-base 3xl:text-lg opacity-100 sm:opacity-65 group-hover:opacity-100 animate500 ease-in-out">
+                  <p
+                    class="text-base 3xl:text-lg opacity-100 sm:opacity-65 group-hover:opacity-100 animate500 ease-in-out">
                     We developed Springsisters using WordPress and WooCommerce, creating a responsive and polished
                     platform that reflects the brand’s aesthetic. The site features smooth navigation, fast performance,
                     and a user-friendly backend for managing products and content efficiently.
@@ -714,7 +711,8 @@
                     class="text-[10rem] lg:text-[15rem] font-black text-white opacity-5 pointer-events-none absolute top-12 left-5 lg:left-12 z-[0] hidden lg:block">
                     05</h2>
                 </div>
-                <div class="w-full sm:w-6/12 h-10/12 lg:h-full overflow-hidden absolute z-10 top-0 left-0 sm:relative bg-[rgba(26,26,26,0.3)]">
+                <div
+                  class="w-full sm:w-6/12 h-10/12 lg:h-full overflow-hidden absolute z-10 top-0 left-0 sm:relative bg-[rgba(26,26,26,0.3)]">
                   <img
                     class="overflow-hidden w-full h-full object-cover lg:scale-[1.1] group-hover:scale-[1] lg:brightness-90 group-hover:brightness-100 relative z-[1] object-center animate500 ease-out"
                     src="assets/SS-Optimized.webp" loading="lazy" alt="" srcset="">
@@ -728,7 +726,9 @@
                 <div
                   class="y-border h-full w-[5px] rounded-full bg-white z-[99] absolute top-0 right-0 [clip-path:inset(100%_0%_0%_0%)] group-hover:[clip-path:inset(0%_0%_0%_0%)] opacity-100 group-hover:opacity-0 animate500 ease-out">
                 </div>
-                <div class="w-full h-full absolute bottom-0 left-0 bg-[linear-gradient(to_top,rgba(26,26,26,1),rgba(26,26,26,1),rgba(26,26,26,0.7),rgba(26,26,26,0))] z-10 block lg:hidden backdrop-blur-[0px]"></div>
+                <div
+                  class="w-full h-full absolute bottom-0 left-0 bg-[linear-gradient(to_top,rgba(26,26,26,1),rgba(26,26,26,1),rgba(26,26,26,0.7),rgba(26,26,26,0))] z-10 block lg:hidden backdrop-blur-[0px]">
+                </div>
               </div>
 
 
@@ -746,7 +746,8 @@
                     class="my-6 sl:my-4 xl:my-6 3xl:my-8 text-[2.5rem] lg:text-[3.5rem] sl:text-[3rem] xl:text-[4rem] 2xl:text-[3.6rem] 3xl:text-[5rem] leading-[0.9] font-black opacity-100 sm:opacity-65 group-hover:opacity-100 animate500 ease-in-out">
                     A2 Employee Portal</h2>
 
-                  <p class="text-base 3xl:text-lg opacity-100 sm:opacity-65 group-hover:opacity-100 animate500 ease-in-out">
+                  <p
+                    class="text-base 3xl:text-lg opacity-100 sm:opacity-65 group-hover:opacity-100 animate500 ease-in-out">
                     As part of our internship project, I developed the A2 Employee Portal using PHP, HTML, jQuery, and
                     MySQL, creating a fully custom, hardcoded solution. The portal features secure user authentication,
                     dynamic data management, and responsive interfaces, providing employees with an efficient platform
@@ -825,7 +826,8 @@
                     class="text-[10rem] lg:text-[15rem] font-black text-white opacity-5 pointer-events-none absolute top-12 left-5 lg:left-12 z-[0] hidden lg:block">
                     06</h2>
                 </div>
-                <div class="w-full sm:w-6/12 h-10/12 lg:h-full overflow-hidden absolute z-10 top-0 left-0 sm:relative bg-[rgba(26,26,26,0.3)]">
+                <div
+                  class="w-full sm:w-6/12 h-10/12 lg:h-full overflow-hidden absolute z-10 top-0 left-0 sm:relative bg-[rgba(26,26,26,0.3)]">
                   <img
                     class="overflow-hidden w-full h-full object-cover lg:scale-[1.1] group-hover:scale-[1] lg:brightness-90 group-hover:brightness-100 relative z-[1] object-center animate500 ease-out"
                     src="assets/A2Portal-Optimized.webp" loading="lazy" alt="" srcset="">
@@ -839,7 +841,9 @@
                 <div
                   class="y-border h-full w-[5px] rounded-full bg-white z-[99] absolute top-0 right-0 [clip-path:inset(100%_0%_0%_0%)] group-hover:[clip-path:inset(0%_0%_0%_0%)] opacity-100 group-hover:opacity-0 animate500 ease-out">
                 </div>
-                <div class="w-full h-full absolute bottom-0 left-0 bg-[linear-gradient(to_top,rgba(26,26,26,1),rgba(26,26,26,1),rgba(26,26,26,0.7),rgba(26,26,26,0))] z-10 block lg:hidden backdrop-blur-[0px]"></div>
+                <div
+                  class="w-full h-full absolute bottom-0 left-0 bg-[linear-gradient(to_top,rgba(26,26,26,1),rgba(26,26,26,1),rgba(26,26,26,0.7),rgba(26,26,26,0))] z-10 block lg:hidden backdrop-blur-[0px]">
+                </div>
               </div>
 
 
@@ -857,7 +861,8 @@
                     class="my-6 sl:my-4 xl:my-6 3xl:my-8 text-[2.5rem] lg:text-[3.5rem] sl:text-[3rem] xl:text-[4rem] 2xl:text-[3.6rem] 3xl:text-[5rem] leading-[0.9] font-black opacity-100 sm:opacity-65 group-hover:opacity-100 animate500 ease-in-out">
                     San Fabian App</h2>
 
-                  <p class="text-base 3xl:text-lg opacity-100 sm:opacity-65 group-hover:opacity-100 animate500 ease-in-out">
+                  <p
+                    class="text-base 3xl:text-lg opacity-100 sm:opacity-65 group-hover:opacity-100 animate500 ease-in-out">
                     SAN FABIAN APP is our capstone project that helps users navigate San Fabian, Pangasinan with ease.
                     As one of the developers, I helped create features like real-time maps, directions, and live weather
                     updates to guide users on where to go and what to do around town. The app is designed to make
@@ -904,7 +909,8 @@
                     class="text-[10rem] lg:text-[15rem] font-black text-white opacity-5 pointer-events-none absolute top-12 left-5 lg:left-12 z-[0] hidden lg:block">
                     07</h2>
                 </div>
-                <div class="w-full sm:w-6/12 h-10/12 lg:h-full overflow-hidden absolute z-10 top-0 left-0 sm:relative bg-[rgba(26,26,26,0.3)]">
+                <div
+                  class="w-full sm:w-6/12 h-10/12 lg:h-full overflow-hidden absolute z-10 top-0 left-0 sm:relative bg-[rgba(26,26,26,0.3)]">
                   <img
                     class="overflow-hidden w-full h-full object-cover lg:scale-[1.1] group-hover:scale-[1] lg:brightness-90 group-hover:brightness-100 relative z-[1] object-center animate500 ease-out"
                     src="assets/sanfabian-app-Optimized.webp" loading="lazy" alt="" srcset="">
@@ -918,7 +924,9 @@
                 <div
                   class="y-border h-full w-[5px] rounded-full bg-white z-[99] absolute top-0 right-0 [clip-path:inset(100%_0%_0%_0%)] group-hover:[clip-path:inset(0%_0%_0%_0%)] opacity-100 group-hover:opacity-0 animate500 ease-out">
                 </div>
-                <div class="w-full h-full absolute bottom-0 left-0 bg-[linear-gradient(to_top,rgba(26,26,26,1),rgba(26,26,26,1),rgba(26,26,26,0.7),rgba(26,26,26,0))] z-10 block lg:hidden backdrop-blur-[0px]"></div>
+                <div
+                  class="w-full h-full absolute bottom-0 left-0 bg-[linear-gradient(to_top,rgba(26,26,26,1),rgba(26,26,26,1),rgba(26,26,26,0.7),rgba(26,26,26,0))] z-10 block lg:hidden backdrop-blur-[0px]">
+                </div>
               </div>
 
 
@@ -936,7 +944,8 @@
                     class="my-6 sl:my-4 xl:my-6 3xl:my-8 text-[2.5rem] lg:text-[3.5rem] sl:text-[3rem] xl:text-[4rem] 2xl:text-[3.6rem] 3xl:text-[5rem] leading-[0.9] font-black opacity-100 sm:opacity-65 group-hover:opacity-100 animate500 ease-in-out">
                     San Fabian Web</h2>
 
-                  <p class="text-base 3xl:text-lg opacity-100 sm:opacity-65 group-hover:opacity-100 animate500 ease-in-out">
+                  <p
+                    class="text-base 3xl:text-lg opacity-100 sm:opacity-65 group-hover:opacity-100 animate500 ease-in-out">
                     SAN FABIAN WEB is a web-based version of our capstone project designed to help users explore San
                     Fabian, Pangasinan. It focuses on providing real-time maps and directions, making it easy for
                     visitors and locals to navigate the town efficiently.
@@ -982,7 +991,8 @@
                     class="text-[10rem] lg:text-[15rem] font-black text-white opacity-5 pointer-events-none absolute top-12 left-5 lg:left-12 z-[0] hidden lg:block">
                     08</h2>
                 </div>
-                <div class="w-full sm:w-6/12 h-10/12 lg:h-full overflow-hidden absolute z-10 top-0 left-0 sm:relative bg-[rgba(26,26,26,0.3)]">
+                <div
+                  class="w-full sm:w-6/12 h-10/12 lg:h-full overflow-hidden absolute z-10 top-0 left-0 sm:relative bg-[rgba(26,26,26,0.3)]">
                   <img
                     class="overflow-hidden w-full h-full object-cover lg:scale-[1.1] group-hover:scale-[1] lg:brightness-90 group-hover:brightness-100 relative z-[1] object-center animate500 ease-out"
                     src="assets/SANFABIAN WEB-Optimized.webp" loading="lazy" alt="" srcset="">
@@ -996,7 +1006,9 @@
                 <div
                   class="y-border h-full w-[5px] rounded-full bg-white z-[99] absolute top-0 right-0 [clip-path:inset(100%_0%_0%_0%)] group-hover:[clip-path:inset(0%_0%_0%_0%)] opacity-100 group-hover:opacity-0 animate500 ease-out">
                 </div>
-                <div class="w-full h-full absolute bottom-0 left-0 bg-[linear-gradient(to_top,rgba(26,26,26,1),rgba(26,26,26,1),rgba(26,26,26,0.7),rgba(26,26,26,0))] z-10 block lg:hidden backdrop-blur-[0px]"></div>
+                <div
+                  class="w-full h-full absolute bottom-0 left-0 bg-[linear-gradient(to_top,rgba(26,26,26,1),rgba(26,26,26,1),rgba(26,26,26,0.7),rgba(26,26,26,0))] z-10 block lg:hidden backdrop-blur-[0px]">
+                </div>
               </div>
 
 
@@ -1014,7 +1026,8 @@
                     class="my-6 sl:my-4 xl:my-6 3xl:my-8 text-[2.5rem] lg:text-[3.5rem] sl:text-[3rem] xl:text-[4rem] 2xl:text-[3.6rem] 3xl:text-[5rem] leading-[0.9] font-black opacity-100 sm:opacity-65 group-hover:opacity-100 animate500 ease-in-out">
                     Attendance Monitoring System</h2>
 
-                  <p class="text-base 3xl:text-lg opacity-100 sm:opacity-65 group-hover:opacity-100 animate500 ease-in-out">
+                  <p
+                    class="text-base 3xl:text-lg opacity-100 sm:opacity-65 group-hover:opacity-100 animate500 ease-in-out">
                     Attendance Monitoring System is a group project developed in VB.Net with MS Access as the database.
                     As the main developer, I helped build the system to efficiently monitor student attendance by
                     capturing their time in and time out, providing a reliable and organized way to track attendance
@@ -1056,7 +1069,8 @@
                     class="text-[10rem] lg:text-[15rem] font-black text-white opacity-5 pointer-events-none absolute top-12 left-5 lg:left-12 z-[0] hidden lg:block">
                     09</h2>
                 </div>
-                <div class="w-full sm:w-6/12 h-10/12 lg:h-full overflow-hidden absolute z-10 top-0 left-0 sm:relative bg-[rgba(26,26,26,0.3)]">
+                <div
+                  class="w-full sm:w-6/12 h-10/12 lg:h-full overflow-hidden absolute z-10 top-0 left-0 sm:relative bg-[rgba(26,26,26,0.3)]">
                   <img
                     class="overflow-hidden w-full h-full object-cover lg:scale-[1.1] group-hover:scale-[1] lg:brightness-90 group-hover:brightness-100 relative z-[1] object-center animate500 ease-out"
                     src="assets/ams2-Optimized.webp" loading="lazy" alt="" srcset="">
@@ -1070,7 +1084,9 @@
                 <div
                   class="y-border h-full w-[5px] rounded-full bg-white z-[99] absolute top-0 right-0 [clip-path:inset(100%_0%_0%_0%)] group-hover:[clip-path:inset(0%_0%_0%_0%)] opacity-100 group-hover:opacity-0 animate500 ease-out">
                 </div>
-                <div class="w-full h-full absolute bottom-0 left-0 bg-[linear-gradient(to_top,rgba(26,26,26,1),rgba(26,26,26,1),rgba(26,26,26,0.7),rgba(26,26,26,0))] z-10 block lg:hidden backdrop-blur-[0px]"></div>
+                <div
+                  class="w-full h-full absolute bottom-0 left-0 bg-[linear-gradient(to_top,rgba(26,26,26,1),rgba(26,26,26,1),rgba(26,26,26,0.7),rgba(26,26,26,0))] z-10 block lg:hidden backdrop-blur-[0px]">
+                </div>
               </div>
 
               <!-- CURRENCY -->
@@ -1087,7 +1103,8 @@
                     class="my-6 sl:my-4 xl:my-6 3xl:my-8 text-[2.5rem] lg:text-[3.5rem] sl:text-[3rem] xl:text-[4rem] 2xl:text-[3.6rem] 3xl:text-[5rem] leading-[0.9] font-black opacity-100 sm:opacity-65 group-hover:opacity-100 animate500 ease-in-out">
                     Simple Currency Converter </h2>
 
-                  <p class="text-base 3xl:text-lg opacity-100 sm:opacity-65 group-hover:opacity-100 animate500 ease-in-out">
+                  <p
+                    class="text-base 3xl:text-lg opacity-100 sm:opacity-65 group-hover:opacity-100 animate500 ease-in-out">
                     Simple Currency App is a personal project I created out of curiosity, using Firebase as the database
                     and exporting data via JSON. The app provides real-time currency information, demonstrating dynamic
                     data updates and practical use of modern technologies.
@@ -1133,7 +1150,8 @@
                     class="text-[10rem] lg:text-[15rem] font-black text-white opacity-5 pointer-events-none absolute top-12 left-5 lg:left-12 z-[0] hidden lg:block">
                     10</h2>
                 </div>
-                <div class="w-full sm:w-6/12 h-10/12 lg:h-full overflow-hidden absolute z-10 top-0 left-0 sm:relative bg-[rgba(26,26,26,0.3)]">
+                <div
+                  class="w-full sm:w-6/12 h-10/12 lg:h-full overflow-hidden absolute z-10 top-0 left-0 sm:relative bg-[rgba(26,26,26,0.3)]">
                   <img
                     class="overflow-hidden w-full h-full object-cover lg:scale-[1.1] group-hover:scale-[1] lg:brightness-90 group-hover:brightness-100 relative z-[1] object-center animate500 ease-out"
                     src="assets/currency-Optimized.webp" loading="lazy" alt="" srcset="">
@@ -1147,13 +1165,17 @@
                 <div
                   class="y-border h-full w-[5px] rounded-full bg-white z-[99] absolute top-0 right-0 [clip-path:inset(100%_0%_0%_0%)] group-hover:[clip-path:inset(0%_0%_0%_0%)] opacity-100 group-hover:opacity-0 animate500 ease-out">
                 </div>
-                <div class="w-full h-full absolute bottom-0 left-0 bg-[linear-gradient(to_top,rgba(26,26,26,1),rgba(26,26,26,1),rgba(26,26,26,0.7),rgba(26,26,26,0))] z-10 block lg:hidden backdrop-blur-[0px]"></div>
+                <div
+                  class="w-full h-full absolute bottom-0 left-0 bg-[linear-gradient(to_top,rgba(26,26,26,1),rgba(26,26,26,1),rgba(26,26,26,0.7),rgba(26,26,26,0))] z-10 block lg:hidden backdrop-blur-[0px]">
+                </div>
               </div>
 
             </div> <!-- Projects Row End -->
 
-            <div class="absolute bottom-4 lg:bottom-0 3xl:bottom-4 left-0 w-full flex items-center justify-center py-2 3xl:py-4">
-              <div class="px-5 lg:px-0 w-full lg:w-[30rem] 3xl:w-[40rem] flex flex-col h-full justify-center items-center">
+            <div
+              class="absolute bottom-4 lg:bottom-0 3xl:bottom-4 left-0 w-full flex items-center justify-center py-2 3xl:py-4">
+              <div
+                class="px-5 lg:px-0 w-full lg:w-[30rem] 3xl:w-[40rem] flex flex-col h-full justify-center items-center">
                 <div
                   class="progress-bar-container w-full h-[3px] 3xl:h-[4px] rounded-full bg-[rgba(230,230,230,0.3)] overflow-hidden">
                   <div class="progress-fill w-[0%] h-full bg-[#e6e6e6]"></div>
@@ -1183,7 +1205,7 @@
               <h6 class="text-base relative left-5 lg:left-6">PROJECTS</h6>
             </div>
           </div> <!-- Max Container End -->
-          
+
         </section>
 
         <section id="aboutme-section"
@@ -1196,7 +1218,8 @@
                 <div class="w-[4rem] lg:w-[8rem] 3xl:w-[10rem] h-px bg-white"></div>
               </div>
 
-              <h2 class="text-[3.25rem] lg:text-[6rem] 3xl:text-[7rem] text-center font-black my-6 lg:my-12">ABOUT ME</h2>
+              <h2 class="text-[3.25rem] lg:text-[6rem] 3xl:text-[7rem] text-center font-black my-6 lg:my-12">ABOUT ME
+              </h2>
 
               <p class="text-lg lg:text-xl text-center w-full lg:w-[45rem]">
                 A developer focused on transforming designs into smooth, functional digital experiences using clean and
@@ -1204,7 +1227,8 @@
                 dependable, results-oriented work.
               </p>
 
-              <div class="profile-wrapper relative mt-16 border-[3px] rounded-[5px] border-white w-[15rem] lg:w-[17rem] h-[15rem] lg:h-[17rem]">
+              <div
+                class="profile-wrapper relative mt-16 border-[3px] rounded-[5px] border-white w-[15rem] lg:w-[17rem] h-[15rem] lg:h-[17rem]">
                 <div class="w-full h-full overflow-hidden ">
                   <img class="w-full h-full object-center scale-[1.1]" src="assets/Portrait.png" alt="">
                 </div>
@@ -1232,9 +1256,10 @@
                 <div
                   class="flex w-full h-full items-center justify-between max-container px-5 sm:px-[5%] 2xl:px-0 relative">
                   <div class="flex flex-row gap-4 items-center">
-                    <div class="h-[40px] lg:h-[55px] w-[40px] lg:w-[55px] rounded-[5px] border-white border-[2px] flex items-center justify-center">
-                      <svg class="w-[30px] lg:w-[40px] h-fit" width="800px" height="800px" viewBox="0 0 24 24" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
+                    <div
+                      class="h-[40px] lg:h-[55px] w-[40px] lg:w-[55px] rounded-[5px] border-white border-[2px] flex items-center justify-center">
+                      <svg class="w-[30px] lg:w-[40px] h-fit" width="800px" height="800px" viewBox="0 0 24 24"
+                        fill="none" xmlns="http://www.w3.org/2000/svg">
 
                         <g id="SVGRepo_bgCarrier" stroke-width="0" />
 
@@ -1261,7 +1286,8 @@
                 <div class="w-full min-h-screen flex flex-col items-center justify-center">
                   <div
                     class="w-full lg:w-[80%] border-[3px] rounded-[10px] border-white px-4 lg:px-12 py-8 lg:py-12 flex flex-col items-center justify-center relative">
-                    <h3 class="font-black text-[2.5rem] lg:text-[3rem] text-center w-full lg:w-[40rem]">Developer Bringing Designs Alive</h3>
+                    <h3 class="font-black text-[2.5rem] lg:text-[3rem] text-center w-full lg:w-[40rem]">Developer
+                      Bringing Designs Alive</h3>
                     <p class="py-8 lg:py-12 text-lg lg:text-xl text-center w-full lg:w-[50rem]">
                       I'm a dedicated developer who creates engaging and impactful web experiences. With over 3 years of
                       WordPress expertise, I focus on delivering results through my skills and hard work. I may not be
@@ -1271,23 +1297,31 @@
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-1.5 lg:gap-4 w-full">
                       <div
                         class="lg:border-[2px] bg-[rgba(22,48,43,1)] lg:hover:bg-white animate300 lg:border-white flex flex-col items-center justify-center gap-1 lg:gap-2 rounded-[5px] py-3 px-3 hover:bg-[length:7px_7px] hover:bg-[linear-gradient(to_right,rgba(112,112,112,0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgba(112,112,112,0.04)_1px,transparent_1px)] bg-center">
-                        <h3 class="text-white lg:mix-blend-difference text-[2rem] lg:text-[4rem] font-black opacity-55">01</h3>
-                        <h6 class="text-white lg:mix-blend-difference text-base lg:text-xl text-center">Based in Cavite, Philippines</h6>
+                        <h3 class="text-white lg:mix-blend-difference text-[2rem] lg:text-[4rem] font-black opacity-55">
+                          01</h3>
+                        <h6 class="text-white lg:mix-blend-difference text-base lg:text-xl text-center">Based in Cavite,
+                          Philippines</h6>
                       </div>
                       <div
                         class="lg:border-[2px] bg-[rgba(22,48,43,1)] lg:hover:bg-white animate300 lg:border-white flex flex-col items-center justify-center gap-1 lg:gap-2 rounded-[5px] py-3 px-3 hover:bg-[length:7px_7px] hover:bg-[linear-gradient(to_right,rgba(112,112,112,0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgba(112,112,112,0.04)_1px,transparent_1px)] bg-center">
-                        <h3 class="text-white lg:mix-blend-difference text-[2rem] lg:text-[4rem] font-black opacity-55">02</h3>
-                        <h6 class="text-white lg:mix-blend-difference text-base lg:text-xl text-center">Working remotely</h6>
+                        <h3 class="text-white lg:mix-blend-difference text-[2rem] lg:text-[4rem] font-black opacity-55">
+                          02</h3>
+                        <h6 class="text-white lg:mix-blend-difference text-base lg:text-xl text-center">Working remotely
+                        </h6>
                       </div>
                       <div
                         class="lg:border-[2px] bg-[rgba(22,48,43,1)] lg:hover:bg-white animate300 lg:border-white flex flex-col items-center justify-center gap-1 lg:gap-2 rounded-[5px] py-3 px-3 hover:bg-[length:7px_7px] hover:bg-[linear-gradient(to_right,rgba(112,112,112,0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgba(112,112,112,0.04)_1px,transparent_1px)] bg-center">
-                        <h3 class="text-white lg:mix-blend-difference text-[2rem] lg:text-[4rem] font-black opacity-55">03</h3>
-                        <h6 class="text-white lg:mix-blend-difference text-base lg:text-xl text-center">Available for freelance projects</h6>
+                        <h3 class="text-white lg:mix-blend-difference text-[2rem] lg:text-[4rem] font-black opacity-55">
+                          03</h3>
+                        <h6 class="text-white lg:mix-blend-difference text-base lg:text-xl text-center">Available for
+                          freelance projects</h6>
                       </div>
                       <div
                         class="lg:border-[2px] bg-[rgba(22,48,43,1)] lg:hover:bg-white animate300 lg:border-white flex flex-col items-center justify-center gap-1 lg:gap-2 rounded-[5px] py-3 px-3 hover:bg-[length:7px_7px] hover:bg-[linear-gradient(to_right,rgba(112,112,112,0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgba(112,112,112,0.04)_1px,transparent_1px)] bg-center">
-                        <h3 class="text-white lg:mix-blend-difference text-[2rem] lg:text-[4rem] font-black opacity-55">04</h3>
-                        <h6 class="text-white lg:mix-blend-difference text-base lg:text-xl text-center">Open to exciting collaborations</h6>
+                        <h3 class="text-white lg:mix-blend-difference text-[2rem] lg:text-[4rem] font-black opacity-55">
+                          04</h3>
+                        <h6 class="text-white lg:mix-blend-difference text-base lg:text-xl text-center">Open to exciting
+                          collaborations</h6>
                       </div>
                     </div>
 
@@ -1316,9 +1350,10 @@
                 <div
                   class="flex w-full h-full items-center justify-between max-container px-5 sm:px-[5%] 2xl:px-0 relative">
                   <div class="flex flex-row gap-4 items-center">
-                    <div class="h-[40px] lg:h-[55px] w-[40px] lg:w-[55px] rounded-[5px] border-white border-[2px] flex items-center justify-center">
-                      <svg class="w-[30px] lg:w-[40px] h-fit" width="800px" height="800px" viewBox="0 0 24 24" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
+                    <div
+                      class="h-[40px] lg:h-[55px] w-[40px] lg:w-[55px] rounded-[5px] border-white border-[2px] flex items-center justify-center">
+                      <svg class="w-[30px] lg:w-[40px] h-fit" width="800px" height="800px" viewBox="0 0 24 24"
+                        fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
                           d="M15.7 4C18.87 4 21 6.98 21 9.76C21 15.39 12.16 20 12 20C11.84 20 3 15.39 3 9.76C3 6.98 5.13 4 8.3 4C10.12 4 11.31 4.91 12 5.71C12.69 4.91 13.88 4 15.7 4Z"
                           stroke="#e6e6e6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
@@ -1335,7 +1370,8 @@
               </div>
               <div class="chapter2-contents min-h-screen max-container px-5 sm:px-[5%] 2xl:px-0 relative py-16">
                 <div class="w-full min-h-screen flex flex-col items-center justify-center">
-                  <h3 class="font-black text-[2.5rem] lg:text-[3rem] text-center w-full lg:w-[40rem]">Code with Purpose</h3>
+                  <h3 class="font-black text-[2.5rem] lg:text-[3rem] text-center w-full lg:w-[40rem]">Code with Purpose
+                  </h3>
                   <p class="pt-8 pb-12 text-lg lg:text-xl text-center w-full lg:w-[45rem]">
                     I love building things with code and turning ideas into working WordPress features. I’m all about
                     clean logic, problem-solving, and making things run smoothly—no design, just development. When I’m
@@ -1412,9 +1448,10 @@
                 <div
                   class="flex w-full h-full items-center justify-between max-container px-5 sm:px-[5%] 2xl:px-0 relative">
                   <div class="flex flex-row gap-4 items-center">
-                    <div class="h-[40px] lg:h-[55px] w-[40px] lg:w-[55px] rounded-[5px] border-black border-[2px] flex items-center justify-center">
-                      <svg class="w-[30px] lg:w-[35px] h-fit" width="800px" height="800px" viewBox="0 0 16 16" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
+                    <div
+                      class="h-[40px] lg:h-[55px] w-[40px] lg:w-[55px] rounded-[5px] border-black border-[2px] flex items-center justify-center">
+                      <svg class="w-[30px] lg:w-[35px] h-fit" width="800px" height="800px" viewBox="0 0 16 16"
+                        fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd"
                           d="M8 4C5.79086 4 4 5.79086 4 8C4 10.2091 5.79086 12 8 12C10.2091 12 12 10.2091 12 8C12 5.79086 10.2091 4 8 4ZM6 8C6 6.89543 6.89543 6 8 6C9.10457 6 10 6.89543 10 8C10 9.10457 9.10457 10 8 10C6.89543 10 6 9.10457 6 8Z"
                           fill="#16302b" />
@@ -1542,7 +1579,8 @@
 
         <section class="sliding-svg-section w-full border-t-[2px] border-b-[2px] border-black relative z-[100]">
           <div class="sliding-svg-white w-full flex flex-row gap-2 lg:gap-4 py-2 lg:py-4 bg-white whitespace-nowrap">
-            <div class="border-[2px] border-black px-3 lg:px-6 py-1.5 lg:py-2 flex items-center justify-center gap-2 lg:gap-3 rounded-[5px]">
+            <div
+              class="border-[2px] border-black px-3 lg:px-6 py-1.5 lg:py-2 flex items-center justify-center gap-2 lg:gap-3 rounded-[5px]">
 
               <svg class="h-[30px] lg:h-[40px] w-fit relative" fill="#e6e6e6" xmlns="http://www.w3.org/2000/svg"
                 xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" enable-background="new 0 0 512 512"
@@ -1562,10 +1600,12 @@
               <h6 class="text-lg lg:text-2xl font-black text-black relative lg:top-[2px]">JAVA</h6>
             </div>
 
-            <div class="border-[2px] border-black px-3 lg:px-6 py-1.5 lg:py-2 flex items-center justify-center gap-2 lg:gap-3 rounded-[5px]">
+            <div
+              class="border-[2px] border-black px-3 lg:px-6 py-1.5 lg:py-2 flex items-center justify-center gap-2 lg:gap-3 rounded-[5px]">
 
-              <svg class="h-[30px] lg:h-[40px] w-fit relative" width="800px" height="800px" viewBox="0 0 20 20" version="1.1"
-                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#16302b">
+              <svg class="h-[30px] lg:h-[40px] w-fit relative" width="800px" height="800px" viewBox="0 0 20 20"
+                version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                fill="#16302b">
                 <g id="SVGRepo_bgCarrier" stroke-width="0" />
                 <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" />
                 <g id="SVGRepo_iconCarrier">
@@ -1584,7 +1624,8 @@
               <h6 class="text-lg lg:text-2xl font-black text-black relative lg:top-[2px]">PYTHON</h6>
             </div>
 
-            <div class="border-[2px] border-black px-3 lg:px-6 py-1.5 lg:py-2 flex items-center justify-center gap-2 lg:gap-3 rounded-[5px]">
+            <div
+              class="border-[2px] border-black px-3 lg:px-6 py-1.5 lg:py-2 flex items-center justify-center gap-2 lg:gap-3 rounded-[5px]">
               <svg class="h-[30px] lg:h-[40px] w-fit relative" width="800px" height="800px" viewBox="0 0 32 32"
                 xmlns="http://www.w3.org/2000/svg">
                 <title>file_type_tailwind</title>
@@ -1595,7 +1636,8 @@
               <h6 class="text-lg lg:text-2xl font-black text-black relative lg:top-[2px]">TAILWIND</h6>
             </div>
 
-            <div class="border-[2px] border-black px-3 lg:px-6 py-1.5 lg:py-2 flex items-center justify-center gap-2 lg:gap-3 rounded-[5px]">
+            <div
+              class="border-[2px] border-black px-3 lg:px-6 py-1.5 lg:py-2 flex items-center justify-center gap-2 lg:gap-3 rounded-[5px]">
               <svg class="h-[25px] w-fit relative" xmlns="http://www.w3.org/2000/svg" width="200" fill="none"
                 viewBox="0 0 82 30">
                 <path fill="#16302b"
@@ -1610,7 +1652,8 @@
               <h6 class="text-lg lg:text-2xl font-black text-black relative lg:top-[2px]">GSAP</h6>
             </div>
 
-            <div class="border-[2px] border-black px-3 lg:px-6 py-1.5 lg:py-2 flex items-center justify-center gap-2 lg:gap-3 rounded-[5px]">
+            <div
+              class="border-[2px] border-black px-3 lg:px-6 py-1.5 lg:py-2 flex items-center justify-center gap-2 lg:gap-3 rounded-[5px]">
               <svg class="h-[30px] lg:h-[40px] w-fit" fill="#16302b" version="1.1" xmlns="http://www.w3.org/2000/svg"
                 xmlns:xlink="http://www.w3.org/1999/xlink" width="800px" height="800px" viewBox="0 0 512 512"
                 enable-background="new 0 0 512 512" xml:space="preserve">
@@ -1634,7 +1677,8 @@
               <h6 class="text-lg lg:text-2xl font-black text-black">PHP</h6>
             </div>
 
-            <div class="border-[2px] border-black px-3 lg:px-6 py-1.5 lg:py-2 flex items-center justify-center gap-2 lg:gap-3 rounded-[5px]">
+            <div
+              class="border-[2px] border-black px-3 lg:px-6 py-1.5 lg:py-2 flex items-center justify-center gap-2 lg:gap-3 rounded-[5px]">
               <svg class="h-[30px] lg:h-[40px] w-fit relative" width="800px" height="800px" viewBox="0 0 24 24"
                 xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -1643,7 +1687,8 @@
               <h6 class="text-lg lg:text-2xl font-black text-black relative lg:top-[2px]">JQUERY</h6>
             </div>
 
-            <div class="border-[2px] border-black px-3 lg:px-6 py-1.5 lg:py-2 flex items-center justify-center gap-2 lg:gap-3 rounded-[5px]">
+            <div
+              class="border-[2px] border-black px-3 lg:px-6 py-1.5 lg:py-2 flex items-center justify-center gap-2 lg:gap-3 rounded-[5px]">
               <svg class="h-[25px] w-fit relative" fill="#16302b" width="800px" height="800px" viewBox="0 0 32 32"
                 xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -1656,7 +1701,8 @@
               <h6 class="text-lg lg:text-2xl font-black text-black relative lg:top-[2px]">SQL</h6>
             </div>
 
-            <div class="border-[2px] border-black px-3 lg:px-6 py-1.5 lg:py-2 flex items-center justify-center gap-2 lg:gap-3 rounded-[5px]">
+            <div
+              class="border-[2px] border-black px-3 lg:px-6 py-1.5 lg:py-2 flex items-center justify-center gap-2 lg:gap-3 rounded-[5px]">
               <svg class="h-[25px] w-fit relative" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
                 xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 147.1 63.1"
                 enable-background="new 0 0 147.1 63.1" xml:space="preserve">
@@ -1718,9 +1764,10 @@
               <h6 class="text-lg lg:text-2xl font-black text-black relative lg:top-[2px]">AJAX</h6>
             </div>
 
-            <div class="border-[2px] border-black px-3 lg:px-6 py-1.5 lg:py-2 flex items-center justify-center gap-2 lg:gap-3 rounded-[5px]">
-              <svg class="h-[25px] lg:h-[30px] w-fit relative" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"
-                viewBox="0 0 500 500">
+            <div
+              class="border-[2px] border-black px-3 lg:px-6 py-1.5 lg:py-2 flex items-center justify-center gap-2 lg:gap-3 rounded-[5px]">
+              <svg class="h-[25px] lg:h-[30px] w-fit relative" xmlns="http://www.w3.org/2000/svg" width="100%"
+                height="100%" viewBox="0 0 500 500">
                 <rect x="5.5" y="5.5" fill="#16302b" width="489" height="489" />
                 <path fill="#e6e6e6"
                   d="M454.478 377.875c-3.58-22.312-18.128-41.045-61.218-58.522-14.967-6.88-31.654-11.806-36.628-23.147-1.767-6.602-1.999-10.319-.883-14.318 3.208-12.968 18.686-17.012 30.958-13.293 7.902 2.648 15.386 8.739 19.895 18.453 21.104-13.666 21.056-13.572 35.792-22.963-5.393-8.366-8.275-12.225-11.807-15.804-12.69-14.177-29.981-21.475-57.639-20.917-4.788.604-9.622 1.255-14.41 1.86-13.805 3.486-26.96 10.737-34.676 20.452-23.149 26.264-16.547 72.234 11.621 91.153 27.75 20.824 68.517 25.565 73.722 45.042 5.067 23.845-17.524 31.561-39.975 28.819-16.548-3.439-25.752-11.854-35.7-27.146-18.313 10.598-18.313 10.598-37.139 21.428 4.462 9.762 9.157 14.178 16.641 22.637 35.42 35.931 124.063 34.166 139.959-20.22.651-1.859 4.927-14.317 1.487-33.514zm-183.142-147.63h-45.74l-.186 118.252c0 25.147 1.302 48.203-2.789 55.27-6.694 13.897-24.032 12.178-31.935 9.481-8.042-3.951-12.132-9.575-16.873-17.523-1.301-2.278-2.278-4.044-2.604-4.184-12.411 7.576-24.775 15.2-37.187 22.776 6.182 12.69 15.293 23.707 26.96 30.864 17.432 10.458 40.858 13.666 65.355 8.041 15.943-4.647 29.703-14.27 36.907-28.911 10.412-19.198 8.181-42.439 8.088-68.145.236-41.927.004-83.854.004-125.921z" />
@@ -1730,7 +1777,8 @@
 
 
 
-            <div class="border-[2px] border-black px-3 lg:px-6 py-1.5 lg:py-2 flex items-center justify-center gap-2 lg:gap-3 rounded-[5px]">
+            <div
+              class="border-[2px] border-black px-3 lg:px-6 py-1.5 lg:py-2 flex items-center justify-center gap-2 lg:gap-3 rounded-[5px]">
 
               <svg class="h-[25px] w-fit relative" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 110 36.9">
                 <g>
@@ -1756,7 +1804,8 @@
             </div>
 
             <!-- 2nd Repeat -->
-            <div class="border-[2px] border-black px-3 lg:px-6 py-1.5 lg:py-2 flex items-center justify-center gap-2 lg:gap-3 rounded-[5px]">
+            <div
+              class="border-[2px] border-black px-3 lg:px-6 py-1.5 lg:py-2 flex items-center justify-center gap-2 lg:gap-3 rounded-[5px]">
 
               <svg class="h-[30px] lg:h-[40px] w-fit relative" fill="#16302B" xmlns="http://www.w3.org/2000/svg"
                 xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" enable-background="new 0 0 512 512"
@@ -1776,10 +1825,12 @@
               <h6 class="text-lg lg:text-2xl font-black text-black relative lg:top-[2px]">JAVA</h6>
             </div>
 
-            <div class="border-[2px] border-black px-3 lg:px-6 py-1.5 lg:py-2 flex items-center justify-center gap-2 lg:gap-3 rounded-[5px]">
+            <div
+              class="border-[2px] border-black px-3 lg:px-6 py-1.5 lg:py-2 flex items-center justify-center gap-2 lg:gap-3 rounded-[5px]">
 
-              <svg class="h-[30px] lg:h-[40px] w-fit relative" width="800px" height="800px" viewBox="0 0 20 20" version="1.1"
-                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#16302b">
+              <svg class="h-[30px] lg:h-[40px] w-fit relative" width="800px" height="800px" viewBox="0 0 20 20"
+                version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                fill="#16302b">
                 <g id="SVGRepo_bgCarrier" stroke-width="0" />
                 <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" />
                 <g id="SVGRepo_iconCarrier">
@@ -1798,7 +1849,8 @@
               <h6 class="text-lg lg:text-2xl font-black text-black relative lg:top-[2px]">PYTHON</h6>
             </div>
 
-            <div class="border-[2px] border-black px-3 lg:px-6 py-1.5 lg:py-2 flex items-center justify-center gap-2 lg:gap-3 rounded-[5px]">
+            <div
+              class="border-[2px] border-black px-3 lg:px-6 py-1.5 lg:py-2 flex items-center justify-center gap-2 lg:gap-3 rounded-[5px]">
               <svg class="h-[30px] lg:h-[40px] w-fit relative" width="800px" height="800px" viewBox="0 0 32 32"
                 xmlns="http://www.w3.org/2000/svg">
                 <title>file_type_tailwind</title>
@@ -1809,7 +1861,8 @@
               <h6 class="text-lg lg:text-2xl font-black text-black relative lg:top-[2px]">TAILWIND</h6>
             </div>
 
-            <div class="border-[2px] border-black px-3 lg:px-6 py-1.5 lg:py-2 flex items-center justify-center gap-2 lg:gap-3 rounded-[5px]">
+            <div
+              class="border-[2px] border-black px-3 lg:px-6 py-1.5 lg:py-2 flex items-center justify-center gap-2 lg:gap-3 rounded-[5px]">
               <svg class="h-[25px] w-fit relative" xmlns="http://www.w3.org/2000/svg" width="200" fill="none"
                 viewBox="0 0 82 30">
                 <path fill="#16302b"
@@ -1824,7 +1877,8 @@
               <h6 class="text-lg lg:text-2xl font-black text-black relative lg:top-[2px]">GSAP</h6>
             </div>
 
-            <div class="border-[2px] border-black px-3 lg:px-6 py-1.5 lg:py-2 flex items-center justify-center gap-2 lg:gap-3 rounded-[5px]">
+            <div
+              class="border-[2px] border-black px-3 lg:px-6 py-1.5 lg:py-2 flex items-center justify-center gap-2 lg:gap-3 rounded-[5px]">
               <svg class="h-[30px] lg:h-[40px] w-fit" fill="#16302b" version="1.1" xmlns="http://www.w3.org/2000/svg"
                 xmlns:xlink="http://www.w3.org/1999/xlink" width="800px" height="800px" viewBox="0 0 512 512"
                 enable-background="new 0 0 512 512" xml:space="preserve">
@@ -1848,7 +1902,8 @@
               <h6 class="text-2xl font-black text-black">PHP</h6>
             </div>
 
-            <div class="border-[2px] border-black px-3 lg:px-6 py-1.5 lg:py-2 flex items-center justify-center gap-2 lg:gap-3 rounded-[5px]">
+            <div
+              class="border-[2px] border-black px-3 lg:px-6 py-1.5 lg:py-2 flex items-center justify-center gap-2 lg:gap-3 rounded-[5px]">
               <svg class="h-[30px] lg:h-[40px] w-fit relative" width="800px" height="800px" viewBox="0 0 24 24"
                 xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -1857,7 +1912,8 @@
               <h6 class="text-lg lg:text-2xl font-black text-black relative lg:top-[2px]">JQUERY</h6>
             </div>
 
-            <div class="border-[2px] border-black px-3 lg:px-6 py-1.5 lg:py-2 flex items-center justify-center gap-2 lg:gap-3 rounded-[5px]">
+            <div
+              class="border-[2px] border-black px-3 lg:px-6 py-1.5 lg:py-2 flex items-center justify-center gap-2 lg:gap-3 rounded-[5px]">
               <svg class="h-[25px] w-fit relative" fill="#16302b" width="800px" height="800px" viewBox="0 0 32 32"
                 xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -1870,7 +1926,8 @@
               <h6 class="text-lg lg:text-2xl font-black text-black relative lg:top-[2px]">SQL</h6>
             </div>
 
-            <div class="border-[2px] border-black px-3 lg:px-6 py-1.5 lg:py-2 flex items-center justify-center gap-2 lg:gap-3 rounded-[5px]">
+            <div
+              class="border-[2px] border-black px-3 lg:px-6 py-1.5 lg:py-2 flex items-center justify-center gap-2 lg:gap-3 rounded-[5px]">
               <svg class="h-[25px] w-fit relative" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
                 xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 147.1 63.1"
                 enable-background="new 0 0 147.1 63.1" xml:space="preserve">
@@ -1932,9 +1989,10 @@
               <h6 class="text-lg lg:text-2xl font-black text-black relative lg:top-[2px]">AJAX</h6>
             </div>
 
-            <div class="border-[2px] border-black px-3 lg:px-6 py-1.5 lg:py-2 flex items-center justify-center gap-2 lg:gap-3 rounded-[5px]">
-              <svg class="h-[25px] lg:h-[30px] w-fit relative" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"
-                viewBox="0 0 500 500">
+            <div
+              class="border-[2px] border-black px-3 lg:px-6 py-1.5 lg:py-2 flex items-center justify-center gap-2 lg:gap-3 rounded-[5px]">
+              <svg class="h-[25px] lg:h-[30px] w-fit relative" xmlns="http://www.w3.org/2000/svg" width="100%"
+                height="100%" viewBox="0 0 500 500">
                 <rect x="5.5" y="5.5" fill="#16302b" width="489" height="489" />
                 <path fill="#e6e6e6"
                   d="M454.478 377.875c-3.58-22.312-18.128-41.045-61.218-58.522-14.967-6.88-31.654-11.806-36.628-23.147-1.767-6.602-1.999-10.319-.883-14.318 3.208-12.968 18.686-17.012 30.958-13.293 7.902 2.648 15.386 8.739 19.895 18.453 21.104-13.666 21.056-13.572 35.792-22.963-5.393-8.366-8.275-12.225-11.807-15.804-12.69-14.177-29.981-21.475-57.639-20.917-4.788.604-9.622 1.255-14.41 1.86-13.805 3.486-26.96 10.737-34.676 20.452-23.149 26.264-16.547 72.234 11.621 91.153 27.75 20.824 68.517 25.565 73.722 45.042 5.067 23.845-17.524 31.561-39.975 28.819-16.548-3.439-25.752-11.854-35.7-27.146-18.313 10.598-18.313 10.598-37.139 21.428 4.462 9.762 9.157 14.178 16.641 22.637 35.42 35.931 124.063 34.166 139.959-20.22.651-1.859 4.927-14.317 1.487-33.514zm-183.142-147.63h-45.74l-.186 118.252c0 25.147 1.302 48.203-2.789 55.27-6.694 13.897-24.032 12.178-31.935 9.481-8.042-3.951-12.132-9.575-16.873-17.523-1.301-2.278-2.278-4.044-2.604-4.184-12.411 7.576-24.775 15.2-37.187 22.776 6.182 12.69 15.293 23.707 26.96 30.864 17.432 10.458 40.858 13.666 65.355 8.041 15.943-4.647 29.703-14.27 36.907-28.911 10.412-19.198 8.181-42.439 8.088-68.145.236-41.927.004-83.854.004-125.921z" />
@@ -1944,7 +2002,8 @@
 
 
 
-            <div class="border-[2px] border-black px-3 lg:px-6 py-1.5 lg:py-2 flex items-center justify-center gap-2 lg:gap-3 rounded-[5px]">
+            <div
+              class="border-[2px] border-black px-3 lg:px-6 py-1.5 lg:py-2 flex items-center justify-center gap-2 lg:gap-3 rounded-[5px]">
 
               <svg class="h-[25px] w-fit relative" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 110 36.9">
                 <g>
@@ -1973,11 +2032,12 @@
           </div> <!-- End ng White Columns -->
 
 
-          <div class="sliding-svg-black w-full flex flex-row justify-end gap-2 lg:gap-4 py-2 lg:py-4 bg-black whitespace-nowrap">
+          <div
+            class="sliding-svg-black w-full flex flex-row justify-end gap-2 lg:gap-4 py-2 lg:py-4 bg-black whitespace-nowrap">
             <div
               class="border-[2px] border-white px-3 lg:px-6 py-1.5 lg:py-2 flex items-center justify-center gap-2 lg:gap-3 text-xl text-white font-black rounded-[5px]">
-              <svg class="h-[30px] lg:h-[40px] w-fit" fill="#e6e6e6" width="800px" height="800px" viewBox="0 0 32 32" id="Camada_1"
-                version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
+              <svg class="h-[30px] lg:h-[40px] w-fit" fill="#e6e6e6" width="800px" height="800px" viewBox="0 0 32 32"
+                id="Camada_1" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
                 xmlns:xlink="http://www.w3.org/1999/xlink">
                 <path
                   d="M28,25.6l-5.9,2.4l-9.7-9.6l-6.1,4.8L4,21.9V10.1l2.3-1.2l6.1,4.8L22.1,4L28,6.4V25.6z M15.7,16l6.3,5l0,0V11L15.7,16  L15.7,16z M6.3,19.7L6.3,19.7L10,16l-3.6-3.7l0,0L6.3,19.7L6.3,19.7z" />
@@ -2042,7 +2102,8 @@
 
             <div
               class="border-[2px] border-white px-3 lg:px-6 py-1.5 lg:py-2 flex items-center justify-center gap-2 lg:gap-3 text-xl text-white font-black rounded-[5px]">
-              <svg class="h-[30px] lg:h-[40px] w-fit" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="#e6e6e6">
+              <svg class="h-[30px] lg:h-[40px] w-fit" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"
+                fill="#e6e6e6">
                 <g id="iconCarrier">
                   <path
                     d="M29.8836 6.146L16.7418 29.6457c-.2714.4851-.9684.488-1.2439.0052L2.0956 6.1482c-.3-.5262.1498-1.1635.746-1.057l13.156 2.3516a.7144.7144 0 00.2537-.0004l12.8808-2.3478c.5942-.1083 1.0463.5241.7515 1.0513z"
@@ -2068,7 +2129,8 @@
 
             <div
               class="border-[2px] border-white px-3 lg:px-6 py-1.5 lg:py-2 flex items-center justify-center gap-2 lg:gap-3 text-xl text-white font-black rounded-[5px]">
-              <svg class="h-[30px] lg:h-[40px] w-fit" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg class="h-[30px] lg:h-[40px] w-fit" viewBox="0 0 32 32" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
                 <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                 <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
                 <g id="SVGRepo_iconCarrier">
@@ -2088,8 +2150,8 @@
 
             <div
               class="border-[2px] border-white px-3 lg:px-6 py-1.5 lg:py-2 flex items-center justify-center gap-2 lg:gap-3 text-xl text-white font-black rounded-[5px]">
-              <svg class="h-[30px] lg:h-[40px] w-fit" viewBox="-1 0 258 258" version="1.1" xmlns="http://www.w3.org/2000/svg"
-                xmlns:xlink="http://www.w3.org/1999/xlink" fill="#16302b">
+              <svg class="h-[30px] lg:h-[40px] w-fit" viewBox="-1 0 258 258" version="1.1"
+                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#16302b">
                 <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                 <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
                 <g id="SVGRepo_iconCarrier">
@@ -2122,8 +2184,8 @@
 
             <div
               class="border-[2px] border-white px-3 lg:px-6 py-1.5 lg:py-2 flex items-center justify-center gap-2 lg:gap-3 text-xl text-white font-black rounded-[5px]">
-              <svg class="h-[30px] lg:h-[40px] w-fit" fill="#e6e6e6" width="800px" height="800px" viewBox="0 0 32 32" id="Camada_1"
-                version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
+              <svg class="h-[30px] lg:h-[40px] w-fit" fill="#e6e6e6" width="800px" height="800px" viewBox="0 0 32 32"
+                id="Camada_1" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
                 xmlns:xlink="http://www.w3.org/1999/xlink">
                 <path
                   d="M28,25.6l-5.9,2.4l-9.7-9.6l-6.1,4.8L4,21.9V10.1l2.3-1.2l6.1,4.8L22.1,4L28,6.4V25.6z M15.7,16l6.3,5l0,0V11L15.7,16  L15.7,16z M6.3,19.7L6.3,19.7L10,16l-3.6-3.7l0,0L6.3,19.7L6.3,19.7z" />
@@ -2188,7 +2250,8 @@
 
             <div
               class="border-[2px] border-white px-3 lg:px-6 py-1.5 lg:py-2 flex items-center justify-center gap-2 lg:gap-3 text-xl text-white font-black rounded-[5px]">
-              <svg class="h-[30px] lg:h-[40px] w-fit" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="#e6e6e6">
+              <svg class="h-[30px] lg:h-[40px] w-fit" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"
+                fill="#e6e6e6">
                 <g id="iconCarrier">
                   <path
                     d="M29.8836 6.146L16.7418 29.6457c-.2714.4851-.9684.488-1.2439.0052L2.0956 6.1482c-.3-.5262.1498-1.1635.746-1.057l13.156 2.3516a.7144.7144 0 00.2537-.0004l12.8808-2.3478c.5942-.1083 1.0463.5241.7515 1.0513z"
@@ -2214,7 +2277,8 @@
 
             <div
               class="border-[2px] border-white px-3 lg:px-6 py-1.5 lg:py-2 flex items-center justify-center gap-2 lg:gap-3 text-xl text-white font-black rounded-[5px]">
-              <svg class="h-[30px] lg:h-[40px] w-fit" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg class="h-[30px] lg:h-[40px] w-fit" viewBox="0 0 32 32" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
                 <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                 <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
                 <g id="SVGRepo_iconCarrier">
@@ -2234,8 +2298,8 @@
 
             <div
               class="border-[2px] border-white px-3 lg:px-6 py-1.5 lg:py-2 flex items-center justify-center gap-2 lg:gap-3 text-xl text-white font-black rounded-[5px]">
-              <svg class="h-[30px] lg:h-[40px] w-fit" viewBox="-1 0 258 258" version="1.1" xmlns="http://www.w3.org/2000/svg"
-                xmlns:xlink="http://www.w3.org/1999/xlink" fill="#16302b">
+              <svg class="h-[30px] lg:h-[40px] w-fit" viewBox="-1 0 258 258" version="1.1"
+                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#16302b">
                 <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                 <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
                 <g id="SVGRepo_iconCarrier">
@@ -2278,9 +2342,10 @@
                 class="relative group w-full aspect-square lg:aspect-[4/3] border-[2px] border-black px-3 lg:px-6 py-3 lg:py-6 flex flex-col justify-between rounded-[5px] bg-[rgba(230,230,230,1)] hover:bg-[rgba(22,48,43,1)] animate500 ease-out">
                 <div
                   class="flex w-full justify-between mix-blend-difference origin-center group-hover:scale-[1.05] animate500 ease-out">
-                  <div class="w-[45px] lg:w-[75px] h-[45px] lg:h-[75px] border-2 border-white flex items-center justify-center">
-                    <svg class="h-[30px] lg:h-[45px] w-fit relative" width="800px" height="800px" viewBox="0 0 24 24" fill="none"
-                      xmlns="http://www.w3.org/2000/svg">
+                  <div
+                    class="w-[45px] lg:w-[75px] h-[45px] lg:h-[75px] border-2 border-white flex items-center justify-center">
+                    <svg class="h-[30px] lg:h-[45px] w-fit relative" width="800px" height="800px" viewBox="0 0 24 24"
+                      fill="none" xmlns="http://www.w3.org/2000/svg">
                       <g id="Edit / Layer">
                         <path id="Vector" d="M21 14L12 20L3 14M21 10L12 16L3 10L12 4L21 10Z" stroke="#e6e6e6"
                           stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
@@ -2291,10 +2356,11 @@
                 </div>
 
                 <div class="flex flex-col w-full origin-center group-hover:scale-[1.05] animate500 ease-out">
-                  <h5 class="text-lg lg:text-[2.25rem] font-black text-[#16302b] group-hover:text-white animate500 ease-out">
+                  <h5
+                    class="text-lg lg:text-[2.25rem] font-black text-[#16302b] group-hover:text-white animate500 ease-out">
                     Wordpress</h5>
                   <h6 class="text-xs lg:text-base mt-2 text-[#16302b] group-hover:text-white animate500 ease-out">
-                    3+ YEARS</h6>
+                    4+ YEARS</h6>
                 </div>
                 <div
                   class="x-border w-full h-[5px] rounded-[3px] bg-black absolute top-0 right-0 [clip-path:inset(0%_100%_0%_0%)] group-hover:[clip-path:inset(0%_0%_0%_0%)] animate700">
@@ -2307,9 +2373,10 @@
                 class="relative group w-full aspect-square lg:aspect-[4/3] border-[2px] border-black px-3 lg:px-6 py-3 lg:py-6 flex flex-col justify-between rounded-[5px] bg-[rgba(230,230,230,1)] hover:bg-[rgba(22,48,43,1)] animate500 ease-out">
                 <div
                   class="flex w-full justify-between mix-blend-difference origin-center group-hover:scale-[1.05] animate500 ease-out">
-                  <div class="w-[45px] lg:w-[75px] h-[45px] lg:h-[75px] border-2 border-white flex items-center justify-center">
-                    <svg class="h-[30px] lg:h-[45px] w-fit relative" fill="#e6e6e6" stroke="#e6e6e6" stroke-width="5" width="800px"
-                      height="800px" viewBox="0 0 256 256" id="Flat" xmlns="http://www.w3.org/2000/svg">
+                  <div
+                    class="w-[45px] lg:w-[75px] h-[45px] lg:h-[75px] border-2 border-white flex items-center justify-center">
+                    <svg class="h-[30px] lg:h-[45px] w-fit relative" fill="#e6e6e6" stroke="#e6e6e6" stroke-width="5"
+                      width="800px" height="800px" viewBox="0 0 256 256" id="Flat" xmlns="http://www.w3.org/2000/svg">
                       <path
                         d="M216,28H72A36.04061,36.04061,0,0,0,36,64v72a20.0226,20.0226,0,0,0,20,20h46.77588a3.9991,3.9991,0,0,1,3.95947,4.56641L100.04,207.43457A4.05553,4.05553,0,0,0,100,208a28,28,0,0,0,56,0,4.05553,4.05553,0,0,0-.04-.56543l-6.69531-46.86816A3.99981,3.99981,0,0,1,153.22412,156H200a20.0226,20.0226,0,0,0,20-20V32A4.0002,4.0002,0,0,0,216,28ZM72,36H180V80a4,4,0,0,0,8,0V36h24v72H44V64A28.03146,28.03146,0,0,1,72,36ZM200,148H153.22412a11.999,11.999,0,0,0-11.87939,13.69727l6.65332,46.57421a19.99989,19.99989,0,0,1-39.9961,0l6.65332-46.57324A11.99971,11.99971,0,0,0,102.77588,148H56a12.01343,12.01343,0,0,1-12-12V116H212v20A12.01343,12.01343,0,0,1,200,148Z" />
                     </svg>
@@ -2318,7 +2385,8 @@
                 </div>
 
                 <div class="flex flex-col w-full origin-center group-hover:scale-[1.05] animate500 ease-out">
-                  <h5 class="text-lg lg:text-[2.25rem] font-black text-[#16302b] group-hover:text-white animate500 ease-out">
+                  <h5
+                    class="text-lg lg:text-[2.25rem] font-black text-[#16302b] group-hover:text-white animate500 ease-out">
                     Tailwind</h5>
                   <h6 class="text-xs lg:text-base mt-2 text-[#16302b] group-hover:text-white animate500 ease-out">
                     CSS</h6>
@@ -2334,9 +2402,10 @@
                 class="relative group w-full aspect-square lg:aspect-[4/3] border-[2px] border-black px-3 lg:px-6 py-3 lg:py-6 flex flex-col justify-between rounded-[5px] bg-[rgba(230,230,230,1)] hover:bg-[rgba(22,48,43,1)] animate500 ease-out">
                 <div
                   class="flex w-full justify-between mix-blend-difference origin-center group-hover:scale-[1.05] animate500 ease-out">
-                  <div class="w-[45px] lg:w-[75px] h-[45px] lg:h-[75px] border-2 border-white flex items-center justify-center">
-                    <svg class="h-[30px] lg:h-[45px] w-fit relative" width="800px" height="800px" viewBox="0 0 24 24" fill="none"
-                      xmlns="http://www.w3.org/2000/svg">
+                  <div
+                    class="w-[45px] lg:w-[75px] h-[45px] lg:h-[75px] border-2 border-white flex items-center justify-center">
+                    <svg class="h-[30px] lg:h-[45px] w-fit relative" width="800px" height="800px" viewBox="0 0 24 24"
+                      fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M7 8L3 11.6923L7 16M17 8L21 11.6923L17 16M14 4L10 20" stroke="#e6e6e6" stroke-width="2"
                         stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
@@ -2345,7 +2414,8 @@
                 </div>
 
                 <div class="flex flex-col w-full origin-center group-hover:scale-[1.05] animate500 ease-out">
-                  <h5 class="text-lg lg:text-[2.25rem] font-black text-[#16302b] group-hover:text-white animate500 ease-out">
+                  <h5
+                    class="text-lg lg:text-[2.25rem] font-black text-[#16302b] group-hover:text-white animate500 ease-out">
                     JQuery</h5>
                   <h6 class="text-xs lg:text-base mt-2 text-[#16302b] group-hover:text-white animate500 ease-out">
                     JAVASCRIPT LIBRARY</h6>
@@ -2361,9 +2431,10 @@
                 class="relative group w-full aspect-square lg:aspect-[4/3] border-[2px] border-black px-3 lg:px-6 py-3 lg:py-6 flex flex-col justify-between rounded-[5px] bg-[rgba(230,230,230,1)] hover:bg-[rgba(22,48,43,1)] animate500 ease-out">
                 <div
                   class="flex w-full justify-between mix-blend-difference origin-center group-hover:scale-[1.05] animate500 ease-out">
-                  <div class="w-[45px] lg:w-[75px] h-[45px] lg:h-[75px] border-2 border-white flex items-center justify-center">
-                    <svg class="h-[30px] lg:h-[45px] w-fit relative" fill="#e6e6e6" width="800px" height="800px" viewBox="0 0 36 36"
-                      xmlns="http://www.w3.org/2000/svg">
+                  <div
+                    class="w-[45px] lg:w-[75px] h-[45px] lg:h-[75px] border-2 border-white flex items-center justify-center">
+                    <svg class="h-[30px] lg:h-[45px] w-fit relative" fill="#e6e6e6" width="800px" height="800px"
+                      viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
                       <g id="b9dc111b-c0fc-4dae-9c72-b1a6d11e341d" data-name="Layer 3">
                         <path
                           d="M10.16,31.71a4.4,4.4,0,0,1-4.64-1A4.34,4.34,0,0,1,4.23,27.6a4.41,4.41,0,0,1,.18-1.2,11.61,11.61,0,0,1-1-2.56,6.4,6.4,0,0,0,9.33,8.63A11.55,11.55,0,0,1,10.16,31.71Z" />
@@ -2378,7 +2449,8 @@
                 </div>
 
                 <div class="flex flex-col w-full origin-center group-hover:scale-[1.05] animate500 ease-out">
-                  <h5 class="text-lg lg:text-[2.25rem] font-black text-[#16302b] group-hover:text-white animate500 ease-out">
+                  <h5
+                    class="text-lg lg:text-[2.25rem] font-black text-[#16302b] group-hover:text-white animate500 ease-out">
                     GSAP</h5>
                   <h6 class="text-xs lg:text-base mt-2 text-[#16302b] group-hover:text-white animate500 ease-out">
                     ANIMATIONS</h6>
@@ -2394,9 +2466,10 @@
                 class="relative group w-full aspect-square lg:aspect-[4/3] border-[2px] border-black px-3 lg:px-6 py-3 lg:py-6 flex flex-col justify-between rounded-[5px] bg-[rgba(230,230,230,1)] hover:bg-[rgba(22,48,43,1)] animate500 ease-out">
                 <div
                   class="flex w-full justify-between mix-blend-difference origin-center group-hover:scale-[1.05] animate500 ease-out">
-                  <div class="w-[45px] lg:w-[75px] h-[45px] lg:h-[75px] border-2 border-white flex items-center justify-center">
-                    <svg class="h-[30px] lg:h-[45px] w-fit relative" width="800px" height="800px" viewBox="0 0 24 24" fill="none"
-                      xmlns="http://www.w3.org/2000/svg">
+                  <div
+                    class="w-[45px] lg:w-[75px] h-[45px] lg:h-[75px] border-2 border-white flex items-center justify-center">
+                    <svg class="h-[30px] lg:h-[45px] w-fit relative" width="800px" height="800px" viewBox="0 0 24 24"
+                      fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path
                         d="M7.5 18C8.32843 18 9 18.6716 9 19.5C9 20.3284 8.32843 21 7.5 21C6.67157 21 6 20.3284 6 19.5C6 18.6716 6.67157 18 7.5 18Z"
                         stroke="#e6e6e6" stroke-width="1.5" />
@@ -2412,7 +2485,8 @@
                 </div>
 
                 <div class="flex flex-col w-full origin-center group-hover:scale-[1.05] animate500 ease-out">
-                  <h5 class="text-lg lg:text-[2.25rem] font-black text-[#16302b] group-hover:text-white animate500 ease-out">
+                  <h5
+                    class="text-lg lg:text-[2.25rem] font-black text-[#16302b] group-hover:text-white animate500 ease-out">
                     Woocommerce</h5>
                   <h6 class="text-xs lg:text-base mt-2 text-[#16302b] group-hover:text-white animate500 ease-out">
                     E-COMMERCE PLATFORM</h6>
@@ -2428,9 +2502,10 @@
                 class="relative group w-full aspect-square lg:aspect-[4/3] border-[2px] border-black px-3 lg:px-6 py-3 lg:py-6 flex flex-col justify-between rounded-[5px] bg-[rgba(230,230,230,1)] hover:bg-[rgba(22,48,43,1)] animate500 ease-out">
                 <div
                   class="flex w-full justify-between mix-blend-difference origin-center group-hover:scale-[1.05] animate500 ease-out">
-                  <div class="w-[45px] lg:w-[75px] h-[45px] lg:h-[75px] border-2 border-white flex items-center justify-center">
-                    <svg class="h-[30px] lg:h-[45px] w-fit relative" width="800px" height="800px" viewBox="0 0 24 24" fill="none"
-                      xmlns="http://www.w3.org/2000/svg">
+                  <div
+                    class="w-[45px] lg:w-[75px] h-[45px] lg:h-[75px] border-2 border-white flex items-center justify-center">
+                    <svg class="h-[30px] lg:h-[45px] w-fit relative" width="800px" height="800px" viewBox="0 0 24 24"
+                      fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path
                         d="M14 21H5C4.06812 21 3.60218 21 3.23463 20.8478C2.74458 20.6448 2.35523 20.2554 2.15224 19.7654C2 19.3978 2 18.9319 2 18C2 17.0681 2 16.6022 2.15224 16.2346C2.35523 15.7446 2.74458 15.3552 3.23463 15.1522C3.60218 15 4.06812 15 5 15H19C19.9319 15 20.3978 15 20.7654 15.1522C21.2554 15.3552 21.6448 15.7446 21.8478 16.2346C22 16.6022 22 17.0681 22 18C22 18.9319 22 19.3978 21.8478 19.7654C21.6448 20.2554 21.2554 20.6448 20.7654 20.8478C20.3978 21 19.9319 21 19 21H18"
                         stroke="#e6e6e6" stroke-width="1.5" stroke-linecap="round" />
@@ -2449,7 +2524,8 @@
                 </div>
 
                 <div class="flex flex-col w-full origin-center group-hover:scale-[1.05] animate500 ease-out">
-                  <h5 class="text-lg lg:text-[2.25rem] font-black text-[#16302b] group-hover:text-white animate500 ease-out">
+                  <h5
+                    class="text-lg lg:text-[2.25rem] font-black text-[#16302b] group-hover:text-white animate500 ease-out">
                     PHP</h5>
                   <h6 class="text-xs lg:text-base mt-2 text-[#16302b] group-hover:text-white animate500 ease-out">
                     SERVER-SIDE LANGUAGE</h6>
@@ -2471,10 +2547,11 @@
                 class="relative group w-full aspect-auto lg:aspect-[4/3] border-[2px] border-black px-3 lg:px-6 py-3 lg:py-6 flex flex-col justify-between gap-y-12 rounded-[5px] bg-[rgba(230,230,230,1)] hover:bg-[rgba(22,48,43,1)] animate500 ease-out">
                 <div
                   class="flex w-full justify-between mix-blend-difference origin-center group-hover:scale-[1.05] animate500 ease-out">
-                  <div class="w-[45px] lg:w-[75px] h-[45px] lg:h-[75px] border-2 border-white flex items-center justify-center">
-                    <svg class="h-[30px] lg:h-[45px] w-fit relative" xmlns="http://www.w3.org/2000/svg" width="28" height="28"
-                      viewBox="0 0 24 24" fill="none" stroke="#e6e6e6" stroke-width="2" stroke-linecap="round"
-                      stroke-linejoin="round"
+                  <div
+                    class="w-[45px] lg:w-[75px] h-[45px] lg:h-[75px] border-2 border-white flex items-center justify-center">
+                    <svg class="h-[30px] lg:h-[45px] w-fit relative" xmlns="http://www.w3.org/2000/svg" width="28"
+                      height="28" viewBox="0 0 24 24" fill="none" stroke="#e6e6e6" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round"
                       class="lucide lucide-handshake sm:w-8 sm:h-8 md:w-10 md:h-10 text-ink-black group-hover:text-paper-white group-active:text-paper-white transition-colors"
                       aria-hidden="true">
                       <path d="m11 17 2 2a1 1 0 1 0 3-3"></path>
@@ -2490,7 +2567,8 @@
                 </div>
 
                 <div class="flex flex-col w-full origin-center group-hover:scale-[1.05] animate500 ease-out">
-                  <h5 class="text-lg lg:text-[2.25rem] font-black text-[#16302b] group-hover:text-white animate500 ease-out">
+                  <h5
+                    class="text-lg lg:text-[2.25rem] font-black text-[#16302b] group-hover:text-white animate500 ease-out">
                     Collaboration</h5>
                   <h6 class="text-xs lg:text-base mt-2 text-[#16302b] group-hover:text-white animate500 ease-out">
                     TEAM PLAYER</h6>
@@ -2507,9 +2585,10 @@
                 class="relative group w-full aspect-auto lg:aspect-[4/3] border-[2px] border-black px-3 lg:px-6 py-3 lg:py-6 flex flex-col justify-between gap-y-12 rounded-[5px] bg-[rgba(230,230,230,1)] hover:bg-[rgba(22,48,43,1)] animate500 ease-out">
                 <div
                   class="flex w-full justify-between mix-blend-difference origin-center group-hover:scale-[1.05] animate500 ease-out">
-                  <div class="w-[45px] lg:w-[75px] h-[45px] lg:h-[75px] border-2 border-white flex items-center justify-center">
-                    <svg class="h-[30px] lg:h-[45px] w-fit relative" width="800px" height="800px" viewBox="0 0 16 16" fill="none"
-                      xmlns="http://www.w3.org/2000/svg">
+                  <div
+                    class="w-[45px] lg:w-[75px] h-[45px] lg:h-[75px] border-2 border-white flex items-center justify-center">
+                    <svg class="h-[30px] lg:h-[45px] w-fit relative" width="800px" height="800px" viewBox="0 0 16 16"
+                      fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path fill-rule="evenodd" clip-rule="evenodd"
                         d="M8 4C5.79086 4 4 5.79086 4 8C4 10.2091 5.79086 12 8 12C10.2091 12 12 10.2091 12 8C12 5.79086 10.2091 4 8 4ZM6 8C6 6.89543 6.89543 6 8 6C9.10457 6 10 6.89543 10 8C10 9.10457 9.10457 10 8 10C6.89543 10 6 9.10457 6 8Z"
                         fill="#e6e6e6"></path>
@@ -2522,7 +2601,8 @@
                 </div>
 
                 <div class="flex flex-col w-full origin-center group-hover:scale-[1.05] animate500 ease-out">
-                  <h5 class="text-lg lg:text-[2.25rem] font-black text-[#16302b] group-hover:text-white animate500 ease-out">
+                  <h5
+                    class="text-lg lg:text-[2.25rem] font-black text-[#16302b] group-hover:text-white animate500 ease-out">
                     Adaptability</h5>
                   <h6 class="text-xs lg:text-base mt-2 text-[#16302b] group-hover:text-white animate500 ease-out">
                     FAST LEARNER</h6>
@@ -2539,7 +2619,8 @@
                 class="relative group w-full aspect-auto lg:aspect-[4/3] border-[2px] border-black px-3 lg:px-6 py-3 lg:py-6 flex flex-col justify-between gap-y-12 rounded-[5px] bg-[rgba(230,230,230,1)] hover:bg-[rgba(22,48,43,1)] animate500 ease-out">
                 <div
                   class="flex w-full justify-between mix-blend-difference origin-center group-hover:scale-[1.05] animate500 ease-out">
-                  <div class="w-[45px] lg:w-[75px] h-[45px] lg:h-[75px] border-2 border-white flex items-center justify-center">
+                  <div
+                    class="w-[45px] lg:w-[75px] h-[45px] lg:h-[75px] border-2 border-white flex items-center justify-center">
                     <svg class="h-[30px] lg:h-[45px] w-fit relative fill-[#e6e6e6]" viewBox="0 0 40 40"
                       xmlns="http://www.w3.org/2000/svg">
                       <path
@@ -2551,7 +2632,8 @@
                 </div>
 
                 <div class="flex flex-col w-full origin-center group-hover:scale-[1.05] animate500 ease-out">
-                  <h5 class="text-lg lg:text-[2.25rem] font-black text-[#16302b] group-hover:text-white animate500 ease-out">
+                  <h5
+                    class="text-lg lg:text-[2.25rem] font-black text-[#16302b] group-hover:text-white animate500 ease-out">
                     Problem Solving</h5>
                   <h6 class="text-xs lg:text-base mt-2 text-[#16302b] group-hover:text-white animate500 ease-out">
                     INNOVATIVE SOLUTION</h6>
@@ -2587,8 +2669,7 @@
 
 
 
-        <section id="contact-section"
-          class="timeline-section bg-[#101010] w-full py-16 lg:py-24">
+        <section id="contact-section" class="timeline-section bg-[#101010] w-full py-16 lg:py-24">
           <div class="max-container relative px-5 sm:px-[5%] 2xl:px-0 flex flex-col justify-center items-center">
             <div class="flex items-center gap-4">
               <div class="w-[4rem] lg:w-[8rem] 3xl:w-[10rem] h-px bg-white"></div>
@@ -2652,19 +2733,21 @@
                 class="my-4 w-full rounded-[5px] border-2 border-[rgba(230,230,230,0.3)] px-4 lg:px-8 py-4 lg:py-6 hover:border-[rgba(230,230,230,1)] animate500 flex flex-col items-center">
                 <div class="w-full relative flex flex-col">
                   <label class="text-xs opacity-75 mb-2">NAME *</label>
-                  <input class="px-2 lg:px-6 py-3 border-2 rounded-[5px] border-[rgba(230,230,230,0.3)] inpName" type="text"
-                    name="cfName" id="inpName" autocomplete="off" placeholder="YOUR NAME" required>
+                  <input class="px-2 lg:px-6 py-3 border-2 rounded-[5px] border-[rgba(230,230,230,0.3)] inpName"
+                    type="text" name="cfName" id="inpName" autocomplete="off" placeholder="YOUR NAME" required>
                 </div>
 
                 <div class="w-full relative flex flex-col my-6 lg:my-8">
                   <label class="text-xs opacity-75 mb-2">EMAIL *</label>
-                  <input class="px-2 lg:px-6 py-3 border-2 rounded-[5px] border-[rgba(230,230,230,0.3)] inpEmail" type="email"
-                    name="cfEmail" id="inpEmail" autocomplete="off" placeholder="YOUREMAIL@HERE.COM" required>
+                  <input class="px-2 lg:px-6 py-3 border-2 rounded-[5px] border-[rgba(230,230,230,0.3)] inpEmail"
+                    type="email" name="cfEmail" id="inpEmail" autocomplete="off" placeholder="YOUREMAIL@HERE.COM"
+                    required>
                 </div>
 
                 <div class="w-full relative flex flex-col">
                   <label class="text-xs opacity-75 mb-2">MESSAGE</label>
-                  <textarea rows="4" class="px-2 lg:px-6 py-3 border-2 rounded-[5px] border-[rgba(230,230,230,0.3)] inpMessage"
+                  <textarea rows="4"
+                    class="px-2 lg:px-6 py-3 border-2 rounded-[5px] border-[rgba(230,230,230,0.3)] inpMessage"
                     name="cfMessage" id="inpMessage" autocomplete="off" placeholder="YOUR MESSAGE..."></textarea>
                 </div>
 
@@ -2701,7 +2784,7 @@
                 <p class="py-4">
                   I'm always interested in hearing about new projects and opportunities.
                 </p>
-                <a href = "#contact-section"
+                <a href="#contact-section"
                   class="cta-plane lg:mt-4 border border-white rounded-[5px] w-fit py-2 px-4 lg:py-3 lg:px-6 bg-transparent relative group hover:cursor-pointer hvr-crsr">
                   <h6 class="text-white mix-blend-difference relative z-20 flex items-center gap-3">
                     START A PROJECT
@@ -2718,44 +2801,44 @@
                 </a>
               </div>
               <div class="lg:col-span-6 w-full flex flex-col lg:flex-row justify-start lg:justify-end gap-x-28">
-                  <div class="my-8 block lg:hidden w-full h-px bg-[rgba(230,230,230,0.3)]"></div>
-                  <div class="flex flex-col items-start gap-y-6 href-target">
-                    <h6 class="text-base opacity-75">NAVIGATION</h6>
-                    <div class="grid grid-cols-1 gap-y-2 lg:gap-y-3">
-                      <a class = "inline-block" href="#home">
-                        <h6 class="text-base">Home</h6>
-                      </a>
-                      <a class = "inline-block" href="#projects-section">
-                        <h6 class="text-base">Projects</h6>
-                      </a>
-                      <a class = "inline-block" href="#aboutme-section">
-                        <h6 class="text-base">About</h6>
-                      </a>
-                      <a class = "inline-block" href="#skills-section">
-                        <h6 class="text-base">Skills</h6>
-                      </a>
-                      <a class = "inline-block" href="#contact-section">
-                        <h6 class="text-base">Contact</h6>
-                      </a>
-                    </div>
+                <div class="my-8 block lg:hidden w-full h-px bg-[rgba(230,230,230,0.3)]"></div>
+                <div class="flex flex-col items-start gap-y-6 href-target">
+                  <h6 class="text-base opacity-75">NAVIGATION</h6>
+                  <div class="grid grid-cols-1 gap-y-2 lg:gap-y-3">
+                    <a class="inline-block" href="#home">
+                      <h6 class="text-base">Home</h6>
+                    </a>
+                    <a class="inline-block" href="#projects-section">
+                      <h6 class="text-base">Projects</h6>
+                    </a>
+                    <a class="inline-block" href="#aboutme-section">
+                      <h6 class="text-base">About</h6>
+                    </a>
+                    <a class="inline-block" href="#skills-section">
+                      <h6 class="text-base">Skills</h6>
+                    </a>
+                    <a class="inline-block" href="#contact-section">
+                      <h6 class="text-base">Contact</h6>
+                    </a>
                   </div>
+                </div>
 
 
-                  <div class="lg:flex flex-col items-start gap-y-6 footer-nav hidden">
-                    <h6 class="text-base opacity-75">CONNECT</h6>
-                    <div class="flex flex-col gap-3">
-                      <a class = "inline-block" href="mailto:barnacheajohnvincent48@gmail.com">
-                        <h6 class="text-base">Email</h6>
-                      </a>
-                      <a class = "inline-block" href="https://www.linkedin.com/in/john-vincent-barnachea/">
-                        <h6 class="text-base">Linkedin</h6>
-                      </a>
-                      <a class = "inline-block" href="https://github.com/VinceBarnachea">
-                        <h6 class="text-base">GitHub</h6>
-                      </a>
-                      </a>
-                    </div>
+                <div class="lg:flex flex-col items-start gap-y-6 footer-nav hidden">
+                  <h6 class="text-base opacity-75">CONNECT</h6>
+                  <div class="flex flex-col gap-3">
+                    <a class="inline-block" href="mailto:barnacheajohnvincent48@gmail.com">
+                      <h6 class="text-base">Email</h6>
+                    </a>
+                    <a class="inline-block" href="https://www.linkedin.com/in/john-vincent-barnachea/">
+                      <h6 class="text-base">Linkedin</h6>
+                    </a>
+                    <a class="inline-block" href="https://github.com/VinceBarnachea">
+                      <h6 class="text-base">GitHub</h6>
+                    </a>
+                    </a>
                   </div>
+                </div>
               </div>
             </div>
 
@@ -2807,7 +2890,8 @@
               </div>
               <div class="lg:col-span-4 flex flex-col lg:h-full items-start lg:items-center order-3 lg:order-2">
                 <a class="hidden lg:inline-block h-[45px] hvr-crsr" href="https://vincebarnachea-portfolio.vercel.app/">
-                  <svg class = "h-[45px] w-fit relative" id="Layer_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 150 150">
+                  <svg class="h-[45px] w-fit relative" id="Layer_1" xmlns="http://www.w3.org/2000/svg" version="1.1"
+                    viewBox="0 0 150 150">
                     <!-- Generator: Adobe Illustrator 30.2.1, SVG Export Plug-In . SVG Version: 2.1.1 Build 1)  -->
                     <defs>
                       <style>
@@ -2816,8 +2900,9 @@
                         }
                       </style>
                     </defs>
-                    <path class="st0" d="M52.66,66.12h-.56c.23.14.46.27.7.38l-.14-.38Z"/>
-                    <path class="st0" d="M44.89,25.86c-1.72-.48-3.08-1.28-4.09-2.41-1.76-1.96-2.64-4.79-2.64-8.49,0-1.76.27-3.5.82-5.21.54-1.72,1.31-3.44,2.31-5.17l-8.1-3.22c-1.29,2.17-2.3,4.5-3.01,6.98-.72,2.48-1.08,5.09-1.08,7.85,0,4.28.77,7.92,2.31,10.91,1.27,2.48,2.98,4.46,5.11,5.93v21c0,5.49.94,10.23,2.83,14.23.19.4.39.81.6,1.19,0,.01.01.01.01.02l28.57,74.35h13.26l26.56-70.95h.01c.55-.58,1.07-1.2,1.55-1.87,3.34-4.63,5.01-10.7,5.01-18.2v-26.94H44.89ZM105.07,50.67c0,4.82-.98,8.52-2.95,11.12-1.95,2.59-4.76,3.89-8.42,3.89-2.58,0-4.78-.62-6.61-1.85-1.83-1.23-3.23-2.95-4.2-5.15-.97-2.2-1.46-4.82-1.46-7.84v-12.43h23.64v12.26ZM52.1,66.12c-.98-.58-1.83-1.33-2.56-2.23-2.11-2.62-3.16-6.61-3.16-11.99v-13.49h25.65v13.27c0,5.49-1.11,9.55-3.31,12.18-2.2,2.63-5.41,3.95-9.63,3.95-2.46,0-4.55-.44-6.29-1.31-.24-.11-.47-.24-.7-.38ZM75.35,127.23l-17.26-46.5c.14.01.29.01.44.01,5.08,0,9.35-1.42,12.82-4.28,3.48-2.86,5.86-6.41,7.17-10.67.79,2.02,2.02,3.96,3.7,5.83,1.68,1.86,3.63,3.38,5.85,4.56,1.58.84,3.22,1.37,4.94,1.6l-17.66,49.45Z"/>
+                    <path class="st0" d="M52.66,66.12h-.56c.23.14.46.27.7.38l-.14-.38Z" />
+                    <path class="st0"
+                      d="M44.89,25.86c-1.72-.48-3.08-1.28-4.09-2.41-1.76-1.96-2.64-4.79-2.64-8.49,0-1.76.27-3.5.82-5.21.54-1.72,1.31-3.44,2.31-5.17l-8.1-3.22c-1.29,2.17-2.3,4.5-3.01,6.98-.72,2.48-1.08,5.09-1.08,7.85,0,4.28.77,7.92,2.31,10.91,1.27,2.48,2.98,4.46,5.11,5.93v21c0,5.49.94,10.23,2.83,14.23.19.4.39.81.6,1.19,0,.01.01.01.01.02l28.57,74.35h13.26l26.56-70.95h.01c.55-.58,1.07-1.2,1.55-1.87,3.34-4.63,5.01-10.7,5.01-18.2v-26.94H44.89ZM105.07,50.67c0,4.82-.98,8.52-2.95,11.12-1.95,2.59-4.76,3.89-8.42,3.89-2.58,0-4.78-.62-6.61-1.85-1.83-1.23-3.23-2.95-4.2-5.15-.97-2.2-1.46-4.82-1.46-7.84v-12.43h23.64v12.26ZM52.1,66.12c-.98-.58-1.83-1.33-2.56-2.23-2.11-2.62-3.16-6.61-3.16-11.99v-13.49h25.65v13.27c0,5.49-1.11,9.55-3.31,12.18-2.2,2.63-5.41,3.95-9.63,3.95-2.46,0-4.55-.44-6.29-1.31-.24-.11-.47-.24-.7-.38ZM75.35,127.23l-17.26-46.5c.14.01.29.01.44.01,5.08,0,9.35-1.42,12.82-4.28,3.48-2.86,5.86-6.41,7.17-10.67.79,2.02,2.02,3.96,3.7,5.83,1.68,1.86,3.63,3.38,5.85,4.56,1.58.84,3.22,1.37,4.94,1.6l-17.66,49.45Z" />
                   </svg>
                 </a>
 
