@@ -9,9 +9,10 @@
 
   <link rel="icon" type="image/svg" href="/assets/logoShape.svg" />
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap"
+    rel="stylesheet">
   <!-- Output.css Tailwind -->
   <link href="tailwind/output.css" rel="stylesheet">
 
@@ -167,9 +168,9 @@
         <section id="home"
           class="home-landing-section w-full relative bg-[length:7px_7px] bg-[linear-gradient(to_right,rgba(112,112,112,0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgba(112,112,112,0.04)_1px,transparent_1px)] bg-center z-10">
           <div class="max-container h-full px-5 sm:px-[5%] 2xl:px-0">
-            <div class="w-full min-h-screen py-24 grid grid-cols-12 gap-4">
-              <div class="col-span-8 w-full h-full flex flex-col justify-center">
-                <div class="flex items-center justify-start gap-3 sm:gap-4 mb-5 sm:mb-6">
+            <div class="w-full min-h-screen pt-24 pb-12 grid lg:grid-cols-12 gap-4">
+              <div class="lg:col-span-8 w-full h-full flex flex-col justify-center">
+                <div class="flex items-center justify-center lg:justify-start gap-3 sm:gap-4 mb-5 sm:mb-6">
                   <a href="https://www.linkedin.com/in/john-vincent-barnachea/" target="_blank"
                     class="w-[40px] sm:w-[45px] h-[40px] sm:h-[45px] flex items-center justify-center border border-white rounded-[5px] hvr-crsr">
                     <svg class="w-[20px] h-fit" fill="#e6e6e6" version="1.1" id="Capa_1"
@@ -208,29 +209,74 @@
                     </svg>
                   </a>
                 </div>
-                <h1 class="text-[clamp(38px,12.4vw,64px)] sm:text-[clamp(52px,8.9vw,130px)] font-black leading-[.92] ">John Vincent</h1>
-                <h2 class="text-[clamp(38px,12.4vw,64px)] sm:text-[clamp(52px,8.9vw,128px)] font-black text-[#e6e6e6cc]">Barnachea</h2>
+                <h1
+                  class="landing1st text-center lg:text-left text-[3.5rem] sm:text-[clamp(52px,8.9vw,130px)] font-black leading-[.92] ">
+                  John Vincent</h1>
+                <h2
+                  class="landing2nd text-center lg:text-left text-[3.1rem] sm:text-[clamp(48px,8.7vw,125px)] font-black text-[#e6e6e6cc]">
+                  Barnachea</h2>
 
-                <div class="mt-4 text-xl text-white text-balance text-left">
-                    <p>I build fast, custom <b>WordPress</b> websites from the ground up, with clean, responsive front ends and custom-coded functionality that clients can easily manage without relying on a website builder.</p>
+                <div class="mt-4 text-base lg:text-xl text-white text-balance text-center lg:text-left">
+                  <p>I build fast, custom <b>WordPress</b> websites from the ground up, with clean, responsive front
+                    ends and custom-coded functionality that clients can easily manage without relying on a website
+                    builder.</p>
                 </div>
 
                 <div class="hero-cta flex items-center justify-start flex-col sm:flex-row gap-3 sm:gap-4 mt-6 3xl:mt-6">
                   <button
-                    class="landingcta-secondary border border-white rounded-[5px] py-2 lg:py-3 px-6 lg:px-8 bg-transparent relative group hover:cursor-pointer hvr-crsr">
+                    class="landingcta-secondary w-full lg:w-fit border border-white rounded-[5px] py-2 lg:py-3 px-6 lg:px-8 bg-transparent relative group hover:cursor-pointer hvr-crsr">
                     <h6 class="text-white mix-blend-difference relative z-20">PROJECTS</h6>
                     <div
                       class="bg-white absolute top-0 left-0 w-full h-full z-10 [clip-path:inset(0%_100%_0%_0%)] group-hover:[clip-path:inset(0%_-1%_0%_0%)] animate300">
                     </div>
                   </button>
                   <button
-                    class="landingcta-primary border border-white rounded-[5px] py-2 lg:py-3 px-6 lg:px-8 relative group hover:cursor-pointer hvr-crsr">
+                    class="landingcta-primary w-full lg:w-fit border border-white rounded-[5px] py-2 lg:py-3 px-6 lg:px-8 relative group hover:cursor-pointer hvr-crsr">
                     <h6 class="text-white mix-blend-difference relative z-20">GET IN TOUCH</h6>
                     <div
                       class="bg-white absolute top-0 left-0 w-full h-full z-10 [clip-path:inset(0%_0%_0%_0%)] group-hover:[clip-path:inset(0%_0%_0%_100%)] animate300">
                     </div>
                   </button>
                 </div>
+              </div>
+              <div class="lg:col-span-4 w-full h-full flex flex-col justify-center items-end">
+                <aside aria-label="Code sample"
+  class="bg-panel border border-line rounded-[14px] overflow-hidden font-mono text-xs leading-[1.7] sm:text-sm sm:leading-[1.75]">
+
+  <div class="flex justify-between px-[18px] py-3 border-b border-line text-mute text-[13px]">
+    <span>functions.php</span>
+    <span>PHP</span>
+  </div>
+
+  <!-- prettier-ignore -->
+  <pre class="m-0 px-3.5 py-4 sm:px-[18px] sm:py-5 text-ink whitespace-normal
+    [&>div]:whitespace-pre-wrap
+    [&>div]:[overflow-wrap:anywhere]
+    [&>div]:pl-[calc(var(--i,0)*2ch_+_2ch)]
+    [&>div]:indent-[-2ch]">
+    <div><span class="text-mute">// Custom post type, built to be client-editable</span></div>
+    <div><span class="text-accent">add_action</span>(<span class="text-[#8fd3b0]">'init'</span>, <span class="text-accent">function</span> () {</div>
+    <div class="[--i:1]"><span class="text-accent">register_post_type</span>(<span class="text-[#8fd3b0]">'project'</span>, [</div>
+    <div class="[--i:2]"><span class="text-[#8fd3b0]">'public'</span>   => <span class="text-accent">true</span>,</div>
+    <div class="[--i:2]"><span class="text-[#8fd3b0]">'show_in_rest'</span> => <span class="text-accent">true</span>,</div>
+    <div class="[--i:2]"><span class="text-[#8fd3b0]">'has_archive'</span> => <span class="text-accent">true</span>,</div>
+    <div class="[--i:2]"><span class="text-[#8fd3b0]">'supports'</span> => [<span class="text-[#8fd3b0]">'title'</span>, <span class="text-[#8fd3b0]">'editor'</span>, <span class="text-[#8fd3b0]">'thumbnail'</span>, <span class="text-[#8fd3b0]">'custom-fields'</span>],</div>
+    <div class="[--i:1]">]);</div>
+    <div>});<span class="inline-block w-2 h-[1em] bg-accent align-[-2px] animate-blink motion-reduce:animate-none"></span></div>
+  </pre>
+
+  <div
+    class="flex flex-wrap gap-1.5 sm:gap-2 px-3.5 py-3 sm:px-[18px] sm:py-3.5 border-t border-line text-xs sm:text-[13px] text-mute">
+    <i class="not-italic px-2.5 py-[3px] border border-line rounded-md">WordPress</i>
+    <i class="not-italic px-2.5 py-[3px] border border-line rounded-md">WooCommerce</i>
+    <i class="not-italic px-2.5 py-[3px] border border-line rounded-md">ACF</i>
+    <i class="not-italic px-2.5 py-[3px] border border-line rounded-md">PHP</i>
+    <i class="not-italic px-2.5 py-[3px] border border-line rounded-md">AJAX</i>
+    <i class="not-italic px-2.5 py-[3px] border border-line rounded-md">jQuery</i>
+    <i class="not-italic px-2.5 py-[3px] border border-line rounded-md">Tailwind</i>
+    <i class="not-italic px-2.5 py-[3px] border border-line rounded-md">GSAP</i>
+  </div>
+</aside>
               </div>
             </div>
           </div>

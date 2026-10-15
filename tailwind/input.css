@@ -33,6 +33,24 @@
     100% { box-shadow: 0 0 0 0 transparent; }
   }
 
+
+  --color-bg: #12302a;
+  --color-panel: #0e2822;
+  --color-ink: #ece9df;
+  --color-mute: #a9bdb3;
+  --color-line: #2c4a42;
+  --color-accent: #f0b85a;
+
+  /* font: font-mono */
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  /* animation: animate-blink */
+  --animate-blink: blink 1s steps(2) infinite;
+
+  @keyframes blink {
+    50% { opacity: 0; }
+  }
+
 }
   
 
