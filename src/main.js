@@ -527,7 +527,7 @@ $(function () {
     // markers: true,
   });
 
-  var svgSpeed = $(window).width() < 768 ? 1.5 : 4;
+  var svgSpeed = $(window).width() < 768 ? 1.5 : 3.5;
   var slideSVGLength = $(".sliding-svg-black").outerWidth(true) * 55;
   var slidingSVGTL = gsap.timeline({
     scrollTrigger: {
@@ -636,6 +636,8 @@ $(function () {
 
   $("#vinceForm").on("submit", function (e) {
     e.preventDefault();
+    var origContentBtn = $('#form-sbmt h6').html();
+    $('#form-sbmt h6').text("SENDING...");
 
     emailjs
       .send("service_trvsn93", "template_3twd4qk", {
@@ -648,10 +650,11 @@ $(function () {
         console.log("SUCCESS!", response.status, response.text);
         alert("Your message has been sent successfully!");
         $("#vinceForm")[0].reset();
+        $('#form-sbmt h6').html(origContentBtn);
       })
       .catch(function (error) {
         console.error("FAILED...", error);
-        alert("Oops! Something went wrong. Please try again.");
+        $('#form-sbmt h6').html(origContentBtn);
       });
   });
 
