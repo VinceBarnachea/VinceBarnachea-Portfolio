@@ -732,8 +732,8 @@ function setHeroHeight() {
   const loopBottom = $('.loop-elements').outerHeight(true);
   
   $(".hero-section").css({
-    "padding-top": headerHeight+8,
-    "padding-bottom": loopBottom+8,
+    "padding-top": headerHeight+12,
+    "padding-bottom": loopBottom+32,
   });
 }
 
