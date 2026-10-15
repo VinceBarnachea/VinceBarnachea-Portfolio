@@ -1,26 +1,3 @@
-// import './style.css'
-// import javascriptLogo from './javascript.svg'
-// import viteLogo from '/vite.svg'
-// import { setupCounter } from './counter.js'
-
-// // document.querySelector('#app').innerHTML = `
-// //   <div>
-// //     <a href="https://vite.dev" target="_blank">
-// //       <img src="${viteLogo}" class="logo" alt="Vite logo" />
-// //     </a>
-// //     <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-// //       <img src="${javascriptLogo}" class="logo vanilla" alt="JavaScript logo" />
-// //     </a>
-// //     <h1>Hello Vite!</h1>
-// //     <div class="card">
-// //       <button id="counter" type="button"></button>
-// //     </div>
-// //     <p class="read-the-docs">
-// //       Click on the Vite logo to learn more
-// //     </p>
-// //   </div>
-
-// // setupCounter(document.querySelector('#counter'))
 import $ from "jquery";
 
 // Make jQuery global (important!)
@@ -63,57 +40,91 @@ $(function () {
   });
 
   $.fn.marquee = function (opts) {
-    const speed = (opts && opts.speed) || 60;          // px per second
-    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const speed = (opts && opts.speed) || 60;          // px per second
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-    return this.each(function () {
-      const $track = $(this);
-      const $originals = $track.children().clone();   // keep a pristine copy of one set
-      let setWidth = 0, x = 0, last = 0, paused = false, raf;
+  return this.each(function () {
+    const track = this;
+    const $track = $(track);
+    const $parent = $track.parent();
+    const $originals = $track.children().clone();    // pristine copy of one set
+    let setWidth = 0, parentW = 0, x = 0, last = 0, paused = false, raf = 0;
 
-      function build() {
-        cancelAnimationFrame(raf);
-        $track.empty().append($originals.clone());
+    // Layout width that ignores transforms on parents (scale animations, etc.)
+    const scaleOf = el => (el.getBoundingClientRect().width / el.offsetWidth) || 1;
 
-        // Exact pixel width of ONE set of items
-        setWidth = 0;
-        $track.children().each(function () { setWidth += this.getBoundingClientRect().width; });
+    function measure() {
+      let w = 0;
+      const s = scaleOf(track);
+      $track.children().slice(0, $originals.length).each(function () {
+        w += this.getBoundingClientRect().width / s;
+      });
+      return w;
+    }
 
-        // Enough extra copies to fill the screen, plus one spare
-        const copies = Math.ceil($track.parent().width() / setWidth) + 1;
-        for (let i = 0; i < copies; i++) {
-          $originals.clone().attr("aria-hidden", "true").appendTo($track);
-        }
+    function build() {
+      // remember how far through the loop we are, so a rebuild doesn't snap back
+      const progress = setWidth ? (-x / setWidth) : 0;
 
-        x = 0; last = 0;
-        if (!reduce) raf = requestAnimationFrame(tick);
+      $track.empty().append($originals.clone());
+      setWidth = measure();
+      parentW = Math.max($parent[0].clientWidth, window.innerWidth);
+
+      const copies = Math.ceil(parentW / setWidth) + 1;
+      for (let i = 0; i < copies; i++) {
+        $originals.clone().attr("aria-hidden", "true").appendTo($track);
       }
 
-      function tick(t) {
-        if (!last) last = t;
-        const dt = (t - last) / 1000;
-        last = t;
-        if (!paused) {
-          x -= speed * dt;
-          if (x <= -setWidth) x += setWidth;           // jump back, invisible
-          $track.css("transform", "translate3d(" + x + "px,0,0)");
-        }
-        raf = requestAnimationFrame(tick);
+      x = -progress * setWidth;
+      last = 0;
+      cancelAnimationFrame(raf);
+      if (!reduce) raf = requestAnimationFrame(tick);
+    }
+
+    // Rebuild only if the numbers really changed (ignores rebuild's own changes)
+    function check() {
+      const w = measure();
+      const p = Math.max($parent[0].clientWidth, window.innerWidth);
+      if (Math.abs(w - setWidth) > 0.5 || Math.abs(p - parentW) > 0.5) build();
+    }
+
+    function tick(t) {
+      if (!last) last = t;
+      const dt = Math.min((t - last) / 1000, 0.05);   // ignore long frame pauses
+      last = t;
+      if (!paused) {
+        x -= speed * dt;
+        x %= setWidth;                                 // always lands inside one set
+        track.style.transform = "translate3d(" + x + "px,0,0)";
       }
+      raf = requestAnimationFrame(tick);
+    }
 
-      // Pause on hover
-      
+    // Pause on hover
+    // $track.on("mouseenter", () => (paused = true))
+    //       .on("mouseleave", () => (paused = false));
 
-      // Rebuild on resize
-      let timer;
-      $(window).on("resize", function () { clearTimeout(timer); timer = setTimeout(build, 200); });
+    // Re-measure whenever the strip or its parent changes size
+    let pending = 0;
+    const schedule = () => { cancelAnimationFrame(pending); pending = requestAnimationFrame(check); };
+    if ("ResizeObserver" in window) {
+      const ro = new ResizeObserver(schedule);
+      ro.observe($parent[0]);
+      ro.observe(document.documentElement);
+    } else {
+      $(window).on("resize", schedule);
+    }
 
-      // Wait for fonts so the widths are measured correctly
-      document.fonts.ready.then(build);
-    });
-  };
+    // Don't jump after the tab was hidden
+    document.addEventListener("visibilitychange", () => { last = 0; });
 
-  $("#marquee").marquee({ speed: 100 });
+    // Wait for fonts so widths are right, and re-check if more fonts load later
+    document.fonts.ready.then(build);
+    document.fonts.addEventListener?.("loadingdone", schedule);
+  });
+};
+
+$("#marquee").marquee({ speed: 100 });
 
   $('nav a[href^="#"], .href-target a[href^="#"]').on("click", function (e) {
     const target = $(this).attr("href");
