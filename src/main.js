@@ -762,50 +762,21 @@ $(window).on("resize", function () {
   }, 100);
 });
 
-ScrollTrigger.config({ ignoreMobileResize: true });
+const landing1st = ["John Vincent", "Website", "Hello", "Web", "Design","Let's","Your Vision"];
+const landing2nd = ["Barnachea", "Portfolio", "World", "Developer", "to Reality","Work Together","My Code"];
 
-const landing1st = ["John Vincent", "Website", "Hello", "Web", "Design", "Let's", "Your Vision"];
-const landing2nd = ["Barnachea", "Portfolio", "World", "Developer", "to Reality", "Work Together", "My Code"];
-
-const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-
-/* ------------------------------------------------------------------
-   reserveSpace()
-   Puts the live text and an invisible copy of EVERY word in the same
-   grid cell. A grid cell is as tall as its tallest item, so the
-   headline never changes height, even when a word wraps to 2 lines.
-------------------------------------------------------------------- */
-function reserveSpace($el, words) {
-  $el.addClass("col-start-1 row-start-1").wrap('<span class="grid"></span>');
-
-  words.forEach(function (w) {
-    $("<span></span>")
-      .attr("class", $el.attr("class"))            // same font / size classes
-      .removeClass("landing1st landing2nd")        // so $(".landing1st") only finds the live text
-      .addClass("invisible pointer-events-none select-none")
-      .attr("aria-hidden", "true")
-      .text(w)
-      .insertAfter($el);
-  });
-}
-
-
-/* ------------------------------------------------------------------
-   cycleTextPair()
-------------------------------------------------------------------- */
 function cycleTextPair($el1, $el2, words1, words2, hold, offset) {
   let index = 0;
 
   gsap.set([$el1, $el2], { autoAlpha: 1 });
 
   function animate() {
+    // Set text and split both elements
     $el1.text(words1[index]);
     $el2.text(words2[index]);
 
-    // No "lines": it re-wraps the text and shifts the layout every cycle
-    const split1 = new SplitText($el1[0], { type: "words,chars" });
-    const split2 = new SplitText($el2[0], { type: "words,chars" });
+    const split1 = new SplitText($el1[0], { type: "lines,words,chars" });
+    const split2 = new SplitText($el2[0], { type: "lines,words,chars" });
 
     const tl = gsap.timeline({
       onComplete: function () {
@@ -832,7 +803,7 @@ function cycleTextPair($el1, $el2, words1, words2, hold, offset) {
       offset
     );
 
-    // When does the longest "in" finish? Then hold.
+    // Compute when the longest "in" finishes, then hold
     const inEnd = Math.max(
       0.5 + 0.04 * (split1.chars.length - 1),
       offset + 0.5 + 0.04 * (split2.chars.length - 1)
@@ -852,44 +823,22 @@ function cycleTextPair($el1, $el2, words1, words2, hold, offset) {
       { y: 50, autoAlpha: 0, stagger: 0.04, duration: 0.5, ease: "power3.in" },
       outStart + offset
     );
+    ScrollTrigger.refresh();
   }
 
   animate();
 }
 
-
-/* ------------------------------------------------------------------
-   INIT
-------------------------------------------------------------------- */
+// INIT
 $(window).on("load", function () {
-  const $a = $(".landing1st");
-  const $b = $(".landing2nd");
-
-  // 1. Reserve the height of the tallest word
-  reserveSpace($a, landing1st);
-  reserveSpace($b, landing2nd);
-
-  // 2. Wait for the font so the reserved height is the real one
-  document.fonts.ready.then(function () {
-
-    // 3. Create your ScrollTriggers HERE (after the space is reserved), e.g.
-    //
-    // gsap.to(".some-section", {
-    //   scrollTrigger: { trigger: ".some-section", start: "top 80%", end: "bottom top", scrub: true },
-    //   y: -80,
-    // });
-
-    ScrollTrigger.refresh();
-
-    // 4. Start the text cycle (or show the first pair for reduced motion)
-    if (reduceMotion) {
-      $a.text(landing1st[0]);
-      $b.text(landing2nd[0]);
-      return;
-    }
-
-    setTimeout(function () {
-      cycleTextPair($a, $b, landing1st, landing2nd, 2.7, 0.5);
-    }, 100);
-  });
+  setTimeout(function () {
+    cycleTextPair(
+      $(".landing1st"),
+      $(".landing2nd"),
+      landing1st,
+      landing2nd,
+      2.7,   // hold time
+      0.5   // landing2nd delay behind landing1st (seconds)
+    );
+  }, 100);
 });
