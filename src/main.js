@@ -374,17 +374,7 @@ $("#marquee").marquee({ speed: 100 });
       });
   });
 
-  gsap.fromTo(
-    ".online",
-    { opacity: 1 },
-    {
-      opacity: 0.5,
-      duration: 1,
-      repeat: -1,
-      yoyo: true,
-      ease: "power1.inOut",
-    },
-  );
+  
 
   var headerTL = gsap.timeline({
     scrollTrigger: {
@@ -591,7 +581,7 @@ $("#marquee").marquee({ speed: 100 });
     // markers: true,
   });
 
-  var svgSpeed = $(window).width() < 768 ? 1.5 : 3.5;
+  var svgSpeed = $(window).width() < 1024 ? 1.5 : 2.5;
   var slideSVGLength = $(".sliding-svg-black").outerWidth(true) * 55;
   var slidingSVGTL = gsap.timeline({
     scrollTrigger: {
