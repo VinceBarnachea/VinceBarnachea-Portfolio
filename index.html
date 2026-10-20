@@ -268,16 +268,15 @@
 
                   <pre
                     class="m-0 px-3.5 py-4 sm:px-[18px] sm:py-5 overflow-x-auto text-ink whitespace-pre"><span class="text-dim">// Custom post type, built to be client-editable</span>
-                      <span class="text-accent">add_action</span>(<span class="text-[#9fdcbc]">'init'</span>, <span class="text-accent">function</span> () {
-                        <span class="text-accent">register_post_type</span>(<span class="text-[#9fdcbc]">'project'</span>, [
-                          <span class="text-[#9fdcbc]">'public'</span>   => <span class="text-accent">true</span>,
-                          <span class="text-[#9fdcbc]">'show_in_rest'</span> => <span class="text-accent">true</span>,
-                          <span class="text-[#9fdcbc]">'has_archive'</span> => <span class="text-accent">true</span>,
-                          <span class="text-[#9fdcbc]">'supports'</span> => [<span class="text-[#9fdcbc]">'title'</span>, <span class="text-[#9fdcbc]">'editor'</span>,
-                            <span class="text-[#9fdcbc]">'thumbnail'</span>, <span class="text-[#9fdcbc]">'custom-fields'</span>],
-                        ]);
-                      });<span class="inline-block w-2 h-[1.3em] bg-accent align-[-5px] animate-blink motion-reduce:animate-none"></span>
-                  </pre>
+<span class="text-accent">add_action</span>(<span class="text-[#9fdcbc]">'init'</span>, <span class="text-accent">function</span> () {
+  <span class="text-accent">register_post_type</span>(<span class="text-[#9fdcbc]">'project'</span>, [
+    <span class="text-[#9fdcbc]">'public'</span>   => <span class="text-accent">true</span>,
+    <span class="text-[#9fdcbc]">'show_in_rest'</span> => <span class="text-accent">true</span>,
+    <span class="text-[#9fdcbc]">'has_archive'</span> => <span class="text-accent">true</span>,
+    <span class="text-[#9fdcbc]">'supports'</span> => [<span class="text-[#9fdcbc]">'title'</span>, <span class="text-[#9fdcbc]">'editor'</span>,
+      <span class="text-[#9fdcbc]">'thumbnail'</span>, <span class="text-[#9fdcbc]">'custom-fields'</span>],
+  ]);
+});<span class="inline-block w-2 h-[1.3em] bg-accent align-[-5px] animate-blink motion-reduce:animate-none"></span></pre>
 
                   <!-- Stats -->
                   <dl class="m-0 grid grid-cols-3 border-t border-line text-center">
