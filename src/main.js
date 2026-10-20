@@ -13,6 +13,10 @@ import { ScrollSmoother } from "gsap/ScrollSmoother";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { SplitText } from "gsap/SplitText";
 
+import { Mascot } from 'page-mascot'
+
+
+
 gsap.registerPlugin(
   DrawSVGPlugin,
   MotionPathPlugin,
@@ -123,6 +127,61 @@ $(function () {
     document.fonts.addEventListener?.("loadingdone", schedule);
   });
 };
+
+
+// PAGE MASCOT
+const DIRECTIONS = "/mascots/sablay-directions.webp";
+  const REACTIONS  = "/mascots/sablay-reactions.webp";
+  const el = document.getElementById("mascot");
+
+  // show cell 0–8 of a sheet (row-major, top-left to bottom-right)
+  function show(sheet, i) {
+    const col = i % 3, row = Math.floor(i / 3);
+    el.style.backgroundImage = `url(${sheet})`;
+    el.style.backgroundPosition = `${col * 50}% ${row * 50}%`;
+  }
+  show(DIRECTIONS, 4); // start looking straight ahead
+
+  // head follows the cursor (skipped on touch screens)
+  if (matchMedia("(pointer: fine)").matches) {
+    let poked = false;
+    addEventListener("pointermove", (e) => {
+      if (poked) return;
+      const r = el.getBoundingClientRect();
+      const dx = e.clientX - (r.left + r.width / 2);
+      const dy = e.clientY - (r.top + r.height / 2);
+      const dead = r.width * 0.5;                 // dead zone: head settles when cursor is close
+      if (Math.hypot(dx, dy) < dead) return show(DIRECTIONS, 4);
+      const t = 0.4;                               // how diagonal before it counts
+      const col = Math.abs(dx) < Math.abs(dy) * t ? 1 : dx < 0 ? 0 : 2;
+      const row = Math.abs(dy) < Math.abs(dx) * t ? 1 : dy < 0 ? 0 : 2;
+      show(DIRECTIONS, row * 3 + col);
+    });
+
+    // poke it: blink (cell 7 = eyes closed), then a smile
+    el.addEventListener("click", () => {
+      poked = true;
+      show(REACTIONS, 7);
+      setTimeout(() => show(REACTIONS, 1), 150);
+      setTimeout(() => { poked = false; show(DIRECTIONS, 4); }, 900);
+    });
+  }
+
+  // TIME
+  const phTime = document.getElementById('phTime');
+  const fmt = new Intl.DateTimeFormat('en-GB', {
+    timeZone: 'Asia/Manila',
+    hour: '2-digit',
+    minute: '2-digit',
+    hourCycle: 'h23',
+  });
+
+  function updateTime() {
+    phTime.textContent = fmt.format(new Date());
+    // wake up exactly on the next minute
+    setTimeout(updateTime, 60000 - (Date.now() % 60000));
+  }
+  updateTime();
 
 $("#marquee").marquee({ speed: 100 });
 
