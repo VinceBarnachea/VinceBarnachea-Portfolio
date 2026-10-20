@@ -134,22 +134,34 @@ const DIRECTIONS = "/mascots/sablay-directions.webp";
 const REACTIONS  = "/mascots/sablay-reactions.webp";
 const el = document.getElementById("mascot");
 
-let poked = false;
-let resetTimer;
-let last = -1;
-
-// reactions to choose from: happy, laugh, wink, surprised, sad, angry, sleepy, smug
 const REACTION_CELLS = [1, 2, 3, 4, 5, 6, 7, 8];
+let last = -1;
+let reactUntil = 0;          // timestamp: tracking is paused until this time
+let resetTimer;
+let px = null, py = null;    // last known cursor position
 
-// show cell 0–8 of a sheet (row-major, top-left to bottom-right)
 function show(sheet, i) {
   const col = i % 3, row = Math.floor(i / 3);
   el.style.backgroundImage = `url(${sheet})`;
   el.style.backgroundPosition = `${col * 50}% ${row * 50}%`;
 }
-show(DIRECTIONS, 4); // start looking straight ahead
 
-// click / tap: random reaction, never the same one twice in a row
+// point the head at the last known cursor position
+function look() {
+  if (px === null || Date.now() < reactUntil) return;
+  const r = el.getBoundingClientRect();
+  const dx = px - (r.left + r.width / 2);
+  const dy = py - (r.top + r.height / 2);
+  if (Math.hypot(dx, dy) < r.width * 0.5) return show(DIRECTIONS, 4); // dead zone
+  const t = 0.4;
+  const col = Math.abs(dx) < Math.abs(dy) * t ? 1 : dx < 0 ? 0 : 2;
+  const row = Math.abs(dy) < Math.abs(dx) * t ? 1 : dy < 0 ? 0 : 2;
+  show(DIRECTIONS, row * 3 + col);
+}
+
+show(DIRECTIONS, 4);
+
+// click / tap: random reaction, then go back to tracking
 el.addEventListener("click", () => {
   let pick;
   do {
@@ -157,29 +169,23 @@ el.addEventListener("click", () => {
   } while (pick === last);
   last = pick;
 
-  poked = true;
-  clearTimeout(resetTimer);
+  reactUntil = Date.now() + 1200;
   show(REACTIONS, pick);
+  clearTimeout(resetTimer);
   resetTimer = setTimeout(() => {
-    poked = false;
-    show(DIRECTIONS, 4);
+    reactUntil = 0;
+    px === null ? show(DIRECTIONS, 4) : look();   // resume tracking right away
   }, 1200);
 });
 
-// head follows the cursor (desktop only, skipped on touch screens)
+// head follows the cursor (desktop only)
 if (matchMedia("(pointer: fine)").matches) {
   addEventListener("pointermove", (e) => {
-    if (poked) return;
-    const r = el.getBoundingClientRect();
-    const dx = e.clientX - (r.left + r.width / 2);
-    const dy = e.clientY - (r.top + r.height / 2);
-    const dead = r.width * 0.5;                // dead zone: head settles when cursor is close
-    if (Math.hypot(dx, dy) < dead) return show(DIRECTIONS, 4);
-    const t = 0.4;                             // how diagonal before it counts
-    const col = Math.abs(dx) < Math.abs(dy) * t ? 1 : dx < 0 ? 0 : 2;
-    const row = Math.abs(dy) < Math.abs(dx) * t ? 1 : dy < 0 ? 0 : 2;
-    show(DIRECTIONS, row * 3 + col);
+    px = e.clientX; py = e.clientY;
+    look();
   });
+  // keep the head correct while the page scrolls under a still cursor
+  addEventListener("scroll", look, { passive: true });
 }
 
   // TIME
