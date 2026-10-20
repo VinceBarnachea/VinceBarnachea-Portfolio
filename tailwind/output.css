@@ -1044,6 +1044,12 @@
   .text-\[clamp\(2\.5rem\,12\.9vw\,130px\)\] {
     font-size: clamp(2.5rem, 12.9vw, 130px);
   }
+  .text-\[clamp\(3\.75rem\,12\.7vw\,105px\)\] {
+    font-size: clamp(3.75rem, 12.7vw, 105px);
+  }
+  .text-\[clamp\(4rem\,12\.9vw\,110px\)\] {
+    font-size: clamp(4rem, 12.9vw, 110px);
+  }
   .leading-\[\.92\] {
     --tw-leading: .92;
     line-height: .92;
