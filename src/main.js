@@ -135,12 +135,19 @@ $(function () {
   const mascotEl = document.getElementById("mascot");
   if (!mascotEl) return;
 
-  // faces to choose from: happy, laugh, wink, surprised, sad, angry, sleepy, smug
-  const FACE_CELLS = [1, 2, 3, 4, 5, 6, 7, 8];
+  const BLINK_CELL = 7;                          // sleepy/blink face
+  const FACE_CELLS = [1, 2, 3, 4, 5, 6, 8];      // happy, laugh, wink, surprised, sad, angry, smug
+  const BLINK_CHANCE = 0.5;                      // half the pokes are a plain blink
+  const FACE_HOLD_MS = 500;                      // how long the reaction stays
+  const BOUNCE_ON = true;                        // false turns the bounce off
+
   let lastFace = -1;
   let faceHoldUntil = 0;           // head tracking is paused until this timestamp
   let faceResetTimer;
+  let bounceAnim = null;
   let cursorX = null, cursorY = null;  // last known cursor position
+
+  const calmMotion = matchMedia("(prefers-reduced-motion: reduce)");
 
   // preload + decode both sheets so the first click has no delay
   [SABLAY_HEADS, SABLAY_FACES].forEach((sheetUrl) => {
@@ -154,6 +161,24 @@ $(function () {
     const cellCol = cellIndex % 3, cellRow = Math.floor(cellIndex / 3);
     mascotEl.style.backgroundImage = `url(${sheetUrl})`;
     mascotEl.style.backgroundPosition = `${cellCol * 50}% ${cellRow * 50}%`;
+  }
+
+  // head-only bounce: stretches upward from the bottom edge, so the bottom never moves
+  function bounceMascot() {
+    if (!BOUNCE_ON || calmMotion.matches || !mascotEl.animate) return;
+    bounceAnim?.cancel();
+    mascotEl.style.transformOrigin = "50% 100%";   // bottom edge stays pinned
+    bounceAnim = mascotEl.animate(
+      [
+        { transform: "scale(1, 1)",       offset: 0 },
+        { transform: "scale(1.06, 0.92)", offset: 0.15 },  // squash down
+        { transform: "scale(0.95, 1.14)", offset: 0.4 },   // head stretches up
+        { transform: "scale(1.04, 0.95)", offset: 0.65 },  // land
+        { transform: "scale(0.99, 1.04)", offset: 0.82 },  // small rebound
+        { transform: "scale(1, 1)",       offset: 1 }
+      ],
+      { duration: 650, easing: "cubic-bezier(.3,.7,.4,1)" }
+    );
   }
 
   // point the head at the last known cursor position
@@ -171,21 +196,26 @@ $(function () {
 
   drawCell(SABLAY_HEADS, 4); // start looking straight ahead
 
-  // click / tap: random face, never the same one twice in a row
+  // poke: blink or a random expression for half a second, then back to tracking
   mascotEl.addEventListener("click", () => {
     let nextFace;
-    do {
-      nextFace = FACE_CELLS[Math.floor(Math.random() * FACE_CELLS.length)];
-    } while (nextFace === lastFace);
+    if (Math.random() < BLINK_CHANCE) {
+      nextFace = BLINK_CELL;
+    } else {
+      do {
+        nextFace = FACE_CELLS[Math.floor(Math.random() * FACE_CELLS.length)];
+      } while (nextFace === lastFace);
+    }
     lastFace = nextFace;
 
-    faceHoldUntil = Date.now() + 1200;
+    faceHoldUntil = Date.now() + FACE_HOLD_MS;
     drawCell(SABLAY_FACES, nextFace);
+    bounceMascot();
     clearTimeout(faceResetTimer);
     faceResetTimer = setTimeout(() => {
       faceHoldUntil = 0;
       cursorX === null ? drawCell(SABLAY_HEADS, 4) : aimHead();  // resume tracking right away
-    }, 1200);
+    }, FACE_HOLD_MS);
   });
 
   // head follows the cursor (desktop only, skipped on touch screens)
