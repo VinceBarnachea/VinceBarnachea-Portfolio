@@ -128,8 +128,75 @@ $(function () {
   });
 };
 
+// PAGE MASCOT
+const DIRECTIONS = "/mascots/sablay-directions.webp";
+const REACTIONS  = "/mascots/sablay-reactions.webp";
+const el = document.getElementById("mascot");
 
+if (el) {
+  // reactions to choose from: happy, laugh, wink, surprised, sad, angry, sleepy, smug
+  const REACTION_CELLS = [1, 2, 3, 4, 5, 6, 7, 8];
+  let last = -1;
+  let reactUntil = 0;          // tracking is paused until this timestamp
+  let resetTimer;
+  let px = null, py = null;    // last known cursor position
 
+  // preload + decode both sheets so the first click has no delay
+  [DIRECTIONS, REACTIONS].forEach((src) => {
+    const img = new Image();
+    img.src = src;
+    img.decode?.().catch(() => {});
+  });
+
+  // show cell 0–8 of a sheet (row-major, top-left to bottom-right)
+  function show(sheet, i) {
+    const col = i % 3, row = Math.floor(i / 3);
+    el.style.backgroundImage = `url(${sheet})`;
+    el.style.backgroundPosition = `${col * 50}% ${row * 50}%`;
+  }
+
+  // point the head at the last known cursor position
+  function look() {
+    if (px === null || Date.now() < reactUntil) return;
+    const r = el.getBoundingClientRect();
+    const dx = px - (r.left + r.width / 2);
+    const dy = py - (r.top + r.height / 2);
+    if (Math.hypot(dx, dy) < r.width * 0.5) return show(DIRECTIONS, 4); // dead zone
+    const t = 0.4;                                 // how diagonal before it counts
+    const col = Math.abs(dx) < Math.abs(dy) * t ? 1 : dx < 0 ? 0 : 2;
+    const row = Math.abs(dy) < Math.abs(dx) * t ? 1 : dy < 0 ? 0 : 2;
+    show(DIRECTIONS, row * 3 + col);
+  }
+
+  show(DIRECTIONS, 4); // start looking straight ahead
+
+  // click / tap: random reaction, never the same one twice in a row
+  el.addEventListener("click", () => {
+    let pick;
+    do {
+      pick = REACTION_CELLS[Math.floor(Math.random() * REACTION_CELLS.length)];
+    } while (pick === last);
+    last = pick;
+
+    reactUntil = Date.now() + 1200;
+    show(REACTIONS, pick);
+    clearTimeout(resetTimer);
+    resetTimer = setTimeout(() => {
+      reactUntil = 0;
+      px === null ? show(DIRECTIONS, 4) : look();   // resume tracking right away
+    }, 1200);
+  });
+
+  // head follows the cursor (desktop only, skipped on touch screens)
+  if (matchMedia("(pointer: fine)").matches) {
+    addEventListener("pointermove", (e) => {
+      px = e.clientX; py = e.clientY;
+      look();
+    });
+    // keep the head correct while the page scrolls under a still cursor
+    addEventListener("scroll", look, { passive: true });
+  }
+}
 
   // TIME
   const phTime = document.getElementById('phTime');
