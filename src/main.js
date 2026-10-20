@@ -135,13 +135,11 @@ $(function () {
   const mascotEl = document.getElementById("mascot");
   if (!mascotEl) return;
 
-  const BLINK_CELL = 7;                          // sleepy/blink face
-  const FACE_CELLS = [1, 2, 3, 4, 5, 6, 8];      // happy, laugh, wink, surprised, sad, angry, smug
-  const BLINK_CHANCE = 0.5;                      // half the pokes are a plain blink
+  // all reactions: happy, laugh, wink, surprised, sad, angry, sleepy/blink, smug
+  const FACE_CELLS = [1, 2, 3, 4, 5, 6, 7, 8];
   const FACE_HOLD_MS = 500;                      // how long the reaction stays
   const BOUNCE_ON = true;                        // false turns the bounce off
 
-  let lastFace = -1;
   let faceHoldUntil = 0;           // head tracking is paused until this timestamp
   let faceResetTimer;
   let bounceAnim = null;
@@ -196,17 +194,9 @@ $(function () {
 
   drawCell(SABLAY_HEADS, 4); // start looking straight ahead
 
-  // poke: blink or a random expression for half a second, then back to tracking
+  // poke: completely random face, then back to tracking
   mascotEl.addEventListener("click", () => {
-    let nextFace;
-    if (Math.random() < BLINK_CHANCE) {
-      nextFace = BLINK_CELL;
-    } else {
-      do {
-        nextFace = FACE_CELLS[Math.floor(Math.random() * FACE_CELLS.length)];
-      } while (nextFace === lastFace);
-    }
-    lastFace = nextFace;
+    const nextFace = FACE_CELLS[Math.floor(Math.random() * FACE_CELLS.length)];
 
     faceHoldUntil = Date.now() + FACE_HOLD_MS;
     drawCell(SABLAY_FACES, nextFace);
