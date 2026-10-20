@@ -2187,6 +2187,21 @@
       font-size: 100px;
     }
   }
+  .lg\:text-\[105px\] {
+    @media (width >= 1025px) {
+      font-size: 105px;
+    }
+  }
+  .lg\:text-\[110px\] {
+    @media (width >= 1025px) {
+      font-size: 110px;
+    }
+  }
+  .lg\:text-\[115px\] {
+    @media (width >= 1025px) {
+      font-size: 115px;
+    }
+  }
   .lg\:mix-blend-difference {
     @media (width >= 1025px) {
       mix-blend-mode: difference;
@@ -2368,6 +2383,12 @@
     @media (width >= 1800px) {
       font-size: var(--text-lg);
       line-height: var(--tw-leading, var(--text-lg--line-height));
+    }
+  }
+  .\33 xl\:text-xl {
+    @media (width >= 1800px) {
+      font-size: var(--text-xl);
+      line-height: var(--tw-leading, var(--text-xl--line-height));
     }
   }
   .\33 xl\:text-xs {
