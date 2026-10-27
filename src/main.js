@@ -135,10 +135,14 @@ $(function () {
   const mascotEl = document.getElementById("mascot");
   if (!mascotEl) return;
 
-  // all reactions: happy, laugh, wink, surprised, sad, angry, sleepy/blink, smug
-  const FACE_CELLS = [1, 2, 3, 4, 5, 6, 7, 8];
-  const FACE_HOLD_MS = 500;                      // how long the reaction stays
-  const BOUNCE_ON = true;                        // false turns the bounce off
+  // all 9 reactions: love, wink, laugh, confused, surprised, sad, shy, sleepy, cool
+  const FACE_CELLS = [0, 1, 2, 3, 4, 5, 6, 7, 8];
+
+  // random ranges (milliseconds / multipliers)
+  const HOLD_MIN_MS = 1000,  HOLD_MAX_MS = 1000;  // how long the reaction stays
+  const BOUNCE_MIN_MS = 500, BOUNCE_MAX_MS = 800; // how long the bounce lasts
+  const STRETCH_MIN = 1.08, STRETCH_MAX = 1.22;   // how tall the head stretches
+  const BOUNCE_ON = true;                         // false turns the bounce off
 
   let faceHoldUntil = 0;           // head tracking is paused until this timestamp
   let faceResetTimer;
@@ -146,6 +150,7 @@ $(function () {
   let cursorX = null, cursorY = null;  // last known cursor position
 
   const calmMotion = matchMedia("(prefers-reduced-motion: reduce)");
+  const randBetween = (lo, hi) => lo + Math.random() * (hi - lo);
 
   // preload + decode both sheets so the first click has no delay
   [SABLAY_HEADS, SABLAY_FACES].forEach((sheetUrl) => {
@@ -161,21 +166,25 @@ $(function () {
     mascotEl.style.backgroundPosition = `${cellCol * 50}% ${cellRow * 50}%`;
   }
 
-  // head-only bounce: stretches upward from the bottom edge, so the bottom never moves
+  // head-only bounce with random strength; the bottom edge stays pinned
   function bounceMascot() {
     if (!BOUNCE_ON || calmMotion.matches || !mascotEl.animate) return;
+    const stretch = randBetween(STRETCH_MIN, STRETCH_MAX);   // e.g. 1.15
+    const squash  = 1 - (stretch - 1) * 0.55;                // matching squash
+    const wide    = 1 + (stretch - 1) * 0.4;                 // sideways squish
+    const thin    = 1 - (stretch - 1) * 0.35;
     bounceAnim?.cancel();
-    mascotEl.style.transformOrigin = "50% 100%";   // bottom edge stays pinned
+    mascotEl.style.transformOrigin = "50% 100%";
     bounceAnim = mascotEl.animate(
       [
-        { transform: "scale(1, 1)",       offset: 0 },
-        { transform: "scale(1.06, 0.92)", offset: 0.15 },  // squash down
-        { transform: "scale(0.95, 1.14)", offset: 0.4 },   // head stretches up
-        { transform: "scale(1.04, 0.95)", offset: 0.65 },  // land
-        { transform: "scale(0.99, 1.04)", offset: 0.82 },  // small rebound
-        { transform: "scale(1, 1)",       offset: 1 }
+        { transform: "scale(1, 1)",                  offset: 0 },
+        { transform: `scale(${wide}, ${squash})`,    offset: 0.15 },  // squash down
+        { transform: `scale(${thin}, ${stretch})`,   offset: 0.4 },   // head stretches up
+        { transform: `scale(${1 + (wide - 1) * 0.6}, ${1 - (1 - squash) * 0.5})`, offset: 0.65 }, // land
+        { transform: `scale(1, ${1 + (stretch - 1) * 0.25})`, offset: 0.82 }, // small rebound
+        { transform: "scale(1, 1)",                  offset: 1 }
       ],
-      { duration: 650, easing: "cubic-bezier(.3,.7,.4,1)" }
+      { duration: randBetween(BOUNCE_MIN_MS, BOUNCE_MAX_MS), easing: "cubic-bezier(.3,.7,.4,1)" }
     );
   }
 
@@ -194,18 +203,19 @@ $(function () {
 
   drawCell(SABLAY_HEADS, 4); // start looking straight ahead
 
-  // poke: completely random face, then back to tracking
+  // poke: random face, random hold time, random bounce, then back to tracking
   mascotEl.addEventListener("click", () => {
     const nextFace = FACE_CELLS[Math.floor(Math.random() * FACE_CELLS.length)];
+    const holdMs = Math.round(randBetween(HOLD_MIN_MS, HOLD_MAX_MS));
 
-    faceHoldUntil = Date.now() + FACE_HOLD_MS;
+    faceHoldUntil = Date.now() + holdMs;
     drawCell(SABLAY_FACES, nextFace);
     bounceMascot();
     clearTimeout(faceResetTimer);
     faceResetTimer = setTimeout(() => {
       faceHoldUntil = 0;
       cursorX === null ? drawCell(SABLAY_HEADS, 4) : aimHead();  // resume tracking right away
-    }, FACE_HOLD_MS);
+    }, holdMs);
   });
 
   // head follows the cursor (desktop only, skipped on touch screens)
