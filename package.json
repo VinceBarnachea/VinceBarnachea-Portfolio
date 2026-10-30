@@ -16,6 +16,7 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "@fancyapps/ui": "^6.1.15",
     "@tailwindcss/cli": "^4.1.17",
     "@vercel/analytics": "^1.6.1",
     "esbuild": "^0.25.12",
