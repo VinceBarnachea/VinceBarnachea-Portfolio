@@ -17,6 +17,12 @@ import { SplitText } from "gsap/SplitText";
 import { Fancybox } from "@fancyapps/ui/dist/fancybox/";
 import "@fancyapps/ui/dist/fancybox/fancybox.css";
 
+// SWIPER.JS
+import Swiper from 'swiper';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import { Pagination } from 'swiper/modules';
+
 import { Mascot } from "page-mascot";
 
 gsap.registerPlugin(
@@ -554,93 +560,238 @@ $(function () {
       "<",
     );
 
-  $("#projects-section").css("padding-top", headerHeight + 10 + "px");
-
-  var projRow = $(".projects-row").outerWidth(true);
-  var sectionWidth = $(".max-container").width();
-  var totalWidthProj = projRow - sectionWidth;
-  var projSpeed = $(window).width() < 768 ? 1.5 : 3.5;
-
-  var projectsTL = gsap.timeline({
-    scrollTrigger: {
-      trigger: "#projects-section",
-      start: "top top",
+  var projectTitleHeaderTL = gsap.timeline({
+    scrollTrigger:{
+      trigger: ".project-titlecontainer",
+      start: "bottom bottom",
+      // markers: true,
       pin: true,
       pinType: ScrollTrigger.isTouch ? "fixed" : "transform",
       scrub: true,
-      end: () => "+=" + totalWidthProj / projSpeed,
-      // markers: true,
+      pinSpacing: false,
+      invalidateOnRefresh: true,
+      end: "top top+=150",
+    }
+  });
+
+  projectTitleHeaderTL
+  .to(".title-wrapper",
+    {
+      y: "-10vh",
+      ease: "none",    
+    }
+  )
+  .to(".projhead-title",
+    {
+      opacity: 0.7,
+      scale: 0.85,
+      ease: "none",
+    },"<"
+  )
+  .to(".title-wrapper",
+    {
+      autoAlpha: 0,
+      ease: "none",    
+    },">"
+  );
+
+ 
+
+const $cards = $(".project-card");
+const $last = $cards.last();
+const STACK_TOP = (headerHeight + 10);
+const STACK_GAP = 10;
+const HOLD = 300;  // scroll distance during which the last card gets buried
+const lastOffset = STACK_TOP + ($cards.length - 1) * STACK_GAP;
+
+const BG_ACTIVE = "rgb(22, 48, 43)";
+const BG_BURIED = "rgb(10, 20, 18)";
+const pinType = ScrollTrigger.isTouch ? "fixed" : "transform";
+
+const cardTriggers = []; // each card's pin ScrollTrigger (used by the nav)
+
+gsap.set($cards.toArray(), { backgroundColor: BG_ACTIVE });
+
+// Every card except the first starts hidden
+gsap.set($cards.toArray().slice(1), { autoAlpha: 0 });
+
+// Release point for cards 1-8: last card's stack spot + HOLD
+const stackEnd = () => $last.offset().top - lastOffset + HOLD;
+
+// Same buried look for every card
+const buryTimeline = (card) =>
+  gsap.timeline({ defaults: { ease: "none" } })
+    .to(card, {
+      backgroundColor: BG_BURIED,
+      scale: 0.92,
+      transformOrigin: "center top",
+    }, 0)
+    .to($(card).children(".grid")[0], { opacity: 0.4 }, 0);
+
+// ---------- Side nav (Tailwind) ----------
+const NUM_IDLE    = "text-xs text-[#ddd]";
+const NUM_ACTIVE  = "text-sm text-white font-bold";
+const BAR_IDLE    = "w-2.5 bg-[#ddd]";
+const BAR_ACTIVE  = "w-8 bg-[#e6e6e6]";
+const NAV_HIDDEN  = "opacity-0 pointer-events-none";
+const NAV_VISIBLE = "opacity-100 pointer-events-auto";
+
+const $nav = $(
+  `<ul class="fixed right-6 top-1/2 -translate-y-1/2 z-[200] flex flex-col gap-4 text-sm
+              m-0 p-0 list-none transition-opacity duration-300 ${NAV_HIDDEN}"></ul>`
+).appendTo("body");
+
+let activeIndex = -1;
+
+function setActive(index) {
+  if (index === activeIndex) return;
+  activeIndex = index;
+  $nav.children("li").each(function (n) {
+    const on = n === index;
+    $(this).find(".num").toggleClass(NUM_ACTIVE, on).toggleClass(NUM_IDLE, !on);
+    $(this).find(".bar").toggleClass(BAR_ACTIVE, on).toggleClass(BAR_IDLE, !on);
+  });
+}
+
+// Active card = the last card whose pin has started
+function syncNav(y) {
+  let idx = 0;
+  cardTriggers.forEach((st, n) => {
+    if (y >= st.start - 1) idx = n;
+  });
+  setActive(idx);
+}
+
+$cards.each(function (i) {
+  const $project = $(this);
+  const $next = $cards.eq(i + 1);
+  const isLast = i === $cards.length - 1;
+  const startOffset = STACK_TOP + i * STACK_GAP;
+
+  const count = String(i + 1).padStart(2, "0"); // 01, 02 ... 09, 10
+  $project.find(".projCount").text(count);
+
+  // Nav item for this card
+  $nav.append(`
+    <li data-index="${i}" class="flex items-center justify-end gap-3 cursor-pointer">
+      <span class="num min-w-[18px] text-right transition-all duration-300 ${NUM_IDLE}">${count}</span>
+      <span class="bar block h-0.5 rounded-sm transition-all duration-300 ${BAR_IDLE}"></span>
+    </li>`);
+
+  // ---------- Fancybox ----------
+  Fancybox.bind(this, '[data-fancybox="project-gallery"]', {
+    animated: true,
+    dragToClose: true,
+    caption: true,
+    Toolbar: {
+      display: {
+        left: [],
+        middle: ["counter"],
+        right: ["zoom", "fullscreen", "close"],
+      },
+    },
+    Carousel: {
+      Autoplay: {
+        autoStart: true,
+        timeout: 3000,
+        showProgressbar: true,
+        pauseOnHover: false,
+      },
     },
   });
 
-  projectsTL.to(".projects-row", {
-    x: "-" + totalWidthProj + "px",
-    ease: "none",
+  // ---------- Swiper ----------
+  const gallery = new Swiper($project.find(".browser-body")[0], {
+    modules: [Pagination],
+    slidesPerView: 1,
+    grabCursor: true,
+    pagination: {
+      el: $project.find(".projgallery-pagination")[0],
+      clickable: true,
+      dynamicBullets: true,
+      dynamicMainBullets: 1,
+    },
   });
 
-  var totalCards = $(".projects-card").length;
-  
-  $(".projects-card").each(function (index, element) {
-    
-    // Show Project Card
-    gsap.fromTo(
-      element,
-      {
-        opacity: 0,
-        y: 80,
-        scale: 0.9,
-      },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 1,
-        scale: 1,
-        ease: "none",
-        scrollTrigger: {
-          trigger: element,
-          containerAnimation: projectsTL,
-          start: "center right",
-          end: "end right-=250",
-          scrub: true,
-          // markers: true,
-        },
-      },
-    );
+  // ---------- Stacking ----------
+  $project.css("z-index", i + 1);
 
-    // Count Current Project Card
-    let current = String(index + 1).padStart(2, "0");
-    $(this).find('.projCount').text(current);
-    $(".all-project-count").text(String(totalCards).padStart(2, "0"));
-    ScrollTrigger.create({
-      trigger: element,
-      containerAnimation: projectsTL,
-      start: "left center",
-      scrub: true,
-      // markers: true,
-      onEnter: () => {
-        $(".project-count").text(current);
-      },
-
-      onEnterBack: () => {
-        $(".project-count").text(current);
-      },
+  if (!isLast) {
+    // Pin until the whole stack is done
+    cardTriggers[i] = ScrollTrigger.create({
+      trigger: this,
+      start: `top top+=${startOffset}`,
+      end: stackEnd,
+      pin: this,
+      pinSpacing: false,
+      pinType,
+      invalidateOnRefresh: true,
     });
-  });
 
-  ScrollTrigger.create({
-    trigger: ".projects-row",
-    containerAnimation: projectsTL,
-    start: "left left",
-    end: "right right",
-    scrub: true,
-    onUpdate: (self) => {
-      let percent = Math.round(self.progress * 100);
+    // Reveal the NEXT card once THIS card is pinned
+    ScrollTrigger.create({
+      trigger: this,
+      start: `top top+=${startOffset}`, // same start as this card's pin
+      end: "max",                       // stays revealed for the rest of the page
+      invalidateOnRefresh: true,
+      onToggle: (self) =>
+        gsap.to($next[0], {
+          autoAlpha: self.isActive ? 1 : 0,
+          duration: 0.3,
+          overwrite: "auto",
+        }),
+    });
 
-      $(".progress-value").text(percent + "%");
+    // Buried when the next card slides over it
+    ScrollTrigger.create({
+      animation: buryTimeline(this),
+      trigger: $next[0],
+      start: "top bottom",
+      end: `top top+=${startOffset + STACK_GAP}`,
+      scrub: true,
+      invalidateOnRefresh: true,
+    });
+  } else {
+    // LAST CARD: pin + buried animation in ONE ScrollTrigger
+    cardTriggers[i] = ScrollTrigger.create({
+      animation: buryTimeline(this),
+      trigger: this,
+      start: `top top+=${startOffset}`,
+      end: `+=${HOLD}`,
+      pin: this,
+      pinSpacing: true,
+      pinType,
+      scrub: true,
+      invalidateOnRefresh: true,
+    });
+  }
+});
 
-      $(".progress-fill").css("width", percent + "%");
-    },
-  });
+// ---------- Nav sync + visibility (created after the cards) ----------
+ScrollTrigger.create({
+  trigger: ".all-project-cards-wrapper",
+  start: "top center",
+  end: () => cardTriggers[cardTriggers.length - 1].end, // when the stack unpins
+  invalidateOnRefresh: true,
+  onUpdate: (self) => syncNav(self.scroll()),
+  onRefresh: (self) => syncNav(self.scroll()),
+  onToggle: (self) =>
+    $nav.toggleClass(NAV_VISIBLE, self.isActive).toggleClass(NAV_HIDDEN, !self.isActive),
+});
+
+// ---------- Click: jump to a specific card ----------
+$nav.on("click", "li", function () {
+  const st = cardTriggers[$(this).data("index")];
+  $("html, body").stop().animate({ scrollTop: st.start + 1 }, 800);
+});
+
+// Let the user interrupt the jump by scrolling
+$(window).on("wheel touchstart", () => $("html, body").stop());
+
+// Offsets depend on final image sizes
+$(window).on("load", () => ScrollTrigger.refresh());
+
+  
 
   var chptstickyHeight = $(".chpt-sticky").outerHeight(true);
   ["chapter1", "chapter2", "chapter3"].forEach((ch) => {
@@ -662,17 +813,6 @@ $(function () {
     // Animate background Y with scroll
   });
 
-  // gsap.to(`.chapter3`, {
-  //   backgroundPositionY: "-" + 5 + "px", // adjust to your total scroll distance
-  //   ease: "none",
-  //   scrollTrigger: {
-  //     trigger: ".allchapters",
-  //     start: "top top",
-  //     end: "+=8000",
-  //     scrub: true,
-  //     // markers: true
-  //   },
-  // });
 
   var $sectionSlidingText = $(".sliding-text-section");
   var $rowSlidingText = $(".sliding-text-row");
@@ -878,51 +1018,6 @@ $(window).on("resize", function () {
     },
   );
 
-  // setTimeout(() => {
-  //   gsap.to("body", {
-  //     overflow: "hidden",
-  //   });
-  //   gsap.to(".coming-soon-section", {
-  //     top: 0,
-  //     duration: 1,
-  //   });
-
-  //   gsap.to(".box", {
-  //     rotate: 720,
-  //     scale: 2,
-  //     duration: 2,
-  //     repeat: -1, // infinite loop
-  //     yoyo: true,
-  //     delay: 0.5,
-  //   });
-
-  //   const texts = ["Coming Soon!", "Work in Progress", "Hello World"];
-  //   let index = 0;
-
-  //   function animateText() {
-  //     const el = $(".comingsoon");
-  //     el.text(texts[index]);
-
-  //     const split = new SplitText(el, { type: "lines,words,chars" });
-
-  //     gsap.from(split.chars, {
-  //       y: 300,
-  //       stagger: 0.05,
-  //       duration: 1,
-  //       yoyo: true,
-  //       repeat: 1, // goes up and down once
-  //       repeatDelay: 0.7,
-  //       ease: "power1.inOut",
-  //       onComplete: () => {
-  //         split.revert(); // clean up
-  //         index = (index + 1) % texts.length; // move to next text
-  //         animateText(); // recursively animate next text
-  //       },
-  //     });
-  //   }
-
-  //   animateText();
-  // }, 30000);
 
   $("#vinceForm").on("submit", function (e) {
     e.preventDefault();
@@ -963,28 +1058,7 @@ $(window).on("resize", function () {
   });
   setHeroHeight();
 
-  $(".projects-card").each(function () {
-    Fancybox.bind(this, '[data-fancybox="project-gallery"]', {
-      animated: true,
-      dragToClose: true,
-      caption: true,
-      Toolbar: {
-        display: {
-          left: [],
-          middle: ["counter"],
-          right: ["zoom", "fullscreen", "close"],
-        },
-      },
-      Carousel: {
-        Autoplay: {
-          autoStart: true,
-          timeout: 3000,
-          showProgressbar: true,
-          pauseOnHover: false,
-        },
-      },
-    });
-  });
+  
 }); //End ng Ready Function
 
 function setHeroHeight() {

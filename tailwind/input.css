@@ -53,7 +53,22 @@
 
 }
   
-
+.project-right-part .swiper-pagination-bullet{
+    border-radius: 0px!important;
+    width: 10px!important;
+    height: 10px!important;
+    background-color: #cecece!important;
+    opacity: 1!important;
+}
+.project-right-part .swiper-pagination-bullet.swiper-pagination-bullet-active{
+    width: 12px!important;
+    height: 12px!important;
+    background-color: #E6E6E6!important;
+}
+.swiper-pagination-bullets-dynamic{
+    left: 0!important;
+    transform: translateX(0)!important;
+}
 
 
 .expand.cursor-flwr {
