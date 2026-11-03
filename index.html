@@ -45,12 +45,12 @@
   <div
     class="cursor-pntr bg-[#fff] w-[10px] h-[10px] origin-center mix-blend-difference !rounded-[3px] [corner-shape:squircle] z-[9999999] fixed left-0 top-0 pointer-events-none translate-x-[-50%] translate-y-[-50%] hidden sm:block">
   </div>
-  <header class="header-main fixed lg:sticky top-0 left-0 w-full z-[99999] h-[65px] lg:h-[75px]">
+  <header class="header-main fixed lg:sticky top-0 left-0 w-full z-[99999] py-2 ">
     <div class="header-wrapper w-full h-full relative z-[10] flex items-center">
       <div class="flex justify-between h-full w-full items-center gap-8 max-container px-5 sm:px-[5%] 2xl:px-0">
-        <a class="inline-block h-[40px] lg:h-[45px] hvr-crsr relative z-[100]"
+        <a class="inline-block h-[40px] lg:h-[40px] 3xl:h-[45px] hvr-crsr relative z-[100]"
           href="https://vincebarnachea-portfolio.vercel.app/">
-          <svg class="h-[40px] lg:h-[45px] w-fit relative" id="Layer_1" xmlns="http://www.w3.org/2000/svg" version="1.1"
+          <svg class="h-full shrink-0 w-fit relative" id="Layer_1" xmlns="http://www.w3.org/2000/svg" version="1.1"
             viewBox="0 0 150 150">
             <defs>
               <style>
@@ -76,33 +76,33 @@
 
           <h6 class="text-sm opacity-75 mb-4 block lg:hidden">MENU</h6>
           <div
-            class="flex flex-col lg:flex-row items-center lg:items-stretch h-fit w-full lg:w-fit lg:h-[40px] gap-4 lg:gap-2">
+            class="flex flex-col lg:flex-row items-center lg:items-stretch lg:min-h-8 lg:flex-1 w-full lg:w-fit gap-4 lg:gap-2">
             <a href="#home"
-              class="flex items-center lg:border-l-[1px] hvr-crsr h-full border-[rgba(230,230,230,0.3)] group animate300 bg-transparent hover:bg-white ">
+              class="flex items-center lg:border-l-[1px] hvr-crsr h-fit lg:h-full border-[rgba(230,230,230,0.3)] group animate300 bg-transparent hover:bg-white ">
               <h6 class="text-white lg:mix-blend-difference px-4 flex items-center gap-2 text-base lg:text-sm"><span
                   class="text-[11px] leading-[0.9]">[01]</span>
                 HOME</h6>
             </a>
             <a href="#projects-section"
-              class="flex items-center lg:border-l-[1px] hvr-crsr h-full border-[rgba(230,230,230,0.3)] group animate300 bg-transparent hover:bg-white ">
+              class="flex items-center lg:border-l-[1px] hvr-crsr h-fit lg:h-full border-[rgba(230,230,230,0.3)] group animate300 bg-transparent hover:bg-white ">
               <h6 class="text-white lg:mix-blend-difference px-4 flex items-center gap-2 text-base lg:text-sm"><span
                   class="text-[11px] leading-[0.9]">[02]</span>
                 PROJECTS</h6>
             </a>
             <a href="#aboutme-section"
-              class="flex items-center lg:border-l-[1px] hvr-crsr h-full border-[rgba(230,230,230,0.3)] group animate300 bg-transparent hover:bg-white ">
+              class="flex items-center lg:border-l-[1px] hvr-crsr h-fit lg:h-full border-[rgba(230,230,230,0.3)] group animate300 bg-transparent hover:bg-white ">
               <h6 class="text-white lg:mix-blend-difference px-4 flex items-center gap-2 text-base lg:text-sm"><span
                   class="text-[11px] leading-[0.9]">[03]</span>
                 ABOUT</h6>
             </a>
             <a href="#skills-section"
-              class="flex items-center lg:border-l-[1px] hvr-crsr h-full border-[rgba(230,230,230,0.3)] group animate300 bg-transparent hover:bg-white ">
+              class="flex items-center lg:border-l-[1px] hvr-crsr h-fit lg:h-full border-[rgba(230,230,230,0.3)] group animate300 bg-transparent hover:bg-white ">
               <h6 class="text-white lg:mix-blend-difference px-4 flex items-center gap-2 text-base lg:text-sm"><span
                   class="text-[11px] leading-[0.9]">[04]</span>
                 SKILLS</h6>
             </a>
             <a href="#contact-section"
-              class="flex items-center lg:border-l-[1px] hvr-crsr h-full border-[rgba(230,230,230,0.3)] group animate300 bg-transparent hover:bg-white ">
+              class="flex items-center lg:border-l-[1px] hvr-crsr h-fit lg:h-full border-[rgba(230,230,230,0.3)] group animate300 bg-transparent hover:bg-white ">
               <h6 class="text-white lg:mix-blend-difference px-4 flex items-center gap-2 text-base lg:text-sm"><span
                   class="text-[11px] leading-[0.9]">[05]</span>
                 CONTACT</h6>
@@ -171,7 +171,7 @@
           <div class="max-container h-full px-5 sm:px-[5%] 2xl:px-0">
             <div class="w-full hero-section min-h-screen grid lg:grid-cols-12 gap-y-8 sm:gap-y-12 gap-x-6">
               <div class="lg:col-span-8 w-full h-full flex flex-col justify-end lg:justify-center">
-                <div class="flex items-center justify-center lg:justify-start gap-3 sm:gap-4 mb-5 sm:mb-6">
+                <div id="landingActions" class="flex items-center justify-center lg:justify-start gap-3 sm:gap-4 mb-5 sm:mb-6">
                   <a href="https://www.linkedin.com/in/john-vincent-barnachea/" target="_blank"
                     class="w-[40px] sm:w-[45px] h-[40px] sm:h-[45px] group flex items-center justify-center border border-white rounded-[5px] hvr-crsr relative">
                     <svg class="w-[18px] h-fit fill-[#e6e6e6] group-hover:fill-[#16302b] relative z-20"
@@ -192,7 +192,7 @@
                       </g>
                     </svg>
                     <div
-                      class="bg-white absolute top-0 left-0 w-full h-full z-10 [clip-path:inset(0%_100%_0%_0%)] group-hover:[clip-path:inset(0%_-1%_0%_0%)] animate300">
+                      class="bg-white absolute top-0 left-0 w-full h-full z-10 [clip-path:inset(0%_100%_0%_0%)] group-hover:[clip-path:inset(0%_0%_0%_0%)] animate300">
                     </div>
                   </a>
 
@@ -222,10 +222,10 @@
                   </a>
                 </div>
                 <h1 id="landing1st"
-                  class="text-center lg:text-left text-[clamp(4rem,12.9vw,110px)] 3xl:text-[130px] font-black leading-[.92] ">
+                  class="text-center lg:text-left text-[clamp(4rem,12.9vw,110px)] 3xl:text-[130px] font-black !leading-[0.85] [&>div]:pb-2 [&>div]:!overflow-hidden">
                   John Vincent</h1>
                 <h2 id="landing2nd"
-                  class="text-center lg:text-left text-[clamp(3.75rem,12.7vw,105px)] 3xl:text-[125px] font-black text-[#e6e6e6cc]">
+                  class="text-center lg:text-left text-[clamp(3.75rem,12.7vw,105px)] 3xl:text-[125px] font-black !leading-[0.85 ] [&>div]:pb-2 text-[#e6e6e6cc] [&>div]:!overflow-hidden">
                   Barnachea</h2>
 
                 <div class="mt-4 text-base lg:text-xl text-white text-balance text-center lg:text-left">
@@ -239,16 +239,22 @@
                 <div class="hero-cta flex items-center justify-start flex-col sm:flex-row gap-3 sm:gap-4 mt-6 3xl:mt-6">
                   <button
                     class="landingcta-primary w-full lg:w-fit border border-white rounded-[5px] py-1.5 lg:py-2 px-4 lg:px-4 relative group hover:cursor-pointer hvr-crsr">
-                    <h6 class="text-white mix-blend-difference relative z-20">GET IN TOUCH</h6>
+                    <div class="overflow-hidden relative">
+                      <h6 class="text-white mix-blend-difference relative z-20 group-hover:translate-y-[-100%] animate300">LET'S CONNECT</h6>
+                      <h6 class="text-white mix-blend-difference absolute top-1/2 translate-y-[50%] group-hover:translate-y-[-50%] animate300 z-20">LET'S CONNECT</h6>
+                    </div>
                     <div
-                      class="bg-white absolute top-0 left-0 w-full h-full z-10 [clip-path:inset(0%_0%_0%_0%)] group-hover:[clip-path:inset(0%_0%_0%_100%)] animate300">
+                      class="bg-white absolute top-0 left-0 w-full h-full z-10 [clip-path:inset(0%_0%_0%_0%)] group-hover:[clip-path:inset(0%_0%_100%_0%)] animate400">
                     </div>
                   </button>
                   <button
                     class="landingcta-secondary w-full lg:w-fit border border-white rounded-[5px] py-1.5 lg:py-2 px-4 lg:px-4 bg-transparent relative group hover:cursor-pointer hvr-crsr">
-                    <h6 class="text-white mix-blend-difference relative z-20">PROJECTS</h6>
+                    <div class="overflow-hidden relative">
+                      <h6 class="text-white mix-blend-difference relative group-hover:translate-y-[-100%] animate400 z-20">SEE MY PROJECTS</h6>
+                      <h6 class="text-white mix-blend-difference absolute top-1/2 translate-y-[50%] group-hover:translate-y-[-50%] animate400 z-20">SEE MY PROJECTS</h6>
+                    </div>
                     <div
-                      class="bg-white absolute top-0 left-0 w-full h-full z-10 [clip-path:inset(0%_100%_0%_0%)] group-hover:[clip-path:inset(0%_-1%_0%_0%)] animate300">
+                      class="bg-white absolute top-0 left-0 w-full h-full z-10 [clip-path:inset(100%_0%_0%_0%)] group-hover:[clip-path:inset(0%_0%_0%_0%)] animate400">
                     </div>
                   </button>
                 </div>
@@ -276,7 +282,7 @@
     <span class="text-[#9fdcbc]">'show_in_rest'</span> => <span class="text-accent">true</span>,
     <span class="text-[#9fdcbc]">'has_archive'</span> => <span class="text-accent">true</span>,
     <span class="text-[#9fdcbc]">'supports'</span> => [<span class="text-[#9fdcbc]">'title'</span>, <span class="text-[#9fdcbc]">'editor'</span>,
-      <span class="text-[#9fdcbc]">'thumbnail'</span>, <span class="text-[#9fdcbc]">'custom-fields'</span>],
+              <span class="text-[#9fdcbc]">'thumbnail'</span>, <span class="text-[#9fdcbc]">'custom-fields'</span>],
   ]);
 });<span class="inline-block w-2 h-[1.3em] bg-accent align-[-5px] animate-blink motion-reduce:animate-none"></span></pre>
 
@@ -312,28 +318,28 @@
           <div class="overflow-hidden loop-elements border-y inset-x-0 border-line absolute bottom-0">
             <div id="marquee" class="flex w-max">
               <span
-                class="shrink-0 flex items-center gap-8 pr-8 py-4 font-black font-extrabold uppercase text-2xl text-dim whitespace-nowrap">WordPress
+                class="shrink-0 flex items-center gap-8 pr-8 py-4 font-black font-extrabold uppercase text-xl text-dim whitespace-nowrap">WordPress
                 <span class="text-white">✦</span></span>
               <span
-                class="shrink-0 flex items-center gap-8 pr-8 py-4 font-black font-extrabold uppercase text-2xl text-dim whitespace-nowrap">WooCommerce
+                class="shrink-0 flex items-center gap-8 pr-8 py-4 font-black font-extrabold uppercase text-xl text-dim whitespace-nowrap">WooCommerce
                 <span class="text-white">✦</span></span>
               <span
-                class="shrink-0 flex items-center gap-8 pr-8 py-4 font-black font-extrabold uppercase text-2xl text-dim whitespace-nowrap">Tailwind
+                class="shrink-0 flex items-center gap-8 pr-8 py-4 font-black font-extrabold uppercase text-xl text-dim whitespace-nowrap">Tailwind
                 <span class="text-white">✦</span></span>
               <span
-                class="shrink-0 flex items-center gap-8 pr-8 py-4 font-black font-extrabold uppercase text-2xl text-dim whitespace-nowrap">ACF
+                class="shrink-0 flex items-center gap-8 pr-8 py-4 font-black font-extrabold uppercase text-xl text-dim whitespace-nowrap">ACF
                 <span class="text-white">✦</span></span>
               <span
-                class="shrink-0 flex items-center gap-8 pr-8 py-4 font-black font-extrabold uppercase text-2xl text-dim whitespace-nowrap">PHP
+                class="shrink-0 flex items-center gap-8 pr-8 py-4 font-black font-extrabold uppercase text-xl text-dim whitespace-nowrap">PHP
                 <span class="text-white">✦</span></span>
               <span
-                class="shrink-0 flex items-center gap-8 pr-8 py-4 font-black font-extrabold uppercase text-2xl text-dim whitespace-nowrap">AJAX
+                class="shrink-0 flex items-center gap-8 pr-8 py-4 font-black font-extrabold uppercase text-xl text-dim whitespace-nowrap">AJAX
                 <span class="text-white">✦</span></span>
               <span
-                class="shrink-0 flex items-center gap-8 pr-8 py-4 font-black font-extrabold uppercase text-2xl text-dim whitespace-nowrap">JQUERY
+                class="shrink-0 flex items-center gap-8 pr-8 py-4 font-black font-extrabold uppercase text-xl text-dim whitespace-nowrap">JQUERY
                 <span class="text-white">✦</span></span>
               <span
-                class="shrink-0 flex items-center gap-8 pr-8 py-4 font-black font-extrabold uppercase text-2xl text-dim whitespace-nowrap">GSAP
+                class="shrink-0 flex items-center gap-8 pr-8 py-4 font-black font-extrabold uppercase text-xl text-dim whitespace-nowrap">GSAP
                 <span class="text-white">✦</span></span>
             </div>
           </div>
@@ -343,30 +349,36 @@
 
 
         <!-- PROJECTS -->
-        <section id="projects-section" class="bg-[#101010] pt-36 pb-0">
+        <section id="projects-section" class="bg-[#101010] pt-12 lg:pt-36 pb-0">
           <div
             class="max-container project-titlecontainer px-5 sm:px-[5%] 2xl:px-0 relative w-full flex flex-col justify-end">
             <div class="flex flex-col title-wrapper">
-              <h6 class="text-white px-4 flex items-center gap-2 text-sm"><span
+              <h6 class="text-white flex items-center gap-2 text-sm"><span
                   class="text-[11px] leading-[0.9]">[02]</span>
                 PROJECTS</h6>
               <h2
-                class="text-center projhead-title origin-left lg:text-left text-[clamp(5rem,13vw,140px)] 3xl:text-[160px] font-black leading-[.92]">
+                class="projhead-title origin-left text-left text-[clamp(5rem,13vw,140px)] 3xl:text-[160px] font-black leading-[.92]">
                 Selected Work
               </h2>
-              <div>
-                <p class="text-white text-base text-balance text-left">
-                  Client sites, custom PHP systems and apps.<br>Scroll to move through them.
-                </p>
-              </div> 
+              <div class="flex justify-between flex-row">
+                <div>
+                  <p class="text-white text-base text-balance text-left">
+                    Client sites, custom PHP systems and apps.<br>Scroll to move through them.
+                  </p>
+                </div>
+                <div class="scroll-cue flex items-center gap-[.7rem] text-xs text-[#8b8f97] tracking-wide">
+                  <i class="scroll-cue-line block w-px h-[46px] bg-[#5eead4] origin-top"></i>
+                  SCROLL
+                </div>
+              </div>
             </div>
           </div>
-          <div class="max-container px-5 sm:px-[5%] 2xl:px-0 relative w-full mt-36">
+          <div class="max-container px-2 sm:px-[5%] 2xl:px-0 relative w-full mt-36">
             <div class="all-project-cards-wrapper flex flex-col gap-24 w-full relative">
               <!-- REWARDIA -->
               <div
-                class="project-card relative w-full bg-[rgba(22,48,43,0.6)] rounded-[15px] border border-[rgba(230,230,230,0.1)] p-8 h-[70vh] flex items-center">
-                <div class="grid grid-cols-2 relative z-100 gap-12 w-full">
+                class="project-card relative w-full bg-[rgba(22,48,43,0.6)] rounded-[15px] border border-[rgba(230,230,230,0.1)] px-4 py-6 lg:p-8 h-[90vh] overflow-hidden lg:h-[75vh] 3xl:h-[70vh] flex items-center">
+                <div class="grid grid-cols-1 lg:grid-cols-2 relative z-100 gap-8 lg:gap-12 w-full">
                   <div class="project-left-part flex flex-col">
                     <h6 class="text-xs text-white mb-4">
                       <span class="projCount"></span>
@@ -375,35 +387,35 @@
                       &nbsp;/
                       2026
                     </h6>
-                    <h3 class="text-[clamp(3rem,3.5rem,4rem)] 3xl:text-[5rem] text-white font-black leading-[0.9]">
+                    <h3 class="text-[2.5rem] sm:text-[3.5rem] lg:text-[4rem] 3xl:text-[5rem] text-white font-black leading-[0.9]">
                       Rewardia</h3>
                     <div class="mt-4">
-                      <p class="text-white text-base text-left text-balance">
+                      <p class="text-white text-sm sm:text-base text-left text-balance">
                         A B2B platform where companies reward employees with redeemable voucher codes. Sole Travel is a
                         partner, so points can also buy travel packages. Voucher codes are encrypted so only the
                         intended recipient can decrypt them from their email.
                       </p>
                     </div>
-                    <div class="tags flex flex-wrap gap-x-1.5 gap-y-1 w-full my-6">
-                      <h6 class="text-xs px-2 py-1 bg-[#101010] rounded-[5px] border border-[rgba(230,230,230,0.3)]">
+                    <div class="tags flex flex-wrap gap-x-1.5 gap-y-1 w-full my-4 lg:my-6">
+                      <h6 class="text-[10px] sm:text-xs px-2 py-1 bg-[#101010] rounded-[5px] border border-[rgba(230,230,230,0.3)]">
                         Wordpress</h6>
-                      <h6 class="text-xs px-2 py-1 bg-[#101010] rounded-[5px] border border-[rgba(230,230,230,0.3)]">PHP
+                      <h6 class="text-[10px] sm:text-xs px-2 py-1 bg-[#101010] rounded-[5px] border border-[rgba(230,230,230,0.3)]">PHP
                       </h6>
-                      <h6 class="text-xs px-2 py-1 bg-[#101010] rounded-[5px] border border-[rgba(230,230,230,0.3)]">
+                      <h6 class="text-[10px] sm:text-xs px-2 py-1 bg-[#101010] rounded-[5px] border border-[rgba(230,230,230,0.3)]">
                         AJAX</h6>
-                      <h6 class="text-xs px-2 py-1 bg-[#101010] rounded-[5px] border border-[rgba(230,230,230,0.3)]">
+                      <h6 class="text-[10px] sm:text-xs px-2 py-1 bg-[#101010] rounded-[5px] border border-[rgba(230,230,230,0.3)]">
                         jQuery</h6>
-                      <h6 class="text-xs px-2 py-1 bg-[#101010] rounded-[5px] border border-[rgba(230,230,230,0.3)]">ACF
+                      <h6 class="text-[10px] sm:text-xs px-2 py-1 bg-[#101010] rounded-[5px] border border-[rgba(230,230,230,0.3)]">ACF
                       </h6>
-                      <h6 class="text-xs px-2 py-1 bg-[#101010] rounded-[5px] border border-[rgba(230,230,230,0.3)]">
+                      <h6 class="text-[10px] sm:text-xs px-2 py-1 bg-[#101010] rounded-[5px] border border-[rgba(230,230,230,0.3)]">
                         Tailwind</h6>
-                      <h6 class="text-xs px-2 py-1 bg-[#101010] rounded-[5px] border border-[rgba(230,230,230,0.3)]">
+                      <h6 class="text-[10px] sm:text-xs px-2 py-1 bg-[#101010] rounded-[5px] border border-[rgba(230,230,230,0.3)]">
                         GSAP</h6>
-                      <h6 class="text-xs px-2 py-1 bg-[#101010] rounded-[5px] border border-[rgba(230,230,230,0.3)]">SQL
+                      <h6 class="text-[10px] sm:text-xs px-2 py-1 bg-[#101010] rounded-[5px] border border-[rgba(230,230,230,0.3)]">SQL
                       </h6>
-                      <h6 class="text-xs px-2 py-1 bg-[#101010] rounded-[5px] border border-[rgba(230,230,230,0.3)]">
+                      <h6 class="text-[10px] sm:text-xs px-2 py-1 bg-[#101010] rounded-[5px] border border-[rgba(230,230,230,0.3)]">
                         Swiper.js</h6>
-                      <h6 class="text-xs px-2 py-1 bg-[#101010] rounded-[5px] border border-[rgba(230,230,230,0.3)]">
+                      <h6 class="text-[10px] sm:text-xs px-2 py-1 bg-[#101010] rounded-[5px] border border-[rgba(230,230,230,0.3)]">
                         Fancybox</h6>
                     </div>
                     <div class="projcta flex flex-row gap-4">
@@ -442,17 +454,17 @@
                   </div>
                   <div class="project-right-part w-full relative h-fit">
                     <div class="w-full browser-view border overflow-hidden border-[rgba(230,230,230,0.1)] rounded-[10px]">
-                        <div class="browser-head px-4 py-2 bg-[#0a0a0a] flex flex-row gap-6">
+                        <div class="browser-head px-4 py-2 bg-[#0a0a0a] flex flex-row gap-4 lg:gap-6">
                           <div class="flex items-center gap-1.5">
-                            <div class="w-2.5 aspect-square rounded-full bg-[#ee5f53]"></div>
-                            <div class="w-2.5 aspect-square rounded-full bg-[#faba32]"></div>
-                            <div class="w-2.5 aspect-square rounded-full bg-[#3dc83c]"></div>
+                            <div class="w-2 lg:w-2.5 aspect-square rounded-full bg-[#ee5f53]"></div>
+                            <div class="w-2 lg:w-2.5 aspect-square rounded-full bg-[#faba32]"></div>
+                            <div class="w-2 lg:w-2.5 aspect-square rounded-full bg-[#3dc83c]"></div>
                           </div>
                           <div class="min-w-16 flex-1 h-full bg-[#111214] rounded-[5px] py-1.5 px-4">
-                            <h6 class="text-xs">getrewardia.com/</h6>
+                            <h6 class="text-[10px] lg:text-xs whitespace-normal break-words">getrewardia.com/</h6>
                           </div>
                         </div>
-                        <div class="browser-body w-full aspect-[16/10] swiper">
+                        <div class="browser-body w-full aspect-video lg:aspect-[16/10] swiper">
                           <div class="swiper-wrapper w-full h-full">
                               <a class = "swiper-slide w-full h-full" href="public/assets/getrewardia-optimized.webp" data-fancybox="project-gallery">
                                 <img class = "w-full h-full object-cover" src="public/assets/getrewardia-optimized.webp" alt="" srcset="">
@@ -486,14 +498,14 @@
                     </div>
                   </div>
                 </div>
-                <h2 class="z-1 text-transparent [-webkit-text-stroke:1px_rgba(230,230,230,0.1)] text-[45rem] font-black !leading-[0.7] absolute bottom-0 right-8 projCount"></h2>
+                <h2 class="z-1 text-transparent [-webkit-text-stroke:1px_rgba(230,230,230,0.1)] text-[clamp(10rem,35rem,40rem)] text-[45rem] font-black !leading-[0.7] absolute bottom-0 right-8 projCount"></h2>
               </div>
 
 
               <!-- A2 DESIGN LAB -->
               <div
-                class="project-card relative w-full bg-[rgba(22,48,43,0.6)] rounded-[15px] border border-[rgba(230,230,230,0.1)] p-8 h-[70vh] flex items-center">
-                <div class="grid grid-cols-2 relative z-100 gap-12 w-full">
+                class="project-card relative w-full bg-[rgba(22,48,43,0.6)] rounded-[15px] border border-[rgba(230,230,230,0.1)] px-4 py-6 lg:p-8 h-[90vh] overflow-hidden lg:h-[75vh] 3xl:h-[70vh] flex items-center">
+                <div class="grid grid-cols-1 lg:grid-cols-2 relative z-100 gap-8 lg:gap-12 w-full">
                   <div class="project-left-part flex flex-col">
                     <h6 class="text-xs text-white mb-4">
                       <span class="projCount"></span>
@@ -502,27 +514,27 @@
                       &nbsp;/
                       2025
                     </h6>
-                    <h3 class="text-[clamp(3rem,3.5rem,4rem)] 3xl:text-[5rem] text-white font-black leading-[0.9]">
+                    <h3 class="text-[2.5rem] sm:text-[3.5rem] lg:text-[4rem] 3xl:text-[5rem] text-white font-black leading-[0.9]">
                       A2 Design Lab</h3>
                     <div class="mt-4">
-                      <p class="text-white text-base text-left text-balance">
+                      <p class="text-white text-sm sm:text-base text-left text-balance">
                         I developed the A2 Design Lab revamp in WordPress, implementing the new design provided by the team with clean, responsive layouts and optimized performance. My work focused on translating the design into a functional, fast, and smooth user experience, ensuring stability, scalability, and seamless interactions across all devices.
                       </p>
                     </div>
-                    <div class="tags flex flex-wrap gap-x-1.5 gap-y-1 w-full my-6">
-                      <h6 class="text-xs px-2 py-1 bg-[#101010] rounded-[5px] border border-[rgba(230,230,230,0.3)]">
+                    <div class="tags flex flex-wrap gap-x-1.5 gap-y-1 w-full my-4 lg:my-6">
+                      <h6 class="text-[10px] sm:text-xs px-2 py-1 bg-[#101010] rounded-[5px] border border-[rgba(230,230,230,0.3)]">
                         Wordpress</h6>
-                      <h6 class="text-xs px-2 py-1 bg-[#101010] rounded-[5px] border border-[rgba(230,230,230,0.3)]">PHP
+                      <h6 class="text-[10px] sm:text-xs px-2 py-1 bg-[#101010] rounded-[5px] border border-[rgba(230,230,230,0.3)]">PHP
                       </h6>
-                      <h6 class="text-xs px-2 py-1 bg-[#101010] rounded-[5px] border border-[rgba(230,230,230,0.3)]">
+                      <h6 class="text-[10px] sm:text-xs px-2 py-1 bg-[#101010] rounded-[5px] border border-[rgba(230,230,230,0.3)]">
                         AJAX</h6>
-                      <h6 class="text-xs px-2 py-1 bg-[#101010] rounded-[5px] border border-[rgba(230,230,230,0.3)]">
+                      <h6 class="text-[10px] sm:text-xs px-2 py-1 bg-[#101010] rounded-[5px] border border-[rgba(230,230,230,0.3)]">
                         jQuery</h6>
-                      <h6 class="text-xs px-2 py-1 bg-[#101010] rounded-[5px] border border-[rgba(230,230,230,0.3)]">ACF
+                      <h6 class="text-[10px] sm:text-xs px-2 py-1 bg-[#101010] rounded-[5px] border border-[rgba(230,230,230,0.3)]">ACF
                       </h6>
-                      <h6 class="text-xs px-2 py-1 bg-[#101010] rounded-[5px] border border-[rgba(230,230,230,0.3)]">
+                      <h6 class="text-[10px] sm:text-xs px-2 py-1 bg-[#101010] rounded-[5px] border border-[rgba(230,230,230,0.3)]">
                         Tailwind</h6>
-                      <h6 class="text-xs px-2 py-1 bg-[#101010] rounded-[5px] border border-[rgba(230,230,230,0.3)]">
+                      <h6 class="text-[10px] sm:text-xs px-2 py-1 bg-[#101010] rounded-[5px] border border-[rgba(230,230,230,0.3)]">
                         GSAP</h6>
                     </div>
                     <div class="projcta flex flex-row gap-4">
@@ -559,17 +571,17 @@
                   </div>
                   <div class="project-right-part w-full relative h-fit">
                     <div class="w-full browser-view border overflow-hidden border-[rgba(230,230,230,0.1)] rounded-[10px]">
-                        <div class="browser-head px-4 py-2 bg-[#0a0a0a] flex flex-row gap-6">
+                        <div class="browser-head px-4 py-2 bg-[#0a0a0a] flex flex-row gap-4 lg:gap-6">
                           <div class="flex items-center gap-1.5">
-                            <div class="w-2.5 aspect-square rounded-full bg-[#ee5f53]"></div>
-                            <div class="w-2.5 aspect-square rounded-full bg-[#faba32]"></div>
-                            <div class="w-2.5 aspect-square rounded-full bg-[#3dc83c]"></div>
+                            <div class="w-2 lg:w-2.5 aspect-square rounded-full bg-[#ee5f53]"></div>
+                            <div class="w-2 lg:w-2.5 aspect-square rounded-full bg-[#faba32]"></div>
+                            <div class="w-2 lg:w-2.5 aspect-square rounded-full bg-[#3dc83c]"></div>
                           </div>
                           <div class="min-w-16 flex-1 h-full bg-[#111214] rounded-[5px] py-1.5 px-4">
-                            <h6 class="text-xs">a2designlab.com/</h6>
+                            <h6 class="text-[10px] lg:text-xs whitespace-normal break-words">a2designlab.com/</h6>
                           </div>
                         </div>
-                        <div class="browser-body w-full aspect-[16/10] swiper">
+                        <div class="browser-body w-full aspect-video lg:aspect-[16/10] swiper">
                           <div class="swiper-wrapper w-full h-full">
                               <a class = "swiper-slide w-full h-full" href="public/assets/a2website-Optimized.webp" data-fancybox="project-gallery">
                                 <img class = "w-full h-full object-cover" src="public/assets/a2website-Optimized.webp" alt="" srcset="">
@@ -600,7 +612,7 @@
                     </div>
                   </div>
                 </div>
-                <h2 class="z-1 text-transparent [-webkit-text-stroke:1px_rgba(230,230,230,0.1)] text-[45rem] font-black !leading-[0.7] absolute bottom-0 right-8 projCount"></h2>
+                <h2 class="z-1 text-transparent [-webkit-text-stroke:1px_rgba(230,230,230,0.1)] text-[clamp(10rem,35rem,40rem)] text-[45rem] font-black !leading-[0.7] absolute bottom-0 right-8 projCount"></h2>
               </div>
 
 
@@ -608,8 +620,8 @@
 
               <!-- Lagim Card Game -->
               <div
-                class="project-card relative w-full bg-[rgba(22,48,43,0.6)] rounded-[15px] border border-[rgba(230,230,230,0.1)] p-8 h-[70vh] flex items-center">
-                <div class="grid grid-cols-2 relative z-100 gap-12 w-full">
+                class="project-card relative w-full bg-[rgba(22,48,43,0.6)] rounded-[15px] border border-[rgba(230,230,230,0.1)] px-4 py-6 lg:p-8 h-[90vh] overflow-hidden lg:h-[75vh] 3xl:h-[70vh] flex items-center">
+                <div class="grid grid-cols-1 lg:grid-cols-2 relative z-100 gap-8 lg:gap-12 w-full">
                   <div class="project-left-part flex flex-col">
                     <h6 class="text-xs text-white mb-4">
                       <span class="projCount"></span>
@@ -618,29 +630,29 @@
                       &nbsp;/
                       2025
                     </h6>
-                    <h3 class="text-[clamp(3rem,3.5rem,4rem)] 3xl:text-[5rem] text-white font-black leading-[0.9]">
+                    <h3 class="text-[2.5rem] sm:text-[3.5rem] lg:text-[4rem] 3xl:text-[5rem] text-white font-black leading-[0.9]">
                       Lagim Card Game Revamp</h3>
                     <div class="mt-4">
-                      <p class="text-white text-base text-left text-balance">
+                      <p class="text-white text-sm sm:text-base text-left text-balance">
                         I handled the development for the Lagim Card Game website revamp, rebuilding the site in WordPress with improved performance, cleaner structure, and responsive layouts. The updated version provides smoother navigation and a more modern, user-friendly experience while staying true to the brand’s theme.
                       </p>
                     </div>
-                    <div class="tags flex flex-wrap gap-x-1.5 gap-y-1 w-full my-6">
-                      <h6 class="text-xs px-2 py-1 bg-[#101010] rounded-[5px] border border-[rgba(230,230,230,0.3)]">
+                    <div class="tags flex flex-wrap gap-x-1.5 gap-y-1 w-full my-4 lg:my-6">
+                      <h6 class="text-[10px] sm:text-xs px-2 py-1 bg-[#101010] rounded-[5px] border border-[rgba(230,230,230,0.3)]">
                         Wordpress</h6>
-                      <h6 class="text-xs px-2 py-1 bg-[#101010] rounded-[5px] border border-[rgba(230,230,230,0.3)]">PHP
+                      <h6 class="text-[10px] sm:text-xs px-2 py-1 bg-[#101010] rounded-[5px] border border-[rgba(230,230,230,0.3)]">PHP
                       </h6>
-                      <h6 class="text-xs px-2 py-1 bg-[#101010] rounded-[5px] border border-[rgba(230,230,230,0.3)]">
+                      <h6 class="text-[10px] sm:text-xs px-2 py-1 bg-[#101010] rounded-[5px] border border-[rgba(230,230,230,0.3)]">
                         AJAX</h6>
-                      <h6 class="text-xs px-2 py-1 bg-[#101010] rounded-[5px] border border-[rgba(230,230,230,0.3)]">
+                      <h6 class="text-[10px] sm:text-xs px-2 py-1 bg-[#101010] rounded-[5px] border border-[rgba(230,230,230,0.3)]">
                         jQuery</h6>
-                      <h6 class="text-xs px-2 py-1 bg-[#101010] rounded-[5px] border border-[rgba(230,230,230,0.3)]">ACF
+                      <h6 class="text-[10px] sm:text-xs px-2 py-1 bg-[#101010] rounded-[5px] border border-[rgba(230,230,230,0.3)]">ACF
                       </h6>
-                      <h6 class="text-xs px-2 py-1 bg-[#101010] rounded-[5px] border border-[rgba(230,230,230,0.3)]">
+                      <h6 class="text-[10px] sm:text-xs px-2 py-1 bg-[#101010] rounded-[5px] border border-[rgba(230,230,230,0.3)]">
                         Tailwind</h6>
-                      <h6 class="text-xs px-2 py-1 bg-[#101010] rounded-[5px] border border-[rgba(230,230,230,0.3)]">
+                      <h6 class="text-[10px] sm:text-xs px-2 py-1 bg-[#101010] rounded-[5px] border border-[rgba(230,230,230,0.3)]">
                         GSAP</h6>
-                      <h6 class="text-xs px-2 py-1 bg-[#101010] rounded-[5px] border border-[rgba(230,230,230,0.3)]">
+                      <h6 class="text-[10px] sm:text-xs px-2 py-1 bg-[#101010] rounded-[5px] border border-[rgba(230,230,230,0.3)]">
                         Swiper.js</h6>
                     </div>
                     <div class="projcta flex flex-row gap-4">
@@ -679,17 +691,17 @@
                   </div>
                   <div class="project-right-part w-full relative h-fit">
                     <div class="w-full browser-view border overflow-hidden border-[rgba(230,230,230,0.1)] rounded-[10px]">
-                        <div class="browser-head px-4 py-2 bg-[#0a0a0a] flex flex-row gap-6">
+                        <div class="browser-head px-4 py-2 bg-[#0a0a0a] flex flex-row gap-4 lg:gap-6">
                           <div class="flex items-center gap-1.5">
-                            <div class="w-2.5 aspect-square rounded-full bg-[#ee5f53]"></div>
-                            <div class="w-2.5 aspect-square rounded-full bg-[#faba32]"></div>
-                            <div class="w-2.5 aspect-square rounded-full bg-[#3dc83c]"></div>
+                            <div class="w-2 lg:w-2.5 aspect-square rounded-full bg-[#ee5f53]"></div>
+                            <div class="w-2 lg:w-2.5 aspect-square rounded-full bg-[#faba32]"></div>
+                            <div class="w-2 lg:w-2.5 aspect-square rounded-full bg-[#3dc83c]"></div>
                           </div>
                           <div class="min-w-16 flex-1 h-full bg-[#111214] rounded-[5px] py-1.5 px-4">
-                            <h6 class="text-xs">lagimcardgame.com/staging/</h6>
+                            <h6 class="text-[10px] lg:text-xs whitespace-normal break-words">lagimcardgame.com/staging/</h6>
                           </div>
                         </div>
-                        <div class="browser-body w-full aspect-[16/10] swiper">
+                        <div class="browser-body w-full aspect-video lg:aspect-[16/10] swiper">
                           <div class="swiper-wrapper w-full h-full">
                               <a class = "swiper-slide w-full h-full" href="public/assets/Lagim Revamp-Optimized.webp" data-fancybox="project-gallery">
                                 <img class = "w-full h-full object-cover" src="public/assets/Lagim Revamp-Optimized.webp" alt="" srcset="">
@@ -717,15 +729,15 @@
                     </div>
                   </div>
                 </div>
-                <h2 class="z-1 text-transparent [-webkit-text-stroke:1px_rgba(230,230,230,0.1)] text-[45rem] font-black !leading-[0.7] absolute bottom-0 right-8 projCount"></h2>
+                <h2 class="z-1 text-transparent [-webkit-text-stroke:1px_rgba(230,230,230,0.1)] text-[clamp(10rem,35rem,40rem)] text-[45rem] font-black !leading-[0.7] absolute bottom-0 right-8 projCount"></h2>
               </div>
 
 
 
               <!-- Sole Travel -->
               <div
-                class="project-card relative w-full bg-[rgba(22,48,43,0.6)] rounded-[15px] border border-[rgba(230,230,230,0.1)] p-8 h-[70vh] flex items-center">
-                <div class="grid grid-cols-2 relative z-100 gap-12 w-full">
+                class="project-card relative w-full bg-[rgba(22,48,43,0.6)] rounded-[15px] border border-[rgba(230,230,230,0.1)] px-4 py-6 lg:p-8 h-[90vh] overflow-hidden lg:h-[75vh] 3xl:h-[70vh] flex items-center">
+                <div class="grid grid-cols-1 lg:grid-cols-2 relative z-100 gap-8 lg:gap-12 w-full">
                   <div class="project-left-part flex flex-col">
                     <h6 class="text-xs text-white mb-4">
                       <span class="projCount"></span>
@@ -734,27 +746,27 @@
                       &nbsp;/
                       2024
                     </h6>
-                    <h3 class="text-[clamp(3rem,3.5rem,4rem)] 3xl:text-[5rem] text-white font-black leading-[0.9]">
+                    <h3 class="text-[2.5rem] sm:text-[3.5rem] lg:text-[4rem] 3xl:text-[5rem] text-white font-black leading-[0.9]">
                       Sole Destinations Travel</h3>
                     <div class="mt-4">
-                      <p class="text-white text-base text-left text-balance">
+                      <p class="text-white text-sm sm:text-base text-left text-balance">
                         A B2B platform where companies reward employees with redeemable voucher codes. Sole Travel is a
                         partner, so points can also buy travel packages. Voucher codes are encrypted so only the
                         intended recipient can decrypt them from their email.
                       </p>
                     </div>
-                    <div class="tags flex flex-wrap gap-x-1.5 gap-y-1 w-full my-6">
-                      <h6 class="text-xs px-2 py-1 bg-[#101010] rounded-[5px] border border-[rgba(230,230,230,0.3)]">
+                    <div class="tags flex flex-wrap gap-x-1.5 gap-y-1 w-full my-4 lg:my-6">
+                      <h6 class="text-[10px] sm:text-xs px-2 py-1 bg-[#101010] rounded-[5px] border border-[rgba(230,230,230,0.3)]">
                         Wordpress</h6>
-                      <h6 class="text-xs px-2 py-1 bg-[#101010] rounded-[5px] border border-[rgba(230,230,230,0.3)]">PHP
+                      <h6 class="text-[10px] sm:text-xs px-2 py-1 bg-[#101010] rounded-[5px] border border-[rgba(230,230,230,0.3)]">PHP
                       </h6>
-                      <h6 class="text-xs px-2 py-1 bg-[#101010] rounded-[5px] border border-[rgba(230,230,230,0.3)]">
+                      <h6 class="text-[10px] sm:text-xs px-2 py-1 bg-[#101010] rounded-[5px] border border-[rgba(230,230,230,0.3)]">
                         AJAX</h6>
-                      <h6 class="text-xs px-2 py-1 bg-[#101010] rounded-[5px] border border-[rgba(230,230,230,0.3)]">
+                      <h6 class="text-[10px] sm:text-xs px-2 py-1 bg-[#101010] rounded-[5px] border border-[rgba(230,230,230,0.3)]">
                         jQuery</h6>
-                      <h6 class="text-xs px-2 py-1 bg-[#101010] rounded-[5px] border border-[rgba(230,230,230,0.3)]">ACF
+                      <h6 class="text-[10px] sm:text-xs px-2 py-1 bg-[#101010] rounded-[5px] border border-[rgba(230,230,230,0.3)]">ACF
                       </h6>
-                      <h6 class="text-xs px-2 py-1 bg-[#101010] rounded-[5px] border border-[rgba(230,230,230,0.3)]">
+                      <h6 class="text-[10px] sm:text-xs px-2 py-1 bg-[#101010] rounded-[5px] border border-[rgba(230,230,230,0.3)]">
                         Tailwind</h6>
                     </div>
                     <div class="projcta flex flex-row gap-4">
@@ -793,17 +805,17 @@
                   </div>
                   <div class="project-right-part w-full relative h-fit">
                     <div class="w-full browser-view border overflow-hidden border-[rgba(230,230,230,0.1)] rounded-[10px]">
-                        <div class="browser-head px-4 py-2 bg-[#0a0a0a] flex flex-row gap-6">
+                        <div class="browser-head px-4 py-2 bg-[#0a0a0a] flex flex-row gap-4 lg:gap-6">
                           <div class="flex items-center gap-1.5">
-                            <div class="w-2.5 aspect-square rounded-full bg-[#ee5f53]"></div>
-                            <div class="w-2.5 aspect-square rounded-full bg-[#faba32]"></div>
-                            <div class="w-2.5 aspect-square rounded-full bg-[#3dc83c]"></div>
+                            <div class="w-2 lg:w-2.5 aspect-square rounded-full bg-[#ee5f53]"></div>
+                            <div class="w-2 lg:w-2.5 aspect-square rounded-full bg-[#faba32]"></div>
+                            <div class="w-2 lg:w-2.5 aspect-square rounded-full bg-[#3dc83c]"></div>
                           </div>
                           <div class="min-w-16 flex-1 h-full bg-[#111214] rounded-[5px] py-1.5 px-4">
-                            <h6 class="text-xs">soledestinationstravel.com/</h6>
+                            <h6 class="text-[10px] lg:text-xs whitespace-normal break-words">soledestinationstravel.com/</h6>
                           </div>
                         </div>
-                        <div class="browser-body w-full aspect-[16/10] swiper">
+                        <div class="browser-body w-full aspect-video lg:aspect-[16/10] swiper">
                           <div class="swiper-wrapper w-full h-full">
                               <a class = "swiper-slide w-full h-full" href="public/assets/Sole Travel-Optimized.webp" data-fancybox="project-gallery">
                                 <img class = "w-full h-full object-cover" src="public/assets/Sole Travel-Optimized.webp" alt="" srcset="">
@@ -828,14 +840,14 @@
                     </div>
                   </div>
                 </div>
-                <h2 class="z-1 text-transparent [-webkit-text-stroke:1px_rgba(230,230,230,0.1)] text-[45rem] font-black !leading-[0.7] absolute bottom-0 right-8 projCount"></h2>
+                <h2 class="z-1 text-transparent [-webkit-text-stroke:1px_rgba(230,230,230,0.1)] text-[clamp(10rem,35rem,40rem)] text-[45rem] font-black !leading-[0.7] absolute bottom-0 right-8 projCount"></h2>
               </div>
 
 
               <!-- Spring Sisters -->
                <div
-                class="project-card relative w-full bg-[rgba(22,48,43,0.6)] rounded-[15px] border border-[rgba(230,230,230,0.1)] p-8 h-[70vh] flex items-center">
-                <div class="grid grid-cols-2 relative z-100 gap-12 w-full">
+                class="project-card relative w-full bg-[rgba(22,48,43,0.6)] rounded-[15px] border border-[rgba(230,230,230,0.1)] px-4 py-6 lg:p-8 h-[90vh] overflow-hidden lg:h-[75vh] 3xl:h-[70vh] flex items-center">
+                <div class="grid grid-cols-1 lg:grid-cols-2 relative z-100 gap-8 lg:gap-12 w-full">
                   <div class="project-left-part flex flex-col">
                     <h6 class="text-xs text-white mb-4">
                       <span class="projCount"></span>
@@ -844,25 +856,25 @@
                       &nbsp;/
                       2023
                     </h6>
-                    <h3 class="text-[clamp(3rem,3.5rem,4rem)] 3xl:text-[5rem] text-white font-black leading-[0.9]">
+                    <h3 class="text-[2.5rem] sm:text-[3.5rem] lg:text-[4rem] 3xl:text-[5rem] text-white font-black leading-[0.9]">
                       Spring Sisters</h3>
                     <div class="mt-4">
-                      <p class="text-white text-base text-left text-balance">
+                      <p class="text-white text-sm sm:text-base text-left text-balance">
                         We developed Springsisters using WordPress and WooCommerce, creating a responsive and polished platform that reflects the brand’s aesthetic. The site features smooth navigation, fast performance, and a user-friendly backend for managing products and content efficiently.
                       </p>
                     </div>
-                    <div class="tags flex flex-wrap gap-x-1.5 gap-y-1 w-full my-6">
-                      <h6 class="text-xs px-2 py-1 bg-[#101010] rounded-[5px] border border-[rgba(230,230,230,0.3)]">
+                    <div class="tags flex flex-wrap gap-x-1.5 gap-y-1 w-full my-4 lg:my-6">
+                      <h6 class="text-[10px] sm:text-xs px-2 py-1 bg-[#101010] rounded-[5px] border border-[rgba(230,230,230,0.3)]">
                         Wordpress</h6>
-                      <h6 class="text-xs px-2 py-1 bg-[#101010] rounded-[5px] border border-[rgba(230,230,230,0.3)]">PHP
+                      <h6 class="text-[10px] sm:text-xs px-2 py-1 bg-[#101010] rounded-[5px] border border-[rgba(230,230,230,0.3)]">PHP
                       </h6>
-                      <h6 class="text-xs px-2 py-1 bg-[#101010] rounded-[5px] border border-[rgba(230,230,230,0.3)]">
+                      <h6 class="text-[10px] sm:text-xs px-2 py-1 bg-[#101010] rounded-[5px] border border-[rgba(230,230,230,0.3)]">
                         Woocommerce</h6>
-                      <h6 class="text-xs px-2 py-1 bg-[#101010] rounded-[5px] border border-[rgba(230,230,230,0.3)]">
+                      <h6 class="text-[10px] sm:text-xs px-2 py-1 bg-[#101010] rounded-[5px] border border-[rgba(230,230,230,0.3)]">
                         jQuery</h6>
-                      <h6 class="text-xs px-2 py-1 bg-[#101010] rounded-[5px] border border-[rgba(230,230,230,0.3)]">ACF
+                      <h6 class="text-[10px] sm:text-xs px-2 py-1 bg-[#101010] rounded-[5px] border border-[rgba(230,230,230,0.3)]">ACF
                       </h6>
-                      <h6 class="text-xs px-2 py-1 bg-[#101010] rounded-[5px] border border-[rgba(230,230,230,0.3)]">
+                      <h6 class="text-[10px] sm:text-xs px-2 py-1 bg-[#101010] rounded-[5px] border border-[rgba(230,230,230,0.3)]">
                         Tailwind</h6>
                     </div>
                     <div class="projcta flex flex-row gap-4">
@@ -899,17 +911,17 @@
                   </div>
                   <div class="project-right-part w-full relative h-fit">
                     <div class="w-full browser-view border overflow-hidden border-[rgba(230,230,230,0.1)] rounded-[10px]">
-                        <div class="browser-head px-4 py-2 bg-[#0a0a0a] flex flex-row gap-6">
+                        <div class="browser-head px-4 py-2 bg-[#0a0a0a] flex flex-row gap-4 lg:gap-6">
                           <div class="flex items-center gap-1.5">
-                            <div class="w-2.5 aspect-square rounded-full bg-[#ee5f53]"></div>
-                            <div class="w-2.5 aspect-square rounded-full bg-[#faba32]"></div>
-                            <div class="w-2.5 aspect-square rounded-full bg-[#3dc83c]"></div>
+                            <div class="w-2 lg:w-2.5 aspect-square rounded-full bg-[#ee5f53]"></div>
+                            <div class="w-2 lg:w-2.5 aspect-square rounded-full bg-[#faba32]"></div>
+                            <div class="w-2 lg:w-2.5 aspect-square rounded-full bg-[#3dc83c]"></div>
                           </div>
                           <div class="min-w-16 flex-1 h-full bg-[#111214] rounded-[5px] py-1.5 px-4">
-                            <h6 class="text-xs">springsisters.com/</h6>
+                            <h6 class="text-[10px] lg:text-xs whitespace-normal break-words">springsisters.com/</h6>
                           </div>
                         </div>
-                        <div class="browser-body w-full aspect-[16/10] swiper">
+                        <div class="browser-body w-full aspect-video lg:aspect-[16/10] swiper">
                           <div class="swiper-wrapper w-full h-full">
                               <a class = "swiper-slide w-full h-full" href="public/assets/SS-Optimized.webp" data-fancybox="project-gallery">
                                 <img class = "w-full h-full object-cover" src="public/assets/SS-Optimized.webp" alt="" srcset="">
@@ -931,14 +943,14 @@
                     </div>
                   </div>
                 </div>
-                <h2 class="z-1 text-transparent [-webkit-text-stroke:1px_rgba(230,230,230,0.1)] text-[45rem] font-black !leading-[0.7] absolute bottom-0 right-8 projCount"></h2>
+                <h2 class="z-1 text-transparent [-webkit-text-stroke:1px_rgba(230,230,230,0.1)] text-[clamp(10rem,35rem,40rem)] text-[45rem] font-black !leading-[0.7] absolute bottom-0 right-8 projCount"></h2>
               </div>
 
 
               <!-- A2 Portal -->
                <div
-                class="project-card relative w-full bg-[rgba(22,48,43,0.6)] rounded-[15px] border border-[rgba(230,230,230,0.1)] p-8 h-[70vh] flex items-center">
-                <div class="grid grid-cols-2 relative z-100 gap-12 w-full">
+                class="project-card relative w-full bg-[rgba(22,48,43,0.6)] rounded-[15px] border border-[rgba(230,230,230,0.1)] px-4 py-6 lg:p-8 h-[90vh] overflow-hidden lg:h-[75vh] 3xl:h-[70vh] flex items-center">
+                <div class="grid grid-cols-1 lg:grid-cols-2 relative z-100 gap-8 lg:gap-12 w-full">
                   <div class="project-left-part flex flex-col">
                     <h6 class="text-xs text-white mb-4">
                       <span class="projCount"></span>
@@ -947,26 +959,26 @@
                       &nbsp;/
                       2022
                     </h6>
-                    <h3 class="text-[clamp(3rem,3.5rem,4rem)] 3xl:text-[5rem] text-white font-black leading-[0.9]">
+                    <h3 class="text-[2.5rem] sm:text-[3.5rem] lg:text-[4rem] 3xl:text-[5rem] text-white font-black leading-[0.9]">
                       A2 Employee Portal</h3>
                     <div class="mt-4">
-                      <p class="text-white text-base text-left text-balance">
+                      <p class="text-white text-sm sm:text-base text-left text-balance">
                         As part of our internship project, I developed the A2 Employee Portal using PHP, HTML, jQuery, and MySQL, creating a fully custom, hardcoded solution. The portal features secure user authentication, dynamic data management, and responsive interfaces, providing employees with an efficient platform for accessing and managing internal resources.
                       </p>
                     </div>
-                    <div class="tags flex flex-wrap gap-x-1.5 gap-y-1 w-full my-6">
-                      <h6 class="text-xs px-2 py-1 bg-[#101010] rounded-[5px] border border-[rgba(230,230,230,0.3)]">
+                    <div class="tags flex flex-wrap gap-x-1.5 gap-y-1 w-full my-4 lg:my-6">
+                      <h6 class="text-[10px] sm:text-xs px-2 py-1 bg-[#101010] rounded-[5px] border border-[rgba(230,230,230,0.3)]">
                         PHP</h6>
-                      <h6 class="text-xs px-2 py-1 bg-[#101010] rounded-[5px] border border-[rgba(230,230,230,0.3)]">SQL
+                      <h6 class="text-[10px] sm:text-xs px-2 py-1 bg-[#101010] rounded-[5px] border border-[rgba(230,230,230,0.3)]">SQL
                       </h6>
-                      <h6 class="text-xs px-2 py-1 bg-[#101010] rounded-[5px] border border-[rgba(230,230,230,0.3)]">
+                      <h6 class="text-[10px] sm:text-xs px-2 py-1 bg-[#101010] rounded-[5px] border border-[rgba(230,230,230,0.3)]">
                         Javascript</h6>
-                      <h6 class="text-xs px-2 py-1 bg-[#101010] rounded-[5px] border border-[rgba(230,230,230,0.3)]">
+                      <h6 class="text-[10px] sm:text-xs px-2 py-1 bg-[#101010] rounded-[5px] border border-[rgba(230,230,230,0.3)]">
                         Bootstrap</h6>
-                      <h6 class="text-xs px-2 py-1 bg-[#101010] rounded-[5px] border border-[rgba(230,230,230,0.3)]">REST API
+                      <h6 class="text-[10px] sm:text-xs px-2 py-1 bg-[#101010] rounded-[5px] border border-[rgba(230,230,230,0.3)]">REST API
                       </h6>
                     </div>
-                    <div class="projcta flex flex-row gap-4">
+                    <div class="projcta flex flex-col lg:flex-row gap-3 lg:gap-4">
                       <a href="https://a2designlab.com/a2portal" target="_blank"
                         class="proj-cta-bg inline-block w-fit border border-white rounded-[5px] py-1.5 lg:py-2 px-4 lg:px-4 relative hover:cursor-pointer hvr-crsr">
                         <h6 class="text-white mix-blend-difference relative z-20 flex items-center gap-3">
@@ -1019,17 +1031,17 @@
                   </div>
                   <div class="project-right-part w-full relative h-fit">
                     <div class="w-full browser-view border overflow-hidden border-[rgba(230,230,230,0.1)] rounded-[10px]">
-                        <div class="browser-head px-4 py-2 bg-[#0a0a0a] flex flex-row gap-6">
+                        <div class="browser-head px-4 py-2 bg-[#0a0a0a] flex flex-row gap-4 lg:gap-6">
                           <div class="flex items-center gap-1.5">
-                            <div class="w-2.5 aspect-square rounded-full bg-[#ee5f53]"></div>
-                            <div class="w-2.5 aspect-square rounded-full bg-[#faba32]"></div>
-                            <div class="w-2.5 aspect-square rounded-full bg-[#3dc83c]"></div>
+                            <div class="w-2 lg:w-2.5 aspect-square rounded-full bg-[#ee5f53]"></div>
+                            <div class="w-2 lg:w-2.5 aspect-square rounded-full bg-[#faba32]"></div>
+                            <div class="w-2 lg:w-2.5 aspect-square rounded-full bg-[#3dc83c]"></div>
                           </div>
                           <div class="min-w-16 flex-1 h-full bg-[#111214] rounded-[5px] py-1.5 px-4">
-                            <h6 class="text-xs">a2designlab.com/a2portal/</h6>
+                            <h6 class="text-[10px] lg:text-xs whitespace-normal break-words">a2designlab.com/a2portal/</h6>
                           </div>
                         </div>
-                        <div class="browser-body w-full aspect-[16/10] swiper">
+                        <div class="browser-body w-full aspect-video lg:aspect-[16/10] swiper">
                           <div class="swiper-wrapper w-full h-full">
                               <a class = "swiper-slide w-full h-full" href="public/assets/A2Portal-Optimized.webp" data-fancybox="project-gallery">
                                 <img class = "w-full h-full object-cover" src="public/assets/A2Portal-Optimized.webp" alt="" srcset="">
@@ -1051,15 +1063,15 @@
                     </div>
                   </div>
                 </div>
-                <h2 class="z-1 text-transparent [-webkit-text-stroke:1px_rgba(230,230,230,0.1)] text-[45rem] font-black !leading-[0.7] absolute bottom-0 right-8 projCount"></h2>
+                <h2 class="z-1 text-transparent [-webkit-text-stroke:1px_rgba(230,230,230,0.1)] text-[clamp(10rem,35rem,40rem)] text-[45rem] font-black !leading-[0.7] absolute bottom-0 right-8 projCount"></h2>
               </div>
 
 
 
               <!-- San Fabian App -->
               <div
-                class="project-card relative w-full bg-[rgba(22,48,43,0.6)] rounded-[15px] border border-[rgba(230,230,230,0.1)] p-8 h-[70vh] flex items-center">
-                <div class="grid grid-cols-2 relative z-100 gap-12 w-full">
+                class="project-card relative w-full bg-[rgba(22,48,43,0.6)] rounded-[15px] border border-[rgba(230,230,230,0.1)] px-4 py-6 lg:p-8 h-[90vh] overflow-hidden lg:h-[75vh] 3xl:h-[70vh] flex items-center">
+                <div class="grid grid-cols-1 lg:grid-cols-2 relative z-100 gap-8 lg:gap-12 w-full">
                   <div class="project-left-part flex flex-col">
                     <h6 class="text-xs text-white mb-4">
                       <span class="projCount"></span>
@@ -1068,23 +1080,23 @@
                       &nbsp;/
                       2022
                     </h6>
-                    <h3 class="text-[clamp(3rem,3.5rem,4rem)] 3xl:text-[5rem] text-white font-black leading-[0.9]">
+                    <h3 class="text-[2.5rem] sm:text-[3.5rem] lg:text-[4rem] 3xl:text-[5rem] text-white font-black leading-[0.9]">
                       San Fabian App</h3>
                     <div class="mt-4">
-                      <p class="text-white text-base text-left text-balance">
+                      <p class="text-white text-sm sm:text-base text-left text-balance">
                         SAN FABIAN APP is our capstone project that helps users navigate San Fabian, Pangasinan with ease. As one of the developers, I helped create features like real-time maps, directions, and live weather updates to guide users on where to go and what to do around town. The app is designed to make exploring San Fabian simple, convenient, and enjoyable for everyone.
                       </p>
                     </div>
-                    <div class="tags flex flex-wrap gap-x-1.5 gap-y-1 w-full my-6">
-                      <h6 class="text-xs px-2 py-1 bg-[#101010] rounded-[5px] border border-[rgba(230,230,230,0.3)]">
+                    <div class="tags flex flex-wrap gap-x-1.5 gap-y-1 w-full my-4 lg:my-6">
+                      <h6 class="text-[10px] sm:text-xs px-2 py-1 bg-[#101010] rounded-[5px] border border-[rgba(230,230,230,0.3)]">
                         Android Studio</h6>
-                      <h6 class="text-xs px-2 py-1 bg-[#101010] rounded-[5px] border border-[rgba(230,230,230,0.3)]">Java
+                      <h6 class="text-[10px] sm:text-xs px-2 py-1 bg-[#101010] rounded-[5px] border border-[rgba(230,230,230,0.3)]">Java
                       </h6>
-                      <h6 class="text-xs px-2 py-1 bg-[#101010] rounded-[5px] border border-[rgba(230,230,230,0.3)]">
+                      <h6 class="text-[10px] sm:text-xs px-2 py-1 bg-[#101010] rounded-[5px] border border-[rgba(230,230,230,0.3)]">
                         SQLite</h6>
-                      <h6 class="text-xs px-2 py-1 bg-[#101010] rounded-[5px] border border-[rgba(230,230,230,0.3)]">
+                      <h6 class="text-[10px] sm:text-xs px-2 py-1 bg-[#101010] rounded-[5px] border border-[rgba(230,230,230,0.3)]">
                         XML</h6>
-                      <h6 class="text-xs px-2 py-1 bg-[#101010] rounded-[5px] border border-[rgba(230,230,230,0.3)]">Mapbox API
+                      <h6 class="text-[10px] sm:text-xs px-2 py-1 bg-[#101010] rounded-[5px] border border-[rgba(230,230,230,0.3)]">Mapbox API
                       </h6>
                     </div>
                     <div class="projcta flex flex-row gap-4">
@@ -1112,17 +1124,17 @@
                   </div>
                   <div class="project-right-part w-full relative h-fit">
                     <div class="w-full browser-view border overflow-hidden border-[rgba(230,230,230,0.1)] rounded-[10px]">
-                        <div class="browser-head px-4 py-2 bg-[#0a0a0a] flex flex-row gap-6">
+                        <div class="browser-head px-4 py-2 bg-[#0a0a0a] flex flex-row gap-4 lg:gap-6">
                           <div class="flex items-center gap-1.5">
-                            <div class="w-2.5 aspect-square rounded-full bg-[#ee5f53]"></div>
-                            <div class="w-2.5 aspect-square rounded-full bg-[#faba32]"></div>
-                            <div class="w-2.5 aspect-square rounded-full bg-[#3dc83c]"></div>
+                            <div class="w-2 lg:w-2.5 aspect-square rounded-full bg-[#ee5f53]"></div>
+                            <div class="w-2 lg:w-2.5 aspect-square rounded-full bg-[#faba32]"></div>
+                            <div class="w-2 lg:w-2.5 aspect-square rounded-full bg-[#3dc83c]"></div>
                           </div>
                           <div class="min-w-16 flex-1 h-full bg-[#111214] rounded-[5px] py-1.5 px-4">
-                            <h6 class="text-xs">github.com/thecodeplayer/SAN-FABIAN-ANDROID/</h6>
+                            <h6 class="text-[10px] lg:text-xs whitespace-normal break-words">github.com/thecodeplayer/SAN-FABIAN-ANDROID/</h6>
                           </div>
                         </div>
-                        <div class="browser-body w-full aspect-[16/10] swiper">
+                        <div class="browser-body w-full aspect-video lg:aspect-[16/10] swiper">
                           <div class="swiper-wrapper w-full h-full">
                               <a class = "swiper-slide w-full h-full" href="public/assets/sanfabian-app-Optimized.webp" data-fancybox="project-gallery">
                                 <img class = "w-full h-full object-cover" src="public/assets/sanfabian-app-Optimized.webp" alt="" srcset="">
@@ -1144,14 +1156,14 @@
                     </div>
                   </div>
                 </div>
-                <h2 class="z-1 text-transparent [-webkit-text-stroke:1px_rgba(230,230,230,0.1)] text-[45rem] font-black !leading-[0.7] absolute bottom-0 right-8 projCount"></h2>
+                <h2 class="z-1 text-transparent [-webkit-text-stroke:1px_rgba(230,230,230,0.1)] text-[clamp(10rem,35rem,40rem)] text-[45rem] font-black !leading-[0.7] absolute bottom-0 right-8 projCount"></h2>
               </div> 
 
 
               <!-- Attendance Monitoring -->
                <div
-                class="project-card relative w-full bg-[rgba(22,48,43,0.6)] rounded-[15px] border border-[rgba(230,230,230,0.1)] p-8 h-[70vh] flex items-center">
-                <div class="grid grid-cols-2 relative z-100 gap-12 w-full">
+                class="project-card relative w-full bg-[rgba(22,48,43,0.6)] rounded-[15px] border border-[rgba(230,230,230,0.1)] px-4 py-6 lg:p-8 h-[90vh] overflow-hidden lg:h-[75vh] 3xl:h-[70vh] flex items-center">
+                <div class="grid grid-cols-1 lg:grid-cols-2 relative z-100 gap-8 lg:gap-12 w-full">
                   <div class="project-left-part flex flex-col">
                     <h6 class="text-xs text-white mb-4">
                       <span class="projCount"></span>
@@ -1160,19 +1172,19 @@
                       &nbsp;/
                       2020
                     </h6>
-                    <h3 class="text-[clamp(3rem,3.5rem,4rem)] 3xl:text-[5rem] text-white font-black leading-[0.9]">
+                    <h3 class="text-[2.5rem] sm:text-[3.5rem] lg:text-[4rem] 3xl:text-[5rem] text-white font-black leading-[0.9]">
                       Attendance Monitoring System</h3>
                     <div class="mt-4">
-                      <p class="text-white text-base text-left text-balance">
+                      <p class="text-white text-sm sm:text-base text-left text-balance">
                         Attendance Monitoring System is a group project developed in VB.Net with MS Access as the database. As the main developer, I helped build the system to efficiently monitor student attendance by capturing their time in and time out, providing a reliable and organized way to track attendance records.
                       </p>
                     </div>
-                    <div class="tags flex flex-wrap gap-x-1.5 gap-y-1 w-full my-6">
-                      <h6 class="text-xs px-2 py-1 bg-[#101010] rounded-[5px] border border-[rgba(230,230,230,0.3)]">
+                    <div class="tags flex flex-wrap gap-x-1.5 gap-y-1 w-full my-4 lg:my-6">
+                      <h6 class="text-[10px] sm:text-xs px-2 py-1 bg-[#101010] rounded-[5px] border border-[rgba(230,230,230,0.3)]">
                         VB.Net</h6>
-                      <h6 class="text-xs px-2 py-1 bg-[#101010] rounded-[5px] border border-[rgba(230,230,230,0.3)]">MS Access Database
+                      <h6 class="text-[10px] sm:text-xs px-2 py-1 bg-[#101010] rounded-[5px] border border-[rgba(230,230,230,0.3)]">MS Access Database
                       </h6>
-                      <h6 class="text-xs px-2 py-1 bg-[#101010] rounded-[5px] border border-[rgba(230,230,230,0.3)]">
+                      <h6 class="text-[10px] sm:text-xs px-2 py-1 bg-[#101010] rounded-[5px] border border-[rgba(230,230,230,0.3)]">
                         SQL</h6>
                     </div>
                     <div class="projcta flex flex-row gap-4">
@@ -1199,17 +1211,17 @@
                   </div>
                   <div class="project-right-part w-full relative h-fit">
                     <div class="w-full browser-view border overflow-hidden border-[rgba(230,230,230,0.1)] rounded-[10px]">
-                        <div class="browser-head px-4 py-2 bg-[#0a0a0a] flex flex-row gap-6">
+                        <div class="browser-head px-4 py-2 bg-[#0a0a0a] flex flex-row gap-4 lg:gap-6">
                           <div class="flex items-center gap-1.5">
-                            <div class="w-2.5 aspect-square rounded-full bg-[#ee5f53]"></div>
-                            <div class="w-2.5 aspect-square rounded-full bg-[#faba32]"></div>
-                            <div class="w-2.5 aspect-square rounded-full bg-[#3dc83c]"></div>
+                            <div class="w-2 lg:w-2.5 aspect-square rounded-full bg-[#ee5f53]"></div>
+                            <div class="w-2 lg:w-2.5 aspect-square rounded-full bg-[#faba32]"></div>
+                            <div class="w-2 lg:w-2.5 aspect-square rounded-full bg-[#3dc83c]"></div>
                           </div>
                           <div class="min-w-16 flex-1 h-full bg-[#111214] rounded-[5px] py-1.5 px-4">
-                            <h6 class="text-xs">github.com/VinceBarnachea/AttendanceMonitoringSystem-VS/</h6>
+                            <h6 class="text-[10px] lg:text-xs whitespace-normal break-words">github.com/VinceBarnachea/AttendanceMonitoringSystem-VS/</h6>
                           </div>
                         </div>
-                        <div class="browser-body w-full aspect-[16/10] swiper">
+                        <div class="browser-body w-full aspect-video lg:aspect-[16/10] swiper">
                           <div class="swiper-wrapper w-full h-full">
                               <a class = "swiper-slide w-full h-full" href="public/assets/ams2-Optimized.webp" data-fancybox="project-gallery">
                                 <img class = "w-full h-full object-cover" src="public/assets/ams2-Optimized.webp" alt="" srcset="">
@@ -1231,14 +1243,14 @@
                     </div>
                   </div>
                 </div>
-                <h2 class="z-1 text-transparent [-webkit-text-stroke:1px_rgba(230,230,230,0.1)] text-[45rem] font-black !leading-[0.7] absolute bottom-0 right-8 projCount"></h2>
+                <h2 class="z-1 text-transparent [-webkit-text-stroke:1px_rgba(230,230,230,0.1)] text-[clamp(10rem,35rem,40rem)] text-[45rem] font-black !leading-[0.7] absolute bottom-0 right-8 projCount"></h2>
               </div>
 
 
               <!-- Currency -->
               <div
-                class="project-card relative w-full bg-[rgba(22,48,43,0.6)] rounded-[15px] border border-[rgba(230,230,230,0.1)] p-8 h-[70vh] flex items-center">
-                <div class="grid grid-cols-2 relative z-100 gap-12 w-full">
+                class="project-card relative w-full bg-[rgba(22,48,43,0.6)] rounded-[15px] border border-[rgba(230,230,230,0.1)] px-4 py-6 lg:p-8 h-[90vh] overflow-hidden lg:h-[75vh] 3xl:h-[70vh] flex items-center">
+                <div class="grid grid-cols-1 lg:grid-cols-2 relative z-100 gap-8 lg:gap-12 w-full">
                   <div class="project-left-part flex flex-col">
                     <h6 class="text-xs text-white mb-4">
                       <span class="projCount"></span>
@@ -1247,25 +1259,25 @@
                       &nbsp;/
                       2020
                     </h6>
-                    <h3 class="text-[clamp(3rem,3.5rem,4rem)] 3xl:text-[5rem] text-white font-black leading-[0.9]">
+                    <h3 class="text-[2.5rem] sm:text-[3.5rem] lg:text-[4rem] 3xl:text-[5rem] text-white font-black leading-[0.9]">
                       Simple Currency Converter</h3>
                     <div class="mt-4">
-                      <p class="text-white text-base text-left text-balance">
+                      <p class="text-white text-sm sm:text-base text-left text-balance">
                         Simple Currency App is a personal project I created out of curiosity, using Firebase as the database and exporting data via JSON. The app provides real-time currency information, demonstrating dynamic data updates and practical use of modern technologies.
                       </p>
                     </div>
-                    <div class="tags flex flex-wrap gap-x-1.5 gap-y-1 w-full my-6">
-                      <h6 class="text-xs px-2 py-1 bg-[#101010] rounded-[5px] border border-[rgba(230,230,230,0.3)]">
+                    <div class="tags flex flex-wrap gap-x-1.5 gap-y-1 w-full my-4 lg:my-6">
+                      <h6 class="text-[10px] sm:text-xs px-2 py-1 bg-[#101010] rounded-[5px] border border-[rgba(230,230,230,0.3)]">
                         Android Studio</h6>
-                      <h6 class="text-xs px-2 py-1 bg-[#101010] rounded-[5px] border border-[rgba(230,230,230,0.3)]">Java
+                      <h6 class="text-[10px] sm:text-xs px-2 py-1 bg-[#101010] rounded-[5px] border border-[rgba(230,230,230,0.3)]">Java
                       </h6>
-                      <h6 class="text-xs px-2 py-1 bg-[#101010] rounded-[5px] border border-[rgba(230,230,230,0.3)]">
+                      <h6 class="text-[10px] sm:text-xs px-2 py-1 bg-[#101010] rounded-[5px] border border-[rgba(230,230,230,0.3)]">
                         Firebase Realtime DB</h6>
-                      <h6 class="text-xs px-2 py-1 bg-[#101010] rounded-[5px] border border-[rgba(230,230,230,0.3)]">
+                      <h6 class="text-[10px] sm:text-xs px-2 py-1 bg-[#101010] rounded-[5px] border border-[rgba(230,230,230,0.3)]">
                         XML</h6>
-                      <h6 class="text-xs px-2 py-1 bg-[#101010] rounded-[5px] border border-[rgba(230,230,230,0.3)]">ACF
+                      <h6 class="text-[10px] sm:text-xs px-2 py-1 bg-[#101010] rounded-[5px] border border-[rgba(230,230,230,0.3)]">ACF
                       </h6>
-                      <h6 class="text-xs px-2 py-1 bg-[#101010] rounded-[5px] border border-[rgba(230,230,230,0.3)]">
+                      <h6 class="text-[10px] sm:text-xs px-2 py-1 bg-[#101010] rounded-[5px] border border-[rgba(230,230,230,0.3)]">
                         JSON</h6>
                       
                     </div>
@@ -1292,17 +1304,17 @@
                   </div>
                   <div class="project-right-part w-full relative h-fit">
                     <div class="w-full browser-view border overflow-hidden border-[rgba(230,230,230,0.1)] rounded-[10px]">
-                        <div class="browser-head px-4 py-2 bg-[#0a0a0a] flex flex-row gap-6">
+                        <div class="browser-head px-4 py-2 bg-[#0a0a0a] flex flex-row gap-4 lg:gap-6">
                           <div class="flex items-center gap-1.5">
-                            <div class="w-2.5 aspect-square rounded-full bg-[#ee5f53]"></div>
-                            <div class="w-2.5 aspect-square rounded-full bg-[#faba32]"></div>
-                            <div class="w-2.5 aspect-square rounded-full bg-[#3dc83c]"></div>
+                            <div class="w-2 lg:w-2.5 aspect-square rounded-full bg-[#ee5f53]"></div>
+                            <div class="w-2 lg:w-2.5 aspect-square rounded-full bg-[#faba32]"></div>
+                            <div class="w-2 lg:w-2.5 aspect-square rounded-full bg-[#3dc83c]"></div>
                           </div>
                           <div class="min-w-16 flex-1 h-full bg-[#111214] rounded-[5px] py-1.5 px-4">
-                            <h6 class="text-xs">github.com/VinceBarnachea/Simple-Currency-Converter/</h6>
+                            <h6 class="text-[10px] lg:text-xs whitespace-normal break-words">github.com/VinceBarnachea/Simple-Currency-Converter/</h6>
                           </div>
                         </div>
-                        <div class="browser-body w-full aspect-[16/10] swiper">
+                        <div class="browser-body w-full aspect-video lg:aspect-[16/10] swiper">
                           <div class="swiper-wrapper w-full h-full">
                               <a class = "swiper-slide w-full h-full" href="public/assets/currency-Optimized.webp" data-fancybox="project-gallery">
                                 <img class = "w-full h-full object-cover" src="public/assets/currency-Optimized.webp" alt="" srcset="">
@@ -1321,7 +1333,7 @@
                     </div>
                   </div>
                 </div>
-                <h2 class="z-1 text-transparent [-webkit-text-stroke:1px_rgba(230,230,230,0.1)] text-[45rem] font-black !leading-[0.7] absolute bottom-0 right-8 projCount"></h2>
+                <h2 class="z-1 text-transparent [-webkit-text-stroke:1px_rgba(230,230,230,0.1)] text-[clamp(10rem,35rem,40rem)] text-[45rem] font-black !leading-[0.7] absolute bottom-0 right-8 projCount"></h2>
               </div>
 
             </div> <!-- END NG PROJECT CONTAINER -->
@@ -1394,13 +1406,13 @@
           <div class="relative w-full allchapters">
             <div class="chapter1 bg-[#101010]">
               <div
-                class="chapter1-header chpt-sticky bg-[#101010] sticky top-0 left-0 border-t-[2px] border-b-[2px] border-white py-3 lg:py-4 z-[999]">
+                class="chapter1-header chpt-sticky bg-[#101010] sticky top-0 left-0 border-t-[2px] border-b-[2px] border-white py-2 lg:py-2 z-[999]">
                 <div
                   class="flex w-full h-full items-center justify-between max-container px-5 sm:px-[5%] 2xl:px-0 relative">
                   <div class="flex flex-row gap-4 items-center">
                     <div
-                      class="h-[40px] lg:h-[55px] w-[40px] lg:w-[55px] rounded-[5px] border-white border-[2px] flex items-center justify-center">
-                      <svg class="w-[30px] lg:w-[40px] h-fit" width="800px" height="800px" viewBox="0 0 24 24"
+                      class="h-[40px] 3xl:h-[55px] aspect-square rounded-[5px] border-white border-[2px] flex items-center justify-center">
+                      <svg class="w-[25px] lg:w-[30px] h-fit" width="800px" height="800px" viewBox="0 0 24 24"
                         fill="none" xmlns="http://www.w3.org/2000/svg">
 
                         <g id="SVGRepo_bgCarrier" stroke-width="0" />
@@ -1416,12 +1428,12 @@
                       </svg>
                     </div>
                     <div class="flex flex-col gap-1">
-                      <h6 class="text-xs">CHAPTER 01</h6>
-                      <h3 class="text-[2.125rem] font-black">Who I Am</h3>
+                      <h6 class="text-[10px] lg:text-xs whitespace-normal break-words">CHAPTER 01</h6>
+                      <h3 class="text-[2rem] 3xl:text-[2.125rem] font-black">Who I Am</h3>
                     </div>
                   </div>
 
-                  <h3 class="text-[3rem] lg:text-[3.75rem] font-black opacity-55">01</h3>
+                  <h3 class="text-[3rem] 3xl:text-[3.75rem] font-black opacity-55">01</h3>
                 </div>
               </div>
               <div class="chapter1-contents min-h-screen max-container px-5 sm:px-[5%] 2xl:px-0 relative py-16">
@@ -1489,13 +1501,13 @@
             <div
               class="chapter2 bg-[#8B2E2E] bg-[length:7px_7px] bg-[linear-gradient(to_right,rgba(112,112,112,0.1)_1px,transparent_1px),linear-gradient(to_bottom,rgba(112,112,112,0.1)_1px,transparent_1px)] bg-center">
               <div
-                class="chapter2-header sticky chpt-sticky bg-[#8B2E2E] top-0 left-0 border-t-[2px] border-b-[2px] border-white py-3 lg:py-4 z-[999]">
+                class="chapter2-header sticky chpt-sticky bg-[#8B2E2E] top-0 left-0 border-t-[2px] border-b-[2px] border-white py-2 lg:py-2 z-[999]">
                 <div
                   class="flex w-full h-full items-center justify-between max-container px-5 sm:px-[5%] 2xl:px-0 relative">
                   <div class="flex flex-row gap-4 items-center">
                     <div
-                      class="h-[40px] lg:h-[55px] w-[40px] lg:w-[55px] rounded-[5px] border-white border-[2px] flex items-center justify-center">
-                      <svg class="w-[30px] lg:w-[40px] h-fit" width="800px" height="800px" viewBox="0 0 24 24"
+                      class="h-[40px] 3xl:h-[55px] aspect-square rounded-[5px] border-white border-[2px] flex items-center justify-center">
+                      <svg class="w-[25px] lg:w-[30px] h-fit" width="800px" height="800px" viewBox="0 0 24 24"
                         fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
                           d="M15.7 4C18.87 4 21 6.98 21 9.76C21 15.39 12.16 20 12 20C11.84 20 3 15.39 3 9.76C3 6.98 5.13 4 8.3 4C10.12 4 11.31 4.91 12 5.71C12.69 4.91 13.88 4 15.7 4Z"
@@ -1503,12 +1515,12 @@
                       </svg>
                     </div>
                     <div class="flex flex-col gap-1">
-                      <h6 class="text-xs">CHAPTER 02</h6>
-                      <h3 class="text-[2.125rem] font-black">What I Love</h3>
+                      <h6 class="text-[10px] lg:text-xs whitespace-normal break-words">CHAPTER 02</h6>
+                      <h3 class="text-[2rem] 3xl:text-[2.125rem] font-black">What I Love</h3>
                     </div>
                   </div>
 
-                  <h3 class="text-[3rem] lg:text-[3.75rem] font-black opacity-55">02</h3>
+                  <h3 class="text-[3rem] 3xl:text-[3.75rem] font-black opacity-55">02</h3>
                 </div>
               </div>
               <div class="chapter2-contents min-h-screen max-container px-5 sm:px-[5%] 2xl:px-0 relative py-16">
@@ -1588,12 +1600,12 @@
             <div
               class="chapter3 bg-[#e6e6e6] bg-[length:150px_150px] bg-[linear-gradient(to_right,rgba(112,112,112,0.3)_1px,transparent_1px),linear-gradient(to_bottom,rgba(112,112,112,0.3)_1px,transparent_1px)] bg-center">
               <div
-                class="chapter3-header sticky chpt-sticky bg-[#e6e6e6] top-0 left-0 border-t-[2px] border-b-[2px] border-black py-3 lg:py-4 z-[999]">
+                class="chapter3-header sticky chpt-sticky bg-[#e6e6e6] top-0 left-0 border-t-[2px] border-b-[2px] border-black py-2 lg:py-2 z-[999]">
                 <div
                   class="flex w-full h-full items-center justify-between max-container px-5 sm:px-[5%] 2xl:px-0 relative">
                   <div class="flex flex-row gap-4 items-center">
                     <div
-                      class="h-[40px] lg:h-[55px] w-[40px] lg:w-[55px] rounded-[5px] border-black border-[2px] flex items-center justify-center">
+                      class="h-[40px] 3xl:h-[55px] aspect-square rounded-[5px] border-black border-[2px] flex items-center justify-center">
                       <svg class="w-[30px] lg:w-[35px] h-fit" width="800px" height="800px" viewBox="0 0 16 16"
                         fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd"
@@ -1606,11 +1618,11 @@
                     </div>
                     <div class="flex flex-col gap-1">
                       <h6 class="text-xs text-black">CHAPTER 03</h6>
-                      <h3 class="text-[2.125rem] font-black text-black">My Mission</h3>
+                      <h3 class="text-[2rem] 3xl:text-[2.125rem] font-black text-black">My Mission</h3>
                     </div>
                   </div>
 
-                  <h3 class="text-[3rem] lg:text-[3.75rem] font-black text-black opacity-55">03</h3>
+                  <h3 class="text-[3rem] 3xl:text-[3.75rem] font-black text-black opacity-55">03</h3>
                 </div>
               </div>
               <div class="chapter3-contents min-h-screen max-container px-5 sm:px-[5%] 2xl:px-0 relative py-16">
@@ -1624,7 +1636,7 @@
                     <div class="lg:col-span-7 h-full w-full flex flex-col justify-center">
                       <div class="flex gap-8">
                         <div class="h-full w-2 bg-black opacity-55 hidden lg:block"></div>
-                        <p class="text-lg lg:text-2xl text-black w-[90%] lg:w-[80%]">
+                        <p class="text-base lg:text-xl text-black w-[90%] lg:w-[80%]">
                           I’ve spent years building sites for my company’s clients, and now I want to build for my own.
                           My goal is to deliver websites that load fast, work on every device, and have a backend the
                           owner can update without calling me. I’m looking for my first client of my own to grow with.
@@ -1723,11 +1735,11 @@
 
 
         <section class="sliding-svg-section w-full border-t-[2px] border-b-[2px] border-black relative z-[100]">
-          <div class="sliding-svg-white w-full flex flex-row gap-2 lg:gap-4 py-2 lg:py-4 bg-white whitespace-nowrap">
+          <div class="sliding-svg-white w-full flex flex-row gap-2 lg:gap-3 py-2 lg:py-2 bg-white whitespace-nowrap">
             <div
-              class="border-[2px] border-black px-3 lg:px-4 3xl:px-6 py-1.5 lg:py-2 flex items-center justify-center gap-2 lg:gap-3 rounded-[5px]">
+              class="border-[2px] border-black px-3 py-1.5 lg:py-2 flex items-center justify-center gap-2 lg:gap-3 rounded-[5px]">
 
-              <svg class="h-[28px] lg:h-[30px] 3xl:h-[40px] w-fit relative" fill="#16302b"
+              <svg class="h-[25px] lg:h-[25px] 3xl:h-[35px] w-fit relative" fill="#16302b"
                 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512"
                 enable-background="new 0 0 512 512" xml:space="preserve">
                 <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -1742,13 +1754,13 @@
               </svg>
 
 
-              <h6 class="text-lg lg:text-2xl font-black text-black relative lg:top-[2px]">JAVA</h6>
+              <h6 class="text-base lg:text-xl font-black text-black relative">JAVA</h6>
             </div>
 
             <div
-              class="border-[2px] border-black px-3 lg:px-4 3xl:px-6 py-1.5 lg:py-2 flex items-center justify-center gap-2 lg:gap-3 rounded-[5px]">
+              class="border-[2px] border-black px-3 py-1.5 lg:py-2 flex items-center justify-center gap-2 lg:gap-3 rounded-[5px]">
 
-              <svg class="h-[28px] lg:h-[30px] 3xl:h-[40px] w-fit relative" width="800px" height="800px"
+              <svg class="h-[25px] lg:h-[25px] 3xl:h-[35px] w-fit relative" width="800px" height="800px"
                 viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg"
                 xmlns:xlink="http://www.w3.org/1999/xlink" fill="#16302b">
                 <g id="SVGRepo_bgCarrier" stroke-width="0" />
@@ -1766,23 +1778,23 @@
                 </g>
               </svg>
 
-              <h6 class="text-lg lg:text-2xl font-black text-black relative lg:top-[2px]">PYTHON</h6>
+              <h6 class="text-base lg:text-xl font-black text-black relative">PYTHON</h6>
             </div>
 
             <div
-              class="border-[2px] border-black px-3 lg:px-4 3xl:px-6 py-1.5 lg:py-2 flex items-center justify-center gap-2 lg:gap-3 rounded-[5px]">
-              <svg class="h-[28px] lg:h-[30px] 3xl:h-[40px] w-fit relative" width="800px" height="800px"
+              class="border-[2px] border-black px-3 py-1.5 lg:py-2 flex items-center justify-center gap-2 lg:gap-3 rounded-[5px]">
+              <svg class="h-[25px] lg:h-[25px] 3xl:h-[35px] w-fit relative" width="800px" height="800px"
                 viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
                 <title>file_type_tailwind</title>
                 <path
                   d="M9,13.7q1.4-5.6,7-5.6c5.6,0,6.3,4.2,9.1,4.9q2.8.7,4.9-2.1-1.4,5.6-7,5.6c-5.6,0-6.3-4.2-9.1-4.9Q11.1,10.9,9,13.7ZM2,22.1q1.4-5.6,7-5.6c5.6,0,6.3,4.2,9.1,4.9q2.8.7,4.9-2.1-1.4,5.6-7,5.6c-5.6,0-6.3-4.2-9.1-4.9Q4.1,19.3,2,22.1Z"
                   style="fill:#16302b" />
               </svg>
-              <h6 class="text-lg lg:text-2xl font-black text-black relative lg:top-[2px]">TAILWIND</h6>
+              <h6 class="text-base lg:text-xl font-black text-black relative">TAILWIND</h6>
             </div>
 
             <div
-              class="border-[2px] border-black px-3 lg:px-4 3xl:px-6 py-1.5 lg:py-2 flex items-center justify-center gap-2 lg:gap-3 rounded-[5px]">
+              class="border-[2px] border-black px-3 py-1.5 lg:py-2 flex items-center justify-center gap-2 lg:gap-3 rounded-[5px]">
               <svg class="h-[25px] w-fit relative" xmlns="http://www.w3.org/2000/svg" width="200" fill="none"
                 viewBox="0 0 82 30">
                 <path fill="#16302b"
@@ -1794,12 +1806,12 @@
                 <path fill="#16302b"
                   d="M71.545.547h-4.639c-.245 0-.52.13-.585.422l-6.455 28.029a.423.423 0 0 0 .088.364.572.572 0 0 0 .437.202h5.798c.311 0 .525-.153.583-.418 0 0 .703-3.168.704-3.178.05-.247-.036-.439-.258-.555-.105-.054-.209-.108-.312-.163l-1.005-.522-1-.522-.387-.201a.186.186 0 0 1-.102-.17.199.199 0 0 1 .198-.194l3.178.014c.95.005 1.901-.062 2.836-.234 6.58-1.215 10.95-6.485 11.076-13.656.107-6.12-3.309-9.221-10.15-9.221l-.005.003Zm-1.579 16.68h-.124c-.278 0-.328-.03-.337-.04-.004-.007 1.833-8.073 1.834-8.084.047-.233.045-.367-.099-.446-.184-.102-2.866-1.516-2.866-1.516a.188.188 0 0 1-.101-.172.197.197 0 0 1 .197-.192h4.241c1.32.04 2.056 1.221 2.021 3.237-.061 3.492-1.721 7.09-4.766 7.214Z" />
               </svg>
-              <h6 class="text-lg lg:text-2xl font-black text-black relative lg:top-[2px]">GSAP</h6>
+              <h6 class="text-base lg:text-xl font-black text-black relative">GSAP</h6>
             </div>
 
             <div
-              class="border-[2px] border-black px-3 lg:px-4 3xl:px-6 py-1.5 lg:py-2 flex items-center justify-center gap-2 lg:gap-3 rounded-[5px]">
-              <svg class="h-[28px] lg:h-[30px] 3xl:h-[40px] w-fit" fill="#16302b" version="1.1"
+              class="border-[2px] border-black px-3 py-1.5 lg:py-2 flex items-center justify-center gap-2 lg:gap-3 rounded-[5px]">
+              <svg class="h-[25px] lg:h-[25px] 3xl:h-[35px] w-fit" fill="#16302b" version="1.1"
                 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="800px"
                 height="800px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
                 <g id="5151e0c8492e5103c096af88a51e2ea6">
@@ -1819,22 +1831,22 @@
                   </path>
                 </g>
               </svg>
-              <h6 class="text-lg lg:text-2xl font-black text-black">PHP</h6>
+              <h6 class="text-base lg:text-xl font-black text-black">PHP</h6>
             </div>
 
             <div
-              class="border-[2px] border-black px-3 lg:px-4 3xl:px-6 py-1.5 lg:py-2 flex items-center justify-center gap-2 lg:gap-3 rounded-[5px]">
-              <svg class="h-[28px] lg:h-[30px] 3xl:h-[40px] w-fit relative" width="800px" height="800px"
+              class="border-[2px] border-black px-3 py-1.5 lg:py-2 flex items-center justify-center gap-2 lg:gap-3 rounded-[5px]">
+              <svg class="h-[25px] lg:h-[25px] 3xl:h-[35px] w-fit relative" width="800px" height="800px"
                 viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M22.88,10.41a5,5,0,0,1-6.43-7.66L17,2.37A5,5,0,0,0,23.34,10l-.46.44M21.1,14.5A7.5,7.5,0,0,1,11.46,3l.92-.64a7.5,7.5,0,0,0,9.53,11.36l-.81.78M20,19.38A10.5,10.5,0,1,1,6.47,3.29L7.58,2.5A10.49,10.49,0,0,0,21,18.43Z" />
               </svg>
-              <h6 class="text-lg lg:text-2xl font-black text-black relative lg:top-[2px]">JQUERY</h6>
+              <h6 class="text-base lg:text-xl font-black text-black relative">JQUERY</h6>
             </div>
 
             <div
-              class="border-[2px] border-black px-3 lg:px-4 3xl:px-6 py-1.5 lg:py-2 flex items-center justify-center gap-2 lg:gap-3 rounded-[5px]">
-              <svg class="h-[25px] w-fit relative" fill="#16302b" width="800px" height="800px" viewBox="0 0 32 32"
+              class="border-[2px] border-black px-3 py-1.5 lg:py-2 flex items-center justify-center gap-2 lg:gap-3 rounded-[5px]">
+              <svg class="h-[25px] lg:h-[25px] 3xl:h-[35px] w-fit relative" fill="#16302b" width="800px" height="800px" viewBox="0 0 32 32"
                 xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M16,14c6.3,0,13-1.93,13-5.5v-3C29,1.93,22.3,0,16,0S3,1.93,3,5.5v3C3,12.07,9.7,14,16,14ZM5,5.5C5,4.07,9.29,2,16,2S27,4.07,27,5.5v3C27,9.93,22.71,12,16,12S5,9.93,5,8.5Z" />
@@ -1843,12 +1855,12 @@
                 <path
                   d="M16,23c6.3,0,13-1.93,13-5.5v-3a1,1,0,0,0-2,0v3c0,1.43-4.29,3.5-11,3.5S5,18.93,5,17.5v-3a1,1,0,0,0-2,0v3C3,21.07,9.7,23,16,23Z" />
               </svg>
-              <h6 class="text-lg lg:text-2xl font-black text-black relative lg:top-[2px]">SQL</h6>
+              <h6 class="text-base lg:text-xl font-black text-black relative">SQL</h6>
             </div>
 
             <div
-              class="border-[2px] border-black px-3 lg:px-4 3xl:px-6 py-1.5 lg:py-2 flex items-center justify-center gap-2 lg:gap-3 rounded-[5px]">
-              <svg class="h-[25px] w-fit relative" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+              class="border-[2px] border-black px-3 py-1.5 lg:py-2 flex items-center justify-center gap-2 lg:gap-3 rounded-[5px]">
+              <svg class="h-[25px] lg:h-[25px] 3xl:h-[35px] w-fit relative" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
                 xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 147.1 63.1"
                 enable-background="new 0 0 147.1 63.1" xml:space="preserve">
                 <g>
@@ -1906,26 +1918,26 @@
                   l-4,4.2L42.6,47l12-11.7l-3.7-4l-4.6,4.2V12.5c0-4,1.8-6.5,5.7-6.5c4.8,0.1,9-1.1,9,5.6v1.7h9v-1.7C70.1,7.1,69.1,5,66.5,2.9z" />
                 </g>
               </svg>
-              <h6 class="text-lg lg:text-2xl font-black text-black relative lg:top-[2px]">AJAX</h6>
+              <h6 class="text-base lg:text-xl font-black text-black relative">AJAX</h6>
             </div>
 
             <div
-              class="border-[2px] border-black px-3 lg:px-4 3xl:px-6 py-1.5 lg:py-2 flex items-center justify-center gap-2 lg:gap-3 rounded-[5px]">
-              <svg class="h-[25px] lg:h-[30px] w-fit relative" xmlns="http://www.w3.org/2000/svg" width="100%"
+              class="border-[2px] border-black px-3 py-1.5 lg:py-2 flex items-center justify-center gap-2 lg:gap-3 rounded-[5px]">
+              <svg class="h-[25px] lg:h-[25px] 3xl:h-[35px] w-fit relative" xmlns="http://www.w3.org/2000/svg" width="100%"
                 height="100%" viewBox="0 0 500 500">
                 <rect x="5.5" y="5.5" fill="#16302b" width="489" height="489" />
                 <path fill="#e6e6e6"
                   d="M454.478 377.875c-3.58-22.312-18.128-41.045-61.218-58.522-14.967-6.88-31.654-11.806-36.628-23.147-1.767-6.602-1.999-10.319-.883-14.318 3.208-12.968 18.686-17.012 30.958-13.293 7.902 2.648 15.386 8.739 19.895 18.453 21.104-13.666 21.056-13.572 35.792-22.963-5.393-8.366-8.275-12.225-11.807-15.804-12.69-14.177-29.981-21.475-57.639-20.917-4.788.604-9.622 1.255-14.41 1.86-13.805 3.486-26.96 10.737-34.676 20.452-23.149 26.264-16.547 72.234 11.621 91.153 27.75 20.824 68.517 25.565 73.722 45.042 5.067 23.845-17.524 31.561-39.975 28.819-16.548-3.439-25.752-11.854-35.7-27.146-18.313 10.598-18.313 10.598-37.139 21.428 4.462 9.762 9.157 14.178 16.641 22.637 35.42 35.931 124.063 34.166 139.959-20.22.651-1.859 4.927-14.317 1.487-33.514zm-183.142-147.63h-45.74l-.186 118.252c0 25.147 1.302 48.203-2.789 55.27-6.694 13.897-24.032 12.178-31.935 9.481-8.042-3.951-12.132-9.575-16.873-17.523-1.301-2.278-2.278-4.044-2.604-4.184-12.411 7.576-24.775 15.2-37.187 22.776 6.182 12.69 15.293 23.707 26.96 30.864 17.432 10.458 40.858 13.666 65.355 8.041 15.943-4.647 29.703-14.27 36.907-28.911 10.412-19.198 8.181-42.439 8.088-68.145.236-41.927.004-83.854.004-125.921z" />
               </svg>
-              <h6 class="text-lg lg:text-2xl font-black text-black relative lg:top-[2px]">JAVASCRIPT</h6>
+              <h6 class="text-base lg:text-xl font-black text-black relative">JAVASCRIPT</h6>
             </div>
 
 
 
             <div
-              class="border-[2px] border-black px-3 lg:px-4 3xl:px-6 py-1.5 lg:py-2 flex items-center justify-center gap-2 lg:gap-3 rounded-[5px]">
+              class="border-[2px] border-black px-3 py-1.5 lg:py-2 flex items-center justify-center gap-2 lg:gap-3 rounded-[5px]">
 
-              <svg class="h-[25px] w-fit relative" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 110 36.9">
+              <svg class="h-[25px] lg:h-[25px] 3xl:h-[35px] w-fit relative" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 110 36.9">
                 <g>
                   <path fill="#16302b" d="M28.1,29.9v-10c0-0.7,0.4-1.3,1-1.6l8.7-5c0.6-0.3,1.3-0.3,1.9,0l8.6,5c0.6,0.3,0.9,1,0.9,1.7v10
                     c0,0.7-0.4,1.3-1,1.6l-8.7,5c-0.6,0.3-1.3,0.3-1.9,0l-8.6-5C28.5,31.2,28.1,30.6,28.1,29.9z" />
@@ -1945,7 +1957,7 @@
               </svg>
 
 
-              <h6 class="text-lg lg:text-2xl font-black text-black relative lg:top-[2px]">NODE.JS</h6>
+              <h6 class="text-base lg:text-xl font-black text-black relative">NODE.JS</h6>
             </div>
 
 
@@ -1954,30 +1966,30 @@
 
 
           <div
-            class="sliding-svg-black w-full flex flex-row justify-end gap-2 lg:gap-4 py-2 lg:py-4 bg-black whitespace-nowrap">
+            class="sliding-svg-black w-full flex flex-row justify-end gap-2 lg:gap-3 py-2 lg:py-2 bg-black whitespace-nowrap">
             <div
-              class="border-[2px] border-white px-3 lg:px-4 3xl:px-6 py-1.5 lg:py-2 flex items-center justify-center gap-2 lg:gap-3 text-xl text-white font-black rounded-[5px]">
-              <svg class="h-[28px] lg:h-[30px] 3xl:h-[40px] w-fit" fill="#e6e6e6" width="800px" height="800px"
+              class="border-[2px] border-white px-3 py-1.5 lg:py-2 flex items-center justify-center gap-2 lg:gap-3 text-xl text-white font-black rounded-[5px]">
+              <svg class="h-[25px] lg:h-[25px] 3xl:h-[35px] w-fit" fill="#e6e6e6" width="800px" height="800px"
                 viewBox="0 0 32 32" id="Camada_1" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
                 xmlns:xlink="http://www.w3.org/1999/xlink">
                 <path
                   d="M28,25.6l-5.9,2.4l-9.7-9.6l-6.1,4.8L4,21.9V10.1l2.3-1.2l6.1,4.8L22.1,4L28,6.4V25.6z M15.7,16l6.3,5l0,0V11L15.7,16  L15.7,16z M6.3,19.7L6.3,19.7L10,16l-3.6-3.7l0,0L6.3,19.7L6.3,19.7z" />
               </svg>
-              <h6 class="text-lg lg:text-2xl font-black text-white relative lg:top-[2px]">VS CODE</h6>
+              <h6 class="text-base lg:text-xl font-black text-white relative">VS CODE</h6>
             </div>
 
             <div
-              class="border-[2px] border-white px-3 lg:px-4 3xl:px-6 py-1.5 lg:py-2 flex items-center justify-center gap-2 lg:gap-3 text-xl text-white font-black rounded-[5px]">
-              <svg class="h-[25px] lg:h-[30px] w-fit" width="800px" height="800px" viewBox="0 0 24 24" fill="none"
+              class="border-[2px] border-white px-3 py-1.5 lg:py-2 flex items-center justify-center gap-2 lg:gap-3 text-xl text-white font-black rounded-[5px]">
+              <svg class="h-[25px] lg:h-[25px] 3xl:h-[35px] w-fit" width="800px" height="800px" viewBox="0 0 24 24" fill="none"
                 xmlns="http://www.w3.org/2000/svg">
                 <path d="M12 1L24 22H0L12 1Z" fill="#e6e6e6" />
               </svg>
-              <h6 class="text-lg lg:text-2xl font-black text-white relative lg:top-[2px]">VERCEL</h6>
+              <h6 class="text-base lg:text-xl font-black text-white relative">VERCEL</h6>
             </div>
 
             <div
-              class="border-[2px] border-white px-3 lg:px-4 3xl:px-6 py-1.5 lg:py-2 flex items-center justify-center gap-2 lg:gap-3 text-xl text-white font-black rounded-[5px]">
-              <svg class="h-[25px] lg:h-[30px] w-fit" width="800px" height="800px" viewBox="0 0 20 20" version="1.1"
+              class="border-[2px] border-white px-3 py-1.5 lg:py-2 flex items-center justify-center gap-2 lg:gap-3 text-xl text-white font-black rounded-[5px]">
+              <svg class="h-[25px] lg:h-[25px] 3xl:h-[35px] w-fit" width="800px" height="800px" viewBox="0 0 20 20" version="1.1"
                 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                   <g id="Dribbble-Light-Preview" transform="translate(-260.000000, -7559.000000)" fill="#e6e6e6">
@@ -1990,12 +2002,12 @@
                 </g>
               </svg>
 
-              <h6 class="text-lg lg:text-2xl font-black text-white relative lg:top-[2px]">WORDPRESS</h6>
+              <h6 class="text-base lg:text-xl font-black text-white relative">WORDPRESS</h6>
             </div>
 
             <div
-              class="border-[2px] border-white px-3 lg:px-4 3xl:px-6 py-1.5 lg:py-2 flex items-center justify-center gap-2 lg:gap-3 text-xl text-white font-black rounded-[5px]">
-              <svg class="h-[28px] lg:h-[30px] 3xl:h-[40px] w-fit" width="800px" height="800px"
+              class="border-[2px] border-white px-3 py-1.5 lg:py-2 flex items-center justify-center gap-2 lg:gap-3 text-xl text-white font-black rounded-[5px]">
+              <svg class="h-[25px] lg:h-[25px] 3xl:h-[35px] w-fit" width="800px" height="800px"
                 viewBox="0 -51.5 256 256" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid">
                 <path
                   d="M23.759 0h208.378C245.325 0 256 10.675 256 23.863v79.541c0 13.188-10.675 23.863-23.863 23.863H157.41l10.257 25.118-45.109-25.118H23.863c-13.187 0-23.862-10.675-23.862-23.863V23.863C-.104 10.78 10.57 0 23.759 0z"
@@ -2004,12 +2016,12 @@
                   d="M14.578 21.75c1.457-1.978 3.642-3.018 6.556-3.226 5.308-.417 8.326 2.08 9.054 7.492 3.226 21.75 6.764 40.17 10.51 55.259l22.79-43.395c2.082-3.955 4.684-6.036 7.806-6.244 4.579-.312 7.388 2.601 8.533 8.741 2.602 13.84 5.932 25.6 9.886 35.59 2.706-26.432 7.285-45.476 13.737-57.235 1.56-2.914 3.85-4.371 6.868-4.58 2.394-.207 4.579.521 6.556 2.082 1.977 1.561 3.018 3.538 3.226 5.932.104 1.873-.208 3.434-1.04 4.995-4.059 7.493-7.39 20.085-10.095 37.567-2.601 16.963-3.538 30.18-2.914 39.65.209 2.6-.208 4.89-1.248 6.868-1.25 2.289-3.122 3.538-5.516 3.746-2.706.208-5.515-1.04-8.221-3.85-9.678-9.887-17.379-24.664-22.998-44.332-6.765 13.32-11.76 23.31-14.986 29.97-6.14 11.76-11.343 17.796-15.714 18.108-2.81.208-5.203-2.186-7.284-7.18-5.307-13.633-11.031-39.962-17.17-78.986-.417-2.706.207-5.1 1.664-6.972zm223.636 16.338c-3.746-6.556-9.262-10.51-16.65-12.072-1.978-.416-3.85-.624-5.62-.624-9.99 0-18.107 5.203-24.455 15.61-5.412 8.845-8.117 18.627-8.117 29.346 0 8.013 1.665 14.881 4.995 20.605 3.746 6.556 9.262 10.51 16.65 12.071 1.977.417 3.85.625 5.62.625 10.094 0 18.211-5.203 24.455-15.61 5.411-8.95 8.117-18.732 8.117-29.45.104-8.117-1.665-14.882-4.995-20.501zm-13.112 28.826c-1.457 6.868-4.059 11.967-7.91 15.401-3.017 2.706-5.827 3.85-8.428 3.33-2.498-.52-4.58-2.705-6.14-6.764-1.25-3.226-1.873-6.452-1.873-9.47 0-2.601.208-5.203.728-7.596.937-4.267 2.706-8.43 5.515-12.384 3.435-5.1 7.077-7.18 10.823-6.452 2.498.52 4.58 2.706 6.14 6.764 1.249 3.226 1.873 6.452 1.873 9.47 0 2.706-.208 5.307-.728 7.7zm-52.033-28.826c-3.746-6.556-9.366-10.51-16.65-12.072-1.977-.416-3.85-.624-5.62-.624-9.99 0-18.107 5.203-24.455 15.61-5.411 8.845-8.117 18.627-8.117 29.346 0 8.013 1.665 14.881 4.995 20.605 3.746 6.556 9.262 10.51 16.65 12.071 1.978.417 3.85.625 5.62.625 10.094 0 18.211-5.203 24.455-15.61 5.412-8.95 8.117-18.732 8.117-29.45 0-8.117-1.665-14.882-4.995-20.501zm-13.216 28.826c-1.457 6.868-4.059 11.967-7.909 15.401-3.018 2.706-5.828 3.85-8.43 3.33-2.497-.52-4.578-2.705-6.14-6.764-1.248-3.226-1.872-6.452-1.872-9.47 0-2.601.208-5.203.728-7.596.937-4.267 2.706-8.43 5.516-12.384 3.434-5.1 7.076-7.18 10.822-6.452 2.498.52 4.58 2.706 6.14 6.764 1.25 3.226 1.873 6.452 1.873 9.47.105 2.706-.208 5.307-.728 7.7z"
                   fill="#e6e6e6" />
               </svg>
-              <h6 class="text-lg lg:text-2xl font-black text-white relative lg:top-[2px]">WOOCOMMERCE</h6>
+              <h6 class="text-base lg:text-xl font-black text-white relative">WOOCOMMERCE</h6>
             </div>
 
             <div
-              class="border-[2px] border-white px-3 lg:px-4 3xl:px-6 py-1.5 lg:py-2 flex items-center justify-center gap-2 lg:gap-3 text-xl text-white font-black rounded-[5px]">
-              <svg class="h-[28px] lg:h-[30px] 3xl:h-[40px] w-fit" width="800px" height="800px" viewBox="0 0 32 32"
+              class="border-[2px] border-white px-3 py-1.5 lg:py-2 flex items-center justify-center gap-2 lg:gap-3 text-xl text-white font-black rounded-[5px]">
+              <svg class="h-[25px] lg:h-[25px] 3xl:h-[35px] w-fit" width="800px" height="800px" viewBox="0 0 32 32"
                 xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M8.785,6.865a3.055,3.055,0,0,0-.785.1V7h.038a6.461,6.461,0,0,0,.612.785c.154.306.288.611.441.917.019-.019.038-.039.038-.039a1.074,1.074,0,0,0,.4-.957,4.314,4.314,0,0,1-.23-.4c-.115-.191-.364-.287-.517-.44"
@@ -2018,12 +2030,12 @@
                   d="M27.78,23.553a8.849,8.849,0,0,0-3.712.536c-.287.115-.745.115-.785.478.154.153.172.4.307.613a4.467,4.467,0,0,0,.995,1.167c.4.306.8.611,1.225.879.745.461,1.588.728,2.314,1.187.422.268.842.612,1.264.9.21.153.343.4.611.5v-.058a3.844,3.844,0,0,0-.291-.613c-.191-.19-.383-.363-.575-.554a9.118,9.118,0,0,0-1.99-1.932c-.613-.422-1.953-1-2.2-1.7l-.039-.039a7.69,7.69,0,0,0,1.321-.308c.65-.172,1.243-.133,1.912-.3.307-.077.862-.268.862-.268v-.3c-.342-.34-.587-.795-.947-1.116a25.338,25.338,0,0,0-3.122-2.328c-.587-.379-1.344-.623-1.969-.946-.226-.114-.6-.17-.737-.36a7.594,7.594,0,0,1-.776-1.457c-.548-1.04-1.079-2.193-1.551-3.293a20.236,20.236,0,0,0-.965-2.157A19.078,19.078,0,0,0,11.609,5a9.07,9.07,0,0,0-2.421-.776c-.474-.02-.946-.057-1.419-.075A7.55,7.55,0,0,1,6.9,3.485C5.818,2.8,3.038,1.328,2.242,3.277,1.732,4.508,3,5.718,3.435,6.343A8.866,8.866,0,0,1,4.4,7.762c.133.322.171.663.3,1A22.556,22.556,0,0,0,5.687,11.3a8.946,8.946,0,0,0,.7,1.172c.153.209.417.3.474.645a5.421,5.421,0,0,0-.436,1.419,8.336,8.336,0,0,0,.549,6.358c.3.473,1.022,1.514,1.987,1.116.851-.34.662-1.419.908-2.364.056-.229.019-.379.132-.53V19.3s.483,1.061.723,1.6a10.813,10.813,0,0,0,2.4,2.59A3.514,3.514,0,0,1,14,24.657V25h.427A1.054,1.054,0,0,0,14,24.212a9.4,9.4,0,0,1-.959-1.16,24.992,24.992,0,0,1-2.064-3.519c-.3-.6-.553-1.258-.793-1.857-.11-.231-.11-.58-.295-.7a7.266,7.266,0,0,0-.884,1.313,11.419,11.419,0,0,0-.517,2.921c-.073.02-.037,0-.073.038-.589-.155-.792-.792-1.014-1.332a8.756,8.756,0,0,1-.166-5.164c.128-.405.683-1.681.461-2.068-.111-.369-.48-.58-.682-.871a7.767,7.767,0,0,1-.663-1.237C5.912,9.5,5.69,8.3,5.212,7.216a10.4,10.4,0,0,0-.921-1.489A9.586,9.586,0,0,1,3.276,4.22c-.092-.213-.221-.561-.074-.793a.3.3,0,0,1,.259-.252c.238-.212.921.058,1.16.174a9.2,9.2,0,0,1,1.824.967c.258.194.866.685.866.685h.18c.612.133,1.3.037,1.876.21a12.247,12.247,0,0,1,2.755,1.32,16.981,16.981,0,0,1,5.969,6.545c.23.439.327.842.537,1.3.4.94.9,1.9,1.3,2.814a12.578,12.578,0,0,0,1.36,2.564c.286.4,1.435.612,1.952.822a13.7,13.7,0,0,1,1.32.535c.651.4,1.3.861,1.913,1.3.305.23,1.262.708,1.32,1.091"
                   style="fill:#e6e6e6;fill-rule:evenodd" />
               </svg>
-              <h6 class="text-lg lg:text-2xl font-black text-white relative lg:top-[2px]">MYSQL</h6>
+              <h6 class="text-base lg:text-xl font-black text-white relative">MYSQL</h6>
             </div>
 
             <div
-              class="border-[2px] border-white px-3 lg:px-4 3xl:px-6 py-1.5 lg:py-2 flex items-center justify-center gap-2 lg:gap-3 text-xl text-white font-black rounded-[5px]">
-              <svg class="h-[28px] lg:h-[30px] 3xl:h-[40px] w-fit" viewBox="0 0 32 32"
+              class="border-[2px] border-white px-3 py-1.5 lg:py-2 flex items-center justify-center gap-2 lg:gap-3 text-xl text-white font-black rounded-[5px]">
+              <svg class="h-[25px] lg:h-[25px] 3xl:h-[35px] w-fit" viewBox="0 0 32 32"
                 xmlns="http://www.w3.org/2000/svg" fill="#e6e6e6">
                 <g id="iconCarrier">
                   <path
@@ -2035,22 +2047,22 @@
                 </g>
               </svg>
 
-              <h6 class="text-lg lg:text-2xl font-black text-white relative lg:top-[2px]">VITE</h6>
+              <h6 class="text-base lg:text-xl font-black text-white relative">VITE</h6>
             </div>
 
             <div
-              class="border-[2px] border-white px-3 lg:px-4 3xl:px-6 py-1.5 lg:py-2 flex items-center justify-center gap-2 lg:gap-3 text-xl text-white font-black rounded-[5px]">
-              <svg class="h-[28px] lg:h-[30px] 3xl:h-[40px] w-fit" fill="#e6e6e6" width="800px" height="800px"
+              class="border-[2px] border-white px-3 py-1.5 lg:py-2 flex items-center justify-center gap-2 lg:gap-3 text-xl text-white font-black rounded-[5px]">
+              <svg class="h-[25px] lg:h-[25px] 3xl:h-[35px] w-fit" fill="#e6e6e6" width="800px" height="800px"
                 viewBox="0 -0.5 25 25" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="m12.301 0h.093c2.242 0 4.34.613 6.137 1.68l-.055-.031c1.871 1.094 3.386 2.609 4.449 4.422l.031.058c1.04 1.769 1.654 3.896 1.654 6.166 0 5.406-3.483 10-8.327 11.658l-.087.026c-.063.02-.135.031-.209.031-.162 0-.312-.054-.433-.144l.002.001c-.128-.115-.208-.281-.208-.466 0-.005 0-.01 0-.014v.001q0-.048.008-1.226t.008-2.154c.007-.075.011-.161.011-.249 0-.792-.323-1.508-.844-2.025.618-.061 1.176-.163 1.718-.305l-.076.017c.573-.16 1.073-.373 1.537-.642l-.031.017c.508-.28.938-.636 1.292-1.058l.006-.007c.372-.476.663-1.036.84-1.645l.009-.035c.209-.683.329-1.468.329-2.281 0-.045 0-.091-.001-.136v.007c0-.022.001-.047.001-.072 0-1.248-.482-2.383-1.269-3.23l.003.003c.168-.44.265-.948.265-1.479 0-.649-.145-1.263-.404-1.814l.011.026c-.115-.022-.246-.035-.381-.035-.334 0-.649.078-.929.216l.012-.005c-.568.21-1.054.448-1.512.726l.038-.022-.609.384c-.922-.264-1.981-.416-3.075-.416s-2.153.152-3.157.436l.081-.02q-.256-.176-.681-.433c-.373-.214-.814-.421-1.272-.595l-.066-.022c-.293-.154-.64-.244-1.009-.244-.124 0-.246.01-.364.03l.013-.002c-.248.524-.393 1.139-.393 1.788 0 .531.097 1.04.275 1.509l-.01-.029c-.785.844-1.266 1.979-1.266 3.227 0 .025 0 .051.001.076v-.004c-.001.039-.001.084-.001.13 0 .809.12 1.591.344 2.327l-.015-.057c.189.643.476 1.202.85 1.693l-.009-.013c.354.435.782.793 1.267 1.062l.022.011c.432.252.933.465 1.46.614l.046.011c.466.125 1.024.227 1.595.284l.046.004c-.431.428-.718 1-.784 1.638l-.001.012c-.207.101-.448.183-.699.236l-.021.004c-.256.051-.549.08-.85.08-.022 0-.044 0-.066 0h.003c-.394-.008-.756-.136-1.055-.348l.006.004c-.371-.259-.671-.595-.881-.986l-.007-.015c-.198-.336-.459-.614-.768-.827l-.009-.006c-.225-.169-.49-.301-.776-.38l-.016-.004-.32-.048c-.023-.002-.05-.003-.077-.003-.14 0-.273.028-.394.077l.007-.003q-.128.072-.08.184c.039.086.087.16.145.225l-.001-.001c.061.072.13.135.205.19l.003.002.112.08c.283.148.516.354.693.603l.004.006c.191.237.359.505.494.792l.01.024.16.368c.135.402.38.738.7.981l.005.004c.3.234.662.402 1.057.478l.016.002c.33.064.714.104 1.106.112h.007c.045.002.097.002.15.002.261 0 .517-.021.767-.062l-.027.004.368-.064q0 .609.008 1.418t.008.873v.014c0 .185-.08.351-.208.466h-.001c-.119.089-.268.143-.431.143-.075 0-.147-.011-.214-.032l.005.001c-4.929-1.689-8.409-6.283-8.409-11.69 0-2.268.612-4.393 1.681-6.219l-.032.058c1.094-1.871 2.609-3.386 4.422-4.449l.058-.031c1.739-1.034 3.835-1.645 6.073-1.645h.098-.005zm-7.64 17.666q.048-.112-.112-.192-.16-.048-.208.032-.048.112.112.192.144.096.208-.032zm.497.545q.112-.08-.032-.256-.16-.144-.256-.048-.112.08.032.256.159.157.256.047zm.48.72q.144-.112 0-.304-.128-.208-.272-.096-.144.08 0 .288t.272.112zm.672.673q.128-.128-.064-.304-.192-.192-.32-.048-.144.128.064.304.192.192.32.044zm.913.4q.048-.176-.208-.256-.24-.064-.304.112t.208.24q.24.097.304-.096zm1.009.08q0-.208-.272-.176-.256 0-.256.176 0 .208.272.176.256.001.256-.175zm.929-.16q-.032-.176-.288-.144-.256.048-.224.24t.288.128.225-.224z" />
               </svg>
-              <h6 class="text-lg lg:text-2xl font-black text-white relative lg:top-[2px]">GITHUB</h6>
+              <h6 class="text-base lg:text-xl font-black text-white relative">GITHUB</h6>
             </div>
 
             <div
-              class="border-[2px] border-white px-3 lg:px-4 3xl:px-6 py-1.5 lg:py-2 flex items-center justify-center gap-2 lg:gap-3 text-xl text-white font-black rounded-[5px]">
-              <svg class="h-[28px] lg:h-[30px] 3xl:h-[40px] w-fit" viewBox="0 0 32 32" fill="none"
+              class="border-[2px] border-white px-3 py-1.5 lg:py-2 flex items-center justify-center gap-2 lg:gap-3 text-xl text-white font-black rounded-[5px]">
+              <svg class="h-[25px] lg:h-[25px] 3xl:h-[35px] w-fit" viewBox="0 0 32 32" fill="none"
                 xmlns="http://www.w3.org/2000/svg">
                 <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                 <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
@@ -2066,12 +2078,12 @@
                     fill="#16302b"></path>
                 </g>
               </svg>
-              <h6 class="text-lg lg:text-2xl font-black text-white relative lg:top-[2px]">ADOBE XD</h6>
+              <h6 class="text-base lg:text-xl font-black text-white relative">ADOBE XD</h6>
             </div>
 
             <div
-              class="border-[2px] border-white px-3 lg:px-4 3xl:px-6 py-1.5 lg:py-2 flex items-center justify-center gap-2 lg:gap-3 text-xl text-white font-black rounded-[5px]">
-              <svg class="h-[28px] lg:h-[30px] 3xl:h-[40px] w-fit" viewBox="-1 0 258 258" version="1.1"
+              class="border-[2px] border-white px-3 py-1.5 lg:py-2 flex items-center justify-center gap-2 lg:gap-3 text-xl text-white font-black rounded-[5px]">
+              <svg class="h-[25px] lg:h-[25px] 3xl:h-[35px] w-fit" viewBox="-1 0 258 258" version="1.1"
                 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#16302b">
                 <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                 <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
@@ -2089,33 +2101,33 @@
                   </g>
                 </g>
               </svg>
-              <h6 class="text-lg lg:text-2xl font-black text-white relative lg:top-[2px]">XAMPP</h6>
+              <h6 class="text-base lg:text-xl font-black text-white relative">XAMPP</h6>
             </div>
 
             <div
-              class="border-[2px] border-white px-3 lg:px-4 3xl:px-6 py-1.5 lg:py-2 flex items-center justify-center gap-2 lg:gap-3 text-xl text-white font-black rounded-[5px]">
-              <svg class="h-[20px] lg:h-[25px] w-fit" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 460">
+              class="border-[2px] border-white px-3 py-1.5 lg:py-2 flex items-center justify-center gap-2 lg:gap-3 text-xl text-white font-black rounded-[5px]">
+              <svg class="h-[25px] lg:h-[25px] 3xl:h-[35px] w-fit" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 460">
                 <path fill="#e6e6e6"
                   d="M180.81 0h14.25l62.52.5a1.1 1.09-10.5 0 1 1 .68L320 150.19a.27.27 0 0 0 .5-.01C383.41-10.21 590.05-47.91 704.65 81.15a.2.2 0 0 0 .35-.14V1.98a.46.46 0 0 1 .46-.46l294.54.07v106.22l-185.01-.03q-.49 0-.49.49v82.23q0 .5.5.5h173.75q.5 0 .5.5l.01 101.95a.35.35 0 0 1-.56.28q-.31-.23-.7-.23H815.2a.74.74 0 0 0-.74.74L814.3 460H705.19l-.13-77.54q0-1.13-.75-.28c-66.74 75.37-172.34 98.16-264.59 57.35q-.55-.25-.32.31l7.02 16.98a.25.25 0 0 1-.23.34l-122.07-.56q-.55 0-.75-.52l-25.43-64.55q-.18-.46-.68-.46l-154.47-.24a.44.42-78.9 0 0-.4.28l-25.11 65.42q-.28.72-1.05.72l-115.78.01a.29.28-78.8 0 1-.26-.4L180.81 0Zm265.88 322.81c67.43 64.54 178.29 35.39 206.86-53.33a.72.71 9 0 1 .68-.49l50.27.02a.51.5-90 0 0 .5-.51v-74a.5.5 0 0 0-.5-.5h-50.22q-.44 0-.59-.42-16.23-48.14-59.32-72.5c-61.6-34.82-140.13-10.12-172.61 51.94-25.98 49.65-16 110.62 24.93 149.79Zm-263.8-35.53a.35.35 0 0 0 .33.47l75.06-.44a.35.35 0 0 0 .33-.47l-38.62-104.95a.35.35 0 0 0-.66.01l-36.44 105.38Z" />
               </svg>
-              <h6 class="text-lg lg:text-2xl font-black text-white relative lg:top-[2px]">ACF</h6>
+              <h6 class="text-base lg:text-xl font-black text-white relative">ACF</h6>
             </div>
 
             <div
-              class="border-[2px] border-white px-3 lg:px-4 3xl:px-6 py-1.5 lg:py-2 flex items-center justify-center gap-2 lg:gap-3 text-xl text-white font-black rounded-[5px]">
-              <svg class="h-[28px] lg:h-[32px] w-fit" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
+              class="border-[2px] border-white px-3 py-1.5 lg:py-2 flex items-center justify-center gap-2 lg:gap-3 text-xl text-white font-black rounded-[5px]">
+              <svg class="h-[25px] lg:h-[25px] 3xl:h-[35px] w-fit" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
                 viewBox="0 0 128 128" fill="#e6e6e6">
                 <title fill="#e6e6e6">swiper</title>
                 <path
                   d="M97.922 10.346c18.251 11.274 30.413 31.461 30.413 54.489c0 35.346-28.654 64-64 64a63.8 63.8 0 0 1-21.94-3.862l-.73-.272l1.19-.383l1.53-.501l.755-.253l.748-.252l1.476-.509l1.449-.512l1.421-.515l1.395-.518l.688-.261l1.354-.524q2.145-.84 4.153-1.699l.995-.431l1.22-.541a119 119 0 0 0 1.583-.728l.774-.366l1.139-.553l.559-.277l.552-.279l1.085-.56c9.106-4.776 15.292-9.965 18.577-15.654c6.96-12.054.881-24.935-16.567-38.067l-1.42-1.064l-.862-.662l-.837-.656l-.813-.652l-.787-.646l-.384-.321l-.379-.32l-.738-.637l-.537-.474l-.523-.472l-.676-.624l-.652-.62l-.628-.614l-.304-.305l-.299-.305l-.579-.605c-6.897-7.332-8.437-13.608-5.306-19.032c1.594-2.76 4.357-5.474 8.284-8.117l.477-.317l.751-.483q.51-.321 1.042-.642l.538-.32l.83-.478l.855-.476l.659-.356l.673-.355l.921-.472a88 88 0 0 1 2.167-1.055l.752-.35l1.025-.464l.522-.232l1.064-.46l.542-.23l1.104-.459l.56-.228l1.143-.455l.581-.227l1.182-.452l1.207-.45l.613-.223l1.247-.447l1.272-.444l1.299-.441l.659-.22l1.337-.438l1.364-.436l1.389-.433l1.415-.431l1.442-.428l1.838-.532l1.879-.528l2.308-.628zM64.335.835c7.783 0 15.242 1.39 22.141 3.933l.737.277l-.467.142l-2.28.703l-.746.236l-1.473.474l-1.446.479l-1.419.482l-1.392.486l-1.365.49l-.673.246l-1.652.62l-1.61.627l-1.259.505l-.619.254l-1.218.512C57.147 16.605 48.99 22.553 45.09 29.309c-6.809 11.793-.633 24.506 16.816 37.634l1.42 1.065l.862.662l.837.657l.41.327l.799.65l.582.484l.57.482l.736.639l.36.317l.699.631q.572.525 1.11 1.043l.53.516l.763.77l.725.761c6.867 7.383 8.335 13.785 5.072 19.438c-2.112 3.658-6.144 7.258-12.086 10.753l-.546.318l-.884.501l-.91.499a86 86 0 0 1-1.576.829l-.815.412l-1.003.494l-1.029.492l-1.055.491l-.537.245l-1.095.487l-1.12.487l-1.147.484l-.584.242l-1.186.481l-.603.24l-.61.24l-1.239.478l-1.265.476l-1.291.474l-1.318.472l-1.343.47l-.682.234l-1.383.467l-.702.232l-1.422.464l-1.449.461l-1.847.574l-1.889.571l-1.54.453l-2.15.619C12.643 108.29.336 88 .336 64.835c0-35.346 28.654-64 64-64Z"
                   fill="#e6e6e6" />
               </svg>
-              <h6 class="text-lg lg:text-2xl font-black text-white relative lg:top-[2px]">SWIPER.JS</h6>
+              <h6 class="text-base lg:text-xl font-black text-white relative">SWIPER.JS</h6>
             </div>
 
             <div
-              class="border-[2px] border-white px-3 lg:px-4 3xl:px-6 py-1.5 lg:py-2 flex items-center justify-center gap-2 lg:gap-3 text-xl text-white font-black rounded-[5px]">
-              <svg class="h-[30px] lg:h-[35px] w-fit" xmlns="http://www.w3.org/2000/svg" width="448" height="446"
+              class="border-[2px] border-white px-3 py-1.5 lg:py-2 flex items-center justify-center gap-2 lg:gap-3 text-xl text-white font-black rounded-[5px]">
+              <svg class="h-[25px] lg:h-[25px] 3xl:h-[35px] w-fit" xmlns="http://www.w3.org/2000/svg" width="448" height="446"
                 viewBox="0 -2 448 446" xmlns:c2pa="http://c2pa.org/manifest">
                 <defs>
                   <clipPath id="fbc">
@@ -2134,7 +2146,7 @@
                   <circle cx="223" cy="342" r="12" />
                 </g>
               </svg>
-              <h6 class="text-lg lg:text-2xl font-black text-white relative lg:top-[2px]">FANCYBOX</h6>
+              <h6 class="text-base lg:text-xl font-black text-white relative">FANCYBOX</h6>
             </div>
 
 

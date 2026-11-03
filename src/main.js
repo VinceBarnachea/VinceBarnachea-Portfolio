@@ -335,10 +335,12 @@ $(function () {
       {
         y: "-100%",
         backgroundColor: "#16302bcc",
+        backdropFilter: "blur(0px)",
       },
       {
         y: 0,
-        backgroundColor: "#16302bcc",
+        backgroundColor: "rgba(22, 48, 43, 0.8)",
+        backdropFilter: "blur(3px)",
       },
     );
 
@@ -563,44 +565,49 @@ $(function () {
   var projectTitleHeaderTL = gsap.timeline({
     scrollTrigger:{
       trigger: ".project-titlecontainer",
-      start: "bottom bottom",
+      start: "bottom bottom-=200",
       // markers: true,
       pin: true,
       pinType: ScrollTrigger.isTouch ? "fixed" : "transform",
       scrub: true,
-      pinSpacing: false,
+      // pinSpacing: false,
       invalidateOnRefresh: true,
-      end: "top top+=150",
+      end: "top top+=70",
     }
   });
 
   projectTitleHeaderTL
   .to(".title-wrapper",
     {
-      y: "-10vh",
+      y: "10vh",
       ease: "none",    
     }
   )
   .to(".projhead-title",
     {
       opacity: 0.7,
-      scale: 0.85,
+      scale: 0.75,
       ease: "none",
     },"<"
-  )
-  .to(".title-wrapper",
-    {
-      autoAlpha: 0,
-      ease: "none",    
-    },">"
   );
 
- 
+  const $cue = $(".scroll-cue");
+
+// Line grows and shrinks on a loop (same as your reference file)
+gsap.fromTo(".scroll-cue-line",
+  { scaleY: 0 },
+  { scaleY: 1, duration: 1.2, ease: "power2.inOut", repeat: -1, yoyo: true }
+);
+
+// Fade in after the heading appears (your reference does this with the hero row)
+gsap.from($cue[0], { opacity: 0, y: 20, duration: 0.8, delay: 0.6 });
+
+
 
 const $cards = $(".project-card");
 const $last = $cards.last();
 const STACK_TOP = (headerHeight + 10);
-const STACK_GAP = 10;
+const STACK_GAP = 5;
 const HOLD = 300;  // scroll distance during which the last card gets buried
 const lastOffset = STACK_TOP + ($cards.length - 1) * STACK_GAP;
 
@@ -608,7 +615,7 @@ const BG_ACTIVE = "rgb(22, 48, 43)";
 const BG_BURIED = "rgb(10, 20, 18)";
 const pinType = ScrollTrigger.isTouch ? "fixed" : "transform";
 
-const cardTriggers = []; // each card's pin ScrollTrigger (used by the nav)
+const cardTriggers = []; // each card's pin ScrollTrigger (used by the nav + progress)
 
 gsap.set($cards.toArray(), { backgroundColor: BG_ACTIVE });
 
@@ -628,18 +635,42 @@ const buryTimeline = (card) =>
     }, 0)
     .to($(card).children(".grid")[0], { opacity: 0.4 }, 0);
 
-// ---------- Side nav (Tailwind) ----------
-const NUM_IDLE    = "text-xs text-[#ddd]";
-const NUM_ACTIVE  = "text-sm text-white font-bold";
+// ---------- Side nav, right (Tailwind) ----------
+const NUM_IDLE    = "text-[10px] text-[#ddd]";
+const NUM_ACTIVE  = "text-xs text-white font-bold";
 const BAR_IDLE    = "w-2.5 bg-[#ddd]";
-const BAR_ACTIVE  = "w-8 bg-[#e6e6e6]";
+const BAR_ACTIVE  = "w-6 bg-[#e6e6e6]";
 const NAV_HIDDEN  = "opacity-0 pointer-events-none";
 const NAV_VISIBLE = "opacity-100 pointer-events-auto";
 
 const $nav = $(
-  `<ul class="fixed right-6 top-1/2 -translate-y-1/2 z-[200] flex flex-col gap-4 text-sm
+  `<ul class="fixed right-4 top-1/2 -translate-y-1/2 z-[200] hidden lg:flex flex-col gap-2 text-sm
               m-0 p-0 list-none transition-opacity duration-300 ${NAV_HIDDEN}"></ul>`
 ).appendTo("body");
+
+// ---------- Progress bar, left (Tailwind) ----------
+const $progress = $(`
+  <div class="fixed left-4 top-1/2 -translate-y-1/2 z-[200] hidden lg:flex flex-col items-start gap-3
+              text-[10px] text-[#ddd] transition-opacity duration-300 ${NAV_HIDDEN}">
+    <span>START</span>
+    <div class="flex items-stretch gap-3 h-48">
+      <div class="relative w-0.5 h-full bg-[#444] rounded-sm">
+        <div class="progress-fill absolute top-0 left-0 w-full h-0 bg-white rounded-sm"></div>
+      </div>
+      <span class="progress-pct self-center tabular-nums">0%</span>
+    </div>
+    <span>END</span>
+  </div>
+`).appendTo("body");
+
+const $fill = $progress.find(".progress-fill");
+const $pct  = $progress.find(".progress-pct");
+
+function setProgress(p) {
+  const pct = Math.round(p * 100);
+  $fill.css("height", pct + "%");
+  $pct.text(pct + "%");
+}
 
 let activeIndex = -1;
 
@@ -775,8 +806,20 @@ ScrollTrigger.create({
   invalidateOnRefresh: true,
   onUpdate: (self) => syncNav(self.scroll()),
   onRefresh: (self) => syncNav(self.scroll()),
-  onToggle: (self) =>
-    $nav.toggleClass(NAV_VISIBLE, self.isActive).toggleClass(NAV_HIDDEN, !self.isActive),
+  onToggle: (self) => {
+    $nav.add($progress)
+      .toggleClass(NAV_VISIBLE, self.isActive)
+      .toggleClass(NAV_HIDDEN, !self.isActive);
+  },
+});
+
+// ---------- Progress: first card's pin start -> stack unpin ----------
+ScrollTrigger.create({
+  start: () => cardTriggers[0].start,
+  end: () => cardTriggers[cardTriggers.length - 1].end,
+  invalidateOnRefresh: true,
+  onUpdate: (self) => setProgress(self.progress),
+  onRefresh: (self) => setProgress(self.progress),
 });
 
 // ---------- Click: jump to a specific card ----------
@@ -1104,44 +1147,70 @@ const landing2nd = [
   "My Code",
 ];
 
-// Measure every word once and lock the element to the tallest one,
-// so swapping text never changes the page height (no layout shift,
-// so ScrollTrigger/ScrollSmoother never have anything to re-measure).
-function lockHeight($el, words) {
-  const el = $el[0];
-  const original = $el.text();
+// Lock the PARENT to the tallest combined (line 1 + line 2) pair,
+// so the page never shifts, while the lines move inside it.
+function lockParentHeight($el1, $el2, words1, words2) {
+  const parent = $el1.parent()[0];
+  const o1 = $el1.text();
+  const o2 = $el2.text();
 
-  el.style.minHeight = "";
+  parent.style.minHeight = "";
+  $el1[0].style.height = "";
+
   let maxH = 0;
-  words.forEach(function (word) {
-    $el.text(word);
-    maxH = Math.max(maxH, el.getBoundingClientRect().height);
+  words1.forEach(function (_, i) {
+    $el1.text(words1[i]);
+    $el2.text(words2[i]);
+    maxH = Math.max(maxH, parent.getBoundingClientRect().height);
   });
 
-  $el.text(original);
-  el.style.minHeight = Math.ceil(maxH) + "px";
+  $el1.text(o1);
+  $el2.text(o2);
+  parent.style.minHeight = Math.ceil(maxH) + "px";
 }
 
 function cycleTextPair($el1, $el2, words1, words2, hold, offset) {
   let index = 0;
+  let firstRun = true;
+  const el1 = $el1[0];
 
-  // Lock heights BEFORE animating so nothing below the hero ever moves
-  lockHeight($el1, words1);
-  lockHeight($el2, words2);
+  // block so the first line has a tweenable height
+  gsap.set($el1, { display: "block" });
 
-  // One refresh, after the final layout is settled (NOT inside the loop)
-  ScrollTrigger.refresh();
+  // keep the actions row on its own layer so it doesn't repaint on every
+  // height frame (this is what shows up as a blink)
+  const actions = document.getElementById("landingActions");
+  if (actions) {
+    actions.style.willChange = "transform";
+    actions.style.transform = "translateZ(0)";
+    actions.style.backfaceVisibility = "hidden";
+  }
+
+  lockParentHeight($el1, $el2, words1, words2);
+  ScrollTrigger.refresh(); // once, after layout is settled
 
   gsap.set([$el1, $el2], { autoAlpha: 1 });
 
   function animate() {
-    // Set text and split both elements
+    // 1. OLD height = whatever line 1 is right now (no reset to auto,
+    //    so there is no extra layout change here)
+    const oldH = el1.getBoundingClientRect().height;
+
+    // 2. swap text and split FIRST, so the new height is measured
+    //    on the final layout (SplitText wrappers included)
     $el1.text(words1[index]);
     $el2.text(words2[index]);
 
-    // "words,chars" only: no extra line wrappers that can change the height
-    const split1 = new SplitText($el1[0], { type: "words,chars" });
+    const split1 = new SplitText(el1, { type: "words,chars" });
     const split2 = new SplitText($el2[0], { type: "words,chars" });
+
+    // hide new chars immediately, before any frame can paint them
+    gsap.set(split1.chars.concat(split2.chars), { y: 150 });
+
+    // measure the NEW natural height with the height unlocked
+    el1.style.height = "auto";
+    const newH = el1.getBoundingClientRect().height;
+    el1.style.height = oldH + "px"; // put it back before painting
 
     const tl = gsap.timeline({
       onComplete: function () {
@@ -1152,44 +1221,56 @@ function cycleTextPair($el1, $el2, words1, words2, hold, offset) {
       },
     });
 
+    // 3. slide line 2 and the row: height goes old -> new
+    //    NO clearProps: it stays at newH, so there is no snap at the end
+    if (!firstRun && Math.abs(oldH - newH) > 1) {
+      tl.to(
+        el1,
+        {
+          height: newH,
+          duration: 0.7,
+          ease: "power3.inOut",
+        },
+        0,
+      );
+    } else {
+      el1.style.height = newH + "px";
+    }
+    firstRun = false;
+
     // IN: first element
-    tl.fromTo(
+    tl.to(
       split1.chars,
-      { y: 50, autoAlpha: 0 },
-      { y: 0, autoAlpha: 1, stagger: 0.04, duration: 0.5, ease: "power3.out" },
-      0,
+      { y: 0, autoAlpha: 1, stagger: 0.03, duration: 0.4, ease: "power3.out" },
+      0.1,
     );
 
     // IN: second element, slightly delayed
-    tl.fromTo(
+    tl.to(
       split2.chars,
-      { y: 50, autoAlpha: 0 },
-      { y: 0, autoAlpha: 1, stagger: 0.04, duration: 0.5, ease: "power3.out" },
+      { y: 0, autoAlpha: 1, stagger: 0.03, duration: 0.4, ease: "power3.out" },
       offset,
     );
 
-    // Compute when the longest "in" finishes, then hold
     const inEnd = Math.max(
-      0.5 + 0.04 * (split1.chars.length - 1),
-      offset + 0.5 + 0.04 * (split2.chars.length - 1),
+      0.1 + 0.4 + 0.03 * (split1.chars.length - 1),
+      offset + 0.4 + 0.03 * (split2.chars.length - 1),
     );
     const outStart = inEnd + hold;
 
     // OUT: first element
     tl.to(
       split1.chars,
-      { y: 50, autoAlpha: 0, stagger: 0.04, duration: 0.5, ease: "power3.in" },
+      { y: 150, stagger: 0.03, duration: 0.4, ease: "power3.in" },
       outStart,
     );
 
-    // OUT: second element, same delay offset
+    // OUT: second element
     tl.to(
       split2.chars,
-      { y: 50, autoAlpha: 0, stagger: 0.04, duration: 0.5, ease: "power3.in" },
+      { y: 150, stagger: 0.03, duration: 0.4, ease: "power3.in" },
       outStart + offset,
     );
-
-    // ❌ removed: ScrollTrigger.refresh();  <- this caused the blink every cycle
   }
 
   animate();
@@ -1197,7 +1278,6 @@ function cycleTextPair($el1, $el2, words1, words2, hold, offset) {
 
 // INIT
 $(window).on("load", function () {
-  // wait for fonts so the locked heights are measured with the real font
   const fontsReady =
     document.fonts && document.fonts.ready
       ? document.fonts.ready
@@ -1210,8 +1290,8 @@ $(window).on("load", function () {
         $("#landing2nd"),
         landing1st,
         landing2nd,
-        2.7, // hold time
-        0.5, // landing2nd delay behind landing1st (seconds)
+        1.7, // hold time
+        0.3, // landing2nd delay behind landing1st (seconds)
       );
     }, 100);
   });
