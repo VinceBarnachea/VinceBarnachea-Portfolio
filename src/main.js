@@ -2,7 +2,6 @@ import $ from "jquery";
 
 // Make jQuery global (important!)
 window.$ = window.jQuery = $;
-import("owl.carousel");
 import { gsap } from "gsap";
 
 import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
@@ -34,6 +33,10 @@ gsap.registerPlugin(
   SplitText,
 );
 
+
+// One shared pin type for every pin on the page
+const PIN_TYPE = ScrollTrigger.isTouch ? "fixed" : "transform";
+
 // Make jQuery global BEFORE loading Owl
 
 // Now load Owl (it will attach to window.jQuery)
@@ -43,6 +46,7 @@ $(function () {
   console.log("Hello Devs! My Portfolio Revamp is WIP :)");
 
   var headerHeight = $(".header-main").outerHeight(true);
+  ScrollTrigger.config({ ignoreMobileResize: true });
   ScrollSmoother.create({
     wrapper: "#smooth-wrapper",
     content: "#smooth-content",
@@ -446,35 +450,31 @@ $(function () {
     },
   );
 
-  $(".prj-cta-non, .prj-cta-bg").hover(
-    function () {
-      const gitAnimation = gsap.timeline();
-
-      gitAnimation
-        // set initial stroke/fill
-        .set("#projcat", { fill: "transparent", stroke: "#e6e6e6" })
-        // animate the stroke drawing
-        .fromTo(
-          "#projcat",
-          { drawSVG: "0%" },
-          { drawSVG: "100%", duration: 0.8, ease: "power2.out" },
-        )
-        // fill the shape at the end
-        .to("#projcat", {
+  // hover effects only on devices that really hover (taps fire fake hovers on phones)
+  if (matchMedia("(hover: hover)").matches) {
+    $(".prj-cta-non, .prj-cta-bg").hover(
+      function () {
+        const $cat = $(this).find(".projcat");
+        gsap
+          .timeline()
+          .set($cat, { fill: "transparent", stroke: "#e6e6e6" })
+          .fromTo(
+            $cat,
+            { drawSVG: "0%" },
+            { drawSVG: "100%", duration: 0.8, ease: "power2.out" },
+          )
+          .to($cat, { fill: "#e6e6e6", duration: 0.3, ease: "power1.inOut" });
+      },
+      function () {
+        gsap.to($(this).find(".projcat"), {
+          stroke: "transparent",
           fill: "#e6e6e6",
-          duration: 0.3,
+          duration: 0.5,
           ease: "power1.inOut",
         });
-    },
-    function () {
-      gsap.to("#projcat", {
-        stroke: "transparent",
-        fill: "#e6e6e6", // also reset fill
-        duration: 0.5,
-        ease: "power1.inOut",
-      });
-    },
-  );
+      },
+    );
+  }
 
   $(".cta-plane, .cta-plane-form").hover(
     function () {
@@ -568,10 +568,10 @@ $(function () {
       start: "bottom bottom-=200",
       // markers: true,
       pin: true,
-      pinType: ScrollTrigger.isTouch ? "fixed" : "transform",
+      pinType: PIN_TYPE,
       scrub: true,
       // pinSpacing: false,
-      invalidateOnRefresh: true,
+      
       end: "top top+=70",
     }
   });
@@ -606,24 +606,23 @@ gsap.from($cue[0], { opacity: 0, y: 20, duration: 0.8, delay: 0.6 });
 
 const $cards = $(".project-card");
 const $last = $cards.last();
-const STACK_TOP = (headerHeight + 10);
-const STACK_GAP = 5;
-const HOLD = 300;  // scroll distance during which the last card gets buried
+const STACK_TOP = (headerHeight + 5);
+const STACK_GAP = $(window).width() < 1024 ? 0 : 5;
+const HOLD = 500;  // scroll distance during which the last card gets buried
 const lastOffset = STACK_TOP + ($cards.length - 1) * STACK_GAP;
 
 const BG_ACTIVE = "rgb(22, 48, 43)";
 const BG_BURIED = "rgb(10, 20, 18)";
-const pinType = ScrollTrigger.isTouch ? "fixed" : "transform";
+const pinType = PIN_TYPE;
 
 const cardTriggers = []; // each card's pin ScrollTrigger (used by the nav + progress)
 
-gsap.set($cards.toArray(), { backgroundColor: BG_ACTIVE });
+gsap.set($cards.toArray(), { backgroundColor: BG_ACTIVE, force3D: true });
 
-// Every card except the first starts hidden
-gsap.set($cards.toArray().slice(1), { autoAlpha: 0 });
-
-// Release point for cards 1-8: last card's stack spot + HOLD
-const stackEnd = () => $last.offset().top - lastOffset + HOLD;
+// Release point for cards 1-8: same scroll position as the last card's release,
+// measured by ScrollTrigger itself (no jQuery offset, no transform drift)
+const releaseY = lastOffset - HOLD; // may be negative
+const stackEndPos = `top top${releaseY >= 0 ? "+=" : "-="}${Math.abs(releaseY)}`;
 
 // Same buried look for every card
 const buryTimeline = (card) =>
@@ -632,6 +631,7 @@ const buryTimeline = (card) =>
       backgroundColor: BG_BURIED,
       scale: 0.92,
       transformOrigin: "center top",
+      force3D: true,
     }, 0)
     .to($(card).children(".grid")[0], { opacity: 0.4 }, 0);
 
@@ -752,25 +752,13 @@ $cards.each(function (i) {
     cardTriggers[i] = ScrollTrigger.create({
       trigger: this,
       start: `top top+=${startOffset}`,
-      end: stackEnd,
+      endTrigger: $last[0],
+      end: stackEndPos,
       pin: this,
       pinSpacing: false,
       pinType,
-      invalidateOnRefresh: true,
-    });
-
-    // Reveal the NEXT card once THIS card is pinned
-    ScrollTrigger.create({
-      trigger: this,
-      start: `top top+=${startOffset}`, // same start as this card's pin
-      end: "max",                       // stays revealed for the rest of the page
-      invalidateOnRefresh: true,
-      onToggle: (self) =>
-        gsap.to($next[0], {
-          autoAlpha: self.isActive ? 1 : 0,
-          duration: 0.3,
-          overwrite: "auto",
-        }),
+      anticipatePin: 1,
+      
     });
 
     // Buried when the next card slides over it
@@ -780,8 +768,13 @@ $cards.each(function (i) {
       start: "top bottom",
       end: `top top+=${startOffset + STACK_GAP}`,
       scrub: true,
-      invalidateOnRefresh: true,
+      
+      // once fully covered, stop painting this card's content
+      onLeave: () => $project.addClass("is-buried"),
+      onEnterBack: () => $project.removeClass("is-buried"),
+      onRefresh: (self) => $project.toggleClass("is-buried", self.progress === 1),
     });
+
   } else {
     // LAST CARD: pin + buried animation in ONE ScrollTrigger
     cardTriggers[i] = ScrollTrigger.create({
@@ -792,8 +785,9 @@ $cards.each(function (i) {
       pin: this,
       pinSpacing: true,
       pinType,
+      anticipatePin: 1,
       scrub: true,
-      invalidateOnRefresh: true,
+      
     });
   }
 });
@@ -803,7 +797,7 @@ ScrollTrigger.create({
   trigger: ".all-project-cards-wrapper",
   start: "top center",
   end: () => cardTriggers[cardTriggers.length - 1].end, // when the stack unpins
-  invalidateOnRefresh: true,
+  
   onUpdate: (self) => syncNav(self.scroll()),
   onRefresh: (self) => syncNav(self.scroll()),
   onToggle: (self) => {
@@ -817,7 +811,7 @@ ScrollTrigger.create({
 ScrollTrigger.create({
   start: () => cardTriggers[0].start,
   end: () => cardTriggers[cardTriggers.length - 1].end,
-  invalidateOnRefresh: true,
+  
   onUpdate: (self) => setProgress(self.progress),
   onRefresh: (self) => setProgress(self.progress),
 });
@@ -831,8 +825,18 @@ $nav.on("click", "li", function () {
 // Let the user interrupt the jump by scrolling
 $(window).on("wheel touchstart", () => $("html, body").stop());
 
+
+
+
+
+
 // Offsets depend on final image sizes
-$(window).on("load", () => ScrollTrigger.refresh());
+$(window).on("load", () => {
+  ScrollTrigger.refresh();
+  // images decode late on phones, refresh once more after they settle
+  setTimeout(() => ScrollTrigger.refresh(), 600);
+});
+document.fonts?.ready.then(() => ScrollTrigger.refresh());
 
   
 
@@ -846,7 +850,7 @@ $(window).on("load", () => ScrollTrigger.refresh());
         endTrigger: `.${ch}-contents`,
         end: "bottom top+=" + (chptstickyHeight + headerHeight),
         pin: `.${ch}-header`,
-        pinType: ScrollTrigger.isTouch ? "fixed" : "transform",
+        pinType: PIN_TYPE,
         pinSpacing: false,
 
         // markers: true
@@ -881,9 +885,9 @@ $(window).on("load", () => ScrollTrigger.refresh());
           return "+=" + getDistance();
         },
         pin: true,
-        pinType: ScrollTrigger.isTouch ? "fixed" : "transform",
+        pinType: PIN_TYPE,
         scrub: true,
-        invalidateOnRefresh: true, // re-runs the function values on resize/refresh
+         // re-runs the function values on resize/refresh
         // markers: true,
       },
     });
@@ -912,7 +916,7 @@ $(window).on("load", () => ScrollTrigger.refresh());
     trigger: ".sliding-svg-section",
     start: "top top+=" + headerHeight,
     pin: true,
-    pinType: ScrollTrigger.isTouch ? "fixed" : "transform",
+    pinType: PIN_TYPE,
     endTrigger: ".skills-grid",
     end: "bottom top+=" + (slidingSvgHeight + headerHeight),
     pinSpacing: false,
@@ -986,7 +990,7 @@ function initSlidingSVG() {
       start: "top bottom",
       end: () => "+=" + slideSVGLength * svgSpeed,
       scrub: true,
-      invalidateOnRefresh: true,
+      
     },
   });
 
@@ -1086,19 +1090,6 @@ $(window).on("resize", function () {
       });
   });
 
-  let resizeTimer;
-  let prevWidth = $(window).width();
-
-  $(window).on("resize", function () {
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(function () {
-      let newWidth = $(window).width();
-      if (newWidth !== prevWidth) {
-        location.reload();
-      }
-      prevWidth = newWidth; // update for next check
-    }, 100);
-  });
   setHeroHeight();
 
   
@@ -1187,7 +1178,6 @@ function cycleTextPair($el1, $el2, words1, words2, hold, offset) {
   }
 
   lockParentHeight($el1, $el2, words1, words2);
-  ScrollTrigger.refresh(); // once, after layout is settled
 
   gsap.set([$el1, $el2], { autoAlpha: 1 });
 
@@ -1290,7 +1280,7 @@ $(window).on("load", function () {
         $("#landing2nd"),
         landing1st,
         landing2nd,
-        1.7, // hold time
+        2.7, // hold time
         0.3, // landing2nd delay behind landing1st (seconds)
       );
     }, 100);
