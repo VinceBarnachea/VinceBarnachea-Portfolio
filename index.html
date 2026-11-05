@@ -64,12 +64,12 @@
 
 <body class="portfolio-body relative">
   <div
-    class="cursor-flwr border-[2px] border-[#fff] w-[40px] h-[40px] origin-center mix-blend-difference !rounded-[10px] [corner-shape:squircle] z-[9999999] fixed left-0 top-0 pointer-events-none transition-all duration-300 ease-out translate-x-[-50%] translate-y-[-50%] hidden sm:block">
+    class="cursor-flwr border-[2px] border-[#fff] w-[40px] h-[40px] origin-center mix-blend-difference !rounded-[10px] [corner-shape:squircle] z-[9999999] fixed left-0 top-0 pointer-events-none animate400 translate-x-[-50%] translate-y-[-50%] hidden sm:block">
   </div>
   <div
-    class="cursor-pntr bg-[#fff] w-[10px] h-[10px] origin-center mix-blend-difference !rounded-[3px] [corner-shape:squircle] z-[9999999] fixed left-0 top-0 pointer-events-none translate-x-[-50%] translate-y-[-50%] hidden sm:block">
+    class="cursor-pntr bg-[#fff] w-[10px] h-[10px] origin-center mix-blend-difference !rounded-[3px] [corner-shape:squircle] z-[9999999] fixed left-0 top-0 pointer-events-none translate-x-[-50%] translate-y-[-50%] hidden sm:block transition-all duration-100 ease-out">
   </div>
-  <header class="header-main fixed lg:sticky top-0 left-0 w-full z-[99999] py-2 ">
+  <header class="header-main fixed lg:sticky mix-blend-difference backdrop-blur-[5px] top-0 left-0 w-full z-[99999] py-2 ">
     <div class="header-wrapper w-full h-full relative z-[10] flex items-center">
       <div class="flex justify-between h-full w-full items-center gap-8 max-container px-5 sm:px-[5%] 2xl:px-0">
         <a class="inline-block h-[40px] lg:h-[40px] 3xl:h-[45px] hvr-crsr relative z-[100]"
@@ -183,9 +183,9 @@
         </nav>
       </div>
     </div>
-    <div class="header-bg bg-[rgba(22,48,43,0.98)] absolute top-0 left-0 w-full h-full z-[1]"></div>
+    <!-- <div class="header-bg bg-[rgba(22,48,43,0.98)] absolute top-0 left-0 w-full h-full z-[1]"></div>
     <div class="header-border border-b-[1px] border-[rgba(230,230,230,0.3)] absolute top-0 left-0 w-full h-full z-[1]">
-    </div>
+    </div> -->
   </header>
   <div id="smooth-wrapper">
     <div id="smooth-content">
@@ -246,10 +246,10 @@
                   </a>
                 </div>
                 <h1 id="landing1st"
-                  class="text-center lg:text-left text-[clamp(4rem,12.9vw,110px)] 3xl:text-[130px] font-black !leading-[0.85] [&>div]:pb-2 [&>div]:!overflow-hidden">
+                  class="text-center lg:text-left text-[clamp(2.5rem,12.9vw,110px)] 3xl:text-[130px] font-black !leading-[0.85] [&>div]:pb-1 [&>div]:!overflow-hidden">
                   John Vincent</h1>
                 <h2 id="landing2nd"
-                  class="text-center lg:text-left text-[clamp(3.75rem,12.7vw,105px)] 3xl:text-[125px] font-black !leading-[0.85 ] [&>div]:pb-2 text-[#e6e6e6cc] [&>div]:!overflow-hidden">
+                  class="text-center lg:text-left text-[clamp(2rem,12.7vw,105px)] 3xl:text-[125px] font-black !leading-[0.85 ] [&>div]:pb-1 text-[#e6e6e6cc] [&>div]:!overflow-hidden">
                   Barnachea</h2>
 
                 <div class="mt-4 text-base lg:text-xl text-white text-balance text-center lg:text-left">
@@ -264,21 +264,21 @@
                   <button
                     class="landingcta-primary w-full lg:w-fit border border-white rounded-[5px] py-1.5 lg:py-2 px-4 lg:px-4 relative group hover:cursor-pointer hvr-crsr">
                     <div class="overflow-hidden relative">
-                      <h6 class="text-white mix-blend-difference text-base relative z-20 group-hover:translate-y-[-100%] animate300">LET'S CONNECT</h6>
-                      <h6 class="text-white mix-blend-difference text-base absolute top-1/2 translate-y-[50%] group-hover:translate-y-[-50%] animate300 z-20">LET'S CONNECT</h6>
+                      <h6 class="text-white mix-blend-difference text-base relative z-20 group-hover:translate-y-[-100%] animate700">LET'S CONNECT</h6>
+                      <h6 class="text-white mix-blend-difference text-base absolute top-1/2 translate-y-[50%] group-hover:translate-y-[-50%] animate700 z-20">LET'S CONNECT</h6>
                     </div>
                     <div
-                      class="bg-white absolute top-0 left-0 w-full h-full z-10 [clip-path:inset(0%_0%_0%_0%)] group-hover:[clip-path:inset(0%_0%_100%_0%)] animate400">
+                      class="bg-white absolute top-0 left-0 w-full h-full z-10 [clip-path:inset(0%_0%_0%_0%)] group-hover:[clip-path:inset(0%_0%_100%_0%)] animate700">
                     </div>
                   </button>
                   <button
                     class="landingcta-secondary w-full lg:w-fit border border-white rounded-[5px] py-1.5 lg:py-2 px-4 lg:px-4 bg-transparent relative group hover:cursor-pointer hvr-crsr">
                     <div class="overflow-hidden relative">
-                      <h6 class="text-white mix-blend-difference relative group-hover:translate-y-[-100%] animate400 z-20">VIEW MY PROJECTS</h6>
-                      <h6 class="text-white mix-blend-difference absolute top-1/2 translate-y-[50%] group-hover:translate-y-[-50%] animate400 z-20">VIEW MY PROJECTS</h6>
+                      <h6 class="text-white mix-blend-difference relative group-hover:translate-y-[-100%] animate700 z-20">VIEW MY PROJECTS</h6>
+                      <h6 class="text-white mix-blend-difference absolute top-1/2 translate-y-[50%] group-hover:translate-y-[-50%] animate700 z-20">VIEW MY PROJECTS</h6>
                     </div>
                     <div
-                      class="bg-white absolute top-0 left-0 w-full h-full z-10 [clip-path:inset(100%_0%_0%_0%)] group-hover:[clip-path:inset(0%_0%_0%_0%)] animate400">
+                      class="bg-white absolute top-0 left-0 w-full h-full z-10 [clip-path:inset(100%_0%_0%_0%)] group-hover:[clip-path:inset(0%_0%_0%_0%)] animate700">
                     </div>
                   </button>
                 </div>

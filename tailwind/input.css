@@ -165,19 +165,19 @@ p:last-of-type {
 }
 
 .animate300{
-  transition: all 0.3s cubic-bezier(0.65, 0, 0.35, 1);
+  transition: all 0.3s cubic-bezier(0.33, 1, 0.68, 1);
 }
 
 .animate400{
-  transition: all 0.4s cubic-bezier(0.65, 0, 0.35, 1);
+  transition: all 0.4s cubic-bezier(0.33, 1, 0.68, 1);
 }
 
 .animate500{
-  transition: all 0.5s cubic-bezier(0.65, 0, 0.35, 1);
+  transition: all 0.5s cubic-bezier(0.33, 1, 0.68, 1);
 }
 
 .animate700{
-  transition: all 0.7s cubic-bezier(0.65, 0, 0.35, 1);
+  transition: all 0.7s cubic-bezier(0.33, 1, 0.68, 1);
 }
 
 

@@ -50,7 +50,7 @@ $(function () {
   ScrollSmoother.create({
     wrapper: "#smooth-wrapper",
     content: "#smooth-content",
-    smooth: ScrollTrigger.isTouch ? 0 : 1, // disable smooth on touch devices
+    smooth: ScrollTrigger.isTouch ? 0 : 2.5, // disable smooth on touch devices
     effects: true,
     normalizeScroll: !ScrollTrigger.isTouch, // only normalize scroll on desktop
   });
@@ -354,11 +354,21 @@ $(function () {
       if (isHeaderButtonToggled) {
         burgerMenuTL.play();
         headerMenuTL.play();
+        $('header').css({
+          'mix-blend-mode':'normal',
+          'backdrop-filter': 'blur(0px)',
+        });
         $body.css("overflow", "hidden");
       } else {
         headerMenuTL.reverse();
         burgerMenuTL.reverse();
         $body.css("overflow", "auto");
+        setTimeout(() => {
+          $('header').css({
+            'mix-blend-mode':'difference',
+            'backdrop-filter': 'blur(5px)',
+          });
+        }, 400);
       }
     });
   }
@@ -538,29 +548,29 @@ $(function () {
       });
   });
 
-  var headerTL = gsap.timeline({
-    scrollTrigger: {
-      trigger: ".home-landing-section",
-      start: "top+=50 top",
-      toggleActions: "play none none reverse",
-    },
-  });
+  // var headerTL = gsap.timeline({
+  //   scrollTrigger: {
+  //     trigger: ".home-landing-section",
+  //     start: "top+=50 top",
+  //     toggleActions: "play none none reverse",
+  //   },
+  // });
 
-  headerTL
-    .from(".header-bg", {
-      opacity: 0,
-      duration: 0.5,
-      ease: "power2.out",
-    })
-    .from(
-      ".header-border",
-      {
-        clipPath: "inset(0% 100% 0% 0%)", // hidden from top
-        duration: 0.5,
-        ease: "power2.out",
-      },
-      "<",
-    );
+  // headerTL
+  //   .from(".header-bg", {
+  //     opacity: 0,
+  //     duration: 0.5,
+  //     ease: "power2.out",
+  //   })
+  //   .from(
+  //     ".header-border",
+  //     {
+  //       clipPath: "inset(0% 100% 0% 0%)", // hidden from top
+  //       duration: 0.5,
+  //       ease: "power2.out",
+  //     },
+  //     "<",
+  //   );
 
   var projectTitleHeaderTL = gsap.timeline({
     scrollTrigger:{
@@ -757,7 +767,7 @@ $cards.each(function (i) {
       pin: this,
       pinSpacing: false,
       pinType,
-      anticipatePin: 1,
+      // anticipatePin: 1,
       
     });
 
@@ -785,7 +795,7 @@ $cards.each(function (i) {
       pin: this,
       pinSpacing: true,
       pinType,
-      anticipatePin: 1,
+      // anticipatePin: 1,
       scrub: true,
       
     });
@@ -822,8 +832,6 @@ $nav.on("click", "li", function () {
   $("html, body").stop().animate({ scrollTop: st.start + 1 }, 800);
 });
 
-// Let the user interrupt the jump by scrolling
-$(window).on("wheel touchstart", () => $("html, body").stop());
 
 
 
@@ -1231,34 +1239,34 @@ function cycleTextPair($el1, $el2, words1, words2, hold, offset) {
     // IN: first element
     tl.to(
       split1.chars,
-      { y: 0, autoAlpha: 1, stagger: 0.03, duration: 0.4, ease: "power3.out" },
+      { y: 0, autoAlpha: 1, stagger: 0.03, duration: 0.65, ease: "power4.out" },
       0.1,
     );
 
     // IN: second element, slightly delayed
     tl.to(
       split2.chars,
-      { y: 0, autoAlpha: 1, stagger: 0.03, duration: 0.4, ease: "power3.out" },
+      { y: 0, autoAlpha: 1, stagger: 0.03, duration: 0.65, ease: "power4.out" },
       offset,
     );
 
     const inEnd = Math.max(
-      0.1 + 0.4 + 0.03 * (split1.chars.length - 1),
-      offset + 0.4 + 0.03 * (split2.chars.length - 1),
+      0.1 + 0.65 + 0.03 * (split1.chars.length - 1),
+      offset + 0.65 + 0.03 * (split2.chars.length - 1),
     );
     const outStart = inEnd + hold;
 
     // OUT: first element
     tl.to(
       split1.chars,
-      { y: 150, stagger: 0.03, duration: 0.4, ease: "power3.in" },
+      { y: 150, stagger: 0.03, duration: 0.65, ease: "power4.in" },
       outStart,
     );
 
     // OUT: second element
     tl.to(
       split2.chars,
-      { y: 150, stagger: 0.03, duration: 0.4, ease: "power3.in" },
+      { y: 150, stagger: 0.03, duration: 0.65, ease: "power4.in" },
       outStart + offset,
     );
   }
